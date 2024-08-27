@@ -7,4 +7,5 @@ Hello! I am Han and Welcome to my website! I’ve always been drawn to exotic an
 ### Education
 
 -The Koç School(2021-2023)
+
 -Hisar School(2023-2026)
