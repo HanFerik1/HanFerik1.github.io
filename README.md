@@ -9,3 +9,7 @@ Hello! I am Han and Welcome to my website! I’ve always been drawn to exotic an
 -The Koç School(2021-2023)
 
 -Hisar School(2023-2026)
+
+###
+
+- I am currently working on some project which I will update and post here later on!
