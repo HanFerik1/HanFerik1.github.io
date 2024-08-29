@@ -12,4 +12,4 @@ Hello! I am Han and Welcome to my website! I’ve always been drawn to exotic an
 
 ### Projects:
 
-- I am currently working on some project which I will update and post here later on!
+- Scratch Memory Card Game: https://github.com/HanFerik1/Projects/tree/main/Project%20Memory%20Card 
