@@ -10,10 +10,10 @@ Hello! I am Han and Welcome to my website! I’ve always been drawn to exotic an
 
 -Hisar School(2023-2026)
 
-### Projects:
+### Projects [Projects](https://github.com/HanFerik1/Projects):
 
-- Scratch Memory Card Game: https://github.com/HanFerik1/Projects/tree/main/Project%20Memory%20Card 
+- Scratch Memory Card Game [Memory Card Game on Scratch](https://github.com/HanFerik1/Projects/tree/main/Project%20Memory%20Card)
 
-### AP CSA:
+### AP CSA [AP CSA](https://github.com/HanFerik1/APCSA):
 
-- AP CSA Unit 1: https://github.com/HanFerik1/APCSA
+- AP CSA Unit 1 [AP CSA Unit 1](https://github.com/HanFerik1/APCSA/tree/main/Unit%201)
