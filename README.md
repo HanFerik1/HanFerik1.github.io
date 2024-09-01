@@ -14,6 +14,6 @@ Hello! I am Han and Welcome to my website! I’ve always been drawn to exotic an
 
 - Scratch Memory Card Game: https://github.com/HanFerik1/Projects/tree/main/Project%20Memory%20Card 
 
-### APCSA:
+### AP CSA:
 
-- Unit 1: https://github.com/HanFerik1/APCSA 
+- AP CSA Unit 1: https://github.com/HanFerik1/APCSA
