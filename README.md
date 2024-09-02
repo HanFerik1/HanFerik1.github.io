@@ -13,6 +13,7 @@ Hello! I am Han and Welcome to my website! I’ve always been drawn to exotic an
 ### Projects [Click Here to see the Projects Folder](https://github.com/HanFerik1/Projects):
 
 - Scratch Memory Card Game [Memory Card Game on Scratch](https://github.com/HanFerik1/Projects/tree/main/Project%20Memory%20Card)
+- Translate FlashCards(Made by Han, Kerem, and Doruk) [Flashcards Game on Scratch](https://scratch.mit.edu/projects/1062310702/)
 
 ### AP CSA [Click Here to see the AP CSA Folder](https://github.com/HanFerik1/APCSA):
 
