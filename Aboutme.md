@@ -13,8 +13,9 @@ Hello! I am Han and Welcome to my website! I’ve always been drawn to exotic an
 ### Projects [Click Here to see the Projects Folder](https://github.com/HanFerik1/Projects):
 
 - Scratch Memory Card Game [Memory Card Game on Scratch](https://github.com/HanFerik1/Projects/tree/main/Project%20Memory%20Card)
-- Translate FlashCards(Made by Han, Kerem, and Doruk) [Flashcards Game on Scratch](https://scratch.mit.edu/projects/1062310702/)
+- Scratch TranslateCards App (Made by Han, Kerem, and Doruk) [Flashcards Game on Scratch](https://github.com/HanFerik1/Projects/tree/main/Project%20Translate%20Cards)
 
 ### AP CSA [Click Here to see the AP CSA Folder](https://github.com/HanFerik1/APCSA):
 
 - AP CSA Unit 1 [AP CSA Unit 1](https://github.com/HanFerik1/APCSA/tree/main/Unit%201)
+- AP CSA Unit 2 [AP CSA Unit 2](https://github.com/HanFerik1/APCSA/tree/main/Unit%202)
