@@ -11,5 +11,5 @@ Hello! I am Han and Welcome to my website! I’ve always been drawn to exotic an
 -Hisar School(2023-2026)
 
 <a 
-  href="/APCSA_Website.md" class="button">APCSA
+  href="projects.html">Projects
 </a>
