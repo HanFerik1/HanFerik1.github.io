@@ -10,12 +10,6 @@ Hello! I am Han and Welcome to my website! I’ve always been drawn to exotic an
 
 -Hisar School(2023-2026)
 
-### Projects [Click Here to see the Projects Folder](https://github.com/HanFerik1/Projects):
-
-- Scratch Memory Card Game [Memory Card Game on Scratch](https://github.com/HanFerik1/Projects/tree/main/Project%20Memory%20Card)
-- Scratch TranslateCards App (Made by Han, Kerem, and Doruk) [Flashcards Game on Scratch](https://github.com/HanFerik1/Projects/tree/main/Project%20Translate%20Cards)
-
-### AP CSA [Click Here to see the AP CSA Folder](https://github.com/HanFerik1/APCSA):
-
-- AP CSA Unit 1 [AP CSA Unit 1](https://github.com/HanFerik1/APCSA/tree/main/Unit%201)
-- AP CSA Unit 2 [AP CSA Unit 2](https://github.com/HanFerik1/APCSA/tree/main/Unit%202)
+<a 
+  href="/APCSA_Website.md" class="button">name
+</a>
