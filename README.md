@@ -10,6 +10,6 @@ Hello! I am Han and Welcome to my website! I’ve always been drawn to exotic an
 
 -Hisar School(2023-2026)
 
-<a 
-###  href="projects.html">Projects:
-</a>
+
+<a href="projects.html" style="font-size: 20px;"> - Projects:</a>
+
