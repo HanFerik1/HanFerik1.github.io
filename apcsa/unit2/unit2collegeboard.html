@@ -1,1 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="AP CSA Unit 2">
+    <title>AP CSA Unit 2 - College Board</title>
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,700,900" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+</head>
+
+<body>
+    <img src="/resources/images/han_ferik_logo.png" alt="Han" width="100" height="100" style="display:block; margin:20px auto;">
+    <h1 style="color:#191919; font-size:50px; text-align:center;">Han Ferik</h1>
+    <p class="centered" style="text-align:center;">
+        <a href="https://hanferik1.github.io/">Home</a> |
+        <a href="/projects.html">Projects</a> |
+        <a href="/apcsa.html">AP CSA</a>
+    </p>
+
+    <h3 class="centered" style="color:#191919; font-size:25px; text-align:center;">AP CSA Unit 1: Primitive Types</h3>
+
+    <div class="centered">
+        <!-- Section 2.1 -->
+        <h2 style="color:#191919; font-size:20px; text-align:center;">2.1:</h2>
+
+        <h3 style="color:#191919; font-size:20px; text-align:center;">2.1(1):</h3>
+        <p> - A Class is a blueprint for creating object with the same behavior and defined attributes </p>
+        <p> - An Object is a specific entity and instances of classes named by variables, made from a class, that we can manipulate in our program </p>
+        <p> - Each object has behaviors and attributes that are defined by the class which does not affect to the behavior of other objects </p> 
+
+        <h3 style="color:#191919; font-size:20px; text-align:center;">2.1(2):</h3>
+        <p> -The changes on the object won't affect the other object that is defined under the same class so after a change on a object, the others will be unchanged </p>
+
+        <!-- Section 2.2 -->
+        <h2 style="color:#191919; font-size:20px; text-align:center;">2.2:</h2>
+
+        <h3 style="color:#191919; font-size:20px; text-align:center;">2.2(1):</h3>
+        <p> - A signature consists of the constructor name and the parameter list </p>
+        <p> - The parameter list lists the types of the values that are passed and the variable names </p>
+        <p> - We can have more than one constructor, which means overloading and no-argument constructor has no parameters and it sets the instance variables for the object to default values </p>
+        <p> - The actual parameters that are passed to a constructor must be compatible with the types identified in the parameter list </p>
+        <p> - Java will match the data types of the constructors with the parameters that we have given </p>
+        <p> - Parameters are passed using call by value which initializes the formal parameters with copies of the actual parameters </p>
+
+        <h3 style="color:#191919; font-size:20px; text-align:center;">2.2(2):</h3>
+        <p> - Every object is creating using the keyword new followed by a call to one of the class’s constructors </p>
+        <p> - A class contains constructors that are invoked to create objects. They have the same name as the class </p>
+        <p> - Existing classes and class libraries can be utilized as appropriate to create objects </p>
+        <p> - Parameters allow values to be passed to the constructor to establish the initial state of the object </p>
+
+        <h3 style="color:#191919; font-size:20px; text-align:center;">2.2(3):</h3>
+        <p> - The keyword null is a special value used to indicate that a reference is not associated with any object </p>
+        <p> - The memory associated with a variable of a reference type holds an object reference value or, if there is no object,null. This value iss the memory address of the referenced object </p>
+
+        <!-- Section 2.3 -->
+        <h2 style="color:#191919; font-size:20px; text-align:center;">2.3:</h2>
+
+        <h3 style="color:#191919; font-size:20px; text-align:center;">2.3(1):</h3>
+        <p> - An object’s behavior refers to what the object can do and is defined by method </p>
+        <p> - Procedural abstraction allows a programmer to use a method by knowing what the method does even if they do not know how the method is written </p>
+        <p> - A method signature for a method without parameters consists of the method name and an empty parameter list which will set the values as default </p>
+        <p> - A method or constructor call interrupts the sequential execution of statements, causing the program to first execute the statements in the method or constructor before continuing </p>
+
+        <h3 style="color:#191919; font-size:20px; text-align:center;">2.3(2):</h3>
+        <p> - Non-static methods are called through objects of the class </p>
+        <p> - The dot operator is used along with the object name to call non-static methods </p>
+        <p> - Void method do not have to return and are therefore not called as part of an expression </p>
+        <p> - Using a null reference to call a method or access an instance variable causes a NullPointerException to be thrown </p>
+
+        <!-- Section 2.4 -->
+        <h2 style="color:#191919; font-size:20px; text-align:center;">2.4:</h2>
+
+        <h3 style="color:#191919; font-size:20px; text-align:center;">2.4(1 and 2):</h3>
+        <p> - A method signature for a method with parameters consists of the method name and an ordered list of parameter types </p>
+        <p> - Values provided in the parameter list need to correspond to order and type in the method signature </p>
+        <p> - Methods are said to be overloaded when there are multiple method with the same name but different signature </p>
+
+        <!-- Section 2.5 -->
+        <h2 style="color:#191919; font-size:20px; text-align:center;">2.5:</h2>
+
+        <h3 style="color:#191919; font-size:20px; text-align:center;">2.5(1 and 2):</h3>
+        <p> - Non void methods are methods with actual types that we can return the output on another method so if we are using non void we can only output just one and single data types but if we are using void since void methods don’t have to return a value then we don’t need declare a type for the method </p>
+        <p> - To use the return value when calling a non-void method, it must be stored in a variable or used as part of an expression </p>
+    </div>
+
+    <div id="interwebs" style="text-align:center; margin-bottom:20px;">
+        <i>
+            <p class="centered" style="padding-bottom:5px;">Find me on the interwebs!</p>
+        </i>
+        <a class="interweb" href="https://github.com/HanFerik1">
+            <img src="/resources/images/github.png" alt="Github" width="25" height="25">
+        </a>
+        <a class="interweb" href="https://linkedin.com/in/han-ferik-ba527a23b">
+            <img src="/resources/images/linkedin.png" alt="LinkedIn" width="25" height="25">
+        </a>
+        <a class="interweb" href="https://www.instagram.com/hanferik/">
+            <img src="/resources/images/instagram.jpg" alt="Instagram" width="25" height="25">
+        </a>
+        <a class="interweb" href="https://www.facebook.com/han.ferik/">
+            <img src="/resources/images/facebook.png" alt="Facebook" width="25" height="25">
+        </a>
+    </div>
+</body>
+</html>
