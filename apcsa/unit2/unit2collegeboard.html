@@ -124,7 +124,48 @@
         <div>Math.sqrt takes a double argument and returns a positive double value which is the square root of the argument. For example, the square root of 9 is 3 because 3 squared is 9.</div>
         <div>If you put (int) before the method Math.random then it will just take integer numbers between the range a to b (b is not included) and if we want to include b, then we should add +1 at the end of the random method.</div>
     </div>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarDemo Java Code</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        pre {
+            background-color: #e8e8e8;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
 
+    <h1>CarDemo Java Code</h1>
+    <pre><code>
+public class CarDemo {
+    private String modelDemo;
+    private int horsepDemo;
+    private int yearDemo;
+
+    public CarDemo(String model, int horse, int year) {
+        modelDemo = model;
+        horsepDemo = horse;
+        yearDemo = year;
+    }
+    
+    public static void main(String[] args) {
+        CarDemo supra = new CarDemo("model", 11, 11);
+        System.out.println("Model: " + supra.modelDemo + ", Horsepower: " + supra.horsepDemo + ", Year: " + supra.yearDemo);
+    }
+}
+    </code></pre>
+
+</body>
     <div id="interwebs" style="text-align:center; margin-bottom:20px;">
         <i>
             <p class="centered" style="padding-bottom:5px;">Find me on the interwebs!</p>
