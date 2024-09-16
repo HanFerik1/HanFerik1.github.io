@@ -23,7 +23,7 @@
 
     <div class="centered">
         <!-- Section 2.1 -->
-        <h2>2.1:</h2>
+        <h2 style="color:#191919; font-size:20px; text-align:center;">2.1:</h2>
         <div>A class defines a new data type (a classification). It is the formal implementation, or blueprint, of the attributes and behaviors of the objects of that class.</div>
         <div>An object is a specific instance of a class with defined attributes. Objects are declared as variables of a class type.</div>
         <div>Objects are values created by constructing an instance of a class.</div>
@@ -36,7 +36,7 @@
         <div>Call by value means that when you pass a value to a constructor or method, it passes a copy of the value.</div>
 
         <!-- Section 2.2 -->
-        <h2>2.2:</h2>
+        <h2 style="color:#191919; font-size:20px; text-align:center;">2.2:</h2>
         <div>A new object is created with the new keyword followed by the class name (new Class()). When this code executes, it creates a new object of the specified class and calls a constructor, which has the same name as the class. E.g. World habitat = new World();</div>
         <div>There can be more than one constructor defined in a class. This is called overloading the constructor. There is usually a constructor that has no parameters (nothing inside the parentheses following the name of the constructor) like the World() constructor above. This is also called the no-argument constructor. The no-argument constructor usually sets the attributes of the object to default values.</div>
         <div>There can also be other constructors that take parameters like the Turtle(habitat) constructor call above. A parameter (also called actual parameter or argument) is a value that is passed into a constructor. It can be used to initialize the attribute of an object.</div>
@@ -45,7 +45,7 @@
         <div>When a constructor like Date(2005,9,1) is called, the formal parameters, (year, month, day), are set to copies of the actual parameters (or arguments), which are (2005,9,1). This is call by value which means that copies of the actual parameter values are passed to the constructor. These values are used to initialize the object’s attributes.</div>
 
         <!-- Section 2.3 -->
-        <h2>2.3:</h2>
+        <h2 style="color:#191919; font-size:20px; text-align:center;">2.3:</h2>
         <div>Procedural abstraction allows a programmer to use a method and not worry about the details of how it exactly works. For example, we know that if we hit the brakes, the car will stop, and we can still use the brakes even if we don’t really know how they work.</div>
         <div>Use dot notation to execute an object’s method. This is the object’s name followed by the dot (.) operator followed by the method name and parentheses: object.method();</div>
         <div>A NullPointerException will happen if you try to call an object method on an object variable whose value is null. This usually means that you forgot to create the object using the new operator followed by the class name and parentheses.</div>
@@ -53,20 +53,20 @@
         <div>A static method or class method is one that doesn’t need to be called on an object of a class.</div>
 
         <!-- Section 2.4 -->
-        <h2>2.4:</h2>
+        <h2 style="color:#191919; font-size:20px; text-align:center;">2.4:</h2>
         <div>Methods define the behaviors or functions for objects.</div>
         <div>Some methods take parameters/arguments that are placed inside the parentheses object.method(arguments).</div>
         <div>Values provided in the parameter list need to correspond to the order and type in the method signature.</div>
 
         <!-- Section 2.5 -->
-        <h2>2.5:</h2>
+        <h2 style="color:#191919; font-size:20px; text-align:center;">2.5:</h2>
         <div>A void method doesn’t return any value, the only point of calling one is because it does something that can be observed by the user or by other code.</div>
         <div>Methods with a return type of anything other than void are called non-void methods. These methods return a value that the code calling the method can use. And because methods are called on an object, these methods can be used to return values that tell us things about an object’s internal state and Non-void methods typically do not have effects, and are called purely for the value they return.</div>
         <div>It is up to the caller of a non-void method to do something with the return value, such as assigning it to a variable or using it as part of an expression.</div>
         <div>The value returned by a method has to match the declared return type of the method. Thus it can only be used where a value of that type is allowed, such as being assigned to a variable of that type. The data type must match the return type of the method.</div>
 
         <!-- Section 2.6 -->
-        <h2>2.6:</h2>
+        <h2 style="color:#191919; font-size:20px; text-align:center;">2.6:</h2>
         <div>Class names in Java, like String, begin with a capital letter. All primitive types: int, double, and boolean, begin with a lowercase letter. This is one easy way to tell the difference between primitive types and class types.</div>
         <div>Every class knows its parent class. But, in Java, a class can only have one parent. A class can inherit object fields and methods from a parent class.</div>
         <div>Strings can be added to each other to create a new string using the + or += operator. This is also called appending or concatenating. You can also add any other kind of value to a String with + or += and the other value will be converted to a String automatically.</div>
@@ -75,7 +75,7 @@
         <div>Escape sequences start with a backslash \ and have special meaning in Java. Escape sequences used in this course include \", \\, and \n to print out a quote, backslash, and a new line.</div>
 
         <!-- Section 2.7 -->
-        <h2>2.7:</h2>
+        <h2 style="color:#191919; font-size:20px; text-align:center;">2.7:</h2>
         <div>int length() method returns the number of characters in the string, including spaces and special characters like punctuation.</div>
         <div>String substring(int from, int to) method returns a new string with the characters in the current string starting with the character at the from index and ending at the character before the to index (if the to index is specified, and if not specified it will contain the rest of the string).</div>
         <div>int indexOf(String str) method searches for the string str in the current string and returns the index of the beginning of str in the current string or -1 if it isn’t found.</div>
@@ -87,13 +87,13 @@
         <div>The substring method returns the string starting at the first index and not including the last index. The method indexOf returns the index of the first place the string occurs.</div>
 
         <!-- Section 2.8 -->
-        <h2>2.8:</h2>
+        <h2 style="color:#191919; font-size:20px; text-align:center;">2.8:</h2>
         <div>Java will actually return the maximum integer value if you try to subtract one from the minimum value. This is called underflow. And, Java will return the minimum integer value if you try to add one to the maximum. This is called overflow.</div>
         <div>Autoboxing is the automatic conversion that the Java compiler makes between primitive types and their corresponding object wrapper classes. This includes converting an int to an Integer and a double to a Double.</div>
         <div>Unboxing is the automatic conversion that the Java compiler makes from the wrapper class to the primitive type. This includes converting an Integer to an int and a Double to a double.</div>
 
         <!-- Section 2.9 -->
-        <h2>2.9:</h2>
+        <h2 style="color:#191919; font-size:20px; text-align:center;">2.9:</h2>
         <div>Math.random() method is used to generate a random number.</div>
         <div>int abs(int) : Returns the absolute value of an int value.</div>
         <div>double abs(double) : Returns the absolute value of a double value.</div>
