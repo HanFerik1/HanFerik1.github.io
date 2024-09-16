@@ -86,45 +86,44 @@
 
         <!-- Section 2.6 -->
         <h2 style="color:#191919; font-size:20px; text-align:center;">2.6:</h2>
-        <div>Class names in Java, like String, begin with a capital letter. All primitive types: int, double, and boolean, begin with a lowercase letter. This is one easy way to tell the difference between primitive types and class types.</div>
-        <div>Every class knows its parent class. But, in Java, a class can only have one parent. A class can inherit object fields and methods from a parent class.</div>
-        <div>Strings can be added to each other to create a new string using the + or += operator. This is also called appending or concatenating. You can also add any other kind of value to a String with + or += and the other value will be converted to a String automatically.</div>
-        <div>Note that spaces are not added between strings automatically. If you want a space between two strings, then add one using + “ “ + and variables are never put inside the quotes (“”) since this would print the variable name out letter by letter instead of its value.</div>
-        <div>If you are appending a number to a string it will be converted to a string first before being appended.</div>
-        <div>Escape sequences start with a backslash \ and have special meaning in Java. Escape sequences used in this course include \", \\, and \n to print out a quote, backslash, and a new line.</div>
-
+        <p> - Class names in Java, like String, begin with a capital letter. All primitive types: int, double, and boolean, begin with a lowercase letter. This is one easy way to tell the difference between primitive types and class types. </p>
+        <p> - Every class knows its parent class. But, in Java, a class can only have one parent. A class can inherit object fields and methods from a parent class. </p>
+        <p> - Strings can be added to each other to create a new string using the + or += operator. This is also called appending or concatenating. You can also add any other kind of value to a String with + or += and the other value will be converted to a String automatically. </p>
+        <p> - Note that spaces are not added between strings automatically. If you want a space between two strings, then add one using + “ “ + and variables are never put inside the quotes (“”) since this would print the variable name out letter by letter instead of its value. </p>
+        <p> - If you are appending a number to a string it will be converted to a string first before being appended. </p>
+        <p> - Escape sequences start with a backslash \ and have special meaning in Java. Escape sequences used in this course include \", \\, and \n to print out a quote, backslash, and a new line. </p>
+        
         <!-- Section 2.7 -->
         <h2 style="color:#191919; font-size:20px; text-align:center;">2.7:</h2>
-        <div>int length() method returns the number of characters in the string, including spaces and special characters like punctuation.</div>
-        <div>String substring(int from, int to) method returns a new string with the characters in the current string starting with the character at the from index and ending at the character before the to index (if the to index is specified, and if not specified it will contain the rest of the string).</div>
-        <div>int indexOf(String str) method searches for the string str in the current string and returns the index of the beginning of str in the current string or -1 if it isn’t found.</div>
-        <div>int compareTo(String other) returns a negative value if the current string is less than the other string alphabetically, 0 if they have the same characters in the same order, and a positive value if the current string is greater than the other string alphabetically.</div>
-        <div>boolean equals(String other) returns true when the characters in the current string are the same as the ones in the other string. This method is inherited from the Object class, but is overridden which means that the String class has its own version of that method.</div>
-        <div>Remember that substring(from,to) does not include the character at the to index! To return a single character at index i, use str.substring(index, index + 1).</div>
-        <div>We can compare primitive types like int and double using operators like == and < or >, which you will learn about in the next unit. However, with reference types like String, you must use the methods equals and compareTo, not == or < or >.</div>
-        <div>The method compareTo compares two strings character by character. If they are equal, it returns 0. If the first string is alphabetically ordered before the second string (which is the argument of compareTo), it returns a negative number. And if the first string is alphabetically ordered after the second string, it returns a positive number.</div>
-        <div>The substring method returns the string starting at the first index and not including the last index. The method indexOf returns the index of the first place the string occurs.</div>
-
+        <p> - int length() method returns the number of characters in the string, including spaces and special characters like punctuation. </p>
+        <p> - String substring(int from, int to) method returns a new string with the characters in the current string starting with the character at the from index and ending at the character before the to index (if the to index is specified, and if not specified it will contain the rest of the string). </p>
+        <p> - int indexOf(String str) method searches for the string str in the current string and returns the index of the beginning of str in the current string or -1 if it isn’t found. </p>
+        <p> - int compareTo(String other) returns a negative value if the current string is less than the other string alphabetically, 0 if they have the same characters in the same order, and a positive value if the current string is greater than the other string alphabetically. </p>
+        <p> - boolean equals(String other) returns true when the characters in the current string are the same as the ones in the other string. This method is inherited from the Object class, but is overridden which means that the String class has its own version of that method. </p>
+        <p> - Remember that substring(from,to) does not include the character at the to index! To return a single character at index i, use str.substring(index, index + 1). </p>
+        <p> - We can compare primitive types like int and double using operators like == and < or >, which you will learn about in the next unit. However, with reference types like String, you must use the methods equals and compareTo, not == or < or >. </p>
+        <p> - The method compareTo compares two strings character by character. If they are equal, it returns 0. If the first string is alphabetically ordered before the second string (which is the argument of compareTo), it returns a negative number. And if the first string is alphabetically ordered after the second string, it returns a positive number. </p>
+        <p> - The substring method returns the string starting at the first index and not including the last index. The method indexOf returns the index of the first place the string occurs. </p>
+        
         <!-- Section 2.8 -->
         <h2 style="color:#191919; font-size:20px; text-align:center;">2.8:</h2>
-        <div>Java will actually return the maximum integer value if you try to subtract one from the minimum value. This is called underflow. And, Java will return the minimum integer value if you try to add one to the maximum. This is called overflow.</div>
-        <div>Autoboxing is the automatic conversion that the Java compiler makes between primitive types and their corresponding object wrapper classes. This includes converting an int to an Integer and a double to a Double.</div>
-        <div>Unboxing is the automatic conversion that the Java compiler makes from the wrapper class to the primitive type. This includes converting an Integer to an int and a Double to a double.</div>
-
+        <p> - Java will actually return the maximum integer value if you try to subtract one from the minimum value. This is called underflow. And, Java will return the minimum integer value if you try to add one to the maximum. This is called overflow. </p>
+        <p> - Autoboxing is the automatic conversion that the Java compiler makes between primitive types and their corresponding object wrapper classes. This includes converting an int to an Integer and a double to a Double. </p>
+        <p> - Unboxing is the automatic conversion that the Java compiler makes from the wrapper class to the primitive type. This includes converting an Integer to an int and a Double to a double. </p>
+        
         <!-- Section 2.9 -->
         <h2 style="color:#191919; font-size:20px; text-align:center;">2.9:</h2>
-        <div>Math.random() method is used to generate a random number.</div>
-        <div>int abs(int) : Returns the absolute value of an int value.</div>
-        <div>double abs(double) : Returns the absolute value of a double value.</div>
-        <div>double pow(double, double) : Returns the value of the first parameter raised to the power of the second parameter.</div>
-        <div>double sqrt(double) : Returns the positive square root of a double value.</div>
-        <div>double random() : Returns a double value greater than or equal to 0.0 and less than 1.0 (not including 1.0!).</div>
-        <div>Math.abs takes a single argument, either a double or an int and returns a value of the same type which is the absolute value of the argument. The absolute value is the positive value of the number without its sign or its distance from 0.</div>
-        <div>Math.pow takes two arguments, both doubles and returns a double which is the first argument raised to the power of the second argument.</div>
-        <div>Math.sqrt takes a double argument and returns a positive double value which is the square root of the argument. For example, the square root of 9 is 3 because 3 squared is 9.</div>
-        <div>If you put (int) before the method Math.random then it will just take integer numbers between the range a to b (b is not included) and if we want to include b, then we should add +1 at the end of the random method.</div>
+        <p> - Math.random() method is used to generate a random number. </p>
+        <p> - int abs(int) : Returns the absolute value of an int value. </p>
+        <p> - double abs(double) : Returns the absolute value of a double value. </p>
+        <p> - double pow(double, double) : Returns the value of the first parameter raised to the power of the second parameter. </p>
+        <p> - double sqrt(double) : Returns the positive square root of a double value. </p>
+        <p> - double random() : Returns a double value greater than or equal to 0.0 and less than 1.0 (not including 1.0!). </p>
+        <p> - Math.abs takes a single argument, either a double or an int and returns a value of the same type which is the absolute value of the argument. The absolute value is the positive value of the number without its sign or its distance from 0. </p>
+        <p> - Math.pow takes two arguments, both doubles and returns a double which is the first argument raised to the power of the second argument. </p>
+        <p> - Math.sqrt takes a double argument and returns a positive double value which is the square root of the argument. For example, the square root of 9 is 3 because 3 squared is 9. </p>
+        <p> - If you put (int) before the method Math.random then it will just take integer numbers between the range a to b (b is not included) and if we want to include b, then we should add +1 at the end of the random method. </p>
     </div>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
