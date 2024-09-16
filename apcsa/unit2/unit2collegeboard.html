@@ -139,6 +139,27 @@
             padding: 15px;
             border-radius: 5px;
             overflow-x: auto;
+            font-size: 14px;
+        }
+        .keyword {
+            color: #d73a49; /* Pink for keywords */
+            font-weight: bold;
+        }
+        .datatype {
+            color: #005cc5; /* Blue for data types */
+        }
+        .variable {
+            color: #6f42c1; /* Purple for variables */
+        }
+        .method {
+            color: #6f42c1; /* Purple for methods */
+        }
+        .comment {
+            color: #6a737d; /* Grey for comments */
+            font-style: italic;
+        }
+        .string {
+            color: #032f62; /* Dark blue for strings */
         }
     </style>
 </head>
@@ -146,20 +167,20 @@
 
     <h1>CarDemo Java Code</h1>
     <pre><code>
-public class CarDemo {
-    private String modelDemo;
-    private int horsepDemo;
-    private int yearDemo;
+<span class="keyword">public class</span> <span class="datatype">CarDemo</span> {
+    <span class="keyword">private</span> <span class="datatype">String</span> <span class="variable">modelDemo</span>;
+    <span class="keyword">private</span> <span class="datatype">int</span> <span class="variable">horsepDemo</span>;
+    <span class="keyword">private</span> <span class="datatype">int</span> <span class="variable">yearDemo</span>;
 
-    public CarDemo(String model, int horse, int year) {
-        modelDemo = model;
-        horsepDemo = horse;
-        yearDemo = year;
+    <span class="keyword">public</span> <span class="datatype">CarDemo</span>(<span class="datatype">String</span> <span class="variable">model</span>, <span class="datatype">int</span> <span class="variable">horse</span>, <span class="datatype">int</span> <span class="variable">year</span>) {
+        <span class="variable">modelDemo</span> = <span class="variable">model</span>;
+        <span class="variable">horsepDemo</span> = <span class="variable">horse</span>;
+        <span class="variable">yearDemo</span> = <span class="variable">year</span>;
     }
     
-    public static void main(String[] args) {
-        CarDemo supra = new CarDemo("model", 11, 11);
-        System.out.println("Model: " + supra.modelDemo + ", Horsepower: " + supra.horsepDemo + ", Year: " + supra.yearDemo);
+    <span class="keyword">public static void</span> <span class="method">main</span>(<span class="datatype">String</span>[] <span class="variable">args</span>) {
+        <span class="datatype">CarDemo</span> <span class="variable">supra</span> = <span class="keyword">new</span> <span class="datatype">CarDemo</span>(<span class="string">"model"</span>, 11, 11);
+        System.out.println(<span class="string">"Model: "</span> + <span class="variable">supra</span>.<span class="variable">modelDemo</span> + <span class="string">", Horsepower: "</span> + <span class="variable">supra</span>.<span class="variable">horsepDemo</span> + <span class="string">", Year: "</span> + <span class="variable">supra</span>.<span class="variable">yearDemo</span>);
     }
 }
     </code></pre>
