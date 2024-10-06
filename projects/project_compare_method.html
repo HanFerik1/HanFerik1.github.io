@@ -14,15 +14,118 @@
 		<h1 style="color:#191919;margin-left: 10px;font-size: 50px;text-align:center;">Han Ferik</h1>
 		<p class="centered" style="text-align:center"><a href="https://hanferik1.github.io/">Home</a> | <a href="../projects.html">Projects</a> | <a href="../apcsa.html">AP CSA</a> </p>
   
-		<h3 class="centered" style="color: #191919;font-size: 25px">Project TranslateCards</h3>
+		<h3 class="centered" style="color: #191919;font-size: 25px">Project compareTo Method</h3>
 		<div class="centered">
-			<p style="margin-top:5px"><i>Tools: Scratch | Source Code: <a href="https://github.com/HanFerik1/Projects/tree/main/Project%20Translate%20Cards">GitHub</a></i></p>
-   
-			<img class="image" src="/resources/images/translatecards.png">
+			<p style="margin-top:5px"><i>Tools: VSCode | Source Code: <a href="https://github.com/HanFerik1/Projects/tree/main/Project%20Compare%20Method">GitHub</a></i></p>
+   			<p>The compareMethod program is designed to compare three cities by their names and populations. The program utilizes two main methods, compareToByName and compareToByPopulation, to perform these comparisons. The first method compares the cities based on their names in alphabetical order, while the second method compares their populations to identify which city has the largest population. The program operates by creating instances of cities and then calling these comparison methods to determine the results.</p>
+
+			<p>The class compareMethod has two instance variables, name and population, representing the name and population of each city. In the constructor, the program initializes the city object with its name and population, allowing the program to handle data for individual cities.</p>
+			
+			<p>The compareToByName method takes three city names as parameters and compares them using the compareTo() method, which is a built-in Java method that compares strings lexicographically (alphabetically). Depending on the outcome of the comparison, the program determines which city name comes first in alphabetical order. The comparisons are performed between the first city and the second city, the first city and the third city, and the second city and the third city. Based on the results of these comparisons, the method prints the city that appears first in alphabetical order.</p>
+			
+			<p>The compareToByPopulation method compares the populations of the three cities to determine which one has the largest population. It uses boolean variables to check if one city's population is greater than another's and then makes a decision about the order of the populations. Depending on the outcome, the method prints which city has the largest population. The logic considers various scenarios where one city's population could be larger than the others, and it prints the city with the highest population in increasing order.</p>
+			
+			<p>In the main method, three city objects are created using the compareMethod constructor: New York, Los Angeles, and Chicago, each with their respective population values. The program then calls the compareToByName method to compare the names of these cities alphabetically and prints which city comes first. Following that, it calls the compareToByPopulation method to compare the populations and determine which city has the largest population.</p>
+			
+			<p>Overall, this program demonstrates a clear understanding of how to use Java's compareTo() method for string comparisons and boolean logic for numerical comparisons. The program also showcases the use of constructors for creating objects and methods for comparing attributes of those objects. Through this project, I practiced using string comparison, boolean logic for conditions, and organizing code into methods to handle specific tasks related to comparing cities based on their attributes.</p>
+
+			<img class="image" src="/resources/images/project_compare_method.png">
 
 		</div>
 		<br>
-
+		<head>
+		    <meta charset="UTF-8">
+		    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		    <title>City Comparison Program</title>
+		    <style>
+		        body {
+		            font-family: Arial, sans-serif;
+		            background-color: #f4f4f4;
+		            padding: 20px;
+		        }
+		        pre {
+		            background-color: #e8e8e8;
+		            padding: 15px;
+		            border-radius: 5px;
+		            overflow-x: auto;
+		            font-size: 14px;
+		        }
+		        .keyword {
+		            color: #d73a49; /* Pink for keywords */
+		            font-weight: bold;
+		        }
+		        .datatype {
+		            color: #005cc5; /* Blue for data types */
+		        }
+		        .variable {
+		            color: #6f42c1; /* Purple for variables */
+		        }
+		        .method {
+		            color: #6f42c1; /* Purple for methods */
+		        }
+		        .comment {
+		            color: #6a737d; /* Grey for comments */
+		            font-style: italic;
+		        }
+		        .string {
+		            color: #032f62; /* Dark blue for strings */
+		        }
+		    </style>
+		</head>
+		<body>
+		
+		    <h1>City Comparison Program in Java</h1>
+		    <pre><code>
+		<span class="keyword">public class</span> <span class="datatype">CompareMethod</span> {
+		    <span class="keyword">private</span> <span class="datatype">String</span> <span class="variable">name</span>;
+		    <span class="keyword">private</span> <span class="datatype">int</span> <span class="variable">population</span>;
+		
+		    <span class="keyword">public</span> <span class="datatype">CompareMethod</span>(<span class="datatype">String</span> <span class="variable">name</span>, <span class="datatype">int</span> <span class="variable">population</span>) {
+		        <span class="keyword">this</span>.<span class="variable">name</span> = <span class="variable">name</span>;
+		        <span class="keyword">this</span>.<span class="variable">population</span> = <span class="variable">population</span>;
+		    }
+		
+		    <span class="keyword">public void</span> <span class="method">compareToByName</span>(<span class="datatype">String</span> <span class="variable">cityNameOne</span>, <span class="datatype">String</span> <span class="variable">cityNameTwo</span>, <span class="datatype">String</span> <span class="variable">cityNameThree</span>) {
+		        <span class="datatype">int</span> <span class="variable">comparisonOne</span> = <span class="variable">cityNameOne</span>.<span class="method">compareTo</span>(<span class="variable">cityNameTwo</span>);
+		        <span class="datatype">int</span> <span class="variable">comparisonTwo</span> = <span class="variable">cityNameOne</span>.<span class="method">compareTo</span>(<span class="variable">cityNameThree</span>);
+		        <span class="datatype">int</span> <span class="variable">comparisonThree</span> = <span class="variable">cityNameTwo</span>.<span class="method">compareTo</span>(<span class="variable">cityNameThree</span>);
+		
+		        <span class="keyword">if</span> (<span class="variable">comparisonOne</span> < <span class="datatype">0</span> && <span class="variable">comparisonTwo</span> < <span class="datatype">0</span>) {
+		            System.out.println(<span class="string">cityNameOne</span> + <span class="string">" is the first in alphabetical order"</span>);
+		        } <span class="keyword">else if</span> (<span class="variable">comparisonOne</span> > <span class="datatype">0</span> && <span class="variable">comparisonTwo</span> > <span class="datatype">0</span>) {
+		            System.out.println(<span class="string">cityNameThree</span> + <span class="string">" is the first in alphabetical order"</span>);
+		        } <span class="keyword">else if</span> (<span class="variable">comparisonThree</span> > <span class="datatype">0</span> && <span class="variable">comparisonTwo</span> < <span class="datatype">0</span>) {
+		            System.out.println(<span class="string">cityNameTwo</span> + <span class="string">" is the first in alphabetical order"</span>);
+		        }
+		    }
+		
+		    <span class="keyword">public void</span> <span class="method">compareToByPopulation</span>(<span class="datatype">int</span> <span class="variable">cityPopOne</span>, <span class="datatype">int</span> <span class="variable">cityPopTwo</span>, <span class="datatype">int</span> <span class="variable">cityPopThree</span>) {
+		        <span class="keyword">boolean</span> <span class="variable">isCityOneGreater</span> = <span class="variable">cityPopOne</span> > <span class="variable">cityPopTwo</span>;
+		        <span class="keyword">boolean</span> <span class="variable">isCityTwoGreater</span> = <span class="variable">cityPopTwo</span> > <span class="variable">cityPopThree</span>;
+		        <span class="keyword">boolean</span> <span class="variable">isCityOneGreaterThanThree</span> = <span class="variable">cityPopOne</span> > <span class="variable">cityPopThree</span>;
+		
+		        <span class="keyword">if</span> (<span class="variable">isCityOneGreater</span> && <span class="variable">isCityOneGreaterThanThree</span>) {
+		            System.out.println(<span class="string">"The city with population "</span> + <span class="variable">cityPopOne</span> + <span class="string">" is the highest in increasing order"</span>);
+		        } <span class="keyword">else if</span> (<span class="variable">isCityOneGreaterThanThree</span> <span class="keyword">==</span> <span class="datatype">false</span> && <span class="variable">isCityTwoGreater</span>) {
+		            System.out.println(<span class="string">"The city with population "</span> + <span class="variable">cityPopThree</span> + <span class="string">" is the highest in increasing order"</span>);
+		        } <span class="keyword">else if</span> (<span class="variable">isCityOneGreaterThanThree</span> <span class="keyword">==</span> <span class="datatype">false</span> && <span class="variable">isCityOneGreater</span>) {
+		            System.out.println(<span class="string">"The city with population "</span> + <span class="variable">cityPopTwo</span> + <span class="string">" is the highest in increasing order"</span>);
+		        }
+		    }
+		
+		    <span class="keyword">public static void</span> <span class="method">main</span>(<span class="datatype">String</span>[] <span class="variable">args</span>) {
+		        <span class="datatype">CompareMethod</span> <span class="variable">city1</span> = <span class="keyword">new</span> <span class="datatype">CompareMethod</span>(<span class="string">"New York"</span>, <span class="datatype">int</span> <span class="variable">8500000</span>);
+		        <span class="datatype">CompareMethod</span> <span class="variable">city2</span> = <span class="keyword">new</span> <span class="datatype">CompareMethod</span>(<span class="string">"Los Angeles"</span>, <span class="datatype">int</span> <span class="variable">4000000</span>);
+		        <span class="datatype">CompareMethod</span> <span class="variable">city3</span> = <span class="keyword">new</span> <span class="datatype">CompareMethod</span>(<span class="string">"Chicago"</span>, <span class="datatype">int</span> <span class="variable">2700000</span>);
+		
+		        <span classvariable>city1</span>.<span class="method">compareToByName</span>(<span class="variable">city1</span>.<span class="variable">name</span>, <span class="variable">city2</span>.<span class="variable">name</span>, <span class="variable">city3</span>.<span class="variable">name</span>);
+		        <span classvariable>city1</span>.<span class="method">compareToByPopulation</span>(<span class="variable">city1</span>.<span class="variable">population</span>, <span class="variable">city2</span>.<span class="variable">population</span>, <span class="variable">city3</span>.<span class="variable">population</span>);
+		    }
+		}
+		    </code></pre>
+		
+		</body>
+		</html>
 		<div id="interwebs" style="text-align:center; margin-bottom:20px">
 			<i><p class="centered" style="padding-bottom:5px">Find me on the interwebs!</p></i>
 			<a class="interweb" href="https://github.com/HanFerik1"><img src="../resources/images/github.png" alt="Github" width="25" height="25"></a>
