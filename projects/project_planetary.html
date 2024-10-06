@@ -33,7 +33,7 @@
 		<head>
 		    <meta charset="UTF-8">
 		    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-		    <title>Ocean Zone Simulation</title>
+		    <title>Planetary Information Simulation</title>
 		    <style>
 		        body {
 		            font-family: Arial, sans-serif;
@@ -71,98 +71,56 @@
 		</head>
 		<body>
 		
-		    <h1>Ocean Zone Simulation in Java</h1>
+		    <h1>Planetary Information Simulation in Java</h1>
 		    <pre><code>
 		<span class="keyword">import</span> java.util.Scanner;
-		<span class="keyword">import</span> java.util.ArrayList;
 		
-		<span class="keyword">public class</span> <span class="datatype">OceanZone</span> {
-		    <span class="keyword">private</span> <span class="datatype">ArrayList&lt;Integer&gt;</span> <span class="variable">oceanDepths</span> = <span class="keyword">new</span> <span class="datatype">ArrayList&lt;&gt;</span>();
-		    <span class="keyword">private</span> <span class="datatype">String</span> <span class="variable">name</span>;
-		    <span class="keyword">private</span> <span class="datatype">int</span> <span class="variable">depth</span>;
-		    <span class="keyword">private</span> <span class="datatype">double</span> <span class="variable">temperature</span>;
-		    <span class="keyword">private</span> <span class="datatype">String</span> <span class="variable">species</span>;
+		<span class="keyword">public class</span> <span class="datatype">PlanetaryInfo</span> {
+		    <span class="keyword">private</span> <span class="datatype">String</span> <span class="variable">planetName</span>;
+		    <span class="keyword">private</span> <span class="datatype">double</span> <span class="variable">distanceFromSun</span>; // in million kilometers
+		    <span class="keyword">private</span> <span class="datatype">double</span> <span class="variable">travelTime</span>; // in years
 		
-		    <span class="keyword">public void</span> <span class="method">createZone</span>(<span class="datatype">String</span> <span class="variable">name</span>, <span class="datatype">int</span> <span class="variable">depth</span>, <span class="datatype">double</span> <span class="variable">temperature</span>, <span class="datatype">String</span> <span class="variable">species</span>){
-		        <span class="keyword">this</span>.<span class="variable">name</span> = <span class="variable">name</span>;
-		        <span class="keyword">this</span>.<span class="variable">depth</span> = <span class="variable">depth</span>;
-		        <span class="keyword">this</span>.<span class="variable">temperature</span> = <span class="variable">temperature</span>;
-		        <span class="keyword">this</span>.<span class="variable">species</span> = <span class="variable">species</span>;
-		        <span class="variable">oceanDepths</span>.add(<span class="variable">depth</span>);
+		    <span class="keyword">public void</span> <span class="method">setPlanetInfo</span>(<span class="datatype">String</span> <span class="variable">name</span>, <span class="datatype">double</span> <span class="variable">distance</span>, <span class="datatype">double</span> <span class="variable">time</span>) {
+		        <span class="keyword">this</span>.<span class="variable">planetName</span> = <span class="variable">name</span>;
+		        <span class="keyword">this</span>.<span class="variable">distanceFromSun</span> = <span class="variable">distance</span>;
+		        <span class="keyword">this</span>.<span class="variable">travelTime</span> = <span class="variable">time</span>;
 		    }
 		
-		    <span class="keyword">public void</span> <span class="method">displayZoneInfo</span>() {
-		        System.out.println(<span class="string">"Zone Name: "</span> + <span class="variable">name</span>);
-		        System.out.println(<span class="string">"Depth: "</span> + <span class="variable">depth</span> + <span class="string">" meters"</span>);
-		        System.out.println(<span class="string">"Average Temperature: "</span> + <span class="variable">temperature</span> + <span class="string">" °C"</span>);
-		        System.out.println(<span class="string">"Main Marine Species: "</span> + <span class="variable">species</span>);
-		    }
-		
-		    <span class="keyword">public void</span> <span class="method">navigate</span>(<span class="datatype">OceanZone</span> <span class="variable">sunlitZone</span>, <span class="datatype">OceanZone</span> <span class="variable">twilightZone</span>, <span class="datatype">OceanZone</span> <span class="variable">midnightZone</span>) {
-		        <span class="datatype">int</span> <span class="variable">navigationChoice</span> = (<span class="datatype">int</span>)((<span class="datatype">Math</span>.random() * 3) + 1);
-		        <span class="datatype">OceanZone</span> <span class="variable">selectedZone</span>;
-		        
-		        <span class="keyword">if</span> (<span class="variable">navigationChoice</span> == 1) {
-		            <span class="variable">selectedZone</span> = <span class="variable">sunlitZone</span>;
-		            System.out.println(<span class="string">"Navigating to Sunlit Zone"</span>);
-		            <span class="variable">selectedZone</span>.<span class="method">displayZoneInfo</span>();
-		        } <span class="keyword">else if</span> (<span class="variable">navigationChoice</span> == 2) {
-		            <span class="variable">selectedZone</span> = <span class="variable">twilightZone</span>;
-		            System.out.println(<span class="string">"Navigating to Twilight Zone"</span>);
-		            <span class="variable">selectedZone</span>.<span class="method">displayZoneInfo</span>();
-		        } <span class="keyword">else</span> {
-		            <span class="variable">selectedZone</span> = <span class="variable">midnightZone</span>;
-		            System.out.println(<span class="string">"Navigating to Midnight Zone"</span>);
-		            <span class="variable">selectedZone</span>.<span class="method">displayZoneInfo</span>();
-		        }
-		        
-		        <span class="keyword">if</span> (<span class="variable">selectedZone</span> == <span class="variable">sunlitZone</span>) {
-		            System.out.println(<span class="string">"Caution: Sunlit Zone may have dangers!"</span>);
-		        } <span class="keyword">else if</span> (<span class="variable">selectedZone</span> == <span class="variable">twilightZone</span>) {
-		            System.out.println(<span class="string">"Caution: Twilight Zone is risky!"</span>);
-		        } <span class="keyword">else if</span> (<span class="variable">selectedZone</span> == <span class="variable">midnightZone</span>) {
-		            System.out.println(<span class="string">"Caution: Midnight Zone is highly dangerous!"</span>);
-		        }
+		    <span class="keyword">public void</span> <span class="method">displayPlanetInfo</span>() {
+		        System.out.println(<span class="string">"Planet Name: "</span> + <span class="variable">planetName</span>);
+		        System.out.println(<span class="string">"Distance from Sun: "</span> + <span class="variable">distanceFromSun</span> + <span class="string">" million km"</span>);
+		        System.out.println(<span class="string">"Travel Time: "</span> + <span class="variable">travelTime</span> + <span class="string">" years"</span>);
 		    }
 		
 		    <span class="keyword">public static void</span> <span class="method">main</span>(<span class="datatype">String</span>[] <span class="variable">args</span>) {
-		        <span class="datatype">boolean</span> <span class="variable">continueExploration</span> = <span class="keyword">true</span>;
-		        <span class="datatype">int</span> <span class="variable">treasurePoints</span> = 0;
-		        <span class="datatype">int</span> <span class="variable">healthPoints</span> = 3;
+		        Scanner <span class="variable">scanner</span> = <span class="keyword">new</span> Scanner(System.in);
+		        <span class="datatype">int</span> <span class="variable">numberOfPlanets</span>;
 		
-		        <span class="datatype">ArrayList&lt;String&gt;</span> <span class="variable">treasures</span> = <span class="keyword">new</span> <span class="datatype">ArrayList&lt;&gt;</span>();
-		        <span class="variable">treasures</span>.add(<span class="string">"You found a Treasure Chest! +1 Treasure Point"</span>);
-		        <span class="variable">treasures</span>.add(<span class="string">"You found a Black Pearl! +1 Treasure Point"</span>);
-		        <span class="variable">treasures</span>.add(<span class="string">"You found a Golden Watch! +1 Treasure Point"</span>);
-		        <span class="variable">treasures</span>.add(<span class="string">"You found a Golden Bracelet! +1 Treasure Point"</span>);
-		        <span class="variable">treasures</span>.add(<span class="string">"You found a Diamond Ring! +1 Treasure Point"</span>);
-		        
-		        <span class="datatype">ArrayList&lt;String&gt;</span> <span class="variable">hazards</span> = <span class="keyword">new</span> <span class="datatype">ArrayList&lt;&gt;</span>();
-		        <span class="variable">hazards</span>.add(<span class="string">"Danger! Shark attack! -1 Health Point"</span>);
-		        <span class="variable">hazards</span>.add(<span class="string">"Danger! Storm approaching! -1 Health Point"</span>);
-		        <span class="variable">hazards</span>.add(<span class="string">"Danger! Giant Squid sighted! -1 Health Point"</span>);
-		        <span class="variable">hazards</span>.add(<span class="string">"Danger! Underwater Volcano! -1 Health Point"</span>);
-		        <span class="variable">hazards</span>.add(<span class="string">"Danger! Jellyfish swarm! -1 Health Point"</span>);
+		        System.out.print(<span class="string">"Enter the number of planets: "</span>);
+		        <span class="variable">numberOfPlanets</span> = <span class="variable">scanner</span>.<span class="method">nextInt</span>();
 		
-		        <span class="keyword">while</span> (<span class="variable">continueExploration</span> && <span class="variable">healthPoints</span> &gt; 0) {
-		            System.out.println(<span class="string">"Exploring the ocean..."</span>);
-		            <span class="keyword">int</span> <span class="variable">event</span> = <span class="keyword">new</span> <span class="datatype">java.util.Random</span>().<span class="method">nextInt</span>(<span class="keyword">treasures</span>.<span class="method">size</span>() + <span class="keyword">hazards</span>.<span class="method">size</span>());
+		        <span class="datatype">PlanetaryInfo[]</span> <span class="variable">planets</span> = <span class="keyword">new</span> <span class="datatype">PlanetaryInfo</span>[<span class="variable">numberOfPlanets</span>];
 		
-		            <span class="keyword">if</span> (<span class="variable">event</span> &lt; <span class="variable">treasures</span>.<span class="method">size</span>()) {
-		                System.out.println(<span class="variable">treasures</span>.<span class="method">get</span>(<span class="variable">event</span>));
-		                <span class="variable">treasurePoints</span>++;
-		            } <span class="keyword">else</span> {
-		                System.out.println(<span class="variable">hazards</span>.<span class="method">get</span>(<span class="variable">event</span> - <span variable="treasures.size()"/>));
-		                <span class="variable">healthPoints</span>--;
-		            }
+		        <span class="keyword">for</span> (<span class="datatype">int</span> <span class="variable">i</span> = 0; <span class="variable">i</span> &lt; <span class="variable">numberOfPlanets</span>; <span class="variable">i</span>++) {
+		            <span class="variable">planets</span>[<span class="variable">i</span>] = <span class="keyword">new</span> <span class="datatype">PlanetaryInfo</span>();
+		            System.out.println(<span class="string">"Enter details for Planet "</span> + (<span class="variable">i</span> + 1) + <span class="string">":"</span>);
+		            System.out.print(<span class="string">"Planet Name: "</span>);
+		            <span classdatatype>String</span> <span class="variable">name</span> = <span class="variable">scanner</span>.<span class="method">next</span>();
+		            System.out.print(<span class="string">"Distance from Sun (million km): "</span>);
+		            <span class="datatype">double</span> <span class="variable">distance</span> = <span class="variable">scanner</span>.<span class="method">nextDouble</span>();
+		            System.out.print(<span class="string">"Travel Time (years): "</span>);
+		            <span class="datatype">double</span> <span class="variable">time</span> = <span class="variable">scanner</span>.<span class="method">nextDouble</span>();
 		
-		            <span class="keyword">if</span> (<span class="variable">healthPoints</span> == 0) {
-		                System.out.println(<span class="string">"You have lost all health points. Game Over!"</span>);
-		                <span class="variable">continueExploration</span> = <span class="keyword">false</span>;
-		            }
+		            <span class="variable">planets</span>[<span class="variable">i</span>].<span class="method">setPlanetInfo</span>(<span class="variable">name</span>, <span class="variable">distance</span>, <span class="variable">time</span>);
 		        }
 		
-		        System.out.println(<span class="string">"You finished with "</span> + <span class="variable">treasurePoints</span> + <span class="string">" Treasure Points!"</span>);
+		        System.out.println(<span class="string">"Planet Information:"</span>);
+		        <span class="keyword">for</span> (<span class="datatype">PlanetaryInfo</span> <span class="variable">planet</span> : <span class="variable">planets</span>) {
+		            <span class="variable">planet</span>.<span class="method">displayPlanetInfo</span>();
+		            System.out.println();
+		        }
+		
+		        <span class="variable">scanner</span>.<span class="method">close</span>();
 		    }
 		}
 		    </code></pre>
