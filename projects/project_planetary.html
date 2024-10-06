@@ -14,15 +14,161 @@
 		<h1 style="color:#191919;margin-left: 10px;font-size: 50px;text-align:center;">Han Ferik</h1>
 		<p class="centered" style="text-align:center"><a href="https://hanferik1.github.io/">Home</a> | <a href="../projects.html">Projects</a> | <a href="../apcsa.html">AP CSA</a> </p>
   
-		<h3 class="centered" style="color: #191919;font-size: 25px">Project TranslateCards</h3>
+		<h3 class="centered" style="color: #191919;font-size: 25px">Project Planetary</h3>
 		<div class="centered">
-			<p style="margin-top:5px"><i>Tools: Scratch | Source Code: <a href="https://github.com/HanFerik1/Projects/tree/main/Project%20Translate%20Cards">GitHub</a></i></p>
-   
-			<img class="image" src="/resources/images/translatecards.png">
+			<p style="margin-top:5px"><i>Tools: VSCode | Source Code: <a href="https://github.com/HanFerik1/Projects/tree/main/Project%20Planetary">GitHub</a></i></p>
+			<p>The Planetary program is designed to manage planetary information and calculate the travel time between two planets based on their distances from the Sun. The user first inputs details for each planet, including the planet's name, its distance from the Sun, diameter, and the number of moons orbiting it. These details are stored in separate lists to easily track each planet’s attributes. The program then allows the user to calculate travel time between two planets by comparing their distances from the Sun.</p>
 
+			<p>The program starts by asking the user how many planets they wish to enter. For each planet, it prompts the user to provide the planet's name, its distance from the Sun, its diameter, and the number of moons. These inputs are stored in four different lists, with each list dedicated to a specific attribute (names, distances, diameters, and number of moons). After collecting this data, the program offers the user the option to calculate travel time between two planets. If the user agrees, they are prompted to enter the index numbers of the two planets they wish to compare. The travel time is calculated using the absolute difference between the distances of the two planets, divided by 50,000 to simulate the time it would take to travel between them.</p>
+			
+			<p>In addition to calculating travel time, the program provides a feature to display the details of all the planets entered. The PlanetaryInfo method iterates through each planet, printing its name, distance from the Sun, diameter, and number of moons. This allows the user to review the full set of planetary information they’ve entered in an organized manner.</p>
+			
+			<p>Working on this project involved learning how to collect and store data dynamically using ArrayList. The lists allow for flexible storage of multiple planets and make it easy to retrieve specific information when needed. I also practiced using arithmetic functions like Math.abs() to calculate absolute differences and handling user input through Scanner. A critical point in the project was correctly comparing user input strings with the .equals() method, ensuring the program responds correctly when asked whether to calculate travel time. Structuring the program into distinct methods, such as PlanetaryInfo for displaying information and TravelTime for performing calculations, made the code modular and easier to maintain.</p>
+			
+			<p>In conclusion, this project helped me improve my skills in managing user input, working with lists, performing calculations, and structuring Java programs. By separating the logic into different methods, I learned how to keep the code more organized and modular, allowing for better readability and functionality.</p>
+
+			<img class="image" src="/resources/images/project_planetary.png">
 		</div>
 		<br>
-
+		<head>
+		    <meta charset="UTF-8">
+		    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		    <title>Ocean Zone Simulation</title>
+		    <style>
+		        body {
+		            font-family: Arial, sans-serif;
+		            background-color: #f4f4f4;
+		            padding: 20px;
+		        }
+		        pre {
+		            background-color: #e8e8e8;
+		            padding: 15px;
+		            border-radius: 5px;
+		            overflow-x: auto;
+		            font-size: 14px;
+		        }
+		        .keyword {
+		            color: #d73a49; /* Pink for keywords */
+		            font-weight: bold;
+		        }
+		        .datatype {
+		            color: #005cc5; /* Blue for data types */
+		        }
+		        .variable {
+		            color: #6f42c1; /* Purple for variables */
+		        }
+		        .method {
+		            color: #6f42c1; /* Purple for methods */
+		        }
+		        .comment {
+		            color: #6a737d; /* Grey for comments */
+		            font-style: italic;
+		        }
+		        .string {
+		            color: #032f62; /* Dark blue for strings */
+		        }
+		    </style>
+		</head>
+		<body>
+		
+		    <h1>Ocean Zone Simulation in Java</h1>
+		    <pre><code>
+		<span class="keyword">import</span> java.util.Scanner;
+		<span class="keyword">import</span> java.util.ArrayList;
+		
+		<span class="keyword">public class</span> <span class="datatype">OceanZone</span> {
+		    <span class="keyword">private</span> <span class="datatype">ArrayList&lt;Integer&gt;</span> <span class="variable">oceanDepths</span> = <span class="keyword">new</span> <span class="datatype">ArrayList&lt;&gt;</span>();
+		    <span class="keyword">private</span> <span class="datatype">String</span> <span class="variable">name</span>;
+		    <span class="keyword">private</span> <span class="datatype">int</span> <span class="variable">depth</span>;
+		    <span class="keyword">private</span> <span class="datatype">double</span> <span class="variable">temperature</span>;
+		    <span class="keyword">private</span> <span class="datatype">String</span> <span class="variable">species</span>;
+		
+		    <span class="keyword">public void</span> <span class="method">createZone</span>(<span class="datatype">String</span> <span class="variable">name</span>, <span class="datatype">int</span> <span class="variable">depth</span>, <span class="datatype">double</span> <span class="variable">temperature</span>, <span class="datatype">String</span> <span class="variable">species</span>){
+		        <span class="keyword">this</span>.<span class="variable">name</span> = <span class="variable">name</span>;
+		        <span class="keyword">this</span>.<span class="variable">depth</span> = <span class="variable">depth</span>;
+		        <span class="keyword">this</span>.<span class="variable">temperature</span> = <span class="variable">temperature</span>;
+		        <span class="keyword">this</span>.<span class="variable">species</span> = <span class="variable">species</span>;
+		        <span class="variable">oceanDepths</span>.add(<span class="variable">depth</span>);
+		    }
+		
+		    <span class="keyword">public void</span> <span class="method">displayZoneInfo</span>() {
+		        System.out.println(<span class="string">"Zone Name: "</span> + <span class="variable">name</span>);
+		        System.out.println(<span class="string">"Depth: "</span> + <span class="variable">depth</span> + <span class="string">" meters"</span>);
+		        System.out.println(<span class="string">"Average Temperature: "</span> + <span class="variable">temperature</span> + <span class="string">" °C"</span>);
+		        System.out.println(<span class="string">"Main Marine Species: "</span> + <span class="variable">species</span>);
+		    }
+		
+		    <span class="keyword">public void</span> <span class="method">navigate</span>(<span class="datatype">OceanZone</span> <span class="variable">sunlitZone</span>, <span class="datatype">OceanZone</span> <span class="variable">twilightZone</span>, <span class="datatype">OceanZone</span> <span class="variable">midnightZone</span>) {
+		        <span class="datatype">int</span> <span class="variable">navigationChoice</span> = (<span class="datatype">int</span>)((<span class="datatype">Math</span>.random() * 3) + 1);
+		        <span class="datatype">OceanZone</span> <span class="variable">selectedZone</span>;
+		        
+		        <span class="keyword">if</span> (<span class="variable">navigationChoice</span> == 1) {
+		            <span class="variable">selectedZone</span> = <span class="variable">sunlitZone</span>;
+		            System.out.println(<span class="string">"Navigating to Sunlit Zone"</span>);
+		            <span class="variable">selectedZone</span>.<span class="method">displayZoneInfo</span>();
+		        } <span class="keyword">else if</span> (<span class="variable">navigationChoice</span> == 2) {
+		            <span class="variable">selectedZone</span> = <span class="variable">twilightZone</span>;
+		            System.out.println(<span class="string">"Navigating to Twilight Zone"</span>);
+		            <span class="variable">selectedZone</span>.<span class="method">displayZoneInfo</span>();
+		        } <span class="keyword">else</span> {
+		            <span class="variable">selectedZone</span> = <span class="variable">midnightZone</span>;
+		            System.out.println(<span class="string">"Navigating to Midnight Zone"</span>);
+		            <span class="variable">selectedZone</span>.<span class="method">displayZoneInfo</span>();
+		        }
+		        
+		        <span class="keyword">if</span> (<span class="variable">selectedZone</span> == <span class="variable">sunlitZone</span>) {
+		            System.out.println(<span class="string">"Caution: Sunlit Zone may have dangers!"</span>);
+		        } <span class="keyword">else if</span> (<span class="variable">selectedZone</span> == <span class="variable">twilightZone</span>) {
+		            System.out.println(<span class="string">"Caution: Twilight Zone is risky!"</span>);
+		        } <span class="keyword">else if</span> (<span class="variable">selectedZone</span> == <span class="variable">midnightZone</span>) {
+		            System.out.println(<span class="string">"Caution: Midnight Zone is highly dangerous!"</span>);
+		        }
+		    }
+		
+		    <span class="keyword">public static void</span> <span class="method">main</span>(<span class="datatype">String</span>[] <span class="variable">args</span>) {
+		        <span class="datatype">boolean</span> <span class="variable">continueExploration</span> = <span class="keyword">true</span>;
+		        <span class="datatype">int</span> <span class="variable">treasurePoints</span> = 0;
+		        <span class="datatype">int</span> <span class="variable">healthPoints</span> = 3;
+		
+		        <span class="datatype">ArrayList&lt;String&gt;</span> <span class="variable">treasures</span> = <span class="keyword">new</span> <span class="datatype">ArrayList&lt;&gt;</span>();
+		        <span class="variable">treasures</span>.add(<span class="string">"You found a Treasure Chest! +1 Treasure Point"</span>);
+		        <span class="variable">treasures</span>.add(<span class="string">"You found a Black Pearl! +1 Treasure Point"</span>);
+		        <span class="variable">treasures</span>.add(<span class="string">"You found a Golden Watch! +1 Treasure Point"</span>);
+		        <span class="variable">treasures</span>.add(<span class="string">"You found a Golden Bracelet! +1 Treasure Point"</span>);
+		        <span class="variable">treasures</span>.add(<span class="string">"You found a Diamond Ring! +1 Treasure Point"</span>);
+		        
+		        <span class="datatype">ArrayList&lt;String&gt;</span> <span class="variable">hazards</span> = <span class="keyword">new</span> <span class="datatype">ArrayList&lt;&gt;</span>();
+		        <span class="variable">hazards</span>.add(<span class="string">"Danger! Shark attack! -1 Health Point"</span>);
+		        <span class="variable">hazards</span>.add(<span class="string">"Danger! Storm approaching! -1 Health Point"</span>);
+		        <span class="variable">hazards</span>.add(<span class="string">"Danger! Giant Squid sighted! -1 Health Point"</span>);
+		        <span class="variable">hazards</span>.add(<span class="string">"Danger! Underwater Volcano! -1 Health Point"</span>);
+		        <span class="variable">hazards</span>.add(<span class="string">"Danger! Jellyfish swarm! -1 Health Point"</span>);
+		
+		        <span class="keyword">while</span> (<span class="variable">continueExploration</span> && <span class="variable">healthPoints</span> &gt; 0) {
+		            System.out.println(<span class="string">"Exploring the ocean..."</span>);
+		            <span class="keyword">int</span> <span class="variable">event</span> = <span class="keyword">new</span> <span class="datatype">java.util.Random</span>().<span class="method">nextInt</span>(<span class="keyword">treasures</span>.<span class="method">size</span>() + <span class="keyword">hazards</span>.<span class="method">size</span>());
+		
+		            <span class="keyword">if</span> (<span class="variable">event</span> &lt; <span class="variable">treasures</span>.<span class="method">size</span>()) {
+		                System.out.println(<span class="variable">treasures</span>.<span class="method">get</span>(<span class="variable">event</span>));
+		                <span class="variable">treasurePoints</span>++;
+		            } <span class="keyword">else</span> {
+		                System.out.println(<span class="variable">hazards</span>.<span class="method">get</span>(<span class="variable">event</span> - <span variable="treasures.size()"/>));
+		                <span class="variable">healthPoints</span>--;
+		            }
+		
+		            <span class="keyword">if</span> (<span class="variable">healthPoints</span> == 0) {
+		                System.out.println(<span class="string">"You have lost all health points. Game Over!"</span>);
+		                <span class="variable">continueExploration</span> = <span class="keyword">false</span>;
+		            }
+		        }
+		
+		        System.out.println(<span class="string">"You finished with "</span> + <span class="variable">treasurePoints</span> + <span class="string">" Treasure Points!"</span>);
+		    }
+		}
+		    </code></pre>
+		
+		</body>
+		</html>
 		<div id="interwebs" style="text-align:center; margin-bottom:20px">
 			<i><p class="centered" style="padding-bottom:5px">Find me on the interwebs!</p></i>
 			<a class="interweb" href="https://github.com/HanFerik1"><img src="../resources/images/github.png" alt="Github" width="25" height="25"></a>
