@@ -13,10 +13,9 @@
 		<img src="../resources/images/han_ferik_logo.png" alt="Han" width="100" height="100" style ="display:block; margin-left: auto; margin-right: auto; margin-top:20px">
 		<h1 style="color:#191919;margin-left: 10px;font-size: 50px;text-align:center;">Han Ferik</h1>
 		<p class="centered" style="text-align:center"><a href="https://hanferik1.github.io/">Home</a> | <a href="../projects.html">Projects</a> | <a href="../apcsa.html">AP CSA</a> </p>
-  
 		<h3 class="centered" style="color: #191919;font-size: 25px">Project Palindromic Numbers</h3>
 		<div class="centered">
-			<p style="margin-top:5px"><i>Tools: Scratch | Source Code: <a href="https://github.com/HanFerik1/Projects/tree/main/Project%20Palindromic%20Numbers">GitHub</a></i></p>
+			<p style="margin-top:5px"><i>Tools: VSCode | Source Code: <a href="https://github.com/HanFerik1/Projects/tree/main/Project%20Palindromic%20Numbers">GitHub</a></i></p>
 			<p> The Palindrome program is designed to check whether a number becomes a palindrome after adding it to its reverse and repeating the process two more times. The user inputs a series of numbers, and the program checks if each number satisfies this condition. First, it ensures the input number is at least three digits long. If valid, the number is added to an array and reversed for further calculations. The goal is to add the number to its reverse, repeat this for the resulting sum, and check if the final result is a palindrome. </p>
 			<p> The logic behind the palindrome check involves reversing the number by breaking it down into its digits, reassembling them in reverse order, and performing arithmetic operations on them. The program adds the original number to its reverse, reverses the sum, and repeats the process twice. By using a simple loop, it handles the reverse calculation, ensuring the operations are carried out efficiently. If the final number and its reverse are equal, the program prints "True," indicating a palindrome has been found. Otherwise, it prints "False." </p>
 			<p> While working on this project, I had to learn several important Java concepts. I learned how to create a reverse method for a number using loops, and how to calculate the total of digits in a number using the modulus and division operations. The `size()` method in Java helped me determine the number of elements in a list, and I learned to use the index of an array through `ArrayList.get()`. Adding input to a list in Java was done using the `add()` method, and I created input-based for loops to handle multiple user inputs. Additionally, I worked on finding the total sum of elements in a list using a loop that iterates over the indexes. These skills were crucial for building the logic behind this palindrome-checking program.</p>
@@ -25,111 +24,110 @@
 			</video>
 		</div>
 		<br>
-	<head>
-	    <meta charset="UTF-8">
-	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	    <title>Palindromic Numbers Java Code</title>
-	    <style>
-	        body {
-	            font-family: Arial, sans-serif;
-	            background-color: #f4f4f4;
-	            padding: 20px;
-	        }
-	        pre {
-	            background-color: #e8e8e8;
-	            padding: 15px;
-	            border-radius: 5px;
-	            overflow-x: auto;
-	            font-size: 14px;
-	        }
-	        .keyword {
-	            color: #d73a49; /* Pink for keywords */
-	            font-weight: bold;
-	        }
-	        .datatype {
-	            color: #005cc5; /* Blue for data types */
-	        }
-	        .variable {
-	            color: #6f42c1; /* Purple for variables */
-	        }
-	        .method {
-	            color: #6f42c1; /* Purple for methods */
-	        }
-	        .comment {
-	            color: #6a737d; /* Grey for comments */
-	            font-style: italic;
-	        }
-	        .string {
-	            color: #032f62; /* Dark blue for strings */
-	        }
-	    </style>
-	</head>
-	<body>
-	
-	    <h1>Palindrome Java Code</h1>
-	    <pre><code>
-	<span class="keyword">import</span> <span class="datatype">java.util.ArrayList</span>;
-	<span class="keyword">import</span> <span class="datatype">java.util.Scanner</span>;
-	
-	<span class="keyword">public class</span> <span class="datatype">Palindrome</span> {
-	    <span class="keyword">public static void</span> <span class="method">main</span>(<span class="datatype">String</span>[] <span class="variable">args</span>) {
-	        <span class="datatype">Scanner</span> <span class="variable">loopNumberInput</span> = <span class="keyword">new</span> <span class="datatype">Scanner</span>(System.in);
-	        System.out.println(<span class="string">"How many numbers are you going to write:"</span>);
-	        <span class="datatype">int</span> <span class="variable">numberTimes</span> = <span class="variable">loopNumberInput</span>.nextInt();
-	        <span class="datatype">ArrayList&lt;Integer&gt;</span> <span class="variable">numberPalListNormal</span> = <span class="keyword">new</span> <span class="datatype">ArrayList&lt;&gt;</span>();
-	        <span class="datatype">ArrayList&lt;Integer&gt;</span> <span class="variable">numberPalListReversed</span> = <span class="keyword">new</span> <span class="datatype">ArrayList&lt;&gt;</span>();
-	
-	        <span class="keyword">for</span> (<span class="datatype">int</span> <span class="variable">i</span> = <span class="variable">numberTimes</span>; <span class="variable">i</span> &gt; 0; <span class="variable">i</span>--) {
-	            System.out.println(<span class="string">"Write your number:"</span>);
-	            <span class="datatype">String</span> <span class="variable">userInputStr</span> = <span class="variable">loopNumberInput</span>.next(); 
-	            
-	            <span class="keyword">if</span> (<span class="variable">userInputStr</span>.length() &gt;= 3) {
-	                <span class="datatype">int</span> <span class="variable">userInput</span> = <span class="datatype">Integer</span>.parseInt(<span class="variable">userInputStr</span>); 
-	                <span class="datatype">int</span> <span class="variable">reverse</span> = 0;
-	
-	                <span class="variable">numberPalListNormal</span>.add(<span class="variable">userInput</span>);
-	                
-	                <span class="datatype">int</span> <span class="variable">copyInput</span> = <span class="variable">userInput</span>;
-	                <span class="keyword">while</span> (<span class="variable">copyInput</span> != 0) {
-	                    <span class="datatype">int</span> <span class="variable">digit</span> = <span class="variable">copyInput</span> % 10;
-	                    <span class="variable">reverse</span> = <span class="variable">reverse</span> * 10 + <span class="variable">digit</span>;
-	                    <span class="variable">copyInput</span> = <span class="variable">copyInput</span> / 10;
-	                }
-	                <span class="variable">numberPalListReversed</span>.add(<span class="variable">reverse</span>);
-	                
-	                <span class="datatype">int</span> <span class="variable">sum</span> = <span class="variable">userInput</span> + <span class="variable">reverse</span>;
-	                <span class="datatype">int</span> <span class="variable">reverseOfSum</span> = <span class="method">reverseNumber</span>(<span class="variable">sum</span>);
-	                <span class="datatype">int</span> <span class="variable">sumTwice</span> = <span class="variable">sum</span> + <span class="variable">reverseOfSum</span>;
-	                <span class="datatype">int</span> <span class="variable">reverseOfSumTwice</span> = <span class="method">reverseNumber</span>(<span class="variable">sumTwice</span>);
-	                <span class="datatype">int</span> <span class="variable">finalSum</span> = <span class="variable">sumTwice</span> + <span class="variable">reverseOfSumTwice</span>;
-	                
-	                <span class="keyword">if</span> (<span class="variable">finalSum</span> == <span class="method">reverseNumber</span>(<span class="variable">finalSum</span>)) {
-	                    System.out.println(<span class="string">"True"</span>);
-	                } <span class="keyword">else</span> {
-	                    System.out.println(<span class="string">"False"</span>);
-	                }
-	            } <span class="keyword">else</span> {
-	                System.out.println(<span class="string">"Your number should be at least 3 characters."</span>);
-	                <span class="variable">i</span>++;
-	            }
-	        }
-	        <span class="variable">loopNumberInput</span>.close();
-	    }
-
-    <span class="keyword">public static int</span> <span class="method">reverseNumber</span>(<span class="datatype">int</span> <span class="variable">number</span>) {
-        <span class="datatype">int</span> <span class="variable">reverse</span> = 0;
-        <span class="keyword">while</span> (<span class="variable">number</span> != 0) {
-            <span class="datatype">int</span> <span class="variable">digit</span> = <span class="variable">number</span> % 10;
-            <span class="variable">reverse</span> = <span class="variable">reverse</span> * 10 + <span class="variable">digit</span>;
-            <span class="variable">number</span> = <span class="variable">number</span> / 10;
-        }
-        <span class="keyword">return</span> <span class="variable">reverse</span>;
-    }
-}
-    </code></pre>
-
-</body>
-
+			<head>
+			    <meta charset="UTF-8">
+			    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+			    <title>Palindromic Numbers Java Code</title>
+			    <style>
+			        body {
+			            font-family: Arial, sans-serif;
+			            background-color: #f4f4f4;
+			            padding: 20px;
+			        }
+			        pre {
+			            background-color: #e8e8e8;
+			            padding: 15px;
+			            border-radius: 5px;
+			            overflow-x: auto;
+			            font-size: 14px;
+			        }
+			        .keyword {
+			            color: #d73a49; /* Pink for keywords */
+			            font-weight: bold;
+			        }
+			        .datatype {
+			            color: #005cc5; /* Blue for data types */
+			        }
+			        .variable {
+			            color: #6f42c1; /* Purple for variables */
+			        }
+			        .method {
+			            color: #6f42c1; /* Purple for methods */
+			        }
+			        .comment {
+			            color: #6a737d; /* Grey for comments */
+			            font-style: italic;
+			        }
+			        .string {
+			            color: #032f62; /* Dark blue for strings */
+			        }
+			    </style>
+			</head>
+			<body>
+			
+			    <h1>Palindrome Java Code</h1>
+			    <pre><code>
+			<span class="keyword">import</span> <span class="datatype">java.util.ArrayList</span>;
+			<span class="keyword">import</span> <span class="datatype">java.util.Scanner</span>;
+			
+			<span class="keyword">public class</span> <span class="datatype">Palindrome</span> {
+			    <span class="keyword">public static void</span> <span class="method">main</span>(<span class="datatype">String</span>[] <span class="variable">args</span>) {
+			        <span class="datatype">Scanner</span> <span class="variable">loopNumberInput</span> = <span class="keyword">new</span> <span class="datatype">Scanner</span>(System.in);
+			        System.out.println(<span class="string">"How many numbers are you going to write:"</span>);
+			        <span class="datatype">int</span> <span class="variable">numberTimes</span> = <span class="variable">loopNumberInput</span>.nextInt();
+			        <span class="datatype">ArrayList&lt;Integer&gt;</span> <span class="variable">numberPalListNormal</span> = <span class="keyword">new</span> <span class="datatype">ArrayList&lt;&gt;</span>();
+			        <span class="datatype">ArrayList&lt;Integer&gt;</span> <span class="variable">numberPalListReversed</span> = <span class="keyword">new</span> <span class="datatype">ArrayList&lt;&gt;</span>();
+			
+			        <span class="keyword">for</span> (<span class="datatype">int</span> <span class="variable">i</span> = <span class="variable">numberTimes</span>; <span class="variable">i</span> &gt; 0; <span class="variable">i</span>--) {
+			            System.out.println(<span class="string">"Write your number:"</span>);
+			            <span class="datatype">String</span> <span class="variable">userInputStr</span> = <span class="variable">loopNumberInput</span>.next(); 
+			            
+			            <span class="keyword">if</span> (<span class="variable">userInputStr</span>.length() &gt;= 3) {
+			                <span class="datatype">int</span> <span class="variable">userInput</span> = <span class="datatype">Integer</span>.parseInt(<span class="variable">userInputStr</span>); 
+			                <span class="datatype">int</span> <span class="variable">reverse</span> = 0;
+			
+			                <span class="variable">numberPalListNormal</span>.add(<span class="variable">userInput</span>);
+			                
+			                <span class="datatype">int</span> <span class="variable">copyInput</span> = <span class="variable">userInput</span>;
+			                <span class="keyword">while</span> (<span class="variable">copyInput</span> != 0) {
+			                    <span class="datatype">int</span> <span class="variable">digit</span> = <span class="variable">copyInput</span> % 10;
+			                    <span class="variable">reverse</span> = <span class="variable">reverse</span> * 10 + <span class="variable">digit</span>;
+			                    <span class="variable">copyInput</span> = <span class="variable">copyInput</span> / 10;
+			                }
+			                <span class="variable">numberPalListReversed</span>.add(<span class="variable">reverse</span>);
+			                
+			                <span class="datatype">int</span> <span class="variable">sum</span> = <span class="variable">userInput</span> + <span class="variable">reverse</span>;
+			                <span class="datatype">int</span> <span class="variable">reverseOfSum</span> = <span class="method">reverseNumber</span>(<span class="variable">sum</span>);
+			                <span class="datatype">int</span> <span class="variable">sumTwice</span> = <span class="variable">sum</span> + <span class="variable">reverseOfSum</span>;
+			                <span class="datatype">int</span> <span class="variable">reverseOfSumTwice</span> = <span class="method">reverseNumber</span>(<span class="variable">sumTwice</span>);
+			                <span class="datatype">int</span> <span class="variable">finalSum</span> = <span class="variable">sumTwice</span> + <span class="variable">reverseOfSumTwice</span>;
+			                
+			                <span class="keyword">if</span> (<span class="variable">finalSum</span> == <span class="method">reverseNumber</span>(<span class="variable">finalSum</span>)) {
+			                    System.out.println(<span class="string">"True"</span>);
+			                } <span class="keyword">else</span> {
+			                    System.out.println(<span class="string">"False"</span>);
+			                }
+			            } <span class="keyword">else</span> {
+			                System.out.println(<span class="string">"Your number should be at least 3 characters."</span>);
+			                <span class="variable">i</span>++;
+			            }
+			        }
+			        <span class="variable">loopNumberInput</span>.close();
+			    }
+		
+		    <span class="keyword">public static int</span> <span class="method">reverseNumber</span>(<span class="datatype">int</span> <span class="variable">number</span>) {
+		        <span class="datatype">int</span> <span class="variable">reverse</span> = 0;
+		        <span class="keyword">while</span> (<span class="variable">number</span> != 0) {
+		            <span class="datatype">int</span> <span class="variable">digit</span> = <span class="variable">number</span> % 10;
+		            <span class="variable">reverse</span> = <span class="variable">reverse</span> * 10 + <span class="variable">digit</span>;
+		            <span class="variable">number</span> = <span class="variable">number</span> / 10;
+		        }
+		        <span class="keyword">return</span> <span class="variable">reverse</span>;
+		    }
+		}
+		    </code></pre>
+		
+		</body>
 		<div id="interwebs" style="text-align:center; margin-bottom:20px">
 			<i><p class="centered" style="padding-bottom:5px">Find me on the interwebs!</p></i>
 			<a class="interweb" href="https://github.com/HanFerik1"><img src="../resources/images/github.png" alt="Github" width="25" height="25"></a>
