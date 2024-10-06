@@ -13,10 +13,9 @@
 		<img src="../resources/images/han_ferik_logo.png" alt="Han" width="100" height="100" style ="display:block; margin-left: auto; margin-right: auto; margin-top:20px">
 		<h1 style="color:#191919;margin-left: 10px;font-size: 50px;text-align:center;">Han Ferik</h1>
 		<p class="centered" style="text-align:center"><a href="https://hanferik1.github.io/">Home</a> | <a href="../projects.html">Projects</a> | <a href="../apcsa.html">AP CSA</a> </p>
-  
 		<h3 class="centered" style="color: #191919;font-size: 25px">Project Palindrama</h3>
 		<div class="centered">
-			<p style="margin-top:5px"><i>Tools: Github | Source Code: <a href="https://github.com/HanFerik1/Projects/tree/main/Project%20Palindrama">GitHub</a></i></p>
+			<p style="margin-top:5px"><i>Tools: VSCode | Source Code: <a href="https://github.com/HanFerik1/Projects/tree/main/Project%20Palindrama">GitHub</a></i></p>
 			<p> The Palindrama project is a palindrome-detection tool that helps users identify and extract palindromes from a given sentence. A palindrome is a word or phrase that reads the same backward as forward, like "hannah" or "racecar." In this project, users input a sentence, and the program processes it to find the longest palindromes by comparing characters from the front and back. The tool effectively tracks multiple palindrome candidates and then returns the longest one, enhancing the user’s ability to discover hidden patterns in text. This approach ensures an engaging exploration of palindromes in a user-friendly manner. </p>
 			<p> In addition to detecting palindromes, Palindrama includes a sorting feature to organize the found palindromes by length. This allows users to not only view all detected palindromes but also focus on the longest ones. The program also takes into account both lowercase and uppercase letters, ensuring accuracy regardless of character casing. By offering these features, the project provides a fun and educational tool for anyone interested in exploring palindromes, whether for linguistic curiosity or problem-solving practice. </p>
 		        <p>To complete the Palindrama project, I had to learn several foundational concepts in Java programming. I needed to understand how to take input from the user using the `Scanner` class and how to implement both `while` and `while not` loops to control the flow of my program. I also learned how to use `if` statements to make logical decisions and how to create and work with `ArrayList` objects in Java. Additionally, I explored how to get the size of an `ArrayList`, access individual elements by index, and find the length of an array. Each of these components was essential to manage the dynamic input and processing required for detecting palindromes.</p>
@@ -52,127 +51,127 @@
 			<img class="image" src="/resources/images/project_palindrama.png">
 		</div>
 		<br>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Palindrama Java Code</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            padding: 20px;
-        }
-        pre {
-            background-color: #e8e8e8;
-            padding: 15px;
-            border-radius: 5px;
-            overflow-x: auto;
-            font-size: 14px;
-        }
-        .keyword {
-            color: #d73a49; /* Pink for keywords */
-            font-weight: bold;
-        }
-        .datatype {
-            color: #005cc5; /* Blue for data types */
-        }
-        .variable {
-            color: #6f42c1; /* Purple for variables */
-        }
-        .method {
-            color: #6f42c1; /* Purple for methods */
-        }
-        .comment {
-            color: #6a737d; /* Grey for comments */
-            font-style: italic;
-        }
-        .string {
-            color: #032f62; /* Dark blue for strings */
-        }
-    </style>
-</head>
-<body>
-
-    <h1>Palindrama Java Code</h1>
-    <pre><code>
-<span class="keyword">import</span> java.util.Scanner;
-<span class="keyword">import</span> java.util.ArrayList;
-
-<span class="keyword">public class</span> <span class="datatype">Palindrama</span> {
-    <span class="keyword">public static void</span> <span class="method">main</span>(<span class="datatype">String</span>[] <span class="variable">args</span>) {
-        <span class="datatype">Scanner</span> <span class="variable">inputPalindroma</span> = <span class="keyword">new</span> <span class="datatype">Scanner</span>(System.in);
-        System.out.println(<span class="string">"Enter your sentence:"</span>);
-        <span class="datatype">String</span> <span class="variable">outputPalindroma</span> = <span class="variable">inputPalindroma</span>.nextLine();
-        System.out.println(<span class="string">"Your sentence is: "</span> + <span class="variable">outputPalindroma</span>);
-
-        <span class="datatype">int</span> <span class="variable">counterBack</span> = 0;
-        <span class="datatype">int</span> <span class="variable">counterFront</span> = 0;
-        <span class="datatype">int</span> <span class="variable">counterBack1</span> = 0;
-        <span class="datatype">int</span> <span class="variable">counterFront1</span> = 0;
-        <span class="datatype">int</span> <span class="variable">lastIndex</span> = 0;
-        <span class="datatype">String</span> <span class="variable">copyOfIndex</span>;
-        <span class="datatype">ArrayList&lt;String&gt;</span> <span class="variable">palindramaList</span> = <span class="keyword">new</span> <span class="datatype">ArrayList</span>&lt;&gt;();
-        
-        <span class="comment">// Loop through the sentence</span>
-        <span class="keyword">while</span> (<span class="variable">counterFront</span> &lt; <span class="variable">outputPalindroma</span>.length()) {
-            <span class="variable">counterBack</span> = 0; <span class="comment">// Reset counterBack for each new start position</span>
-            <span class="keyword">while</span> (<span class="variable">counterBack</span> &lt;= <span class="variable">outputPalindroma</span>.length() - <span class="variable">counterFront</span> - 1) {
-                <span class="comment">// Ensure indices are valid</span>
-                <span class="datatype">int</span> <span class="variable">startIndex</span> = <span class="variable">counterFront</span>;
-                <span class="datatype">int</span> <span class="variable">endIndex</span> = <span class="variable">outputPalindroma</span>.length() - <span class="variable">counterBack</span> - 1;
-                <span class="keyword">if</span> (<span class="variable">startIndex</span> &lt;= <span class="variable">endIndex</span>) { <span class="comment">// Ensure valid substring range</span>
-                    <span class="keyword">if</span> (<span class="variable">outputPalindroma</span>.charAt(<span class="variable">startIndex</span>) == <span class="variable">outputPalindroma</span>.charAt(<span class="variable">endIndex</span>)) {
-                        <span class="comment">// Check if substring is a palindrome</span>
-                        <span class="variable">counterFront1</span> = <span class="variable">startIndex</span>;
-                        <span class="variable">counterBack1</span> = <span class="variable">endIndex</span>;
-                        <span class="keyword">while</span> (<span class="variable">counterFront1</span> &lt;= <span class="variable">counterBack1</span> &&
-                               <span class="variable">outputPalindroma</span>.charAt(<span class="variable">counterFront1</span>) == <span class="variable">outputPalindroma</span>.charAt(<span class="variable">counterBack1</span>)) {
-                            <span class="variable">counterFront1</span>++;
-                            <span class="variable">counterBack1</span>--;
-                        }
-                        <span class="keyword">if</span> (<span class="variable">counterFront1</span> > <span class="variable">counterBack1</span>) {
-                            <span class="datatype">String</span> <span class="variable">palindrome</span> = <span class="variable">outputPalindroma</span>.substring(<span class="variable">startIndex</span>, <span class="variable">endIndex</span> + 1);
-                            <span class="keyword">if</span> (!<span class="variable">palindramaList</span>.contains(<span class="variable">palindrome</span>)) {
-                                <span class="variable">palindramaList</span>.add(<span class="variable">palindrome</span>);
-                            }
-                        }
-                    }
-                }
-                <span class="variable">counterBack</span>++;
-            }
-            <span class="variable">counterFront</span>++;
-        }
-
-        <span class="comment">// Original sorting method</span>
-        <span class="keyword">if</span> (<span class="variable">palindramaList</span>.size() > 1) {
-            <span class="comment">// Bubble sort for sorting based on length</span>
-            <span class="datatype">boolean</span> <span class="variable">swapped</span>;
-            <span class="keyword">do</span> {
-                <span class="variable">swapped</span> = <span class="keyword">false</span>;
-                <span class="keyword">for</span> (<span class="datatype">int</span> <span class="variable">i</span> = 0; <span class="variable">i</span> &lt; <span class="variable">palindramaList</span>.size() - 1; <span class="variable">i</span>++) {
-                    <span class="variable">lastIndex</span> = <span class="variable">palindramaList</span>.size();
-                    <span class="keyword">if</span> (<span class="variable">palindramaList</span>.get(<span class="variable">i</span>).length() > <span class="variable">palindramaList</span>.get(<span class="variable">i</span> + 1).length()) {
-                        <span class="variable">copyOfIndex</span> = <span class="variable">palindramaList</span>.get(<span class="variable">i</span>);
-                        <span class="variable">palindramaList</span>.set(<span class="variable">i</span>, <span class="variable">palindramaList</span>.get(<span class="variable">i</span> + 1));
-                        <span class="variable">palindramaList</span>.set(<span class="variable">i</span> + 1, <span class="variable">copyOfIndex</span>);
-                        <span class="variable">swapped</span> = <span class="keyword">true</span>;
-                    }
-                }
-            } <span class="keyword">while</span> (<span class="variable">swapped</span>);
-
-            <span class="comment">// Display the longest palindrome</span>
-            System.out.println(<span class="string">"The longest palindrome in the list is: "</span> + <span class="variable">palindramaList</span>.get(<span class="variable">lastIndex</span>));
-        } <span class="keyword">else if</span> (<span class="variable">palindramaList</span>.size() == 1) {
-            System.out.println(<span class="string">"The longest palindrome is: "</span> + <span class="variable">palindramaList</span>.get(0));
-        } <span class="keyword">else</span> {
-            System.out.println(<span class="string">"There is no palindrome in your sentence."</span>);
-        }
-
-        <span class="variable">inputPalindroma</span>.close(); <span class="comment">// Close the scanner to avoid resource leak</span>
-    }
-}
-    </code></pre>
-</body>
+		<head>
+		    <meta charset="UTF-8">
+		    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		    <title>Palindrama Java Code</title>
+		    <style>
+		        body {
+		            font-family: Arial, sans-serif;
+		            background-color: #f4f4f4;
+		            padding: 20px;
+		        }
+		        pre {
+		            background-color: #e8e8e8;
+		            padding: 15px;
+		            border-radius: 5px;
+		            overflow-x: auto;
+		            font-size: 14px;
+		        }
+		        .keyword {
+		            color: #d73a49; /* Pink for keywords */
+		            font-weight: bold;
+		        }
+		        .datatype {
+		            color: #005cc5; /* Blue for data types */
+		        }
+		        .variable {
+		            color: #6f42c1; /* Purple for variables */
+		        }
+		        .method {
+		            color: #6f42c1; /* Purple for methods */
+		        }
+		        .comment {
+		            color: #6a737d; /* Grey for comments */
+		            font-style: italic;
+		        }
+		        .string {
+		            color: #032f62; /* Dark blue for strings */
+		        }
+		    </style>
+		</head>
+		<body>
+		
+		    <h1>Palindrama Java Code</h1>
+		    <pre><code>
+		<span class="keyword">import</span> java.util.Scanner;
+		<span class="keyword">import</span> java.util.ArrayList;
+		
+		<span class="keyword">public class</span> <span class="datatype">Palindrama</span> {
+		    <span class="keyword">public static void</span> <span class="method">main</span>(<span class="datatype">String</span>[] <span class="variable">args</span>) {
+		        <span class="datatype">Scanner</span> <span class="variable">inputPalindroma</span> = <span class="keyword">new</span> <span class="datatype">Scanner</span>(System.in);
+		        System.out.println(<span class="string">"Enter your sentence:"</span>);
+		        <span class="datatype">String</span> <span class="variable">outputPalindroma</span> = <span class="variable">inputPalindroma</span>.nextLine();
+		        System.out.println(<span class="string">"Your sentence is: "</span> + <span class="variable">outputPalindroma</span>);
+		
+		        <span class="datatype">int</span> <span class="variable">counterBack</span> = 0;
+		        <span class="datatype">int</span> <span class="variable">counterFront</span> = 0;
+		        <span class="datatype">int</span> <span class="variable">counterBack1</span> = 0;
+		        <span class="datatype">int</span> <span class="variable">counterFront1</span> = 0;
+		        <span class="datatype">int</span> <span class="variable">lastIndex</span> = 0;
+		        <span class="datatype">String</span> <span class="variable">copyOfIndex</span>;
+		        <span class="datatype">ArrayList&lt;String&gt;</span> <span class="variable">palindramaList</span> = <span class="keyword">new</span> <span class="datatype">ArrayList</span>&lt;&gt;();
+		        
+		        <span class="comment">// Loop through the sentence</span>
+		        <span class="keyword">while</span> (<span class="variable">counterFront</span> &lt; <span class="variable">outputPalindroma</span>.length()) {
+		            <span class="variable">counterBack</span> = 0; <span class="comment">// Reset counterBack for each new start position</span>
+		            <span class="keyword">while</span> (<span class="variable">counterBack</span> &lt;= <span class="variable">outputPalindroma</span>.length() - <span class="variable">counterFront</span> - 1) {
+		                <span class="comment">// Ensure indices are valid</span>
+		                <span class="datatype">int</span> <span class="variable">startIndex</span> = <span class="variable">counterFront</span>;
+		                <span class="datatype">int</span> <span class="variable">endIndex</span> = <span class="variable">outputPalindroma</span>.length() - <span class="variable">counterBack</span> - 1;
+		                <span class="keyword">if</span> (<span class="variable">startIndex</span> &lt;= <span class="variable">endIndex</span>) { <span class="comment">// Ensure valid substring range</span>
+		                    <span class="keyword">if</span> (<span class="variable">outputPalindroma</span>.charAt(<span class="variable">startIndex</span>) == <span class="variable">outputPalindroma</span>.charAt(<span class="variable">endIndex</span>)) {
+		                        <span class="comment">// Check if substring is a palindrome</span>
+		                        <span class="variable">counterFront1</span> = <span class="variable">startIndex</span>;
+		                        <span class="variable">counterBack1</span> = <span class="variable">endIndex</span>;
+		                        <span class="keyword">while</span> (<span class="variable">counterFront1</span> &lt;= <span class="variable">counterBack1</span> &&
+		                               <span class="variable">outputPalindroma</span>.charAt(<span class="variable">counterFront1</span>) == <span class="variable">outputPalindroma</span>.charAt(<span class="variable">counterBack1</span>)) {
+		                            <span class="variable">counterFront1</span>++;
+		                            <span class="variable">counterBack1</span>--;
+		                        }
+		                        <span class="keyword">if</span> (<span class="variable">counterFront1</span> > <span class="variable">counterBack1</span>) {
+		                            <span class="datatype">String</span> <span class="variable">palindrome</span> = <span class="variable">outputPalindroma</span>.substring(<span class="variable">startIndex</span>, <span class="variable">endIndex</span> + 1);
+		                            <span class="keyword">if</span> (!<span class="variable">palindramaList</span>.contains(<span class="variable">palindrome</span>)) {
+		                                <span class="variable">palindramaList</span>.add(<span class="variable">palindrome</span>);
+		                            }
+		                        }
+		                    }
+		                }
+		                <span class="variable">counterBack</span>++;
+		            }
+		            <span class="variable">counterFront</span>++;
+		        }
+		
+		        <span class="comment">// Original sorting method</span>
+		        <span class="keyword">if</span> (<span class="variable">palindramaList</span>.size() > 1) {
+		            <span class="comment">// Bubble sort for sorting based on length</span>
+		            <span class="datatype">boolean</span> <span class="variable">swapped</span>;
+		            <span class="keyword">do</span> {
+		                <span class="variable">swapped</span> = <span class="keyword">false</span>;
+		                <span class="keyword">for</span> (<span class="datatype">int</span> <span class="variable">i</span> = 0; <span class="variable">i</span> &lt; <span class="variable">palindramaList</span>.size() - 1; <span class="variable">i</span>++) {
+		                    <span class="variable">lastIndex</span> = <span class="variable">palindramaList</span>.size();
+		                    <span class="keyword">if</span> (<span class="variable">palindramaList</span>.get(<span class="variable">i</span>).length() > <span class="variable">palindramaList</span>.get(<span class="variable">i</span> + 1).length()) {
+		                        <span class="variable">copyOfIndex</span> = <span class="variable">palindramaList</span>.get(<span class="variable">i</span>);
+		                        <span class="variable">palindramaList</span>.set(<span class="variable">i</span>, <span class="variable">palindramaList</span>.get(<span class="variable">i</span> + 1));
+		                        <span class="variable">palindramaList</span>.set(<span class="variable">i</span> + 1, <span class="variable">copyOfIndex</span>);
+		                        <span class="variable">swapped</span> = <span class="keyword">true</span>;
+		                    }
+		                }
+		            } <span class="keyword">while</span> (<span class="variable">swapped</span>);
+		
+		            <span class="comment">// Display the longest palindrome</span>
+		            System.out.println(<span class="string">"The longest palindrome in the list is: "</span> + <span class="variable">palindramaList</span>.get(<span class="variable">lastIndex</span>));
+		        } <span class="keyword">else if</span> (<span class="variable">palindramaList</span>.size() == 1) {
+		            System.out.println(<span class="string">"The longest palindrome is: "</span> + <span class="variable">palindramaList</span>.get(0));
+		        } <span class="keyword">else</span> {
+		            System.out.println(<span class="string">"There is no palindrome in your sentence."</span>);
+		        }
+		
+		        <span class="variable">inputPalindroma</span>.close(); <span class="comment">// Close the scanner to avoid resource leak</span>
+		    }
+		}
+		    </code></pre>
+		</body>
 		<div id="interwebs" style="text-align:center; margin-bottom:20px">
 			<i><p class="centered" style="padding-bottom:5px">Find me on the interwebs!</p></i>
 			<a class="interweb" href="https://github.com/HanFerik1"><img src="../resources/images/github.png" alt="Github" width="25" height="25"></a>
