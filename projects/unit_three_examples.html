@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Han Ferik's Portfolio Website">
+	<title>Han Ferik</title>
+	<link href="https://fonts.googleapis.com/css?family=Nunito:400,700,900" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="../css/main.css">
+</head>
+
+<body>
+		<img src="../resources/images/han_ferik_logo.png" alt="Han" width="100" height="100" style ="display:block; margin-left: auto; margin-right: auto; margin-top:20px">
+		<h1 style="color:#191919;margin-left: 10px;font-size: 50px;text-align:center;">Han Ferik</h1>
+		<p class="centered" style="text-align:center"><a href="https://hanferik1.github.io/">Home</a> | <a href="../projects.html">Projects</a> | <a href="../apcsa.html">AP CSA</a> </p>
+  
+		<h3 class="centered" style="color: #191919;font-size: 25px">Unit 3 Examples</h3>
+		<div class="centered">
+			<p style="margin-top:5px"><i>Tools: VSCode | Source Code: <a href="https://github.com/HanFerik1/Projects/tree/main/Unit%203%20Examples">GitHub</a></i></p>
+			<p><strong>1. Pitfalls of If Statements</strong></p>
+      <p>The <code>IfStatementExamples</code> class highlights two key pitfalls in using <code>if</code> statements:</p>
+      <p><em>Pitfall #1: Unnecessary If-Else Nesting</em><br>In this example, the nested <code>if</code> statements determine grades based on a <code>score</code>. Initially, each condition is embedded within another <code>else</code> block, creating a "pyramid" structure that's both cumbersome and hard to read. This is a common pitfall because each additional level of nesting increases cognitive load and chances for errors. The simplified solution with <code>else if</code> statements removes the unnecessary nesting by sequentially checking conditions. This prevents redundancy and makes it clear that each condition is exclusive.<br><em>Tricky Part:</em> Avoid deep nesting in <code>if-else</code> structures whenever possible. Java reads conditions in sequence, so you can keep statements flat and still get accurate results.</p>
+      <p><em>Pitfall #2: Repeated Condition Checks</em><br>In the example of going outside if it’s raining and you have an umbrella, <code>if (isRaining == true)</code> is an unnecessary check because <code>isRaining</code> is already a Boolean. Using <code>== true</code> or <code>== false</code> with Boolean variables is redundant and can even lead to confusion when reading the code. The solution checks both conditions with <code>if (isRaining && hasUmbrella)</code>, making it clearer and more efficient.<br><em>Tricky Part:</em> Avoid comparing Boolean variables with <code>== true</code> or <code>== false</code>—this is redundant. Simply use the Boolean variable directly.</p>
+
+      <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>IfStatementExamples Java Code</title>
+          <style>
+              body {
+                  font-family: Arial, sans-serif;
+                  background-color: #f4f4f4;
+                  padding: 20px;
+              }
+              pre {
+                  background-color: #e8e8e8;
+                  padding: 15px;
+                  border-radius: 5px;
+                  overflow-x: auto;
+                  font-size: 14px;
+              }
+              .keyword {
+                  color: #d73a49; /* Pink for keywords */
+                  font-weight: bold;
+              }
+              .datatype {
+                  color: #005cc5; /* Blue for data types */
+              }
+              .variable {
+                  color: #6f42c1; /* Purple for variables */
+              }
+              .method {
+                  color: #6f42c1; /* Purple for methods */
+              }
+              .comment {
+                  color: #6a737d; /* Grey for comments */
+                  font-style: italic;
+              }
+              .string {
+                  color: #032f62; /* Dark blue for strings */
+              }
+          </style>
+      </head>
+      <body>
+      
+          <h1>IfStatementExamples Java Code</h1>
+          <pre><code>
+      <span class="comment">// Pitfalls of If Statements:</span>
+      <span class="keyword">public class</span> <span class="datatype">IfStatementExamples</span> {
+      
+          <span class="keyword">public static void</span> <span class="method">main</span>(<span class="datatype">String</span>[] <span class="variable">args</span>) {
+              <span class="datatype">int</span> <span class="variable">score</span> = 85;
+      
+              <span class="comment">// Pitfall #1: Unnecessary if-else statements</span>
+              <span class="keyword">if</span> (<span class="variable">score</span> >= 90) {
+                  System.out.println(<span class="string">"Grade: A"</span>);
+              } <span class="keyword">else</span> {
+                  <span class="keyword">if</span> (<span class="variable">score</span> >= 80) {
+                      System.out.println(<span class="string">"Grade: B"</span>);
+                  } <span class="keyword">else</span> {
+                      <span class="keyword">if</span> (<span class="variable">score</span> >= 70) {
+                          System.out.println(<span class="string">"Grade: C"</span>);
+                      } <span class="keyword">else</span> {
+                          System.out.println(<span class="string">"Grade: F"</span>);
+                      }
+                  }
+              }
+      
+              <span class="comment">// Solution: Use else-if to simplify</span>
+              <span class="keyword">if</span> (<span class="variable">score</span> >= 90) {
+                  System.out.println(<span class="string">"Grade: A"</span>);
+              } <span class="keyword">else if</span> (<span class="variable">score</span> >= 80) {
+                  System.out.println(<span class="string">"Grade: B"</span>);
+              } <span class="keyword">else if</span> (<span class="variable">score</span> >= 70) {
+                  System.out.println(<span class="string">"Grade: C"</span>);
+              } <span class="keyword">else</span> {
+                  System.out.println(<span class="string">"Grade: F"</span>);
+              }
+      
+              <span class="comment">// Pitfall #2: Repeated condition checks</span>
+              <span class="keyword">boolean</span> <span class="variable">isRaining</span> = <span class="keyword">true</span>;
+              <span class="keyword">boolean</span> <span class="variable">hasUmbrella</span> = <span class="keyword">true</span>;
+      
+              <span class="keyword">if</span> (<span class="variable">isRaining</span> == <span class="keyword">true</span>) {  <span class="comment">// Avoid checking "== true"</span>
+                  <span class="keyword">if</span> (<span class="variable">hasUmbrella</span> == <span class="keyword">true</span>) {
+                      System.out.println(<span class="string">"You can go outside."</span>);
+                  }
+              }
+      
+              <span class="comment">// Solution: Simplify with direct conditions</span>
+              <span class="keyword">if</span> (<span class="variable">isRaining</span> && <span class="variable">hasUmbrella</span>) {
+                  System.out.println(<span class="string">"You can go outside."</span>);
+              }
+          }
+      }
+          </code></pre>
+      
+      </body>
+      
+      <p><strong>2. Boolean Operators</strong></p>
+      <p>In <code>BooleanOperatorsExample</code>, we explore the use of logical operators (<code>&&</code>, <code>||</code>, and <code>!</code>):</p>
+      <p><em>AND (&&)</em>: Here, both conditions in <code>if (age >= 18 && hasLicense)</code> must be true for the code inside the block to execute, indicating that both age and a license are required to drive.<br><em>Tricky Part:</em> Remember that <code>&&</code> is strict. If any condition fails, the entire statement becomes false. Use it only when all conditions must be met.</p>
+      <p><em>OR (||)</em>: The <code>if (age < 18 || !hasLicense)</code> checks if either condition is true, meaning the person either isn’t old enough or doesn’t have a license. If either is true, they cannot drive.<br><em>Tricky Part:</em> <code>||</code> only needs one condition to be true. This can sometimes lead to unintended results if not carefully thought through, so ensure it’s appropriate for your logic.</p>
+      <p><em>NOT (!)</em>: The <code>if (!isWeekend)</code> inverts the value of <code>isWeekend</code>, checking if it’s not the weekend.<br><em>Tricky Part:</em> Inversion is straightforward here, but when combined with other operators, <code>!</code> can complicate expressions. Use parentheses to clarify complex expressions.</p>
+      <p><em>Combining Operators</em>: This final example combines all three operators, showing how conditions can be layered for complex logic checks.<br><em>Tricky Part:</em> Combined conditions require understanding of operator precedence. In Java, <code>&&</code> binds more tightly than <code>||</code>, so use parentheses to ensure expressions evaluate as expected.</p>
+
+      <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>BooleanOperatorsExample Java Code</title>
+          <style>
+              body {
+                  font-family: Arial, sans-serif;
+                  background-color: #f4f4f4;
+                  padding: 20px;
+              }
+              pre {
+                  background-color: #e8e8e8;
+                  padding: 15px;
+                  border-radius: 5px;
+                  overflow-x: auto;
+                  font-size: 14px;
+              }
+              .keyword {
+                  color: #d73a49; /* Pink for keywords */
+                  font-weight: bold;
+              }
+              .datatype {
+                  color: #005cc5; /* Blue for data types */
+              }
+              .variable {
+                  color: #6f42c1; /* Purple for variables */
+              }
+              .method {
+                  color: #6f42c1; /* Purple for methods */
+              }
+              .comment {
+                  color: #6a737d; /* Grey for comments */
+                  font-style: italic;
+              }
+              .string {
+                  color: #032f62; /* Dark blue for strings */
+              }
+          </style>
+      </head>
+      <body>
+      
+          <h1>BooleanOperatorsExample Java Code</h1>
+          <pre><code>
+      <span class="comment">// Boolean Operators:</span>
+      <span class="keyword">public class</span> <span class="datatype">BooleanOperatorsExample</span> {
+      
+          <span class="keyword">public static void</span> <span class="method">main</span>(<span class="datatype">String</span>[] <span class="variable">args</span>) {
+              <span class="datatype">int</span> <span class="variable">age</span> = 20;
+              <span class="keyword">boolean</span> <span class="variable">hasLicense</span> = <span class="keyword">true</span>;
+              <span class="keyword">boolean</span> <span class="variable">isWeekend</span> = <span class="keyword">false</span>;
+      
+              <span class="comment">// Example 1: Using AND (&&) operator</span>
+              <span class="comment">// Both conditions need to be true for this block to execute</span>
+              <span class="keyword">if</span> (<span class="variable">age</span> >= 18 && <span class="variable">hasLicense</span>) {
+                  System.out.println(<span class="string">"You can drive."</span>);
+              } <span class="keyword">else</span> {
+                  System.out.println(<span class="string">"You cannot drive."</span>);
+              }
+      
+              <span class="comment">// Example 2: Using OR (||) operator</span>
+              <span class="comment">// Only one of these conditions needs to be true for this block to execute</span>
+              <span class="keyword">if</span> (<span class="variable">age</span> &lt; 18 || !<span class="variable">hasLicense</span>) {
+                  System.out.println(<span class="string">"You are not allowed to drive."</span>);
+              } <span class="keyword">else</span> {
+                  System.out.println(<span class="string">"You are allowed to drive."</span>);
+              }
+      
+              <span class="comment">// Example 3: Using NOT (!) operator</span>
+              <span class="comment">// This inverts the boolean value</span>
+              <span class="keyword">if</span> (!<span class="variable">isWeekend</span>) {
+                  System.out.println(<span class="string">"It's a weekday."</span>);
+              } <span class="keyword">else</span> {
+                  System.out.println(<span class="string">"It's the weekend."</span>);
+              }
+      
+              <span class="comment">// Example 4: Combining operators</span>
+              <span class="comment">// Using &&, ||, and ! together for complex conditions</span>
+              <span class="keyword">if</span> ((<span class="variable">age</span> >= 18 && <span class="variable">hasLicense</span>) || (<span class="variable">isWeekend</span> && !<span class="variable">hasLicense</span>)) {
+                  System.out.println(<span class="string">"Special conditions met for driving or weekend."</span>);
+              } <span class="keyword">else</span> {
+                  System.out.println(<span class="string">"Regular conditions apply."</span>);
+              }
+          }
+      }
+          </code></pre>
+      
+      </body>
+
+      <p><strong>3. Truth Table</strong></p>
+      <p>The <code>TruthTableExample</code> illustrates how to display results of Boolean operations for all combinations of values for two variables, <code>A</code> and <code>B</code>. This is useful for understanding how <code>&&</code>, <code>||</code>, and <code>!</code> behave across all possible inputs.<br><em>Tricky Part:</em> When constructing a truth table, be careful to account for all combinations. This example is straightforward, but with more variables, manually covering each scenario is challenging. For larger tables, consider using loops and arrays to ensure you don’t miss any combinations.</p>
+
+      <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>TruthTableExample Java Code</title>
+          <style>
+              body {
+                  font-family: Arial, sans-serif;
+                  background-color: #f4f4f4;
+                  padding: 20px;
+              }
+              pre {
+                  background-color: #e8e8e8;
+                  padding: 15px;
+                  border-radius: 5px;
+                  overflow-x: auto;
+                  font-size: 14px;
+              }
+              .keyword {
+                  color: #d73a49; /* Pink for keywords */
+                  font-weight: bold;
+              }
+              .datatype {
+                  color: #005cc5; /* Blue for data types */
+              }
+              .variable {
+                  color: #6f42c1; /* Purple for variables */
+              }
+              .method {
+                  color: #6f42c1; /* Purple for methods */
+              }
+              .comment {
+                  color: #6a737d; /* Grey for comments */
+                  font-style: italic;
+              }
+              .string {
+                  color: #032f62; /* Dark blue for strings */
+              }
+          </style>
+      </head>
+      <body>
+      
+          <h1>TruthTableExample Java Code</h1>
+          <pre><code>
+      <span class="comment">// Truth Table:</span>
+      <span class="keyword">public class</span> <span class="datatype">TruthTableExample</span> {
+      
+          <span class="keyword">public static void</span> <span class="method">main</span>(<span class="datatype">String</span>[] <span class="variable">args</span>) {
+              <span class="keyword">boolean</span>[] <span class="variable">values</span> = { <span class="keyword">true</span>, <span class="keyword">false</span> };
+      
+              System.out.println(<span class="string">"A\tB\tA && B\tA || B\t!A"</span>);
+              System.out.println(<span class="string">"-----------------------------"</span>);
+      
+              <span class="comment">// Loop through all combinations of A and B</span>
+              <span class="keyword">for</span> (<span class="keyword">boolean</span> <span class="variable">A</span> : <span class="variable">values</span>) {
+                  <span class="keyword">for</span> (<span class="keyword">boolean</span> <span class="variable">B</span> : <span class="variable">values</span>) {
+                      <span class="keyword">boolean</span> <span class="variable">andResult</span> = <span class="variable">A</span> && <span class="variable">B</span>;
+                      <span class="keyword">boolean</span> <span class="variable">orResult</span> = <span class="variable">A</span> || <span class="variable">B</span>;
+                      <span class="keyword">boolean</span> <span class="variable">notAResult</span> = !<span class="variable">A</span>;
+      
+                      System.out.println(<span class="variable">A</span> + <span class="string">"\t"</span> + <span class="variable">B</span> + <span class="string">"\t"</span> + <span class="variable">andResult</span> + <span class="string">"\t"</span> + <span class="variable">orResult</span> + <span class="string">"\t"</span> + <span class="variable">notAResult</span>);
+                  }
+              }
+          }
+      }
+          </code></pre>
+      
+      </body>
+
+      
+      <p><strong>4. Short-Circuit Operations</strong></p>
+      <p>In the <code>ShortCircuitExample</code>, we see how short-circuiting prevents unnecessary evaluation in <code>&&</code> and <code>||</code> conditions:</p>
+      <p><em>AND Short-Circuit (&&)</em>: In the line <code>if (x < 5 && checkCondition())</code>, Java doesn’t call <code>checkCondition()</code> because <code>x < 5</code> is <code>false</code>. With <code>&&</code>, if the first condition fails, Java skips the second, saving processing time.<br><em>Tricky Part:</em> While this improves efficiency, remember that short-circuiting can skip function calls or side effects you might expect to run, so avoid placing essential logic in conditions that may be skipped.</p>
+      <p><em>OR Short-Circuit (||)</em>: In <code>if (x > 5 || checkCondition())</code>, <code>checkCondition()</code> isn’t evaluated because <code>x > 5</code> is <code>true</code>. For <code>||</code>, if the first condition is true, Java skips the second.<br><em>Tricky Part:</em> Short-circuiting with <code>||</code> can similarly bypass code unexpectedly, so be cautious with functions in these conditions. If functions have side effects, use separate statements.</p>
+
+      <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>ShortCircuitExample Java Code</title>
+          <style>
+              body {
+                  font-family: Arial, sans-serif;
+                  background-color: #f4f4f4;
+                  padding: 20px;
+              }
+              pre {
+                  background-color: #e8e8e8;
+                  padding: 15px;
+                  border-radius: 5px;
+                  overflow-x: auto;
+                  font-size: 14px;
+              }
+              .keyword {
+                  color: #d73a49; /* Pink for keywords */
+                  font-weight: bold;
+              }
+              .datatype {
+                  color: #005cc5; /* Blue for data types */
+              }
+              .variable {
+                  color: #6f42c1; /* Purple for variables */
+              }
+              .method {
+                  color: #6f42c1; /* Purple for methods */
+              }
+              .comment {
+                  color: #6a737d; /* Grey for comments */
+                  font-style: italic;
+              }
+              .string {
+                  color: #032f62; /* Dark blue for strings */
+              }
+          </style>
+      </head>
+      <body>
+      
+          <h1>ShortCircuitExample Java Code</h1>
+          <pre><code>
+      <span class="comment">// Short Circuit Operations:</span>
+      <span class="keyword">public class</span> <span class="datatype">ShortCircuitExample</span> {
+      
+          <span class="keyword">public static void</span> <span class="method">main</span>(<span class="datatype">String</span>[] <span class="variable">args</span>) {
+              <span class="datatype">int</span> <span class="variable">x</span> = <span class="datatype">10</span>;
+      
+              <span class="comment">// Example of short-circuit AND (&&)</span>
+              <span class="comment">// The second condition (x > 5) will not be evaluated since x < 5 is false</span>
+              <span class="keyword">if</span> (<span class="variable">x</span> < <span class="datatype">5</span> && <span class="method">checkCondition</span>()) {
+                  System.out.println(<span class="string">"This won't print, as short-circuit AND stops at x < 5."</span>);
+              } <span class="keyword">else</span> {
+                  System.out.println(<span class="string">"AND short-circuit: Second condition skipped."</span>);
+              }
+      
+              <span class="comment">// Example of short-circuit OR (||)</span>
+              <span class="comment">// The second condition (x < 5) will not be evaluated since x > 5 is true</span>
+              <span class="keyword">if</span> (<span class="variable">x</span> > <span class="datatype">5</span> || <span class="method">checkCondition</span>()) {
+                  System.out.println(<span class="string">"OR short-circuit: Second condition skipped."</span>);
+              } <span class="keyword">else</span> {
+                  System.out.println(<span class="string">"This won't print, as short-circuit OR stops at x > 5."</span>);
+              }
+          }
+      
+          <span class="comment">// Method to simulate a condition check with a print statement</span>
+          <span class="keyword">public static boolean</span> <span class="method">checkCondition</span>() {
+              System.out.println(<span class="string">"checkCondition() was called!"</span>);
+              <span class="keyword">return</span> <span class="keyword">true</span>;
+          }
+      }
+          </code></pre>
+      
+      </body>
+      </html>
+
+      
+      <p><strong>5. Comparing Primitives vs. Comparing Objects</strong></p>
+      <p>In <code>ComparisonExample</code>, we explore the difference between comparing primitives and objects:</p>
+      <p><em>Comparing Primitives</em>: <code>if (a == b)</code> compares values directly. Since <code>a</code> and <code>b</code> are both <code>5</code>, this evaluates to <code>true</code>. Primitives always compare their actual values, making comparison straightforward.<br><em>Tricky Part:</em> Primitive comparisons are simple, but when switching between objects and primitives, remember that they behave differently.</p>
+      <p><em>Comparing Objects</em>: The line <code>if (obj1 == obj2)</code> returns <code>false</code> because it checks reference equality, not the actual value within each object. Since <code>obj1</code> and <code>obj2</code> refer to different memory locations, they aren’t considered equal by <code>==</code>. Using <code>obj1.equals(obj2)</code> checks the values within, returning <code>true</code> since both hold <code>5</code>.<br><em>Tricky Part:</em> <code>==</code> checks if two objects point to the same memory location, not their content. To check for value equality, always use <code>.equals()</code> with objects.</p>
+
+      <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>ComparisonExample Java Code</title>
+          <style>
+              body {
+                  font-family: Arial, sans-serif;
+                  background-color: #f4f4f4;
+                  padding: 20px;
+              }
+              pre {
+                  background-color: #e8e8e8;
+                  padding: 15px;
+                  border-radius: 5px;
+                  overflow-x: auto;
+                  font-size: 14px;
+              }
+              .keyword {
+                  color: #d73a49; /* Pink for keywords */
+                  font-weight: bold;
+              }
+              .datatype {
+                  color: #005cc5; /* Blue for data types */
+              }
+              .variable {
+                  color: #6f42c1; /* Purple for variables */
+              }
+              .method {
+                  color: #6f42c1; /* Purple for methods */
+              }
+              .comment {
+                  color: #6a737d; /* Grey for comments */
+                  font-style: italic;
+              }
+              .string {
+                  color: #032f62; /* Dark blue for strings */
+              }
+          </style>
+      </head>
+      <body>
+      
+          <h1>ComparisonExample Java Code</h1>
+          <pre><code>
+      <span class="comment">// Comparing Primitives vs. Comparing Objects:</span>
+      <span class="keyword">public class</span> <span class="datatype">ComparisonExample</span> {
+      
+          <span class="keyword">public static void</span> <span class="method">main</span>(<span class="datatype">String</span>[] <span class="variable">args</span>) {
+              <span class="comment">// Comparing primitives</span>
+              <span class="datatype">int</span> <span class="variable">a</span> = <span class="datatype">5</span>;
+              <span class="datatype">int</span> <span class="variable">b</span> = <span class="datatype">5</span>;
+      
+              <span class="keyword">if</span> (<span class="variable">a</span> == <span class="variable">b</span>) {
+                  System.out.println(<span class="string">"Primitives are equal (a == b)"</span>);
+              } <span class="keyword">else</span> {
+                  System.out.println(<span class="string">"Primitives are not equal (a != b)"</span>);
+              }
+      
+              <span class="comment">// Comparing objects</span>
+              <span class="datatype">Integer</span> <span class="variable">obj1</span> = <span class="keyword">new</span> <span class="datatype">Integer</span>(<span class="datatype">5</span>);
+              <span class="datatype">Integer</span> <span class="variable">obj2</span> = <span class="keyword">new</span> <span class="datatype">Integer</span>(<span class="datatype">5</span>);
+      
+              <span class="keyword">if</span> (<span class="variable">obj1</span> == <span class="variable">obj2</span>) {
+                  System.out.println(<span class="string">"Objects are equal (obj1 == obj2)"</span>);
+              } <span class="keyword">else</span> {
+                  System.out.println(<span class="string">"Objects are not equal (obj1 != obj2)"</span>);
+              }
+      
+              <span class="keyword">if</span> (<span class="variable">obj1</span>.<span class="method">equals</span>(<span class="variable">obj2</span>)) {
+                  System.out.println(<span class="string">"Objects are equal in value (obj1.equals(obj2))"</span>);
+              } <span class="keyword">else</span> {
+                  System.out.println(<span class="string">"Objects are not equal in value (!obj1.equals(obj2))"</span>);
+              }
+          }
+      }
+          </code></pre>
+      
+      </body>
+      </html>
+      
+      <p><strong>6. De Morgan’s Law</strong></p>
+      <p>In <code>DeMorgansLawExample</code>, we see how De Morgan’s Laws transform Boolean expressions to simplify conditions, particularly when negating them:</p>
+      <p><em>Example 1: !(A && B)</em>: Here, <code>!(A && B)</code> is equivalent to <code>!A || !B</code>. Both expressions yield the same result, demonstrating De Morgan’s Law. This conversion is useful because it simplifies the negation of combined conditions.<br><em>Tricky Part:</em> When negating complex expressions, remember that <code>!(A && B)</code> doesn’t equal <code>!A && !B</code>—that’s incorrect logic. De Morgan’s Laws are essential to keep negations accurate.</p>
+      <p><em>Example 2: !(A || B)</em>: In this case, <code>!(A || B)</code> is equivalent to <code>!A && !B</code>. Both produce the same result, showing that De Morgan’s Law holds for OR conditions as well.<br><em>Tricky Part:</em> Be mindful of which operations you’re negating. Using De Morgan’s Law correctly is especially helpful when refactoring code, as it can reduce the need for nested negations and make the logic clearer.</p>
+
+      <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>DeMorgansLawExample Java Code</title>
+          <style>
+              body {
+                  font-family: Arial, sans-serif;
+                  background-color: #f4f4f4;
+                  padding: 20px;
+              }
+              pre {
+                  background-color: #e8e8e8;
+                  padding: 15px;
+                  border-radius: 5px;
+                  overflow-x: auto;
+                  font-size: 14px;
+              }
+              .keyword {
+                  color: #d73a49; /* Pink for keywords */
+                  font-weight: bold;
+              }
+              .datatype {
+                  color: #005cc5; /* Blue for data types */
+              }
+              .variable {
+                  color: #6f42c1; /* Purple for variables */
+              }
+              .method {
+                  color: #6f42c1; /* Purple for methods */
+              }
+              .comment {
+                  color: #6a737d; /* Grey for comments */
+                  font-style: italic;
+              }
+              .string {
+                  color: #032f62; /* Dark blue for strings */
+              }
+          </style>
+      </head>
+      <body>
+      
+          <h1>DeMorgansLawExample Java Code</h1>
+          <pre><code>
+      <span class="comment">// De Morgan's Law:</span>
+      <span class="keyword">public class</span> <span class="datatype">DeMorgansLawExample</span> {
+      
+          <span class="keyword">public static void</span> <span class="method">main</span>(<span class="datatype">String</span>[] <span class="variable">args</span>) {
+              <span class="datatype">boolean</span> <span class="variable">A</span> = <span class="keyword">true</span>;
+              <span class="datatype">boolean</span> <span class="variable">B</span> = <span class="keyword">false</span>;
+      
+              <span class="comment">// Example 1: !(A && B) is equivalent to !A || !B</span>
+              <span class="datatype">boolean</span> <span class="variable">result1</span> = <span class="keyword">!</span>(<span class="variable">A</span> && <span class="variable">B</span>);
+              <span class="datatype">boolean</span> <span class="variable">result2</span> = <span class="keyword">!</span><span class="variable">A</span> || <span class="keyword">!</span><span class="variable">B</span>;
+      
+              System.out.println(<span class="string">"!(A && B) = "</span> + <span class="variable">result1</span>);
+              System.out.println(<span class="string">"!A || !B = "</span> + <span class="variable">result2</span>);
+              System.out.println(<span class="string">"Are they equal? "</span> + (<span class="variable">result1</span> == <span class="variable">result2</span>));  <span class="comment">// should be true</span>
+      
+              <span class="comment">// Example 2: !(A || B) is equivalent to !A && !B</span>
+              <span class="datatype">boolean</span> <span class="variable">result3</span> = <span class="keyword">!</span>(<span class="variable">A</span> || <span class="variable">B</span>);
+              <span class="datatype">boolean</span> <span class="variable">result4</span> = <span class="keyword">!</span><span class="variable">A</span> && <span class="keyword">!</span><span class="variable">B</span>;
+      
+              System.out.println(<span class="string">"\n!(A || B) = "</span> + <span class="variable">result3</span>);
+              System.out.println(<span class="string">"!A && !B = "</span> + <span class="variable">result4</span>);
+              System.out.println(<span class="string">"Are they equal? "</span> + (<span class="variable">result3</span> == <span class="variable">result4</span>));  <span class="comment">// should be true</span>
+          }
+      }
+          </code></pre>
+      
+      </body>
+      </html>
+    </div>
+		<br>
+		<div id="interwebs" style="text-align:center; margin-bottom:20px">
+			<i><p class="centered" style="padding-bottom:5px">Find me on the interwebs!</p></i>
+			<a class="interweb" href="https://github.com/HanFerik1"><img src="../resources/images/github.png" alt="Github" width="25" height="25"></a>
+			<a class="interweb" href="https://linkedin.com/in/han-ferik-ba527a23b?original_referer=https%3A%2F%2Fwww.linkedin.com%2F"><img src="../resources/images/linkedin.png" alt="LinkedIn" width="25" height="25"></a>
+			<a class="interweb" href="https://www.instagram.com/hanferik/"><img src="../resources/images/instagram.jpg" alt="Instagram" width="25" height="25"></a>
+			<a class="interweb" href="https://www.facebook.com/han.ferik/"><img src="../resources/images/facebook.png" alt="Facebook" width="25" height="25"></a>
+		</div>
+
+</body>
+</html>
