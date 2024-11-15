@@ -18,118 +18,118 @@
 		<div class="centered">
 			<p style="margin-top:5px"><i>Tools: VSCode | Source Code: <a href="https://github.com/HanFerik1/Projects/tree/main/Project%20Brilliant%20Numbers">GitHub</a></i></p>
      
-      <p>The <code>BrilliantNumbers</code> program is designed to determine whether a given number is a "Brilliant Number," a concept defined as a number that can be factored into two prime numbers with the same number of digits. The program interacts with the user to receive a list of numbers and checks each one individually, providing feedback on whether the number is considered "Brilliant." The program is built with user input handling, prime checking, and factor analysis in a structured way to achieve this goal.</p>
-      
-      <p>The main method starts by using a <code>Scanner</code> object to collect user input. It first asks the user how many numbers they want to check and stores this in the <code>times</code> variable. Then, in a loop, the program repeatedly asks the user to input a number and checks whether each number is a Brilliant Number by calling the <code>isBrilliant()</code> method. If the number meets the criteria, it prints "TRUE"; otherwise, it prints "FALSE." After processing all numbers, the <code>Scanner</code> is closed to manage resources properly and avoid memory leaks.</p>
-      
-      <p>The <code>isBrilliant</code> method is the core of the program. It checks whether a number can be factored into two prime numbers, and if so, whether those prime factors have the same number of digits. The method iterates through potential factors starting from 2 up to the square root of the number. For each factor, it checks if both the factor and its paired factor (calculated as <code>number / i</code>) are prime. The <code>isPrime</code> method is used to verify primality. If the factors are prime and have the same number of digits, the number is identified as Brilliant and the method returns <code>true</code>; otherwise, it returns <code>false</code>.</p>
-      
-      <p>The <code>isPrime</code> method checks if a number is prime by testing if it is divisible by any number between 2 and its square root. If any divisors are found, the method returns <code>false</code>; otherwise, it returns <code>true</code>, indicating the number is prime. This method ensures that only prime factors are considered in the Brilliant Number check.</p>
-      
-      <p>The <code>digitLength</code> method converts a number to a string and returns its length, which is used to compare the number of digits between two prime factors. This simple method helps ensure that only pairs of prime factors with matching digit lengths are considered valid, which is a key part of the Brilliant Number definition.</p>
+		        <p>The <code>BrilliantNumbers</code> program is designed to determine whether a given number is a "Brilliant Number," a concept defined as a number that can be factored into two prime numbers with the same number of digits. The program interacts with the user to receive a list of numbers and checks each one individually, providing feedback on whether the number is considered "Brilliant." The program is built with user input handling, prime checking, and factor analysis in a structured way to achieve this goal.</p>
+		      
+		        <p>The main method starts by using a <code>Scanner</code> object to collect user input. It first asks the user how many numbers they want to check and stores this in the <code>times</code> variable. Then, in a loop, the program repeatedly asks the user to input a number and checks whether each number is a Brilliant Number by calling the <code>isBrilliant()</code> method. If the number meets the criteria, it prints "TRUE"; otherwise, it prints "FALSE." After processing all numbers, the <code>Scanner</code> is closed to manage resources properly and avoid memory leaks.</p>
+		      
+		        <p>The <code>isBrilliant</code> method is the core of the program. It checks whether a number can be factored into two prime numbers, and if so, whether those prime factors have the same number of digits. The method iterates through potential factors starting from 2 up to the square root of the number. For each factor, it checks if both the factor and its paired factor (calculated as <code>number / i</code>) are prime. The <code>isPrime</code> method is used to verify primality. If the factors are prime and have the same number of digits, the number is identified as Brilliant and the method returns <code>true</code>; otherwise, it returns <code>false</code>.</p>
+		      
+		        <p>The <code>isPrime</code> method checks if a number is prime by testing if it is divisible by any number between 2 and its square root. If any divisors are found, the method returns <code>false</code>; otherwise, it returns <code>true</code>, indicating the number is prime. This method ensures that only prime factors are considered in the Brilliant Number check.</p>
+		      
+		        <p>The <code>digitLength</code> method converts a number to a string and returns its length, which is used to compare the number of digits between two prime factors. This simple method helps ensure that only pairs of prime factors with matching digit lengths are considered valid, which is a key part of the Brilliant Number definition.</p>
 		</div>
 		<br>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>BrilliantNumbers Java Code</title>
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-                background-color: #f4f4f4;
-                padding: 20px;
-            }
-            pre {
-                background-color: #e8e8e8;
-                padding: 15px;
-                border-radius: 5px;
-                overflow-x: auto;
-                font-size: 14px;
-            }
-            .keyword {
-                color: #d73a49; /* Pink for keywords */
-                font-weight: bold;
-            }
-            .datatype {
-                color: #005cc5; /* Blue for data types */
-            }
-            .variable {
-                color: #6f42c1; /* Purple for variables */
-            }
-            .method {
-                color: #6f42c1; /* Purple for methods */
-            }
-            .comment {
-                color: #6a737d; /* Grey for comments */
-                font-style: italic;
-            }
-            .string {
-                color: #032f62; /* Dark blue for strings */
-            }
-        </style>
-    </head>
-    <body>
-    
-        <h1>BrilliantNumbers Java Code</h1>
-        <pre><code>
-    <span class="keyword">import</span> <span class="datatype">java.util.Scanner</span>;
-    
-    <span class="keyword">public class</span> <span class="datatype">BrilliantNumbers</span> {
-    
-        <span class="keyword">public static void</span> <span class="method">main</span>(<span class="datatype">String</span>[] <span class="variable">args</span>) {
-            <span class="datatype">Scanner</span> <span class="variable">scanner</span> = <span class="keyword">new</span> <span class="datatype">Scanner</span>(System.in);
-            System.out.print(<span class="string">"How many numbers would you like to check? "</span>);
-            <span class="datatype">int</span> <span class="variable">times</span> = <span class="variable">scanner.nextInt</span>();
-    
-            <span class="keyword">for</span> (<span class="datatype">int</span> <span class="variable">i</span> = 0; <span class="variable">i</span> < <span class="variable">times</span>; <span class="variable">i</span>++) {
-                System.out.print(<span class="string">"Enter number: "</span>);
-                <span class="datatype">long</span> <span class="variable">number</span> = <span class="variable">scanner.nextLong</span>();
-                System.out.println(<span class="variable">isBrilliant</span>(<span class="variable">number</span>) ? <span class="string">"TRUE"</span> : <span class="string">"FALSE"</span>);
-            }
-    
-            <span class="variable">scanner.close</span>();
-        }
-    
-        <span class="keyword">public static boolean</span> <span class="method">isBrilliant</span>(<span class="datatype">long</span> <span class="variable">number</span>) {
-            <span class="datatype">int</span> <span class="variable">factorCount</span> = 0;
-            <span class="datatype">long</span> <span class="variable">firstFactor</span> = -1;
-    
-            <span class="keyword">for</span> (<span class="datatype">long</span> <span class="variable">i</span> = 2; <span class="variable">i</span> * <span class="variable">i</span> <= <span class="variable">number</span>; <span class="variable">i</span>++) {
-                <span class="keyword">if</span> (<span class="variable">number</span> % <span class="variable">i</span> == 0 && <span class="variable">isPrime</span>(<span class="variable">i</span>)) {
-                    <span class="datatype">long</span> <span class="variable">pairedFactor</span> = <span class="variable">number</span> / <span class="variable">i</span>;
-                    <span class="keyword">if</span> (<span class="variable">isPrime</span>(<span class="variable">pairedFactor</span>)) {
-                        <span class="keyword">if</span> (<span class="variable">factorCount</span> == 0) {
-                            <span class="variable">firstFactor</span> = <span class="variable">i</span>;
-                            <span class="variable">factorCount</span>++;
-                        } <span class="keyword">else if</span> (<span class="variable">factorCount</span> == 1 && <span class="variable">digitLength</span>(<span class="variable">firstFactor</span>) == <span class="variable">digitLength</span>(<span class="variable">pairedFactor</span>)) {
-                            <span class="keyword">return</span> <span class="keyword">true</span>;
-                        } <span class="keyword">else</span> {
-                            <span class="keyword">return</span> <span class="keyword">false</span>;
-                        }
-                    }
-                }
-            }
-            <span class="keyword">return</span> <span class="keyword">false</span>;
-        }
-    
-        <span class="keyword">public static boolean</span> <span class="method">isPrime</span>(<span class="datatype">long</span> <span class="variable">num</span>) {
-            <span class="keyword">if</span> (<span class="variable">num</span> &lt; 2) <span class="keyword">return</span> <span class="keyword">false</span>;
-            <span class="keyword">for</span> (<span class="datatype">long</span> <span class="variable">i</span> = 2; <span class="variable">i</span> * <span class="variable">i</span> <= <span class="variable">num</span>; <span class="variable">i</span>++) {
-                <span class="keyword">if</span> (<span class="variable">num</span> % <span class="variable">i</span> == 0) {
-                    <span class="keyword">return</span> <span class="keyword">false</span>;
-                }
-            }
-            <span class="keyword">return</span> <span class="keyword">true</span>;
-        }
-    
-        <span class="keyword">public static int</span> <span class="method">digitLength</span>(<span class="datatype">long</span> <span class="variable">num</span>) {
-            <span class="keyword">return</span> <span class="variable">String.valueOf</span>(<span class="variable">num</span>).<span class="method">length</span>();
-        }
-    }
-        </code></pre>
-    
-    </body>
-    </html>
+		    <head>
+		        <meta charset="UTF-8">
+		        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		        <title>BrilliantNumbers Java Code</title>
+		        <style>
+		            body {
+		                font-family: Arial, sans-serif;
+		                background-color: #f4f4f4;
+		                padding: 20px;
+		            }
+		            pre {
+		                background-color: #e8e8e8;
+		                padding: 15px;
+		                border-radius: 5px;
+		                overflow-x: auto;
+		                font-size: 14px;
+		            }
+		            .keyword {
+		                color: #d73a49; /* Pink for keywords */
+		                font-weight: bold;
+		            }
+		            .datatype {
+		                color: #005cc5; /* Blue for data types */
+		            }
+		            .variable {
+		                color: #6f42c1; /* Purple for variables */
+		            }
+		            .method {
+		                color: #6f42c1; /* Purple for methods */
+		            }
+		            .comment {
+		                color: #6a737d; /* Grey for comments */
+		                font-style: italic;
+		            }
+		            .string {
+		                color: #032f62; /* Dark blue for strings */
+		            }
+		        </style>
+		    </head>
+		    <body>
+		    
+		        <h1>BrilliantNumbers Java Code</h1>
+		        <pre><code>
+		    <span class="keyword">import</span> <span class="datatype">java.util.Scanner</span>;
+		    
+		    <span class="keyword">public class</span> <span class="datatype">BrilliantNumbers</span> {
+		    
+		        <span class="keyword">public static void</span> <span class="method">main</span>(<span class="datatype">String</span>[] <span class="variable">args</span>) {
+		            <span class="datatype">Scanner</span> <span class="variable">scanner</span> = <span class="keyword">new</span> <span class="datatype">Scanner</span>(System.in);
+		            System.out.print(<span class="string">"How many numbers would you like to check? "</span>);
+		            <span class="datatype">int</span> <span class="variable">times</span> = <span class="variable">scanner.nextInt</span>();
+		    
+		            <span class="keyword">for</span> (<span class="datatype">int</span> <span class="variable">i</span> = 0; <span class="variable">i</span> < <span class="variable">times</span>; <span class="variable">i</span>++) {
+		                System.out.print(<span class="string">"Enter number: "</span>);
+		                <span class="datatype">long</span> <span class="variable">number</span> = <span class="variable">scanner.nextLong</span>();
+		                System.out.println(<span class="variable">isBrilliant</span>(<span class="variable">number</span>) ? <span class="string">"TRUE"</span> : <span class="string">"FALSE"</span>);
+		            }
+		    
+		            <span class="variable">scanner.close</span>();
+		        }
+		    
+		        <span class="keyword">public static boolean</span> <span class="method">isBrilliant</span>(<span class="datatype">long</span> <span class="variable">number</span>) {
+		            <span class="datatype">int</span> <span class="variable">factorCount</span> = 0;
+		            <span class="datatype">long</span> <span class="variable">firstFactor</span> = -1;
+		    
+		            <span class="keyword">for</span> (<span class="datatype">long</span> <span class="variable">i</span> = 2; <span class="variable">i</span> * <span class="variable">i</span> <= <span class="variable">number</span>; <span class="variable">i</span>++) {
+		                <span class="keyword">if</span> (<span class="variable">number</span> % <span class="variable">i</span> == 0 && <span class="variable">isPrime</span>(<span class="variable">i</span>)) {
+		                    <span class="datatype">long</span> <span class="variable">pairedFactor</span> = <span class="variable">number</span> / <span class="variable">i</span>;
+		                    <span class="keyword">if</span> (<span class="variable">isPrime</span>(<span class="variable">pairedFactor</span>)) {
+		                        <span class="keyword">if</span> (<span class="variable">factorCount</span> == 0) {
+		                            <span class="variable">firstFactor</span> = <span class="variable">i</span>;
+		                            <span class="variable">factorCount</span>++;
+		                        } <span class="keyword">else if</span> (<span class="variable">factorCount</span> == 1 && <span class="variable">digitLength</span>(<span class="variable">firstFactor</span>) == <span class="variable">digitLength</span>(<span class="variable">pairedFactor</span>)) {
+		                            <span class="keyword">return</span> <span class="keyword">true</span>;
+		                        } <span class="keyword">else</span> {
+		                            <span class="keyword">return</span> <span class="keyword">false</span>;
+		                        }
+		                    }
+		                }
+		            }
+		            <span class="keyword">return</span> <span class="keyword">false</span>;
+		        }
+		    
+		        <span class="keyword">public static boolean</span> <span class="method">isPrime</span>(<span class="datatype">long</span> <span class="variable">num</span>) {
+		            <span class="keyword">if</span> (<span class="variable">num</span> &lt; 2) <span class="keyword">return</span> <span class="keyword">false</span>;
+		            <span class="keyword">for</span> (<span class="datatype">long</span> <span class="variable">i</span> = 2; <span class="variable">i</span> * <span class="variable">i</span> <= <span class="variable">num</span>; <span class="variable">i</span>++) {
+		                <span class="keyword">if</span> (<span class="variable">num</span> % <span class="variable">i</span> == 0) {
+		                    <span class="keyword">return</span> <span class="keyword">false</span>;
+		                }
+		            }
+		            <span class="keyword">return</span> <span class="keyword">true</span>;
+		        }
+		    
+		        <span class="keyword">public static int</span> <span class="method">digitLength</span>(<span class="datatype">long</span> <span class="variable">num</span>) {
+		            <span class="keyword">return</span> <span class="variable">String.valueOf</span>(<span class="variable">num</span>).<span class="method">length</span>();
+		        }
+		    }
+		        </code></pre>
+		    
+		    </body>
+		    </html>
 		<div id="interwebs" style="text-align:center; margin-bottom:20px">
 			<i><p class="centered" style="padding-bottom:5px">Find me on the interwebs!</p></i>
 			<a class="interweb" href="https://github.com/HanFerik1"><img src="../resources/images/github.png" alt="Github" width="25" height="25"></a>
