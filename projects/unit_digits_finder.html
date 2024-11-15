@@ -1,1 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Han Ferik's Portfolio Website">
+	<title>Han Ferik</title>
+	<link href="https://fonts.googleapis.com/css?family=Nunito:400,700,900" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="../css/main.css">
+</head>
 
+<body>
+		<img src="../resources/images/han_ferik_logo.png" alt="Han" width="100" height="100" style ="display:block; margin-left: auto; margin-right: auto; margin-top:20px">
+		<h1 style="color:#191919;margin-left: 10px;font-size: 50px;text-align:center;">Han Ferik</h1>
+		<p class="centered" style="text-align:center"><a href="https://hanferik1.github.io/">Home</a> | <a href="../projects.html">Projects</a> | <a href="../apcsa.html">AP CSA</a> </p>
+  
+		<h3 class="centered" style="color: #191919;font-size: 25px">Unit Digits Finder</h3>
+		<div class="centered">
+      <p>The <code>basamak</code> program is designed to process a number, break it into its individual digits, display each digit alongside its position, and calculate the sum of all its digits. The program has a straightforward structure that focuses on both user input handling and digit-by-digit processing. It also includes a main method that demonstrates the functionality using a predefined number.</p>
+      <p>The program begins with a class definition, <code>basamak</code>, which contains private fields for storing information about the number. These fields include <code>sayi</code>, which holds the integer input, <code>sayi2</code>, the string representation of the number, <code>basamaksayi</code>, which stores the total count of digits, and <code>basamaktoplami</code>, which stores the sum of the digits. The class includes a constructor that initializes the number when creating an instance of the class. This constructor ensures the object starts with a valid input number for processing.</p>
+      <p>To allow dynamic input, the <code>sayiInput</code> method prompts the user to enter a number through the console. It uses a <code>Scanner</code> object to capture the input and stores the result in the <code>sayi</code> field. The scanner is then closed to avoid resource leaks, showcasing proper resource management practices. This method enables the program to work with user-provided numbers instead of relying solely on predefined values.</p>
+      <p>The primary functionality of the program lies in the <code>basamakSayi</code> method, which calculates the number of digits and their sum. The method begins by converting the integer <code>sayi</code> to a string <code>sayi2</code>, making it easier to access individual digits. The length of this string is used to determine the total count of digits, which is stored in <code>basamaksayi</code>. Using a <code>for</code> loop, the method iterates through each character in the string, converts it back to an integer, and adds it to <code>basamaktoplami</code>. During each iteration, the program prints the position of the digit (starting from 1) and its value. Once all digits have been processed, the method returns the sum of the digits as the final result.</p>
+      <p>The program’s functionality is demonstrated in the <code>main</code> method. An instance of the <code>basamak</code> class is created with the predefined number 1234, and the <code>basamakSayi</code> method is called to perform the digit processing. The sum of the digits is then printed to the console. This example highlights how the program can be used in practical scenarios, either with predefined numbers or through user input.</p>
+      <p>Working on this project helped deepen my understanding of several Java concepts. I learned how to convert integers to strings and manipulate them character by character, which is useful for breaking down numbers into their components. I also practiced implementing loops for iterative processing and managing resources like <code>Scanner</code> objects effectively. Additionally, the project reinforced the importance of encapsulation, as the class's private fields are only modified through its methods, ensuring a controlled and structured flow of data. Overall, this program demonstrates a clear and practical approach to digit processing in Java.</p>
+		</div>
+		<br>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Basamak Java Code</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f4;
+                padding: 20px;
+            }
+            pre {
+                background-color: #e8e8e8;
+                padding: 15px;
+                border-radius: 5px;
+                overflow-x: auto;
+                font-size: 14px;
+            }
+            .keyword {
+                color: #d73a49; /* Pink for keywords */
+                font-weight: bold;
+            }
+            .datatype {
+                color: #005cc5; /* Blue for data types */
+            }
+            .variable {
+                color: #6f42c1; /* Purple for variables */
+            }
+            .method {
+                color: #6f42c1; /* Purple for methods */
+            }
+            .comment {
+                color: #6a737d; /* Grey for comments */
+                font-style: italic;
+            }
+            .string {
+                color: #032f62; /* Dark blue for strings */
+            }
+        </style>
+    </head>
+    <body>
+    
+        <h1>Basamak Java Code</h1>
+        <pre><code>
+    <span class="keyword">import</span> <span class="datatype">java.util.Scanner</span>;
+    
+    <span class="keyword">public class</span> <span class="datatype">basamak</span> {
+        <span class="keyword">private int</span> <span class="variable">basamaksayi</span>;
+        <span class="keyword">private int</span> <span class="variable">basamaktoplami</span>;
+        <span class="keyword">private String</span> <span class="variable">sayi2</span>;
+        <span class="keyword">private int</span> <span class="variable">sayi</span>;
+    
+        <span class="keyword">public</span> <span class="datatype">basamak</span>(<span class="datatype">int</span> <span class="variable">anasayi</span>) {
+            <span class="variable">sayi</span> = <span class="variable">anasayi</span>;
+        }
+    
+        <span class="keyword">public void</span> <span class="method">sayiInput</span>() {
+            <span class="datatype">Scanner</span> <span class="variable">sayigir</span> = <span class="keyword">new</span> <span class="datatype">Scanner</span>(System.in);
+            System.out.println(<span class="string">"Sayi gir: "</span>);
+            <span class="variable">sayi</span> = <span class="variable">sayigir.nextInt</span>();
+            <span class="variable">sayigir.close</span>();
+        }
+    
+        <span class="keyword">public int</span> <span class="method">basamakSayi</span>() {
+            <span class="variable">sayi2</span> = String.valueOf(<span class="variable">sayi</span>);
+            <span class="variable">basamaksayi</span> = <span class="variable">sayi2.length</span>();
+            <span class="variable">basamaktoplami</span> = 0;
+    
+            <span class="keyword">for</span> (<span class="keyword">int</span> <span class="variable">i</span> = 0; <span class="variable">i</span> < <span class="variable">basamaksayi</span>; <span class="variable">i</span>++) {
+                <span class="keyword">int</span> <span class="variable">counter</span> = <span class="datatype">Integer.parseInt</span>(<span class="variable">sayi2.substring</span>(<span class="variable">i</span>, <span class="variable">i</span> + 1));
+                <span class="variable">basamaktoplami</span> += <span class="variable">counter</span>;
+                System.out.println((<span class="variable">i</span> + 1) + <span class="string">". basamak: "</span> + <span class="variable">counter</span>);
+            }
+            <span class="keyword">return</span> <span class="variable">basamaktoplami</span>;
+        }
+    
+        <span class="keyword">public static void</span> <span class="method">main</span>(<span class="datatype">String</span>[] <span class="variable">args</span>) {
+            <span class="datatype">basamak</span> <span class="variable">b</span> = <span class="keyword">new</span> <span class="datatype">basamak</span>(1234);
+            <span class="keyword">int</span> <span class="variable">toplam</span> = <span class="variable">b.basamakSayi</span>();
+            System.out.println(<span class="string">"Basamak Toplami: "</span> + <span class="variable">toplam</span>);
+        }
+    }
+        </code></pre>
+    
+    </body>
+    </html>
+		<div id="interwebs" style="text-align:center; margin-bottom:20px">
+			<i><p class="centered" style="padding-bottom:5px">Find me on the interwebs!</p></i>
+			<a class="interweb" href="https://github.com/HanFerik1"><img src="../resources/images/github.png" alt="Github" width="25" height="25"></a>
+			<a class="interweb" href="https://linkedin.com/in/han-ferik-ba527a23b?original_referer=https%3A%2F%2Fwww.linkedin.com%2F"><img src="../resources/images/linkedin.png" alt="LinkedIn" width="25" height="25"></a>
+			<a class="interweb" href="https://www.instagram.com/hanferik/"><img src="../resources/images/instagram.jpg" alt="Instagram" width="25" height="25"></a>
+			<a class="interweb" href="https://www.facebook.com/han.ferik/"><img src="../resources/images/facebook.png" alt="Facebook" width="25" height="25"></a>
+		</div>
+
+</body>
+</html>
