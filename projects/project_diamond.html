@@ -8,8 +8,147 @@
 	<link href="https://fonts.googleapis.com/css?family=Nunito:400,700,900" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" type="text/css" href="../css/main.css">
 </head>
+<p>The fullDiamond program is designed to generate and display a symmetrical diamond pattern made of asterisks. This pattern is constructed by splitting the diamond into two parts: the upper triangular section and the lower inverted triangular section. The method uses nested for loops to achieve the desired structure and alignment of the asterisks in each row.</p>
 
+<p>The upper triangular section of the diamond begins with a single asterisk in the center of the first row and progressively increases the number of asterisks in odd increments (1, 3, 5, etc.) in subsequent rows. This creates the widening effect of the top half of the diamond. For each row, a spacing loop is used to print the necessary number of spaces before the asterisks to maintain symmetry. The number of spaces decreases as the number of asterisks increases.</p>
+
+<p>The lower inverted triangular section mirrors the upper part but in reverse. It starts with the maximum number of asterisks from the last row of the upper section and decreases the count in odd increments (7, 5, 3, etc.) for each subsequent row. A corresponding spacing loop ensures that the rows remain centered as the number of asterisks reduces. This forms the narrowing effect of the bottom half of the diamond.</p>
+
+<p>The program uses two sets of nested for loops: one for the upper section and one for the lower section. Within each set, the outer loop controls the rows, the first inner loop handles spacing, and the second inner loop prints the asterisks. The careful use of these loops ensures that the diamond pattern remains symmetrical and properly aligned.</p>
+
+<p>Through this program, I practiced using nested for loops to create visual patterns and manage alignment through precise spacing. This project helped reinforce my understanding of how to increment and decrement values in loops, as well as how to structure code to produce visually symmetric outputs. By breaking the diamond into two distinct sections, I was able to simplify the problem and focus on each part independently. This exercise also highlighted the importance of attention to detail when formatting outputs in Java.</p>
 <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diamond Class Program</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        pre {
+            background-color: #e8e8e8;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-size: 14px;
+        }
+        .keyword {
+            color: #d73a49;
+            font-weight: bold;
+        }
+        .datatype {
+            color: #005cc5;
+        }
+        .variable {
+            color: #6f42c1;
+        }
+        .method {
+            color: #6f42c1;
+        }
+        .comment {
+            color: #6a737d;
+            font-style: italic;
+        }
+        .string {
+            color: #032f62;
+        }
+    </style>
+</head>
+<body>
+    <h1>Diamond Class Program in Java</h1>
+    <pre><code>
+<span class="keyword">public class</span> <span class="datatype">Diamond</span> {
+
+    <span class="keyword">public void</span> <span class="method">half</span>() {
+        <span class="keyword">for</span> (<span class="datatype">int</span> <span class="variable">i</span> = 0; <span class="variable">i</span> < 5; <span class="variable">i</span>++) {
+            <span class="keyword">for</span> (<span class="datatype">int</span> <span class="variable">k</span> = 0; <span class="variable">k</span> <= <span class="variable">i</span>; <span class="variable">k</span>++) {
+                <span class="method">System.out.print</span>(<span class="string">"</span>*<span class="string">"</span>);
+            }
+            <span class="method">System.out.println</span>();
+        }
+    }
+
+    <span class="keyword">public void</span> <span class="method">invertedHalf</span>() {
+        <span class="keyword">for</span> (<span class="datatype">int</span> <span class="variable">a</span> = 5; <span class="variable">a</span> >= 1; <span class="variable">a</span>--) {
+            <span class="keyword">for</span> (<span class="datatype">int</span> <span class="variable">b</span> = 1; <span class="variable">b</span> <= <span class="variable">a</span>; <span class="variable">b</span>++) {
+                <span class="method">System.out.print</span>(<span class="string">"</span>*<span class="string">"</span>);
+            }
+            <span class="method">System.out.println</span>();
+        }
+    }
+
+    <span class="keyword">public void</span> <span class="method">fullDiamond</span>() {
+        <span class="keyword">for</span> (<span class="datatype">int</span> <span class="variable">c</span> = 1; <span class="variable">c</span> <= 9; <span class="variable">c</span> += 2) {
+            <span class="keyword">for</span> (<span class="datatype">int</span> <span class="variable">counterspace</span> = 9; <span class="variable">counterspace</span> > <span class="variable">c</span>; <span class="variable">counterspace</span> -= 2) {
+                <span class="method">System.out.print</span>(<span class="string">" "</span>);
+            }
+            <span class="keyword">for</span> (<span class="datatype">int</span> <span class="variable">d</span> = 1; <span class="variable">d</span> <= <span class="variable">c</span>; <span class="variable">d</span>++) {
+                <span class="method">System.out.print</span>(<span class="string">"</span>*<span class="string">"</span>);
+            }
+            <span class="method">System.out.println</span>();
+        }
+        <span class="keyword">for</span> (<span class="datatype">int</span> <span class="variable">e</span> = 7; <span class="variable">e</span> >= 1; <span class="variable">e</span> -= 2) {
+            <span class="keyword">for</span> (<span class="datatype">int</span> <span class="variable">counterspace</span> = 9; <span class="variable">counterspace</span> > <span class="variable">e</span>; <span class="variable">counterspace</span> -= 2) {
+                <span class="method">System.out.print</span>(<span class="string">" "</span>);
+            }
+            <span class="keyword">for</span> (<span class="datatype">int</span> <span class="variable">f</span> = 1; <span class="variable">f</span> <= <span class="variable">e</span>; <span class="variable">f</span>++) {
+                <span class="method">System.out.print</span>(<span class="string">"</span>*<span class="string">"</span>);
+            }
+            <span class="method">System.out.println</span>();
+        }
+    }
+
+    <span class="keyword">public void</span> <span class="method">fullandhalf</span>() {
+        <span class="keyword">for</span> (<span class="datatype">int</span> <span class="variable">g</span> = 1; <span class="variable">g</span> <= 9; <span class="variable">g</span> += 2) {
+            <span class="keyword">for</span> (<span class="datatype">int</span> <span class="variable">counterspace</span> = 9; <span class="variable">counterspace</span> > <span class="variable">g</span>; <span class="variable">counterspace</span> -= 2) {
+                <span class="method">System.out.print</span>(<span class="string">" "</span>);
+            }
+            <span class="keyword">for</span> (<span class="datatype">int</span> <span class="variable">h</span> = 1; <span class="variable">h</span> <= <span class="variable">g</span>; <span class="variable">h</span>++) {
+                <span class="method">System.out.print</span>(<span class="string">"</span>*<span class="string">"</span>);
+            }
+            <span class="method">System.out.print</span>(<span class="string">" "</span>);
+            <span class="keyword">for</span> (<span class="datatype">int</span> <span class="variable">n</span> = 1; <span class="variable">n</span> <= <span class="variable">g</span> / 2 + 1; <span class="variable">n</span>++) {
+                <span class="method">System.out.print</span>(<span class="string">"</span>*<span class="string">"</span>);
+            }
+            <span class="method">System.out.println</span>();
+        }
+    }
+
+    <span class="keyword">public void</span> <span class="method">fullLetter</span>() {
+        <span class="datatype">String[]</span> <span class="variable">Han</span> = {<span class="string">"A"</span>, <span class="string">"B"</span>, <span class="string">"C"</span>, <span class="string">"D"</span>, <span class="string">"E"</span>, <span class="string">"F"</span>, <span class="string">"G"</span>, <span class="string">"H"</span>, <span class="string">"I"</span>};
+        <span class="keyword">for</span> (<span class="datatype">int</span> <span class="variable">m</span> = 1; <span class="variable">m</span> <= 9; <span class="variable">m</span> += 2) {
+            <span class="keyword">for</span> (<span class="datatype">int</span> <span class="variable">counterspace</span> = 9; <span class="variable">counterspace</span> > <span class="variable">m</span>; <span class="variable">counterspace</span> -= 2) {
+                <span class="method">System.out.print</span>(<span class="string">" "</span>);
+            }
+            <span class="keyword">for</span> (<span class="datatype">int</span> <span class="variable">o</span> = 0; <span class="variable">o</span> < <span class="variable">m</span>; <span class="variable">o</span>++) {
+                <span class="method">System.out.print</span>(<span class="variable">Han</span>[<span class="variable">o</span> % <span class="variable">Han.length</span>]);
+            }
+            <span class="method">System.out.println</span>();
+        }
+        <span class="keyword">for</span> (<span class="datatype">int</span> <span class="variable">p</span> = 7; <span class="variable">p</span> >= 1; <span class="variable">p</span> -= 2) {
+            <span class="keyword">for</span> (<span class="datatype">int</span> <span class="variable">counterspace</span> = 9; <span class="variable">counterspace</span> > <span class="variable">p</span>; <span class="variable">counterspace</span> -= 2) {
+                <span class="method">System.out.print</span>(<span class="string">" "</span>);
+            }
+            <span class="keyword">for</span> (<span class="datatype">int</span> <span class="variable">q</span> = 0; <span class="variable">q</span> < <span class="variable">p</span>; <span class="variable">q</span>++) {
+                <span class="method">System.out.print</span>(<span class="variable">Han</span>[<span class="variable">q</span> % <span class="variable">Han.length</span>]);
+            }
+            <span class="method">System.out.println</span>();
+        }
+    }
+
+    <span class="keyword">public static void</span> <span class="method">main</span>(<span class="datatype">String</span>[] <span class="variable">args</span>) {
+        <span class="datatype">Diamond</span> <span class="variable">D</span> = <span class="keyword">new</span> <span class="variable">Diamond</span>();
+        <span class="variable">D</span>.<span class="method">fullLetter</span>();
+        <span class="variable">D</span>.<span class="method">fullDiamond</span>();
+        <span class="variable">D</span>.<span class="method">invertedHalf</span>();
+        <span class="variable">D</span>.<span class="method">half</span>();
+    }
+}
+</code></pre>
+</body>
 		<img src="../resources/images/han_ferik_logo.png" alt="Han" width="100" height="100" style ="display:block; margin-left: auto; margin-right: auto; margin-top:20px">
 		<h1 style="color:#191919;margin-left: 10px;font-size: 50px;text-align:center;">Han Ferik</h1>
 		<p class="centered" style="text-align:center"><a href="https://hanferik1.github.io/">Home</a> | <a href="../projects.html">Projects</a> | <a href="../apcsa.html">AP CSA</a> </p>
