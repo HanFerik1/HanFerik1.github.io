@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Han Ferik's Portfolio Website">
+	<title>Han Ferik</title>
+	<link href="https://fonts.googleapis.com/css?family=Nunito:400,700,900" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="../css/main.css">
+</head>
+
+<body>
+		<img src="../resources/images/han_ferik_logo.png" alt="Han" width="100" height="100" style ="display:block; margin-left: auto; margin-right: auto; margin-top:20px">
+		<h1 style="color:#191919;margin-left: 10px;font-size: 50px;text-align:center;">Han Ferik</h1>
+		<p class="centered" style="text-align:center"><a href="https://hanferik1.github.io/">Home</a> | <a href="../projects.html">Projects</a> | <a href="../apcsa.html">AP CSA</a> </p>
+  
+		<h3 class="centered" style="color: #191919;font-size: 25px">Project Dog</h3>
+		<div class="centered">
+			<p style="margin-top:5px"><i>Tools: VSCode | Source Code: <a href="https://github.com/HanFerik1/Projects/tree/main/Project%20Dog">GitHub</a></i></p>
+      <p>The <code>Dog</code> program models two dogs with ages and provides functionality to set, display, and compare their ages. The main objective is to offer methods for assigning ages to two dogs, displaying their ages based on user input, and determining if the dogs share the same age. It uses constructors to initialize the dogs and includes methods to interact with the user and perform comparisons.</p>
+
+      <p>The <code>Dog</code> class contains two private instance variables: <code>age1</code> and <code>age2</code>, which store the ages of the two dogs. It provides two constructors: one to initialize the first dog’s age and another to initialize the second dog’s age. The reason for having two constructors is to offer flexibility in how the dog objects are created. The first constructor, <code>Dog(int yas1)</code>, is used when only the first dog's age needs to be provided, while the second constructor, <code>Dog(int yas2, boolean isdogsecond)</code>, allows the user to set the second dog's age. This design ensures that the program can handle both scenarios depending on which dog’s age is being set.</p>
+      
+      <p>The two constructors are important for flexibility. The first constructor only requires an age for the first dog, while the second one allows the age for the second dog to be set, with the additional unused boolean parameter (<code>isdogsecond</code>) potentially available for future program expansion or additional logic. By providing both constructors, the program can cater to different needs, whether it's creating a single dog or both dogs with their respective ages.</p>
+      
+      <p>The <code>Dog</code> class includes setter and getter methods for both dogs' ages. The <code>setAge1(int dogage1)</code> and <code>setAge2(int dogage2)</code> methods assign values to <code>age1</code> and <code>age2</code>, while the <code>getAge1()</code> and <code>getAge2()</code> methods return the values of <code>age1</code> and <code>age2</code>. These methods ensure encapsulation by allowing age values to be modified and retrieved in a controlled manner, providing good object-oriented design practices.</p>
+      
+      <p>The <code>toString()</code> method interacts with the user to display the age of the dog they choose. The program asks the user to input <code>1</code> or <code>2</code> to select which dog’s age they want to see. Based on the user's input, the program displays the corresponding dog's age. If the input is invalid, the method returns "Invalid dog choice." This method provides a user-friendly way to interact with the program, ensuring flexibility and responsiveness to user input.</p>
+      
+      <p>The <code>equalsAge()</code> method compares the ages of the two dogs and now returns a <code>boolean</code> value instead of printing a message. If the dogs have the same age, the method returns <code>true</code>; otherwise, it returns <code>false</code>. This change to returning a boolean provides more utility by allowing the result of the comparison to be used in further logic or displayed by the calling code, making the method more versatile for future use cases.</p>
+      
+      <p>The <code>Dogtester</code> class tests the functionality of the <code>Dog</code> class. In the <code>main</code> method, two <code>Dog</code> objects are created: <code>fido</code> with an age of 5 and <code>yeller</code> with an age of 7. The <code>toString()</code> method is called on both objects to display their ages, and the <code>equalsAge()</code> method is called on <code>fido</code> to check if its age matches <code>yeller</code>'s age. Since their ages differ, the result of the <code>equalsAge()</code> method will be <code>false</code>, and it is printed to the console.</p>
+      
+      <p>The change from a <code>void</code> method to a <code>boolean</code> return type in <code>equalsAge()</code> improves the program by allowing the age comparison result to be used programmatically. Instead of simply printing a message, the method now returns a boolean, enabling more flexible handling of the comparison results in future code implementations.</p>
+      
+      <p>The reason for having two constructors in the <code>Dog</code> class is to support different scenarios: initializing one dog or both dogs. The first constructor is used when only one dog’s age is provided, and the second constructor is for initializing both dogs. By providing these constructors, the program is more adaptable to various use cases, such as when only one dog’s age needs to be set, or when both dogs' ages are known at the time of object creation.</p>
+      
+      <p>Having two constructors allows for better control and flexibility in how dog objects are instantiated, making the program more robust and easier to expand in the future. This kind of constructor overloading is a common object-oriented programming technique that simplifies object creation and makes code more maintainable.</p>
+		</div>
+		<br>
+    
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog Class Program</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        pre {
+            background-color: #e8e8e8;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-size: 14px;
+        }
+        .keyword {
+            color: #d73a49;
+            font-weight: bold;
+        }
+        .datatype {
+            color: #005cc5;
+        }
+        .variable {
+            color: #6f42c1;
+        }
+        .method {
+            color: #6f42c1;
+        }
+        .comment {
+            color: #6a737d;
+            font-style: italic;
+        }
+        .string {
+            color: #032f62;
+        }
+    </style>
+    </head>
+    <body>
+        <h1>Dog Class Program in Java</h1>
+        <pre><code>
+    <span class="keyword">import</span> <span class="datatype">java.util.Scanner</span>;
+    
+    <span class="keyword">public class</span> <span class="datatype">Dog</span> {
+        <span class="keyword">private</span> <span class="datatype">int</span> <span class="variable">age1</span>;
+        <span class="keyword">private</span> <span class="datatype">int</span> <span class="variable">age2</span>;
+    
+        <span class="keyword">public</span> <span class="datatype">Dog</span>(<span class="datatype">int</span> <span class="variable">yas1</span>) {
+            <span class="method">setAge1</span>(<span class="variable">yas1</span>);
+        }
+    
+        <span class="keyword">public</span> <span class="datatype">Dog</span>(<span class="datatype">int</span> <span class="variable">yas2</span>, <span class="keyword">boolean</span> <span class="variable">isdogsecond</span>) {
+            <span class="method">setAge2</span>(<span class="variable">yas2</span>);
+        }
+    
+        <span class="keyword">public void</span> <span class="method">setAge1</span>(<span class="datatype">int</span> <span class="variable">dogage1</span>) {
+            <span class="variable">age1</span> = <span class="variable">dogage1</span>;
+        }
+    
+        <span class="keyword">public int</span> <span class="method">getAge1</span>() {
+            <span class="keyword">return</span> <span class="variable">age1</span>;
+        }
+    
+        <span class="keyword">public void</span> <span class="method">setAge2</span>(<span class="datatype">int</span> <span class="variable">dogage2</span>) {
+            <span class="variable">age2</span> = <span class="variable">dogage2</span>;
+        }
+    
+        <span class="keyword">public int</span> <span class="method">getAge2</span>() {
+            <span class="keyword">return</span> <span class="variable">age2</span>;
+        }
+    
+        <span class="keyword">public String</span> <span class="method">toString</span>() {
+            <span class="datatype">Scanner</span> <span class="variable">whichdog</span> = <span class="keyword">new</span> <span class="datatype">Scanner</span>(System.<span class="method">in</span>);
+            System.<span class="method">out.println</span>(<span class="string">"Which dog age (1 or 2):"</span>);
+            <span class="datatype">int</span> <span class="variable">dogdog</span> = <span class="variable">whichdog</span>.<span class="method">nextInt</span>();
+    
+            <span class="keyword">if</span> (<span class="variable">dogdog</span> == <span class="datatype">1</span>) {
+                <span class="keyword">return</span> <span class="string">"Dog 1's age is "</span> + <span class="method">getAge1</span>();
+            } <span class="keyword">else if</span> (<span class="variable">dogdog</span> == <span class="datatype">2</span>) {
+                <span class="keyword">return</span> <span class="string">"Dog 2's age is "</span> + <span class="method">getAge2</span>();
+            } <span class="keyword">else</span> {
+                <span class="keyword">return</span> <span class="string">"Invalid dog choice"</span>;
+            }
+        }
+    
+        <span class="keyword">public boolean</span> <span class="method">equalsAge</span>() {
+            <span class="keyword">return</span> <span class="variable">age1</span> == <span class="variable">age2</span>;
+        }
+    }
+    
+    <span class="keyword">public class</span> <span class="datatype">DogTester</span> {
+        <span class="keyword">public static void</span> <span class="method">main</span>(<span class="datatype">String</span>[] <span class="variable">args</span>) {
+            <span class="datatype">Dog</span> <span class="variable">fido</span> = <span class="keyword">new</span> <span class="datatype">Dog</span>(<span class="datatype">5</span>);
+            System.<span class="method">out.println</span>(<span class="variable">fido</span>.<span class="method">toString</span>());
+    
+            <span class="datatype">Dog</span> <span class="variable">yeller</span> = <span class="keyword">new</span> <span class="datatype">Dog</span>(<span class="datatype">7</span>, <span class="keyword">true</span>);
+            System.<span class="method">out.println</span>(<span class="variable">yeller</span>.<span class="method">toString</span>());
+    
+            System.<span class="method">out.println</span>(<span class="variable">fido</span>.<span class="method">equalsAge</span>());
+        }
+    }
+        </code></pre>
+    </body>
+
+		<div id="interwebs" style="text-align:center; margin-bottom:20px">
+			<i><p class="centered" style="padding-bottom:5px">Find me on the interwebs!</p></i>
+			<a class="interweb" href="https://github.com/HanFerik1"><img src="../resources/images/github.png" alt="Github" width="25" height="25"></a>
+			<a class="interweb" href="https://linkedin.com/in/han-ferik-ba527a23b?original_referer=https%3A%2F%2Fwww.linkedin.com%2F"><img src="../resources/images/linkedin.png" alt="LinkedIn" width="25" height="25"></a>
+			<a class="interweb" href="https://www.instagram.com/hanferik/"><img src="../resources/images/instagram.jpg" alt="Instagram" width="25" height="25"></a>
+			<a class="interweb" href="https://www.facebook.com/han.ferik/"><img src="../resources/images/facebook.png" alt="Facebook" width="25" height="25"></a>
+		</div>
+
+</body>
+</html>
