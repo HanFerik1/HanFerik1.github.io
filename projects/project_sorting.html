@@ -1,1 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Han Ferik's Portfolio Website">
+	<title>Han Ferik</title>
+	<link href="https://fonts.googleapis.com/css?family=Nunito:400,700,900" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="../css/main.css">
+</head>
 
+<body>
+		<img src="../resources/images/han_ferik_logo.png" alt="Han" width="100" height="100" style ="display:block; margin-left: auto; margin-right: auto; margin-top:20px">
+		<h1 style="color:#191919;margin-left: 10px;font-size: 50px;text-align:center;">Han Ferik</h1>
+		<p class="centered" style="text-align:center"><a href="https://hanferik1.github.io/">Home</a> | <a href="../projects.html">Projects</a> | <a href="../apcsa.html">AP CSA</a> </p>
+  
+		<h3 class="centered" style="color: #191919;font-size: 25px">Project Memory Card</h3>
+		<div class="centered">
+			<p style="margin-top:5px"><i>Tools: VSCode | Source Code: <a href="https://github.com/HanFerik1/Projects/tree/main/Project%20Sorting">GitHub</a></i></p>
+     
+      <p>The <strong>Sorting</strong> program is designed to interact with the user by receiving a list of numbers, performing various operations such as finding the largest and smallest values, calculating the sum of the numbers, and sorting the list in ascending order using the <strong>Bubble Sort</strong> algorithm. The program prints the intermediate steps during the sorting process, allowing the user to observe how the list is sorted step by step.</p>
+
+      <p>The program begins with a method called <code>InputArray</code>. This method prompts the user to define the size of the list and then takes input for each number in the list. A <code>Scanner</code> object is used to collect user input, and the numbers are stored in a dynamically allocated array called <code>Han</code>. The method uses a loop to iterate as many times as the size specified by the user, ensuring all numbers are stored properly.</p>
+      
+      <p>The <code>BiggySort</code> method is designed to find the largest number in the array. It uses nested loops to compare each element with all other elements in the list. If a larger value is found, it updates the variable <code>biggest</code>. Although the nested loops make the method less efficient, it demonstrates a basic approach to comparing elements in the list.</p>
+      
+      <p>The <code>LillySort</code> method attempts to find the smallest number in the array. Similar to <code>BiggySort</code>, it uses nested loops to compare each element of the array. The <code>smally</code> variable is updated whenever a smaller value is encountered. If two elements are equal, the method skips any action using a <code>continue</code> statement. The method ensures that the smallest value in the array is returned.</p>
+      
+      <p>The <code>Sum</code> method calculates the sum of all the numbers stored in the array. It iterates through the array using a single loop and accumulates the values of all elements into the <code>summy</code> variable. Once the loop completes, the total sum of the array is returned, providing the user with a straightforward calculation of the list's total value.</p>
+      
+      <p>The most significant part of the program is the <code>BubbleSort</code> method, which sorts the list in ascending order using the <strong>Bubble Sort</strong> algorithm. The method works by repeatedly comparing adjacent elements in the list and swapping them if they are out of order. This process continues until the entire list is sorted. The method also prints the list after each swap, allowing the user to observe the progress of the sorting process in real-time. This step-by-step display highlights how Bubble Sort gradually moves the largest unsorted elements to their correct positions.</p>
+      
+      <p>Overall, the program combines user interaction with basic sorting and calculation methods. It allows the user to input data dynamically, observe the sorting process, and obtain key results such as the largest number, smallest number, and sum of the list. While the program uses a simple approach, it demonstrates foundational programming concepts like loops, nested comparisons, and sorting algorithms.</p>  
+		</div>
+		<br>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sorting Program in Java</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f4;
+                padding: 20px;
+            }
+            pre {
+                background-color: #e8e8e8;
+                padding: 15px;
+                border-radius: 5px;
+                overflow-x: auto;
+                font-size: 14px;
+            }
+            .keyword {
+                color: #d73a49; /* Pink for keywords */
+                font-weight: bold;
+            }
+            .datatype {
+                color: #005cc5; /* Blue for data types */
+            }
+            .variable {
+                color: #6f42c1; /* Purple for variables */
+            }
+            .method {
+                color: #6f42c1; /* Purple for methods */
+            }
+            .string {
+                color: #032f62; /* Dark blue for strings */
+            }
+        </style>
+    </head>
+    <body>
+    
+        <h1>Sorting Program in Java</h1>
+        <pre><code>
+    <span class="keyword">import</span> <span class="datatype">java.util.Scanner</span>;
+    
+    <span class="keyword">public class</span> <span class="datatype">Sorting</span> {
+        <span class="datatype">double</span> <span class="variable">biggest</span>;
+        <span class="datatype">double</span> <span class="variable">smally</span>;
+        <span class="datatype">double</span> <span class="variable">summy</span>;
+        <span class="datatype">double[]</span> <span class="variable">Han</span>;
+    
+        <span class="keyword">public void</span> <span class="method">InputArray</span>() {
+            <span class="datatype">Scanner</span> <span class="variable">HowlongArrayInput</span> = <span class="keyword">new</span> <span class="datatype">Scanner</span>(System.in);
+            System.out.println(<span class="string">"How big list?"</span>);
+            <span class="datatype">int</span> <span class="variable">HowlongArray</span> = <span class="variable">HowlongArrayInput</span>.nextInt();
+            <span class="variable">Han</span> = <span class="keyword">new</span> <span class="datatype">double</span>[<span class="variable">HowlongArray</span>];
+    
+            <span class="keyword">for</span> (<span class="datatype">int</span> <span class="variable">g</span> = 0; <span class="variable">g</span> &lt; <span class="variable">HowlongArray</span>; <span class="variable">g</span>++) {
+                <span class="datatype">Scanner</span> <span class="variable">NumberInput</span> = <span class="keyword">new</span> <span class="datatype">Scanner</span>(System.in);
+                System.out.println(<span class="string">"Enter Number?"</span>);
+                <span class="datatype">double</span> <span class="variable">Number</span> = <span class="variable">NumberInput</span>.nextDouble();
+                <span class="variable">Han</span>[<span class="variable">g</span>] = <span class="variable">Number</span>;
+            }
+        }
+    
+        <span class="keyword">public double</span> <span class="method">BiggySort</span>() {
+            <span class="keyword">for</span> (<span class="datatype">int</span> <span class="variable">i</span> = 0; <span class="variable">i</span> &lt; <span class="variable">Han</span>.length; <span class="variable">i</span>++) {
+                <span class="keyword">for</span> (<span class="datatype">int</span> <span class="variable">k</span> = 0; <span class="variable">k</span> &lt; <span class="variable">Han</span>.length; <span class="variable">k</span>++) {
+                    <span class="keyword">if</span> (<span class="variable">Han</span>[<span class="variable">i</span>] > <span class="variable">Han</span>[<span class="variable">k</span>]) {
+                        <span class="variable">biggest</span> = <span class="variable">Han</span>[<span class="variable">i</span>];
+                    }
+                    <span class="keyword">else if</span> (<span class="variable">Han</span>[<span class="variable">i</span>] == <span class="variable">Han</span>[<span class="variable">k</span>]) {
+                        <span class="keyword">continue</span>;
+                    }
+                    <span class="keyword">else if</span> (<span class="variable">Han</span>[<span class="variable">i</span>] &lt; <span class="variable">Han</span>[<span class="variable">k</span>]) {
+                        <span class="keyword">break</span>;
+                    }
+                }
+            }
+            <span class="keyword">return</span> <span class="variable">biggest</span>;
+        }
+    
+        <span class="keyword">public double</span> <span class="method">LillySort</span>() {
+            <span class="keyword">for</span> (<span class="datatype">int</span> <span class="variable">i</span> = 0; <span class="variable">i</span> &lt; <span class="variable">Han</span>.length; <span class="variable">i</span>++) {
+                <span class="keyword">for</span> (<span class="datatype">int</span> <span class="variable">k</span> = 0; <span class="variable">k</span> &lt; <span class="variable">Han</span>.length; <span class="variable">k</span>++) {
+                    <span class="keyword">if</span> (<span class="variable">Han</span>[<span class="variable">k</span>] &lt; <span class="variable">Han</span>[<span class="variable">i</span>]) {
+                        <span class="variable">smally</span> = <span class="variable">Han</span>[<span class="variable">k</span>];
+                    }
+                    <span class="keyword">else if</span> (<span class="variable">Han</span>[<span class="variable">i</span>] == <span class="variable">Han</span>[<span class="variable">k</span>]) {
+                        <span class="keyword">continue</span>;
+                    }
+                }
+            }
+            <span class="keyword">return</span> <span class="variable">smally</span>;
+        }
+    
+        <span class="keyword">public double</span> <span class="method">Sum</span>() {
+            <span class="keyword">for</span> (<span class="datatype">int</span> <span class="variable">i</span> = 0; <span class="variable">i</span> &lt; <span class="variable">Han</span>.length; <span class="variable">i</span>++) {
+                <span class="variable">summy</span> += <span class="variable">Han</span>[<span class="variable">i</span>];
+            }
+            <span class="keyword">return</span> <span class="variable">summy</span>;
+        }
+    
+        <span class="keyword">public void</span> <span class="method">BubbleSort</span>() {
+            <span class="datatype">int</span> <span class="variable">n</span> = <span class="variable">Han</span>.length;
+            <span class="keyword">for</span> (<span class="datatype">int</span> <span class="variable">b</span> = 0; <span class="variable">b</span> &lt; <span class="variable">n</span> - 1; <span class="variable">b</span>++) {
+                <span class="keyword">for</span> (<span class="datatype">int</span> <span class="variable">j</span> = 0; <span class="variable">j</span> &lt; <span class="variable">n</span> - <span class="variable">b</span> - 1; <span class="variable">j</span>++) {
+                    <span class="keyword">if</span> (<span class="variable">Han</span>[<span class="variable">j</span>] > <span class="variable">Han</span>[<span class="variable">j</span> + 1]) {
+                        <span class="datatype">double</span> <span class="variable">temp</span> = <span class="variable">Han</span>[<span class="variable">j</span>];
+                        <span class="variable">Han</span>[<span class="variable">j</span>] = <span class="variable">Han</span>[<span class="variable">j</span> + 1];
+                        <span class="variable">Han</span>[<span class="variable">j</span> + 1] = <span class="variable">temp</span>;
+                        System.out.print(<span class="string">"List: "</span>);
+                        <span class="keyword">for</span> (<span class="datatype">double</span> <span class="variable">num</span> : <span class="variable">Han</span>) {
+                            System.out.print(<span class="variable">num</span> + <span class="string">" "</span>);
+                        }
+                        System.out.println();
+                    }
+                }
+            }
+        }
+    }
+        </code></pre>
+    </body>
+    </html>
+
+		<div id="interwebs" style="text-align:center; margin-bottom:20px">
+			<i><p class="centered" style="padding-bottom:5px">Find me on the interwebs!</p></i>
+			<a class="interweb" href="https://github.com/HanFerik1"><img src="../resources/images/github.png" alt="Github" width="25" height="25"></a>
+			<a class="interweb" href="https://linkedin.com/in/han-ferik-ba527a23b?original_referer=https%3A%2F%2Fwww.linkedin.com%2F"><img src="../resources/images/linkedin.png" alt="LinkedIn" width="25" height="25"></a>
+			<a class="interweb" href="https://www.instagram.com/hanferik/"><img src="../resources/images/instagram.jpg" alt="Instagram" width="25" height="25"></a>
+			<a class="interweb" href="https://www.facebook.com/han.ferik/"><img src="../resources/images/facebook.png" alt="Facebook" width="25" height="25"></a>
+		</div>
+
+</body>
+</html>
