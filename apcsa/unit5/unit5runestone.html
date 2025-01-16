@@ -22,62 +22,269 @@
     <h3 class="centered" style="color:#191919; font-size:25px; text-align:center;">AP CSA Unit 5: Writing Classes</h3>
 
 <div class="centered">
-    <!-- Section 5.1 -->
-    <h2 style="color:#191919; font-size:20px; text-align:center;">5.1:</h2>
-    <p>- Instance variables are also sometimes called attributes, fields, or properties.</p>
-    <p>- Instance variables are declared right after the class declaration. They usually start with private, then the type of the variable, and then a name for the variable. Private means only the code in this class has access to it.</p>
-    <p>- Data encapsulation is a technique in which the implementation details of a class are kept hidden from the user. The data is kept private with access only through the public methods that can act on the data in the class.</p>
-    <p>- Methods define what the object can do. They typically start with public, then a type, then the name of the method followed by parentheses for optional parameters. Methods defined for an object can access and use its instance variables!</p>
-    <p>- The keyword private restricts access to the declaring class, while the keyword public allows access from classes outside the declaring class.</p>
-    <p>- In object-oriented design (OOD), programmers often start by deciding which classes are needed to solve a problem and then figure out the data and methods in each class. Once you’ve determined the classes you need, you can go through the process we described above to design the individual classes. Note that you can often identify methods that should exist on classes.</p>
+<!-- Section 5.1 -->
+<div id="section-5-1">
+  <h2 style="color:#191919; font-size:20px; text-align:center;">5.1:</h2>
+  <p>- Instance variables are also sometimes called attributes, fields, or properties.</p>
+  <p>- Instance variables are declared right after the class declaration. They usually start with private, then the type of the variable, and then a name for the variable. Private means only the code in this class has access to it.</p>
+  <p>- Data encapsulation is a technique in which the implementation details of a class are kept hidden from the user. The data is kept private with access only through the public methods that can act on the data in the class.</p>
+  <p>- Methods define what the object can do. They typically start with public, then a type, then the name of the method followed by parentheses for optional parameters. Methods defined for an object can access and use its instance variables!</p>
+  <p>- The keyword private restricts access to the declaring class, while the keyword public allows access from classes outside the declaring class.</p>
+  <p>- In object-oriented design (OOD), programmers often start by deciding which classes are needed to solve a problem and then figure out the data and methods in each class. Once you’ve determined the classes you need, you can go through the process we described above to design the individual classes. Note that you can often identify methods that should exist on classes.</p>
+  <h3>Example:</h3>
+  <pre><code>
+// Example of instance variable and encapsulation
+public class Person {
+    private String name; // Instance variable
+    private int age;
 
-    <!-- Section 5.2 -->
-    <h2 style="color:#191919; font-size:20px; text-align:center;">5.2:</h2>
-    <p>- Constructors must have the same name as the class! Constructors have no return type, and it’s always marked as public. Constructors also have a parameter list specified in parentheses.</p>
-    <p>- If an object is in a valid state when all its instance variables have values that let us use the object by invoking its public methods.</p>
-    <p>- If you do not write a constructor, your class will automatically get what is called the default no-argument constructor.</p>
-    <p>- This constructor will initialize all your instance variables to the default value for their type: 0 for int and double, false for boolean, and null for all reference types.</p>
-    <p>- If the objects are mutable, meaning their instance variables can change after they are constructed, then storing the passed-in reference in an instance variable in your object can lead to surprising results: if some other code changes the object, it will change for you too.</p>
+    // Constructor to initialize the instance variables
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
 
-    <!-- Section 5.3 -->
-    <h2 style="color:#191919; font-size:20px; text-align:center;">5.3:</h2>
-    <p>- There are 3 types of comments in Java: // Single line comment, /* Multiline comment */, /** Documentation comment */.</p>
-    <p>- A precondition is a condition that must be true for your method code to work. The precondition is what the method expects in order to do its job properly. A postcondition is a condition that is true after running the method. It is what the method promises to do. Postconditions describe the outcome of running the method.</p>
-    <p>- The method str.substring(beginIndex, endIndex) has the precondition that 0 <= beginIndex <= endIndex <= str.length.</p>
+    // Getter methods (accessors)
+    public String getName() {
+        return name;
+    }
 
-    <!-- Section 5.4 -->
-    <h2 style="color:#191919; font-size:20px; text-align:center;">5.4:</h2>
-    <p>- Accessor methods, but which everyone actually just calls a getter. A getter is a public method that takes no arguments and returns the value of the private instance variable. A getter’s return type is the same as the type of the instance variable, and all the body of the getter does is return the value of the variable using a return statement.</p>
-    <p>- The toString method is an overridden method that is included in classes to provide a description of a specific object. It generally includes what values are stored in the instance data of the object. An object’s toString method is also used to get the String representation used when concatenating the object to a String with the + operator.</p>
+    public int getAge() {
+        return age;
+    }
 
-    <!-- Section 5.5 -->
-    <h2 style="color:#191919; font-size:20px; text-align:center;">5.5:</h2>
-    <p>- If we want to allow code outside the class to change the value of an instance variable, we have to provide what is formally called a mutator method, but which everyone actually calls a setter. A setter is a void method with a name that starts with set and that takes a single argument of the same type as the instance variable to be set. The effect of a setter, as you would probably expect, is to assign the provided value to the instance variable.</p>
+    // Setter methods (mutators)
+    public void setName(String name) {
+        this.name = name;
+    }
 
-    <!-- Section 5.6 -->
-    <h2 style="color:#191919; font-size:20px; text-align:center;">5.6:</h2>
-    <p>- Procedural Abstraction allows us to name a block of code as a method and call it whenever we need it, abstracting away the details of how it works. This serves to organize our code by function and reduce its complexity and reduce the repetition of code.</p>
+    public void setAge(int age) {
+        this.age = age;
+    }
 
-    <!-- Section 5.7 -->
-    <h2 style="color:#191919; font-size:20px; text-align:center;">5.7:</h2>
-    <p>- Static variables and methods belong to a class and are called with the Class Name rather than using object variables, like ClassName.methodName();.</p>
-    <p>- There is only one copy of a static variable or method for the whole class. For example, the main method is static because there should only be one main method.</p>
-    <p>- Static methods can be public or private.</p>
-    <p>- The static keyword is placed right after the public/private modifier and right before the type of variables and methods in their declarations.</p>
+    public static void main(String[] args) {
+        Person person = new Person("John", 30);
+        System.out.println(person.getName()); // Output: John
+    }
+}
+  </code></pre>
+</div>
 
-    <!-- Section 5.8 -->
-    <h2 style="color:#191919; font-size:20px; text-align:center;">5.8:</h2>
-    <p>- Scope is defined as where a variable is accessible or can be used.</p>
-    <p>- Local variables can be declared in the body of constructors and methods. These variables may only be used within the constructor or method and cannot be declared to be public or private.</p>
-    <p>- When there is a local variable with the same name as an instance variable, the variable name will refer to the local variable instead of the instance variable.</p>
-    <p>- Formal parameters and variables declared in a method or constructor can only be used within that method or constructor.</p>
+<!-- Section 5.2 -->
+<div id="section-5-2">
+  <h2 style="color:#191919; font-size:20px; text-align:center;">5.2:</h2>
+  <p>- Constructors must have the same name as the class! Constructors have no return type, and it’s always marked as public. Constructors also have a parameter list specified in parentheses.</p>
+  <p>- If an object is in a valid state when all its instance variables have values that let us use the object by invoking its public methods.</p>
+  <p>- If you do not write a constructor, your class will automatically get what is called the default no-argument constructor.</p>
+  <p>- This constructor will initialize all your instance variables to the default value for their type: 0 for int and double, false for boolean, and null for all reference types.</p>
+  <p>- If the objects are mutable, meaning their instance variables can change after they are constructed, then storing the passed-in reference in an instance variable in your object can lead to surprising results: if some other code changes the object, it will change for you too.</p>
+  <h3>Example:</h3>
+  <pre><code>
+// Example of a constructor in a class
+public class Car {
+    private String model;
+    private int year;
 
-    <!-- Section 5.9 -->
-    <h2 style="color:#191919; font-size:20px; text-align:center;">5.9:</h2>
-    <p>- Within a non-static method or a constructor, the keyword this is a reference to the current object, the object whose method or constructor is being called.</p>
-    <p>- this.instanceVariable can be used to distinguish between this object’s instance variables and local parameter variables that may have the same variable names.</p>
-    <p>- Static methods do not have a this reference.</p>
-    <p>- The this variable can be used anywhere you would use an object variable, even to pass it to another method as an argument.</p>
+    // Constructor
+    public Car(String model, int year) {
+        this.model = model;
+        this.year = year;
+    }
+
+    public void displayDetails() {
+        System.out.println("Model: " + model + ", Year: " + year);
+    }
+
+    public static void main(String[] args) {
+        Car car = new Car("Toyota", 2020);
+        car.displayDetails(); // Output: Model: Toyota, Year: 2020
+    }
+}
+  </code></pre>
+</div>
+
+<!-- Section 5.3 -->
+<div id="section-5-3">
+  <h2 style="color:#191919; font-size:20px; text-align:center;">5.3:</h2>
+  <p>- There are 3 types of comments in Java: // Single line comment, /* Multiline comment */, /** Documentation comment */.</p>
+  <p>- A precondition is a condition that must be true for your method code to work. The precondition is what the method expects in order to do its job properly. A postcondition is a condition that is true after running the method. It is what the method promises to do. Postconditions describe the outcome of running the method.</p>
+  <p>- The method str.substring(beginIndex, endIndex) has the precondition that 0 <= beginIndex <= endIndex <= str.length.</p>
+  <h3>Example:</h3>
+  <pre><code>
+// Example of using comments and preconditions
+public class StringOperations {
+    public String extractSubstring(String str, int beginIndex, int endIndex) {
+        // Preconditions: 0 <= beginIndex <= endIndex <= str.length
+        if (beginIndex >= 0 && endIndex <= str.length() && beginIndex < endIndex) {
+            return str.substring(beginIndex, endIndex); // Postcondition: substring extracted
+        } else {
+            return "Invalid indices"; // Invalid case
+        }
+    }
+
+    public static void main(String[] args) {
+        StringOperations ops = new StringOperations();
+        System.out.println(ops.extractSubstring("Hello, World!", 0, 5)); // Output: Hello
+    }
+}
+  </code></pre>
+</div>
+
+<!-- Section 5.4 -->
+<div id="section-5-4">
+  <h2 style="color:#191919; font-size:20px; text-align:center;">5.4:</h2>
+  <p>- Accessor methods, but which everyone actually just calls a getter. A getter is a public method that takes no arguments and returns the value of the private instance variable. A getter’s return type is the same as the type of the instance variable, and all the body of the getter does is return the value of the variable using a return statement.</p>
+  <p>- The toString method is an overridden method that is included in classes to provide a description of a specific object. It generally includes what values are stored in the instance data of the object. An object’s toString method is also used to get the String representation used when concatenating the object to a String with the + operator.</p>
+  <h3>Example:</h3>
+  <pre><code>
+// Example of getter and toString method
+public class Employee {
+    private String name;
+    private int age;
+
+    public Employee(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String toString() {
+        return "Employee [Name: " + name + ", Age: " + age + "]";
+    }
+
+    public static void main(String[] args) {
+        Employee emp = new Employee("Alice", 25);
+        System.out.println(emp.getName()); // Output: Alice
+        System.out.println(emp.toString()); // Output: Employee [Name: Alice, Age: 25]
+    }
+}
+  </code></pre>
+</div>
+
+<!-- Section 5.5 -->
+<div id="section-5-5">
+  <h2 style="color:#191919; font-size:20px; text-align:center;">5.5:</h2>
+  <p>- If we want to allow code outside the class to change the value of an instance variable, we have to provide what is formally called a mutator method, but which everyone actually calls a setter. A setter is a void method with a name that starts with set and that takes a single argument of the same type as the instance variable to be set. The effect of a setter, as you would probably expect, is to assign the provided value to the instance variable.</p>
+  <h3>Example:</h3>
+  <pre><code>
+// Example of setter method
+public class Product {
+    private String name;
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public static void main(String[] args) {
+        Product product = new Product();
+        product.setName("Laptop");
+        System.out.println("Product name: " + product.name); // Output: Laptop
+    }
+}
+  </code></pre>
+</div>
+
+<!-- Section 5.6 -->
+<div id="section-5-6">
+  <h2 style="color:#191919; font-size:20px; text-align:center;">5.6:</h2>
+  <p>- Procedural Abstraction allows us to name a block of code as a method and call it whenever we need it, abstracting away the details of how it works. This serves to organize our code by function and reduce its complexity and reduce the repetition of code.</p>
+  <h3>Example:</h3>
+  <pre><code>
+// Example of procedural abstraction
+public class Calculator {
+    public int add(int a, int b) {
+        return a + b;
+    }
+
+    public static void main(String[] args) {
+        Calculator calc = new Calculator();
+        System.out.println("Sum: " + calc.add(10, 5)); // Output: 15
+    }
+}
+  </code></pre>
+</div>
+
+<!-- Section 5.7 -->
+<div id="section-5-7">
+  <h2 style="color:#191919; font-size:20px; text-align:center;">5.7:</h2>
+  <p>- Static variables and methods belong to a class and are called with the Class Name rather than using object variables, like ClassName.methodName();.</p>
+  <p>- There is only one copy of a static variable or method for the whole class. For example, the main method is static because there should only be one main method.</p>
+  <p>- Static methods can be public or private.</p>
+  <p>- The static keyword is placed right after the public/private modifier and right before the type of variables and methods in their declarations.</p>
+  <h3>Example:</h3>
+  <pre><code>
+// Example of static method and variable
+public class Counter {
+    private static int count = 0;
+
+    public static void increment() {
+        count++;
+    }
+
+    public static void main(String[] args) {
+        Counter.increment();
+        System.out.println("Count: " + count); // Output: Count: 1
+    }
+}
+  </code></pre>
+</div>
+
+<!-- Section 5.8 -->
+<div id="section-5-8">
+  <h2 style="color:#191919; font-size:20px; text-align:center;">5.8:</h2>
+  <p>- Scope is defined as where a variable can be accessed. The scope of a local variable is within the method where it is defined. Instance variables have a class-wide scope, but only within the object.</p>
+  <h3>Example:</h3>
+  <pre><code>
+// Example of variable scope
+public class ScopeExample {
+    private int number = 10; // Instance variable
+
+    public void printNumber() {
+        int localNumber = 5; // Local variable
+        System.out.println("Local Number: " + localNumber); // Output: Local Number: 5
+        System.out.println("Instance Number: " + number); // Output: Instance Number: 10
+    }
+
+    public static void main(String[] args) {
+        ScopeExample example = new ScopeExample();
+        example.printNumber();
+    }
+}
+  </code></pre>
+</div>
+
+<!-- Section 5.9 -->
+<div id="section-5-9">
+  <h2 style="color:#191919; font-size:20px; text-align:center;">5.9:</h2>
+  <p>- Accessor methods (getters) only retrieve the value of instance variables, while mutator methods (setters) modify them.</p>
+  <h3>Example:</h3>
+  <pre><code>
+// Example of getter and setter
+public class Student {
+    private String name;
+    private int age;
+
+    // Getter method
+    public String getName() {
+        return name;
+    }
+
+    // Setter method
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public static void main(String[] args) {
+        Student student = new Student();
+        student.setName("John");
+        System.out.println("Student Name: " + student.getName()); // Output: Student Name: John
+    }
+}
+  </code></pre>
+</div>
 </div>
 
     <div id="interwebs" style="text-align:center; margin-bottom:20px;">
