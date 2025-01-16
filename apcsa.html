@@ -7,95 +7,127 @@
 	<title>AP CSA - Han Ferik</title>
 	<link href="https://fonts.googleapis.com/css?family=Nunito:400,700,900" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<style>
+		/* Flexbox layout for images */
+		.container {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			gap: 20px;
+			padding-top: 20px;
+		}
+		.container .unit {
+			width: 220px;
+			text-align: center;
+		}
+		.container .unit img {
+			width: 100%;
+			border-radius: 8px;
+		}
+		.middle .text {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			color: white;
+			font-size: 18px;
+			font-weight: bold;
+			background-color: rgba(0, 0, 0, 0.5);
+			border-radius: 4px;
+			padding: 5px;
+		}
+		/* Styling for interwebs section */
+		#interwebs a {
+			margin: 0 10px;
+		}
+	</style>
 </head>
 
 <body>
-		<img src="../resources/images/han_ferik_logo.png" alt="Han" width="100" height="100" style ="display:block; margin-left: auto; margin-right: auto; margin-top:20px">
+		<img src="../resources/images/han_ferik_logo.png" alt="Han" width="100" height="100" style="display:block; margin-left: auto; margin-right: auto; margin-top:20px">
 		<h1 style="color:#191919;margin-left: 10px;font-size: 50px;text-align:center;">Han Ferik</h1>
 		<p class="centered" style="text-align:center"><a href="https://hanferik1.github.io">Home</a> | <a href="projects.html">Projects</a> | <a href="../apcsa.html">AP CSA</a> </p>
 		<br>
 
-		<div>
-			<div style="width:100%; max-width:720px; height: 1670px; margin: auto">
-				<a href="/apcsa/unit1/unit1.html"><div class="left" style="padding-right:20px; padding-top:0px">
-					<img class="image" src="../resources/images/apcsaunit1.jpg" alt="AP CSA Unit 1">
-					<div class="middle">
-						<div class="text">APCSA Unit 1: Primitive Types</div>
-					</div>
-				</div></a>
+		<div class="container">
+			<a href="/apcsa/unit1/unit1.html" class="unit">
+				<img src="../resources/images/apcsaunit1.jpg" alt="AP CSA Unit 1">
+				<div class="middle">
+					<div class="text">APCSA Unit 1: Primitive Types</div>
+				</div>
+			</a>
 
-				<a href="/apcsa/unit2/unit2.html"><div class="right" style="padding-top:0px">
-					<img class="image" src="../resources/images/apcsaunit2.jpg" alt="AP CSA Unit 2">
-					<div class="middle">
-						<div class="text">APCSA Unit 2: Using Objects</div>
-					</div>
-				</div></a>
+			<a href="/apcsa/unit2/unit2.html" class="unit">
+				<img src="../resources/images/apcsaunit2.jpg" alt="AP CSA Unit 2">
+				<div class="middle">
+					<div class="text">APCSA Unit 2: Using Objects</div>
+				</div>
+			</a>
 
-				<a href="/apcsa/unit3/unit3.html"><div class="left" style="padding-right:20px; padding-top:0px">
-					<img class="image" src="../resources/images/apcsaunit3.jpg" alt="AP CSA Unit 3">
-					<div class="middle">
-						<div class="text">APCSA Unit 3: Boolean Expressions and if Statements</div>
-					</div>
-				</div></a>
+			<a href="/apcsa/unit3/unit3.html" class="unit">
+				<img src="../resources/images/apcsaunit3.jpg" alt="AP CSA Unit 3">
+				<div class="middle">
+					<div class="text">APCSA Unit 3: Boolean Expressions and if Statements</div>
+				</div>
+			</a>
 
-				<a href="/apcsa/unit4/unit4.html"><div class="left" style="padding-right:20px; padding-top:0px">
-					<img class="image" src="../resources/images/apcsaunit4.jpg" alt="AP CSA Unit 4">
-					<div class="middle">
-						<div class="text">APCSA Unit 4: Iteration</div>
-					</div>
-				</div></a>
+			<a href="/apcsa/unit4/unit4.html" class="unit">
+				<img src="../resources/images/apcsaunit4.jpg" alt="AP CSA Unit 4">
+				<div class="middle">
+					<div class="text">APCSA Unit 4: Iteration</div>
+				</div>
+			</a>
 
-				<a href="/apcsa/unit5/unit5.html"><div class="left" style="padding-right:20px; padding-top:0px">
-					<img class="image" src="../resources/images/apcsaunit5.jpg" alt="AP CSA Unit 5">
-					<div class="middle">
-						<div class="text">APCSA Unit 5: Writing Classes</div>
-					</div>
-				</div></a>
+			<a href="/apcsa/unit5/unit5.html" class="unit">
+				<img src="../resources/images/apcsaunit5.jpg" alt="AP CSA Unit 5">
+				<div class="middle">
+					<div class="text">APCSA Unit 5: Writing Classes</div>
+				</div>
+			</a>
 
-				<a href="/apcsa/unit6/unit6.html"><div class="left" style="padding-right:20px; padding-top:0px">
-					<img class="image" src="../resources/images/apcsaunit6.jpg" alt="AP CSA Unit 6">
-					<div class="middle">
-						<div class="text">APCSA Unit 6: Array</div>
-					</div>
-				</div></a>
+			<a href="/apcsa/unit6/unit6.html" class="unit">
+				<img src="../resources/images/apcsaunit6.jpg" alt="AP CSA Unit 6">
+				<div class="middle">
+					<div class="text">APCSA Unit 6: Array</div>
+				</div>
+			</a>
 
-				<a href="/apcsa/unit7/unit7.html"><div class="left" style="padding-right:20px; padding-top:0px">
-					<img class="image" src="../resources/images/apcsaunit7.jpg" alt="AP CSA Unit 7">
-					<div class="middle">
-						<div class="text">APCSA Unit 7: ArrayList</div>
-					</div>
-				</div></a>
+			<a href="/apcsa/unit7/unit7.html" class="unit">
+				<img src="../resources/images/apcsaunit7.jpg" alt="AP CSA Unit 7">
+				<div class="middle">
+					<div class="text">APCSA Unit 7: ArrayList</div>
+				</div>
+			</a>
 
-				<a href="/apcsa/unit8/unit8.html"><div class="left" style="padding-right:20px; padding-top:0px">
-					<img class="image" src="../resources/images/apcsaunit8.jpg" alt="AP CSA Unit 8">
-					<div class="middle">
-						<div class="text">APCSA Unit 8: 2D Array</div>
-					</div>
-				</div></a>
+			<a href="/apcsa/unit8/unit8.html" class="unit">
+				<img src="../resources/images/apcsaunit8.jpg" alt="AP CSA Unit 8">
+				<div class="middle">
+					<div class="text">APCSA Unit 8: 2D Array</div>
+				</div>
+			</a>
 
-				<a href="/apcsa/unit9/unit9.html"><div class="left" style="padding-right:20px; padding-top:0px">
-					<img class="image" src="../resources/images/apcsaunit9.jpg" alt="AP CSA Unit 9">
-					<div class="middle">
-						<div class="text">APCSA Unit 9: Inheritance</div>
-					</div>
-				</div></a>
+			<a href="/apcsa/unit9/unit9.html" class="unit">
+				<img src="../resources/images/apcsaunit9.jpg" alt="AP CSA Unit 9">
+				<div class="middle">
+					<div class="text">APCSA Unit 9: Inheritance</div>
+				</div>
+			</a>
 
-				<a href="/apcsa/unit10/unit10.html"><div class="left" style="padding-right:20px; padding-top:0px">
-					<img class="image" src="../resources/images/apcsaunit10.jpg" alt="AP CSA Unit 10">
-					<div class="middle">
-						<div class="text">APCSA Unit 10: Recursion</div>
-					</div>
-				</div></a>
-			</div>
-			<br>
+			<a href="/apcsa/unit10/unit10.html" class="unit">
+				<img src="../resources/images/apcsaunit10.jpg" alt="AP CSA Unit 10">
+				<div class="middle">
+					<div class="text">APCSA Unit 10: Recursion</div>
+				</div>
+			</a>
+		</div>
+		<br>
 				
-			<div id="interwebs" style="text-align:center; margin-bottom:20px">
-				<i><p class="centered" style="padding-bottom:5px">Find me on the interwebs!</p></i>
-				<a class="interweb" href="https://github.com/HanFerik1"><img src="../resources/images/github.png" alt="Github" width="25" height="25"></a>
-				<a class="interweb" href="https://linkedin.com/in/han-ferik-ba527a23b?original_referer=https%3A%2F%2Fwww.linkedin.com%2F"><img src="../resources/images/linkedin.png" alt="LinkedIn" width="25" height="25"></a>
-				<a class="interweb" href="https://www.instagram.com/hanferik/"><img src="../resources/images/instagram.png" alt="Instagram" width="25" height="25"></a>
-				<a class="interweb" href="https://www.facebook.com/han.ferik/"><img src="..resources/images/facebook.png" alt="Facebook" width="25" height="25"></a>
-			</div>
+		<div id="interwebs" style="text-align:center; margin-bottom:20px">
+			<i><p class="centered" style="padding-bottom:5px">Find me on the interwebs!</p></i>
+			<a class="interweb" href="https://github.com/HanFerik1"><img src="../resources/images/github.png" alt="Github" width="25" height="25"></a>
+			<a class="interweb" href="https://linkedin.com/in/han-ferik-ba527a23b?original_referer=https%3A%2F%2Fwww.linkedin.com%2F"><img src="../resources/images/linkedin.png" alt="LinkedIn" width="25" height="25"></a>
+			<a class="interweb" href="https://www.instagram.com/hanferik/"><img src="../resources/images/instagram.png" alt="Instagram" width="25" height="25"></a>
+			<a class="interweb" href="https://www.facebook.com/han.ferik/"><img src="..resources/images/facebook.png" alt="Facebook" width="25" height="25"></a>
 		</div>
 </body>
 </html>
