@@ -8,23 +8,25 @@
 	<link href="https://fonts.googleapis.com/css?family=Nunito:400,700,900" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<style>
-		/* Flexbox layout for images (vertical) */
+		/* Flexbox layout for images (two images per row) */
 		.container {
 			display: flex;
-			flex-direction: column; /* Stack the images vertically */
+			flex-wrap: wrap; /* Allow items to wrap onto the next row */
 			justify-content: center;
-			align-items: center;
-			gap: 20px;
+			gap: 20px; /* Space between images */
 			padding-top: 20px;
 		}
+
 		.container .unit {
 			width: 220px; /* Set a fixed width for each image */
 			text-align: center;
 		}
+
 		.container .unit img {
 			width: 100%; /* Ensure the image fills the container width */
 			border-radius: 8px;
 		}
+
 		.middle .text {
 			position: absolute;
 			top: 50%;
@@ -37,6 +39,7 @@
 			border-radius: 4px;
 			padding: 5px;
 		}
+
 		/* Styling for interwebs section */
 		#interwebs a {
 			margin: 0 10px;
