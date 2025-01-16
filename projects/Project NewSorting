@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Han Ferik's Portfolio Website">
+	<title>Han Ferik</title>
+	<link href="https://fonts.googleapis.com/css?family=Nunito:400,700,900" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="../css/main.css">
+</head>
+
+<body>
+		<img src="../resources/images/han_ferik_logo.png" alt="Han" width="100" height="100" style ="display:block; margin-left: auto; margin-right: auto; margin-top:20px">
+		<h1 style="color:#191919;margin-left: 10px;font-size: 50px;text-align:center;">Han Ferik</h1>
+		<p class="centered" style="text-align:center"><a href="https://hanferik1.github.io/">Home</a> | <a href="../projects.html">Projects</a> | <a href="../apcsa.html">AP CSA</a> </p>
+  
+		<h3 class="centered" style="color: #191919;font-size: 25px">Project Memory Card</h3>
+		<div class="centered">
+      <p>The <strong>NewSorting</strong> program is designed to allow users to input a list of integers and perform various operations on them, such as finding the maximum and minimum values, calculating the total sum, computing the average, and sorting the list using the <strong>Bubble Sort</strong> algorithm.</p>
+
+      <p>The program starts with the <code>SortingInput</code> method, where the user is prompted to enter the size of the array, followed by each number in the array. This input is collected through the <code>Scanner</code> class, which reads the values entered by the user. The numbers are then stored in an array, and the method ensures that only valid integers are entered. If an invalid input is detected, the value 0 is used as a default for that element in the array.</p>
+      
+      <p>The <code>Maximum</code> method is responsible for finding the largest number in the array. It initializes the <code>maximum</code> variable with the first element of the array, and then iterates through the array, comparing each element to find a larger value. If a larger value is found, the <code>maximum</code> value is updated accordingly. Finally, the method prints the largest number.</p>
+      
+      <p>Similarly, the <code>Minimum</code> method finds the smallest number in the array. It works in a similar way to the <code>Maximum</code> method but looks for smaller values during the iteration. Once the smallest value is found, it is printed for the user.</p>
+      
+      <p>The <code>TotalSum</code> method calculates the sum of all numbers in the array. It iterates through each element, adding them to a running total, and then outputs the total sum of the array.</p>
+      
+      <p>The <code>AverageArray</code> method calculates the average of the numbers in the array. It sums the values in the array, keeps count of the number of elements, and then divides the sum by the number of elements to get the average. The calculated average is then printed.</p>
+      
+      <p>The most notable feature of the program is the <code>bubbleSort</code> method, which uses the <strong>Bubble Sort</strong> algorithm to sort the list in ascending order. The algorithm works by repeatedly comparing adjacent elements and swapping them if they are in the wrong order. This process continues until the array is sorted. After each pass, the array is printed to show the progress of the sorting process. If no swaps are made during a pass, the algorithm stops early, optimizing the sorting process.</p>
+      
+      <p>Finally, the <code>printArray</code> method is used to print the current state of the array after any operation, allowing the user to see the list at any point in time.</p>
+      
+      <p>Overall, the program demonstrates basic array operations, user input validation, and the implementation of the Bubble Sort algorithm. It provides the user with an interactive experience to work with a list of numbers, calculate various statistics, and observe how the sorting algorithm works step by step.</p>
+		</div>
+		<br>
+
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting Program in Java</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        pre {
+            background-color: #e8e8e8;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-size: 14px;
+        }
+        .keyword {
+            color: #d73a49; /* Pink for keywords */
+            font-weight: bold;
+        }
+        .datatype {
+            color: #005cc5; /* Blue for data types */
+        }
+        .variable {
+            color: #6f42c1; /* Purple for variables */
+        }
+        .method {
+            color: #6f42c1; /* Purple for methods */
+        }
+        .string {
+            color: #032f62; /* Dark blue for strings */
+        }
+    </style>
+</head>
+<body>
+
+<h1>Sorting Program in Java</h1>
+<pre><code>
+<span class="keyword">import</span> <span class="datatype">java.util.Scanner</span>;
+
+<span class="keyword">public class</span> <span class="datatype">NewSorting</span> {
+    <span class="datatype">int</span> <span class="variable">maximum</span>;
+    <span class="datatype">int</span> <span class="variable">minimum</span>;
+    <span class="datatype">int</span> <span class="variable">sum</span>;
+    <span class="datatype">int[]</span> <span class="variable">SortingList</span>;
+
+    <span class="keyword">public void</span> <span class="method">SortingInput</span>() {
+        <span class="datatype">Scanner</span> <span class="variable">HowlongArrayInput</span> = <span class="keyword">new</span> <span class="datatype">Scanner</span>(System.in);
+        System.out.println(<span class="string">"Write the length of the list ? "</span>);
+        <span class="datatype">int</span> <span class="variable">HowlongArray</span> = <span class="variable">HowlongArrayInput</span>.nextInt();
+        <span class="variable">SortingList</span> = <span class="keyword">new</span> <span class="datatype">int</span>[<span class="variable">HowlongArray</span>];
+        <span class="datatype">int</span> <span class="variable">Number</span> = 0;
+
+        <span class="keyword">for</span> (<span class="datatype">int</span> <span class="variable">i</span> = 0; <span class="variable">i</span> &lt; <span class="variable">HowlongArray</span>; <span class="variable">i</span>++) {
+            <span class="datatype">Scanner</span> <span class="variable">NumberInput</span> = <span class="keyword">new</span> <span class="datatype">Scanner</span>(System.in);
+            System.out.println(<span class="string">"Enter Number: "</span>);
+            <span class="keyword">if</span> (<span class="variable">NumberInput</span>.hasNextInt()) {
+                <span class="variable">Number</span> = <span class="variable">NumberInput</span>.nextInt();
+                <span class="variable">SortingList</span>[<span class="variable">i</span>] = <span class="variable">Number</span>;
+            } <span class="keyword">else</span> {
+                System.out.println(<span class="string">"Invalid Input. Defaulting to 0"</span>);
+                <span class="variable">SortingList</span>[<span class="variable">i</span>] = 0;
+            }
+        }
+        <span class="method">printArray</span>();
+    }
+
+    <span class="keyword">public void</span> <span class="method">Maximum</span>() {
+        <span class="variable">maximum</span> = <span class="variable">SortingList</span>[0];
+        <span class="keyword">for</span> (<span class="datatype">int</span> <span class="variable">index</span> : <span class="variable">SortingList</span>) {
+            <span class="keyword">if</span> (<span class="variable">index</span> &gt; <span class="variable">maximum</span>) {
+                <span class="variable">maximum</span> = <span class="variable">index</span>;
+            }
+        }
+        System.out.println(<span class="string">"Maximum Value: "</span> + <span class="variable">maximum</span>);
+    }
+
+    <span class="keyword">public void</span> <span class="method">Minimum</span>() {
+        <span class="variable">minimum</span> = <span class="variable">SortingList</span>[0];
+        <span class="keyword">for</span> (<span class="datatype">int</span> <span class="variable">index</span> : <span class="variable">SortingList</span>) {
+            <span class="keyword">if</span> (<span class="variable">index</span> &lt; <span class="variable">minimum</span>) {
+                <span class="variable">minimum</span> = <span class="variable">index</span>;
+            }
+        }
+        System.out.println(<span class="string">"Minimum Value: "</span> + <span class="variable">minimum</span>);
+    }
+
+    <span class="keyword">public void</span> <span class="method">TotalSum</span>() {
+        <span class="datatype">int</span> <span class="variable">Total</span> = 0;
+        <span class="keyword">for</span> (<span class="datatype">int</span> <span class="variable">index</span> : <span class="variable">SortingList</span>) {
+            <span class="variable">Total</span> += <span class="variable">index</span>;
+        }
+        System.out.println(<span class="string">"Total "</span> + <span class="variable">Total</span>);
+    }
+
+    <span class="keyword">public void</span> <span class="method">AverageArray</span>() {
+        <span class="datatype">double</span> <span class="variable">Total</span> = 0;
+        <span class="datatype">int</span> <span class="variable">Counter</span> = 0;
+        <span class="keyword">for</span> (<span class="datatype">int</span> <span class="variable">index</span> : <span class="variable">SortingList</span>) {
+            <span class="variable">Total</span> += <span class="variable">index</span>;
+            <span class="variable">Counter</span>++;
+        }
+        System.out.println(<span class="string">"Average "</span> + (<span class="variable">Total</span> / <span class="variable">Counter</span>));
+    }
+
+    <span class="keyword">public void</span> <span class="method">bubbleSort</span>() {
+        System.out.println(<span class="string">"Starting Bubble Sort..."</span>);
+        System.out.println(<span class="string">"Bubble Sort steps: "</span>);
+        <span class="keyword">for</span> (<span class="datatype">int</span> <span class="variable">i</span> = 0; <span class="variable">i</span> &lt; <span class="variable">SortingList</span>.length - 1; <span class="variable">i</span>++) {
+            <span class="datatype">boolean</span> <span class="variable">swapped</span> = <span class="keyword">false</span>;
+            <span class="keyword">for</span> (<span class="datatype">int</span> <span class="variable">j</span> = 0; <span class="variable">j</span> &lt; <span class="variable">SortingList</span>.length - <span class="variable">i</span> - 1; <span class="variable">j</span>++) {
+                <span class="keyword">if</span> (<span class="variable">SortingList</span>[<span class="variable">j</span>] &gt; <span class="variable">SortingList</span>[<span class="variable">j</span> + 1]) {
+                    <span class="datatype">int</span> <span class="variable">temp</span> = <span class="variable">SortingList</span>[<span class="variable">j</span>];
+                    <span class="variable">SortingList</span>[<span class="variable">j</span>] = <span class="variable">SortingList</span>[<span class="variable">j</span> + 1];
+                    <span class="variable">SortingList</span>[<span class="variable">j</span> + 1] = <span class="variable">temp</span>;
+                    <span class="variable">swapped</span> = <span class="keyword">true</span>;
+                }
+            }
+            System.out.print(<span class="string">"Step "</span> + (<span class="variable">i</span> + 1) + <span class="string">": "</span>);
+            <span class="method">printArray</span>();
+            <span class="keyword">if</span> (<span class="keyword">!swapped</span>) {
+                <span class="keyword">break</span>;
+            }
+        }
+    }
+
+    <span class="keyword">public void</span> <span class="method">printArray</span>() {
+        <span class="keyword">for</span> (<span class="datatype">int</span> <span class="variable">num</span> : <span class="variable">SortingList</span>) {
+            System.out.print(<span class="variable">num</span> + <span class="string">" "</span>);
+        }
+        System.out.println();
+    }
+}
+
+<span class="keyword">public class</span> <span class="datatype">NewSortingTester</span> {
+    <span class="keyword">public static void</span> <span class="method">main</span>(<span class="datatype">String[]</span> <span class="variable">args</span>) {
+        <span class="datatype">NewSorting</span> <span class="variable">program</span> = <span class="keyword">new</span> <span class="datatype">NewSorting</span>();
+
+        <span class="variable">program</span>.<span class="method">SortingInput</span>();
+
+        System.out.print(<span class="string">"Entered Array: "</span>);
+        <span class="variable">program</span>.<span class="method">printArray</span>();
+
+        <span class="variable">program</span>.<span class="method">Maximum</span>();
+        <span class="variable">program</span>.<span class="method">Minimum</span>();
+        <span class="variable">program</span>.<span class="method
+
+
+		<div id="interwebs" style="text-align:center; margin-bottom:20px">
+			<i><p class="centered" style="padding-bottom:5px">Find me on the interwebs!</p></i>
+			<a class="interweb" href="https://github.com/HanFerik1"><img src="../resources/images/github.png" alt="Github" width="25" height="25"></a>
+			<a class="interweb" href="https://linkedin.com/in/han-ferik-ba527a23b?original_referer=https%3A%2F%2Fwww.linkedin.com%2F"><img src="../resources/images/linkedin.png" alt="LinkedIn" width="25" height="25"></a>
+			<a class="interweb" href="https://www.instagram.com/hanferik/"><img src="../resources/images/instagram.jpg" alt="Instagram" width="25" height="25"></a>
+			<a class="interweb" href="https://www.facebook.com/han.ferik/"><img src="../resources/images/facebook.png" alt="Facebook" width="25" height="25"></a>
+		</div>
+
+</body>
+</html>
