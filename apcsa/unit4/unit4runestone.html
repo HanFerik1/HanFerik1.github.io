@@ -22,7 +22,7 @@
     <h3 class="centered" style="color:#191919; font-size:25px; text-align:center;">AP CSA Unit 4: Iteration </h3>
 
     <div class="centered">
- <!-- Section 4.1 -->
+  <!-- Section 4.1 -->
         <h2 style="color:#191919; font-size:20px; text-align:center;">4.1:</h2>
         <p>- Iteration statements (loops) change the flow of control by repeating a set of statements zero or more times until a condition is met.</p>
         <p>- Loops often have a loop control variable that is used in the Boolean condition, requiring the steps of initializing, testing, and changing the loop variable.</p>
@@ -32,12 +32,36 @@
         <p>- Off-by-one errors happen when the iteration statement loops one time too many or too few.</p>
         <p>- Input-controlled loops often use a sentinel value (e.g., "bye" or -1) provided by the user to signal the loop to stop, though these are not on the AP CSA exam.</p>
         <p>- Standard algorithms like computing a sum or average are commonly implemented with loops.</p>
+        
+        <h4>Example of a while loop:</h4>
+        <pre><code>
+        public class WhileExample {
+            public static void main(String[] args) {
+                int i = 0;
+                while (i < 5) {
+                    System.out.println("Iteration " + i);
+                    i++; // Increment to avoid infinite loop
+                }
+            }
+        }
+        </code></pre>
     
         <!-- Section 4.2 -->
         <h2 style="color:#191919; font-size:20px; text-align:center;">4.2:</h2>
         <p>- In a for loop, the initialization statement is only executed once before the evaluation of the test Boolean expression. The variable being initialized is referred to as a loop control variable.</p>
         <p>- In each iteration of a for loop, the increment or decrement statement is executed after the entire loop body is executed and before the Boolean expression is evaluated again.</p>
         <p>- A for loop can be rewritten into an equivalent while loop and vice versa.</p>
+        
+        <h4>Example of a for loop:</h4>
+        <pre><code>
+        public class ForExample {
+            public static void main(String[] args) {
+                for (int i = 0; i < 5; i++) {
+                    System.out.println("Iteration " + i);
+                }
+            }
+        }
+        </code></pre>
     
         <!-- Section 4.3 -->
         <h2 style="color:#191919; font-size:20px; text-align:center;">4.3:</h2>
@@ -45,18 +69,56 @@
         <p>- Standard algorithms using string traversals can determine if one or more substrings have a particular property.</p>
         <p>- Loops can calculate the number of substrings that meet specific criteria.</p>
         <p>- String traversals can create a new string with the characters reversed.</p>
-    
+        
+        <h4>Example of string traversal:</h4>
+        <pre><code>
+        public class StringTraversal {
+            public static void main(String[] args) {
+                String str = "hello";
+                for (int i = 0; i < str.length(); i++) {
+                    System.out.println("Character at index " + i + ": " + str.charAt(i));
+                }
+            }
+        }
+        </code></pre>
+
         <!-- Section 4.4 -->
         <h2 style="color:#191919; font-size:20px; text-align:center;">4.4:</h2>
         <p>- Nested iteration statements are iteration statements that appear in the body of another iteration statement.</p>
         <p>- When a loop is nested inside another loop, the inner loop must complete all its iterations before the outer loop can continue.</p>
-    
+        
+        <h4>Example of nested loops:</h4>
+        <pre><code>
+        public class NestedLoopExample {
+            public static void main(String[] args) {
+                for (int i = 0; i < 3; i++) {
+                    for (int j = 0; j < 2; j++) {
+                        System.out.println("Outer loop: " + i + ", Inner loop: " + j);
+                    }
+                }
+            }
+        }
+        </code></pre>
+
         <!-- Section 4.5 -->
         <h2 style="color:#191919; font-size:20px; text-align:center;">4.5:</h2>
         <p>- A trace table can be used to keep track of the variables and their values throughout each iteration of the loop.</p>
         <p>- We can determine the number of times a code segment will execute with a statement execution count. This is called run-time analysis.</p>
         <p>- The number of times a loop executes can be calculated by largestValue - smallestValue + 1, where these are the largest and smallest values of the loop counter variable possible in the body of the loop.</p>
-        <p>- The number of times a nested for-loop runs is the number of times the outer loop runs times the number of times the inner loop runs.</p>    </div>
+        <p>- The number of times a nested for-loop runs is the number of times the outer loop runs times the number of times the inner loop runs.</p>
+        
+        <h4>Example of calculating the number of executions:</h4>
+        <pre><code>
+        public class LoopExecutionCount {
+            public static void main(String[] args) {
+                int outerLoopCount = 3;
+                int innerLoopCount = 2;
+                System.out.println("Total iterations: " + (outerLoopCount * innerLoopCount));
+            }
+        }
+        </code></pre>
+    </div>
+</div>
     <div id="interwebs" style="text-align:center; margin-bottom:20px;">
         <i>
             <p class="centered" style="padding-bottom:5px;">Find me on the interwebs!</p>
