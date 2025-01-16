@@ -12,13 +12,13 @@
 		.container {
 			display: flex;
 			flex-wrap: wrap; /* Allow items to wrap onto the next row */
-			justify-content: center;
+			justify-content: space-between; /* Space out the items evenly */
 			gap: 20px; /* Space between images */
 			padding-top: 20px;
 		}
 
 		.container .unit {
-			width: 220px; /* Set a fixed width for each image */
+			flex-basis: 48%; /* Set each unit to take up 48% of the row width, leaving room for two items per row */
 			text-align: center;
 		}
 
