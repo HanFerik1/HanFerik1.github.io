@@ -8,20 +8,21 @@
 	<link href="https://fonts.googleapis.com/css?family=Nunito:400,700,900" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<style>
-		/* Flexbox layout for images */
+		/* Flexbox layout for images (vertical) */
 		.container {
 			display: flex;
-			flex-wrap: wrap;
+			flex-direction: column; /* Stack the images vertically */
 			justify-content: center;
+			align-items: center;
 			gap: 20px;
 			padding-top: 20px;
 		}
 		.container .unit {
-			width: 220px;
+			width: 220px; /* Set a fixed width for each image */
 			text-align: center;
 		}
 		.container .unit img {
-			width: 100%;
+			width: 100%; /* Ensure the image fills the container width */
 			border-radius: 8px;
 		}
 		.middle .text {
