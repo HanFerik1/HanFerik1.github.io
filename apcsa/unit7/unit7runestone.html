@@ -22,7 +22,195 @@
     <h3 class="centered" style="color:#191919; font-size:25px; text-align:center;">AP CSA Unit 7: Using Objects</h3>
 
     <div class="centered">
-      // buraya yaz kodu
+      <div id="section-7-1">
+  <h2>7.1:</h2>
+  <p>ArrayLists are re-sizable lists that allow adding and removing items to change their size during run time.</p>
+  <p>The ArrayList class is in the java.util package. You must import java.util.ArrayList or java.util.* to use it.</p>
+  <p>An ArrayList object contains object references and is mutable, meaning it can change (by adding and removing items from it).</p>
+  <p>The ArrayList constructor <code>ArrayList()</code> constructs an empty list of size 0.</p>
+  <p>Java allows the generic type <code>ArrayList&lt;E&gt;</code>, where the generic type E specifies the type of the elements, like String or Integer. Without it, the type will be Object.</p>
+  <p><code>ArrayList&lt;E&gt;</code> is preferred over <code>ArrayList</code> because it allows the compiler to find errors that would otherwise be found at run time.</p>
+  <p>When <code>ArrayList&lt;E&gt;</code> is specified, the types of the reference parameters and return type when using its methods are type E.</p>
+  <p>ArrayLists cannot hold primitive types like <code>int</code> or <code>double</code>, so you must use the wrapper classes <code>Integer</code> or <code>Double</code> to put numerical values into an ArrayList. However, autoboxing usually takes care of that for you.</p>
+  <h3>Example:</h3>
+  <pre><code>
+// Import the ArrayList class
+import java.util.ArrayList;
+
+public class ArrayListExample {
+    public static void main(String[] args) {
+        // Create an ArrayList of Strings
+        ArrayList<String> names = new ArrayList<>();
+        
+        // Add elements
+        names.add("Alice");
+        names.add("Bob");
+        names.add("Charlie");
+
+        // Print the list
+        System.out.println("Names: " + names);
+
+        // Add an element at index 1
+        names.add(1, "Diana");
+        System.out.println("After adding Diana: " + names);
+
+        // Remove an element
+        names.remove("Charlie");
+        System.out.println("After removing Charlie: " + names);
+
+        // Access an element
+        System.out.println("Element at index 1: " + names.get(1));
+    }
+}
+  </code></pre>
+</div>
+
+<div id="section-7-2">
+  <h2>7.2:</h2>
+  <ul>
+    <li><code>int size()</code>: Returns the number of elements in the list</li>
+    <li><code>boolean add(E obj)</code>: Appends obj to the end of the list; returns true</li>
+    <li><code>void add(int index, E obj)</code>: Inserts obj at position index (0 ≤ index ≤ size), moving elements at position index and higher to the right (adds 1 to their indices) and adds 1 to size</li>
+    <li><code>remove(int index)</code>: Removes element from position index, moving elements at position index + 1 and higher to the left (subtracts 1 from their indices) and subtracts 1 from size; returns the element formerly at position index</li>
+    <li><code>E get(int index)</code>: Returns the element at position index in the list</li>
+    <li><code>E set(int index, E obj)</code>: Replaces the element at position index with obj; returns the element formerly at position index</li>
+  </ul>
+  <h3>Example:</h3>
+  <pre><code>
+// Example demonstrating size, add, remove, and set methods
+import java.util.ArrayList;
+
+public class ArrayListMethodsExample {
+    public static void main(String[] args) {
+        ArrayList<Integer> numbers = new ArrayList<>();
+
+        // Adding elements
+        numbers.add(10);
+        numbers.add(20);
+        numbers.add(30);
+
+        System.out.println("Initial List: " + numbers);
+        System.out.println("Size: " + numbers.size());
+
+        // Insert at index
+        numbers.add(1, 15);
+        System.out.println("After adding 15 at index 1: " + numbers);
+
+        // Remove element at index 2
+        int removed = numbers.remove(2);
+        System.out.println("Removed element: " + removed);
+        System.out.println("List after removal: " + numbers);
+
+        // Replace element
+        int oldValue = numbers.set(1, 25);
+        System.out.println("Replaced " + oldValue + " with 25: " + numbers);
+    }
+}
+  </code></pre>
+</div>
+
+<div id="section-7-3">
+  <h2>7.3:</h2>
+  <p>ArrayLists can be traversed with an enhanced for loop, a while loop, or a regular for loop using an index.</p>
+  <p>Deleting elements during a traversal of an ArrayList requires using special techniques to avoid skipping elements, since <code>remove</code> moves all the elements above the removed index down.</p>
+  <p>Since the indices for an ArrayList start at 0 and end at the number of elements − 1, accessing an index value outside of this range will result in an <code>IndexOutOfBoundsException</code> being thrown.</p>
+  <p>Changing the size of an ArrayList while traversing it using an enhanced for loop can result in a <code>ConcurrentModificationException</code> being thrown. Therefore, when using an enhanced for loop to traverse an ArrayList, you should not add or remove elements.</p>
+  <h3>Example:</h3>
+  <pre><code>
+// Traversing and removing elements safely
+import java.util.ArrayList;
+
+public class ArrayListTraversalExample {
+    public static void main(String[] args) {
+        ArrayList<Integer> numbers = new ArrayList<>();
+        numbers.add(10);
+        numbers.add(20);
+        numbers.add(30);
+        numbers.add(40);
+
+        // Using a regular for loop to remove even numbers
+        for (int i = 0; i < numbers.size(); i++) {
+            if (numbers.get(i) % 20 == 0) {
+                numbers.remove(i);
+                i--; // Adjust index after removal
+            }
+        }
+        System.out.println("After removing even numbers: " + numbers);
+    }
+}
+  </code></pre>
+</div>
+
+<div id="section-7-5">
+  <h2>7.5:</h2>
+  <p>Sequential/linear search algorithms check each element in order until the desired value is found or all elements in the array or ArrayList have been checked.</p>
+  <p>The binary search algorithm starts at the middle of a sorted array or ArrayList and eliminates half of the array or ArrayList in each iteration until the desired value is found or all elements have been eliminated.</p>
+  <p>Data must be in sorted order to use the binary search algorithm. This algorithm will be covered more in Unit 10.</p>
+  <p>Informal run-time comparisons of program code segments can be made using statement execution counts.</p>
+  <h3>Example:</h3>
+  <pre><code>
+// Linear and Binary Search
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class SearchExample {
+    public static void main(String[] args) {
+        ArrayList<Integer> numbers = new ArrayList<>();
+        Collections.addAll(numbers, 1, 3, 5, 7, 9, 11);
+
+        // Linear Search
+        int target = 7;
+        boolean found = false;
+        for (int num : numbers) {
+            if (num == target) {
+                found = true;
+                break;
+            }
+        }
+        System.out.println("Linear Search: Target " + target + " found? " + found);
+
+        // Binary Search
+        int index = Collections.binarySearch(numbers, target);
+        System.out.println("Binary Search: Target " + target + " found at index: " + index);
+    }
+}
+  </code></pre>
+</div>
+
+<div id="section-7-6">
+  <h2>7.6:</h2>
+  <p>Selection sort and insertion sort are iterative sorting algorithms that can be used to sort elements in an array or ArrayList.</p>
+  <p>Informal run-time comparisons of program code segments can be made using statement execution counts.</p>
+  <h3>Example:</h3>
+  <pre><code>
+// Selection Sort
+import java.util.ArrayList;
+
+public class SelectionSortExample {
+    public static void main(String[] args) {
+        ArrayList<Integer> numbers = new ArrayList<>();
+        numbers.add(40);
+        numbers.add(10);
+        numbers.add(30);
+        numbers.add(20);
+
+        for (int i = 0; i < numbers.size() - 1; i++) {
+            int minIndex = i;
+            for (int j = i + 1; j < numbers.size(); j++) {
+                if (numbers.get(j) < numbers.get(minIndex)) {
+                    minIndex = j;
+                }
+            }
+            // Swap
+            int temp = numbers.get(i);
+            numbers.set(i, numbers.get(minIndex));
+            numbers.set(minIndex, temp);
+        }
+        System.out.println("Sorted List: " + numbers);
+    }
+}
+  </code></pre>
+</div>
     </div>
 
     <div id="interwebs" style="text-align:center; margin-bottom:20px;">
