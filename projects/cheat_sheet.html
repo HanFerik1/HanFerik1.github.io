@@ -27,245 +27,271 @@
       
       <p>Each of these operations illustrates the versatility of the <code>ArrayList</code> class in Java, covering a wide range of tasks from basic element manipulation to advanced operations such as sorting, removing duplicates, and calculating the median. The program is a comprehensive guide for working with <code>ArrayList</code> and shows how to use Java’s collection framework effectively for various tasks.</p>
 
-      <img class="image" src="/resources/images/cheatsheet.png">
 		</div>
 		<br>
 
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Java CheatSheet Code</title>
-        <style>
-            pre {
-                background-color: #f4f4f4;
-                padding: 10px;
-                border-radius: 5px;
-                font-family: "Courier New", Courier, monospace;
-                color: #333;
-            }
-            .keyword { color: #0000ff; }
-            .string { color: #a31515; }
-            .method { color: #2b91af; }
-            .comment { color: #008000; font-style: italic; }
-        </style>
-    </head>
-    <body>
-    
-    <h1>Java CheatSheet Code</h1>
-    <pre>
-    <span class="comment">// 1. Create and Initialize an ArrayList</span>
-    <span class="keyword">ArrayList</span>&lt;<span class="keyword">Integer</span>&gt; numbers = new <span class="keyword">ArrayList</span><>();
-    numbers.add(10);
-    numbers.add(20);
-    numbers.add(30);
-    numbers.add(40);
-    numbers.add(50);
-    <span class="method">System.out.println</span>(<span class="string">"ArrayList: "</span> + numbers);
-    
-    <span class="comment">// 2. Access and Update Elements</span>
-    <span class="keyword">ArrayList</span>&lt;<span class="keyword">String</span>&gt; names = new <span class="keyword">ArrayList</span><>();
-    names.add(<span class="string">"Alice"</span>);
-    names.add(<span class="string">"Bob"</span>);
-    names.add(<span class="string">"Charlie"</span>);
-    names.set(1, <span class="string">"David"</span>); <span class="comment">// Replace "Bob" with "David"</span>
-    <span class="method">System.out.println</span>(<span class="string">"Updated ArrayList: "</span> + names);
-    
-    <span class="comment">// 3. Remove an Element</span>
-    <span class="keyword">ArrayList</span>&lt;<span class="keyword">Integer</span>&gt; integers = new <span class="keyword">ArrayList</span><>();
-    integers.add(10);
-    integers.add(20);
-    integers.add(30);
-    integers.add(40);
-    integers.add(50);
-    integers.remove(2); <span class="comment">// Remove element at index 2</span>
-    <span class="method">System.out.println</span>(<span class="string">"ArrayList after removal: "</span> + integers);
-    
-    <span class="comment">// 4. Check if an Element Exists</span>
-    <span class="keyword">ArrayList</span>&lt;<span class="keyword">String</span>&gt; checkNames = new <span class="keyword">ArrayList</span><>();
-    checkNames.add(<span class="string">"Alice"</span>);
-    checkNames.add(<span class="string">"Bob"</span>);
-    checkNames.add(<span class="string">"Charlie"</span>);
-    <span class="keyword">if</span> (checkNames.contains(<span class="string">"Alice"</span>)) {
-        <span class="method">System.out.println</span>(<span class="string">"Found"</span>);
-    } <span class="keyword">else</span> {
-        <span class="method">System.out.println</span>(<span class="string">"Not Found"</span>);
-    }
-    
-    <span class="comment">// 5. Find the Size of an ArrayList</span>
-    <span class="keyword">ArrayList</span>&lt;<span class="keyword">String</span>&gt; sizeList = new <span class="keyword">ArrayList</span><>();
-    sizeList.add(<span class="string">"A"</span>);
-    sizeList.add(<span class="string">"B"</span>);
-    sizeList.add(<span class="string">"C"</span>);
-    <span class="method">System.out.println</span>(<span class="string">"Size before: "</span> + sizeList.size());
-    sizeList.add(<span class="string">"D"</span>);
-    sizeList.add(<span class="string">"E"</span>);
-    <span class="method">System.out.println</span>(<span class="string">"Size after: "</span> + sizeList.size());
-    
-    <span class="comment">// 6. Print All Elements Using a For-Each Loop</span>
-    <span class="keyword">ArrayList</span>&lt;<span class="keyword">Integer</span>&gt; forEachList = new <span class="keyword">ArrayList</span><>();
-    forEachList.add(1);
-    forEachList.add(2);
-    forEachList.add(3);
-    forEachList.add(4);
-    forEachList.add(5);
-    <span class="keyword">for</span> (<span class="keyword">Integer</span> num : forEachList) {
-        <span class="method">System.out.println</span>(num);
-    }
-    
-    <span class="comment">// 7. Print All Elements Using a For Loop</span>
-    <span class="keyword">ArrayList</span>&lt;<span class="keyword">String</span>&gt; forLoopList = new <span class="keyword">ArrayList</span><>();
-    forLoopList.add(<span class="string">"Alice"</span>);
-    forLoopList.add(<span class="string">"Bob"</span>);
-    forLoopList.add(<span class="string">"Charlie"</span>);
-    <span class="keyword">for</span> (<span class="keyword">int</span> i = 0; i &lt; forLoopList.size(); i++) {
-        <span class="method">System.out.println</span>(forLoopList.get(i));
-    }
-    
-    <span class="comment">// 8. Reverse the Elements in an ArrayList</span>
-    <span class="keyword">ArrayList</span>&lt;<span class="keyword">Integer</span>&gt; reverseList = new <span class="keyword">ArrayList</span><>();
-    reverseList.add(10);
-    reverseList.add(20);
-    reverseList.add(30);
-    reverseList.add(40);
-    <span class="method">Collections.reverse</span>(reverseList);
-    <span class="method">System.out.println</span>(<span class="string">"Reversed ArrayList: "</span> + reverseList);
-    
-    <span class="comment">// 9. Find the Sum of Elements in an ArrayList</span>
-    <span class="keyword">ArrayList</span>&lt;<span class="keyword">Integer</span>&gt; sumList = new <span class="keyword">ArrayList</span><>();
-    sumList.add(1);
-    sumList.add(2);
-    sumList.add(3);
-    sumList.add(4);
-    sumList.add(5);
-    <span class="keyword">int</span> sum = 0;
-    <span class="keyword">for</span> (<span class="keyword">Integer</span> num : sumList) {
-        sum += num;
-    }
-    <span class="method">System.out.println</span>(<span class="string">"Sum of elements: "</span> + sum);
-    
-    <span class="comment">// 10. Count the Number of Even Numbers</span>
-    <span class="keyword">ArrayList</span>&lt;<span class="keyword">Integer</span>&gt; evenList = new <span class="keyword">ArrayList</span><>();
-    evenList.add(1);
-    evenList.add(2);
-    evenList.add(3);
-    evenList.add(4);
-    evenList.add(5);
-    <span class="keyword">int</span> evenCount = 0;
-    <span class="keyword">for</span> (<span class="keyword">Integer</span> num : evenList) {
-        <span class="keyword">if</span> (num % 2 == 0) {
-            evenCount++;
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CheatSheet Java Code</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
         }
-    }
-    <span class="method">System.out.println</span>(<span class="string">"Number of even numbers: "</span> + evenCount);
-    
-    <span class="comment">// 11. Find the Maximum and Minimum Values</span>
-    <span class="keyword">ArrayList</span>&lt;<span class="keyword">Integer</span>&gt; maxMinList = new <span class="keyword">ArrayList</span><>();
-    maxMinList.add(10);
-    maxMinList.add(20);
-    maxMinList.add(30);
-    maxMinList.add(40);
-    maxMinList.add(50);
-    <span class="keyword">int</span> max = <span class="method">Collections.max</span>(maxMinList);
-    <span class="keyword">int</span> min = <span class="method">Collections.min</span>(maxMinList);
-    <span class="method">System.out.println</span>(<span class="string">"Maximum value: "</span> + max);
-    <span class="method">System.out.println</span>(<span class="string">"Minimum value: "</span> + min);
-    
-    <span class="comment">// 12. Remove All Duplicates</span>
-    <span class="keyword">ArrayList</span>&lt;<span class="keyword">Integer</span>&gt; duplicateList = new <span class="keyword">ArrayList</span><>();
-    duplicateList.add(1);
-    duplicateList.add(2);
-    duplicateList.add(2);
-    duplicateList.add(3);
-    duplicateList.add(3);
-    duplicateList.add(4);
-    <span class="keyword">ArrayList</span>&lt;<span class="keyword">Integer</span>&gt; uniqueList = new <span class="keyword">ArrayList</span><>();
-    <span class="keyword">for</span> (<span class="keyword">Integer</span> num : duplicateList) {
-        <span class="keyword">if</span> (!uniqueList.contains(num)) {
-            uniqueList.add(num);
+        pre {
+            background-color: #e8e8e8;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-size: 14px;
         }
-    }
-    <span class="method">System.out.println</span>(<span class="string">"Unique elements: "</span> + uniqueList);
-    
-    <span class="comment">// 13. Find the Index of an Element</span>
-    <span class="keyword">ArrayList</span>&lt;<span class="keyword">String</span>&gt; indexList = new <span class="keyword">ArrayList</span><>();
-    indexList.add(<span class="string">"Alice"</span>);
-    indexList.add(<span class="string">"Bob"</span>);
-    indexList.add(<span class="string">"Charlie"</span>);
-    <span class="keyword">int</span> index = indexList.indexOf(<span class="string">"Bob"</span>);
-    <span class="method">System.out.println</span>(<span class="string">"Index of 'Bob': "</span> + index);
-    
-    <span class="comment">// 14. Convert an ArrayList to an Array</span>
-    <span class="keyword">ArrayList</span>&lt;<span class="keyword">Integer</span>&gt; listToArray = new <span class="keyword">ArrayList</span><>();
-    listToArray.add(1);
-    listToArray.add(2);
-    listToArray.add(3);
-    listToArray.add(4);
-    <span class="keyword">Integer[]</span> array = new <span class="keyword">Integer</span>[listToArray.size()];
-    listToArray.toArray(array);
-    <span class="method">System.out.println</span>(<span class="string">"Array from ArrayList: "</span> + <span class="method">Arrays.toString</span>(array));
-    
-    <span class="comment">// 15. Add All Elements from Another List</span>
-    <span class="keyword">ArrayList</span>&lt;<span class="keyword">Integer</span>&gt; list1 = new <span class="keyword">ArrayList</span><>();
-    list1.add(1);
-    list1.add(2);
-    list1.add(3);
-    <span class="keyword">ArrayList</span>&lt;<span class="keyword">Integer</span>&gt; list2 = new <span class="keyword">ArrayList</span><>();
-    list2.add(4);
-    list2.add(5);
-    list1.addAll(list2);
-    <span class="method">System.out.println</span>(<span class="string">"Merged list: "</span> + list1);
-    
-    <span class="comment">// 16. Remove All Elements from an ArrayList</span>
-    <span class="keyword">ArrayList</span>&lt;<span class="keyword">Integer</span>&gt; clearList = new <span class="keyword">ArrayList</span><>();
-    clearList.add(1);
-    clearList.add(2);
-    clearList.add(3);
-    clearList.clear();
-    <span class="method">System.out.println</span>(<span class="string">"Cleared list: "</span> + clearList);
-    
-    <span class="comment">// 17. Sort an ArrayList</span>
-    <span class="keyword">ArrayList</span>&lt;<span class="keyword">Integer</span>&gt; sortList = new <span class="keyword">ArrayList</span><>();
-    sortList.add(5);
-    sortList.add(3);
-    sortList.add(4);
-    sortList.add(1);
-    sortList.add(2);
-    <span class="method">Collections.sort</span>(sortList);
-    <span class="method">System.out.println</span>(<span class="string">"Sorted list: "</span> + sortList);
-    
-    <span class="comment">// 18. Find the Frequency of an Element</span>
-    <span class="keyword">ArrayList</span>&lt;<span class="keyword">Integer</span>&gt; frequencyList = new <span class="keyword">ArrayList</span><>();
-    frequencyList.add(1);
-    frequencyList.add(2);
-    frequencyList.add(2);
-    frequencyList.add(3);
-    frequencyList.add(2);
-    <span class="keyword">int</span> frequency = <span class="method">Collections.frequency</span>(frequencyList, 2);
-    <span class="method">System.out.println</span>(<span class="string">"Frequency of 2: "</span> + frequency);
-    
-    <span class="comment">// 19. Replace All Occurrences of an Element</span>
-    <span class="keyword">ArrayList</span>&lt;<span class="keyword">Integer</span>&gt; replaceList = new <span class="keyword">ArrayList</span><>();
-    replaceList.add(1);
-    replaceList.add(2);
-    replaceList.add(3);
-    replaceList.add(2);
-    <span class="keyword">for</span> (<span class="keyword">int</span> i = 0; i &lt; replaceList.size(); i++) {
-        <span class="keyword">if</span> (replaceList.get(i) == 2) {
-            replaceList.set(i, 10);
+        .keyword {
+            color: #d73a49; /* Pink for keywords */
+            font-weight: bold;
         }
-    }
-    <span class="method">System.out.println</span>(<span class="string">"Replaced list: "</span> + replaceList);
-    
-    <span class="comment">// 20. Create a List from Elements</span>
-    <span class="keyword">List</span>&lt;<span class="keyword">String</span>&gt; list = <span class="method">Arrays.asList</span>(<span class="string">"Apple"</span>, <span class="string">"Banana"</span>, <span class="string">"Cherry"</span>);
-    <span class="method">System.out.println</span>(<span class="string">"List: "</span> + list);
-    </pre>
-    
-    </body>
-    </html>
+        .datatype {
+            color: #005cc5; /* Blue for data types */
+        }
+        .variable {
+            color: #6f42c1; /* Purple for variables */
+        }
+        .method {
+            color: #6f42c1; /* Purple for methods */
+        }
+        .comment {
+            color: #6a737d; /* Grey for comments */
+            font-style: italic;
+        }
+        .string {
+            color: #032f62; /* Dark blue for strings */
+        }
+    </style>
+</head>
+<body>
 
+    <h1>CheatSheet Java Code</h1>
+    <pre><code>
+<span class="keyword">import</span> <span class="datatype">java.util.ArrayList</span>;
+<span class="keyword">import</span> <span class="datatype">java.util.Collections</span>;
+
+<span class="keyword">public class</span> <span class="datatype">CheatSheet</span> {
+
+    <span class="keyword">public static void</span> <span class="method">main</span>(<span class="datatype">String</span>[] <span class="variable">args</span>) {
+        
+        // 1. Create and Initialize an ArrayList
+        <span class="datatype">ArrayList</span>&lt;<span class="datatype">Integer</span>&gt; <span class="variable">numbers</span> = <span class="keyword">new</span> <span class="datatype">ArrayList</span>&lt;&gt;();
+        <span class="variable">numbers</span>.<span class="method">add</span>(10);
+        <span class="variable">numbers</span>.<span class="method">add</span>(20);
+        <span class="variable">numbers</span>.<span class="method">add</span>(30);
+        <span class="variable">numbers</span>.<span class="method">add</span>(40);
+        <span class="variable">numbers</span>.<span class="method">add</span>(50);
+        System.out.println(<span class="string">"ArrayList: "</span> + <span class="variable">numbers</span>);
+
+        // 2. Access and Update Elements
+        <span class="datatype">ArrayList</span>&lt;<span class="datatype">String</span>&gt; <span class="variable">names</span> = <span class="keyword">new</span> <span class="datatype">ArrayList</span>&lt;&gt;();
+        <span class="variable">names</span>.<span class="method">add</span>(<span class="string">"Alice"</span>);
+        <span class="variable">names</span>.<span class="method">add</span>(<span class="string">"Bob"</span>);
+        <span class="variable">names</span>.<span class="method">add</span>(<span class="string">"Charlie"</span>);
+        <span class="variable">names</span>.<span class="method">set</span>(1, <span class="string">"David"</span>); <span class="comment">// Replace "Bob" with "David"</span>
+        System.out.println(<span class="string">"Updated ArrayList: "</span> + <span class="variable">names</span>);
+
+        // 3. Remove an Element
+        <span class="datatype">ArrayList</span>&lt;<span class="datatype">Integer</span>&gt; <span class="variable">integers</span> = <span class="keyword">new</span> <span class="datatype">ArrayList</span>&lt;&gt;();
+        <span class="variable">integers</span>.<span class="method">add</span>(10);
+        <span class="variable">integers</span>.<span class="method">add</span>(20);
+        <span class="variable">integers</span>.<span class="method">add</span>(30);
+        <span class="variable">integers</span>.<span class="method">add</span>(40);
+        <span class="variable">integers</span>.<span class="method">add</span>(50);
+        <span class="variable">integers</span>.<span class="method">remove</span>(2); <span class="comment">// Remove element at index 2</span>
+        System.out.println(<span class="string">"ArrayList after removal: "</span> + <span class="variable">integers</span>);
+
+        // 4. Check if an Element Exists
+        <span class="datatype">ArrayList</span>&lt;<span class="datatype">String</span>&gt; <span class="variable">checkNames</span> = <span class="keyword">new</span> <span class="datatype">ArrayList</span>&lt;&gt;();
+        <span class="variable">checkNames</span>.<span class="method">add</span>(<span class="string">"Alice"</span>);
+        <span class="variable">checkNames</span>.<span class="method">add</span>(<span class="string">"Bob"</span>);
+        <span class="variable">checkNames</span>.<span class="method">add</span>(<span class="string">"Charlie"</span>);
+        <span class="keyword">if</span> (<span class="variable">checkNames</span>.<span class="method">contains</span>(<span class="string">"Alice"</span>)) {
+            System.out.println(<span class="string">"Found"</span>);
+        } <span class="keyword">else</span> {
+            System.out.println(<span class="string">"Not Found"</span>);
+        }
+
+        // 5. Find the Size of an ArrayList
+        <span class="datatype">ArrayList</span>&lt;<span class="datatype">String</span>&gt; <span class="variable">sizeList</span> = <span class="keyword">new</span> <span class="datatype">ArrayList</span>&lt;&gt;();
+        <span class="variable">sizeList</span>.<span class="method">add</span>(<span class="string">"A"</span>);
+        <span class="variable">sizeList</span>.<span class="method">add</span>(<span class="string">"B"</span>);
+        <span class="variable">sizeList</span>.<span class="method">add</span>(<span class="string">"C"</span>);
+        System.out.println(<span class="string">"Size before: "</span> + <span class="variable">sizeList</span>.<span class="method">size</span>());
+        <span class="variable">sizeList</span>.<span class="method">add</span>(<span class="string">"D"</span>);
+        <span class="variable">sizeList</span>.<span class="method">add</span>(<span class="string">"E"</span>);
+        System.out.println(<span class="string">"Size after: "</span> + <span class="variable">sizeList</span>.<span class="method">size</span>());
+
+        // 6. Print All Elements Using a For-Each Loop
+        <span class="datatype">ArrayList</span>&lt;<span class="datatype">Integer</span>&gt; <span class="variable">forEachList</span> = <span class="keyword">new</span> <span class="datatype">ArrayList</span>&lt;&gt;();
+        <span class="variable">forEachList</span>.<span class="method">add</span>(1);
+        <span class="variable">forEachList</span>.<span class="method">add</span>(2);
+        <span class="variable">forEachList</span>.<span class="method">add</span>(3);
+        <span class="variable">forEachList</span>.<span class="method">add</span>(4);
+        <span class="variable">forEachList</span>.<span class="method">add</span>(5);
+        <span class="keyword">for</span> (<span class="datatype">Integer</span> <span class="variable">num</span> : <span class="variable">forEachList</span>) {
+            System.out.println(<span class="variable">num</span>);
+        }
+
+        // 7. Print All Elements Using a For Loop
+        <span class="datatype">ArrayList</span>&lt;<span class="datatype">String</span>&gt; <span class="variable">forLoopList</span> = <span class="keyword">new</span> <span class="datatype">ArrayList</span>&lt;&gt;();
+        <span class="variable">forLoopList</span>.<span class="method">add</span>(<span class="string">"Alice"</span>);
+        <span class="variable">forLoopList</span>.<span class="method">add</span>(<span class="string">"Bob"</span>);
+        <span class="variable">forLoopList</span>.<span class="method">add</span>(<span class="string">"Charlie"</span>);
+        <span class="keyword">for</span> (<span class="datatype">int</span> <span class="variable">i</span> = 0; <span class="variable">i</span> &lt; <span class="variable">forLoopList</span>.<span class="method">size</span>(); <span class="variable">i</span>++) {
+            System.out.println(<span class="variable">forLoopList</span>.<span class="method">get</span>(<span class="variable">i</span>));
+        }
+
+        // 8. Reverse the Elements in an ArrayList
+        <span class="datatype">ArrayList</span>&lt;<span class="datatype">Integer</span>&gt; <span class="variable">reverseList</span> = <span class="keyword">new</span> <span class="datatype">ArrayList</span>&lt;&gt;();
+        <span class="variable">reverseList</span>.<span class="method">add</span>(10);
+        <span class="variable">reverseList</span>.<span class="method">add</span>(20);
+        <span class="variable">reverseList</span>.<span class="method">add</span>(30);
+        <span class="variable">reverseList</span>.<span class="method">add</span>(40);
+        <span class="keyword">Collections</span>.<span class="method">reverse</span>(<span class="variable">reverseList</span>);
+        System.out.println(<span class="string">"Reversed ArrayList: "</span> + <span class="variable">reverseList</span>);
+    }
+
+        // 9. Find the Sum of Elements in an ArrayList
+        <span class="datatype">ArrayList</span><<span class="datatype">Integer</span>> <span class="variable">sumList</span> = <span class="keyword">new</span> <span class="datatype">ArrayList</span><>();
+        <span class="variable">sumList</span>.<span class="method">add</span>(1);
+        <span class="variable">sumList</span>.<span class="method">add</span>(2);
+        <span class="variable">sumList</span>.<span class="method">add</span>(3);
+        <span class="variable">sumList</span>.<span class="method">add</span>(4);
+        <span class="variable">sumList</span>.<span class="method">add</span>(5);
+        <span class="datatype">int</span> <span class="variable">sum</span> = 0;
+        <span class="keyword">for</span> (<span class="datatype">Integer</span> <span class="variable">num</span> : <span class="variable">sumList</span>) {
+            <span class="variable">sum</span> += <span class="variable">num</span>;
+        }
+        <span class="keyword">System.out.println</span>(<span class="string">"Sum of elements: "</span> + <span class="variable">sum</span>);
+
+        // 10. Count the Number of Even Numbers
+        <span class="datatype">ArrayList</span><<span class="datatype">Integer</span>> <span class="variable">evenList</span> = <span class="keyword">new</span> <span class="datatype">ArrayList</span><>();
+        <span class="variable">evenList</span>.<span class="method">add</span>(1);
+        <span class="variable">evenList</span>.<span class="method">add</span>(2);
+        <span class="variable">evenList</span>.<span class="method">add</span>(3);
+        <span class="variable">evenList</span>.<span class="method">add</span>(4);
+        <span class="variable">evenList</span>.<span class="method">add</span>(5);
+        <span class="datatype">int</span> <span class="variable">evenCount</span> = 0;
+        <span class="keyword">for</span> (<span class="datatype">Integer</span> <span class="variable">num</span> : <span class="variable">evenList</span>) {
+            <span class="keyword">if</span> (<span class="variable">num</span> % 2 == 0) {
+                <span class="variable">evenCount</span>++;
+            }
+        }
+        <span class="keyword">System.out.println</span>(<span class="string">"Number of even numbers: "</span> + <span class="variable">evenCount</span>);
+
+        // 11. Find the Maximum and Minimum Values
+        <span class="datatype">ArrayList</span><<span class="datatype">Integer</span>> <span class="variable">maxMinList</span> = <span class="keyword">new</span> <span class="datatype">ArrayList</span><>();
+        <span class="variable">maxMinList</span>.<span class="method">add</span>(10);
+        <span class="variable">maxMinList</span>.<span class="method">add</span>(20);
+        <span class="variable">maxMinList</span>.<span class="method">add</span>(30);
+        <span class="variable">maxMinList</span>.<span class="method">add</span>(40);
+        <span class="variable">maxMinList</span>.<span class="method">add</span>(50);
+        <span class="datatype">int</span> <span class="variable">max</span> = <span class="keyword">Collections</span>.<span class="method">max</span>(<span class="variable">maxMinList</span>);
+        <span class="datatype">int</span> <span class="variable">min</span> = <span class="keyword">Collections</span>.<span class="method">min</span>(<span class="variable">maxMinList</span>);
+        <span class="keyword">System.out.println</span>(<span class="string">"Maximum value: "</span> + <span class="variable">max</span>);
+        <span class="keyword">System.out.println</span>(<span class="string">"Minimum value: "</span> + <span class="variable">min</span>);
+
+        // 12. Remove All Duplicates
+        <span class="datatype">ArrayList</span><<span class="datatype">Integer</span>> <span class="variable">duplicateList</span> = <span class="keyword">new</span> <span class="datatype">ArrayList</span><>();
+        <span class="variable">duplicateList</span>.<span class="method">add</span>(1);
+        <span class="variable">duplicateList</span>.<span class="method">add</span>(2);
+        <span class="variable">duplicateList</span>.<span class="method">add</span>(2);
+        <span class="variable">duplicateList</span>.<span class="method">add</span>(3);
+        <span class="variable">duplicateList</span>.<span class="method">add</span>(3);
+        <span class="variable">duplicateList</span>.<span class="method">add</span>(4);
+        <span class="datatype">ArrayList</span><<span class="datatype">Integer</span>> <span class="variable">uniqueList</span> = <span class="keyword">new</span> <span class="datatype">ArrayList</span><>();
+        <span class="keyword">for</span> (<span class="datatype">Integer</span> <span class="variable">num</span> : <span class="variable">duplicateList</span>) {
+            <span class="keyword">if</span> (!<span class="variable">uniqueList</span>.<span class="method">contains</span>(<span class="variable">num</span>)) {
+                <span class="variable">uniqueList</span>.<span class="method">add</span>(<span class="variable">num</span>);
+            }
+        }
+        <span class="keyword">System.out.println</span>(<span class="string">"Unique elements: "</span> + <span class="variable">uniqueList</span>);
+
+        // 13. Find the Index of an Element
+        <span class="datatype">ArrayList</span><<span class="datatype">String</span>> <span class="variable">indexList</span> = <span class="keyword">new</span> <span class="datatype">ArrayList</span><>();
+        <span class="variable">indexList</span>.<span class="method">add</span>(<span class="string">"Alice"</span>);
+        <span class="variable">indexList</span>.<span class="method">add</span>(<span class="string">"Bob"</span>);
+        <span class="variable">indexList</span>.<span class="method">add</span>(<span class="string">"Charlie"</span>);
+        <span class="datatype">int</span> <span class="variable">index</span> = <span class="variable">indexList</span>.<span class="method">indexOf</span>(<span class="string">"Bob"</span>);
+        <span class="keyword">System.out.println</span>(<span class="string">"Index of 'Bob': "</span> + <span class="variable">index</span>);
+
+        // 14. Insert an Element at a Specific Index
+        <span class="datatype">ArrayList</span><<span class="datatype">String</span>> <span class="variable">insertList</span> = <span class="keyword">new</span> <span class="datatype">ArrayList</span><>();
+        <span class="variable">insertList</span>.<span class="method">add</span>(<span class="string">"Alice"</span>);
+        <span class="variable">insertList</span>.<span class="method">add</span>(<span class="string">"Bob"</span>);
+        <span class="variable">insertList</span>.<span class="method">add</span>(<span class="string">"Charlie"</span>);
+        <span class="variable">insertList</span>.<span class="method">add</span>(1, <span class="string">"David"</span>);
+        <span class="keyword">System.out.println</span>(<span class="string">"ArrayList after insertion: "</span> + <span class="variable">insertList</span>);
+
+        // 15. Merge Two ArrayLists
+        <span class="datatype">ArrayList</span><<span class="datatype">Integer</span>> <span class="variable">list1</span> = <span class="keyword">new</span> <span class="datatype">ArrayList</span><>();
+        <span class="variable">list1</span>.<span class="method">add</span>(1);
+        <span class="variable">list1</span>.<span class="method">add</span>(2);
+        <span class="datatype">ArrayList</span><<span class="datatype">Integer</span>> <span class="variable">list2</span> = <span class="keyword">new</span> <span class="datatype">ArrayList</span><>();
+        <span class="variable">list2</span>.<span class="method">add</span>(3);
+        <span class="variable">list2</span>.<span class="method">add</span>(4);
+        <span class="variable">list1</span>.<span class="method">addAll</span>(<span class="variable">list2</span>);
+        <span class="keyword">System.out.println</span>(<span class="string">"Merged ArrayList: "</span> + <span class="variable">list1</span>);
+
+        // 16. Sort an ArrayList
+        <span class="datatype">ArrayList</span><<span class="datatype">Integer</span>> <span class="variable">sortList</span> = <span class="keyword">new</span> <span class="datatype">ArrayList</span><>();
+        <span class="variable">sortList</span>.<span class="method">add</span>(30);
+        <span class="variable">sortList</span>.<span class="method">add</span>(10);
+        <span class="variable">sortList</span>.<span class="method">add</span>(20);
+        <span class="keyword">Collections</span>.<span class="method">sort</span>(<span class="variable">sortList</span>);
+        <span class="keyword">System.out.println</span>(<span class="string">"Sorted ArrayList: "</span> + <span class="variable">sortList</span>);
+
+        // 17. Reverse an ArrayList
+        <span class="datatype">ArrayList</span><<span class="datatype">Integer</span>> <span class="variable">reverseList</span> = <span class="keyword">new</span> <span class="datatype">ArrayList</span><>();
+        <span class="variable">reverseList</span>.<span class="method">add</span>(10);
+        <span class="variable">reverseList</span>.<span class="method">add</span>(20);
+        <span class="variable">reverseList</span>.<span class="method">add</span>(30);
+        <span class="keyword">Collections</span>.<span class="method">reverse</span>(<span class="variable">reverseList</span>);
+        <span class="keyword">System.out.println</span>(<span class="string">"Reversed ArrayList: "</span> + <span class="variable">reverseList</span>);
+
+        // 18. Convert ArrayList to Array
+        <span class="datatype">ArrayList</span><<span class="datatype">String</span>> <span class="variable">arrayList</span> = <span class="keyword">new</span> <span class="datatype">ArrayList</span><>();
+        <span class="variable">arrayList</span>.<span class="method">add</span>(<span class="string">"Apple"</span>);
+        <span class="variable">arrayList</span>.<span class="method">add</span>(<span class="string">"Banana"</span>);
+        <span class="variable">arrayList</span>.<span class="method">add</span>(<span class="string">"Cherry"</span>);
+        <span class="datatype">String</span>[] <span class="variable">array</span> = <span class="variable">arrayList</span>.<span class="method">toArray</span>(<span class="keyword">new</span> <span class="datatype">String</span>[0]);
+        <span class="keyword">System.out.println</span>(<span class="string">"Array from ArrayList: "</span> + <span class="variable">array</span>);
+        
+    }
+
+	// 19. Media Creates Reality
+        <span class="comment">// Defining the media impact and biases with examples</span>
+        <span class="datatype">String</span> <span class="variable">mediaExample</span> = <span class="string">"In the 2016 U.S. Elections, media coverage played a significant role in shaping perceptions of the candidates."</span>;
+        <span class="keyword">System.out.println</span>(<span class="string">"Media Example: "</span> + <span class="variable">mediaExample</span>);
+
+        // 20. Counting Even Numbers in a List
+        <span class="datatype">ArrayList</span><<span class="datatype">Integer</span>> <span class="variable">numberList</span> = <span class="keyword">new</span> <span class="datatype">ArrayList</span><>();
+        <span class="variable">numberList</span>.<span class="method">add</span>(1);
+        <span class="variable">numberList</span>.<span class="method">add</span>(2);
+        <span class="variable">numberList</span>.<span class="method">add</span>(3);
+        <span class="variable">numberList</span>.<span class="method">add</span>(4);
+        <span class="variable">numberList</span>.<span class="method">add</span>(5);
+        <span class="datatype">int</span> <span class="variable">evenCount</span> = 0;
+        <span class="keyword">for</span> (<span class="datatype">Integer</span> <span class="variable">num</span> : <span class="variable">numberList</span>) {
+            <span class="keyword">if</span> (<span class="variable">num</span> % 2 == 0) {
+                <span class="variable">evenCount</span>++;
+            }
+        }
+        <span class="keyword">System.out.println</span>(<span class="string">"Number of even numbers: "</span> + <span class="variable">evenCount</span>);
+    }
+}
+    </code></pre>
+
+</body>
+
+	
 		<div id="interwebs" style="text-align:center; margin-bottom:20px">
 			<i><p class="centered" style="padding-bottom:5px">Find me on the interwebs!</p></i>
 			<a class="interweb" href="https://github.com/HanFerik1"><img src="../resources/images/github.png" alt="Github" width="25" height="25"></a>
