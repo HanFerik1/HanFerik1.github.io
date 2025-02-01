@@ -24,7 +24,6 @@
       <p>The encryption is performed by the <code>CeaserReturner</code> method. This method processes the input string in reverse order, checking each character and shifting it forward by three places if it is a letter. If the character is not a letter, it remains unchanged. The <code>equalsIgnoreCase</code> method is used to ensure that the encryption works regardless of letter case. The transformed text is stored in the <code>newinput</code> variable, which is returned as the encrypted result.</p>
       
       <p>The program's <code>main</code> method initializes an instance of <code>CeaserCipher</code>, calls the <code>CeaserReturner</code> method to perform the encryption, and prints the resulting encrypted text. However, the program's approach is inefficient due to the extensive use of <code>if-else</code> statements for character conversion. A more optimized approach would involve using ASCII values or direct <code>char</code> manipulation to achieve the shift in a simpler and more efficient way.</p>
-      <img class="image" src="/resources/images/caesarcipher.png">
 		</div>
 		<br>
 
