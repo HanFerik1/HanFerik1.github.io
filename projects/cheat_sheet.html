@@ -1,1 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Han Ferik's Portfolio Website">
+	<title>Han Ferik</title>
+	<link href="https://fonts.googleapis.com/css?family=Nunito:400,700,900" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="../css/main.css">
+</head>
 
+<body>
+		<img src="../resources/images/han_ferik_logo.png" alt="Han" width="100" height="100" style ="display:block; margin-left: auto; margin-right: auto; margin-top:20px">
+		<h1 style="color:#191919;margin-left: 10px;font-size: 50px;text-align:center;">Han Ferik</h1>
+		<p class="centered" style="text-align:center"><a href="https://hanferik1.github.io/">Home</a> | <a href="../projects.html">Projects</a> | <a href="../apcsa.html">AP CSA</a> </p>
+  
+		<h3 class="centered" style="color: #191919;font-size: 25px">Cheat Sheet</h3>
+		<div class="centered">
+			<p style="margin-top:5px"><i>Tools: VSCode | Source Code: <a href="https://github.com/HanFerik1/Projects/tree/main/Unit%207%20Cheat%20Sheet">GitHub</a></i></p>
+      <p>This Java program demonstrates various basic, intermediate, and advanced operations on <code>ArrayList</code> collections. The class <code>CheatSheet</code> is structured to tackle different array manipulations, such as adding, updating, removing elements, and using loops for traversing the list. The first set of operations focuses on basic <code>ArrayList</code> operations. It begins by showing how to create and initialize an <code>ArrayList</code> of integers and add elements such as 10, 20, 30, 40, and 50. After adding these elements, the program prints the entire <code>ArrayList</code> to show the result. Next, it works with a <code>String</code> <code>ArrayList</code> containing names like "Alice," "Bob," and "Charlie." The program replaces "Bob" with "David" using the <code>set()</code> method and prints the updated list to reflect this change. The program then removes an element at a specific index—index 2—demonstrating the <code>remove()</code> method, and prints the modified list. Following this, the program checks if a specific name, "Alice," exists in the list using the <code>contains()</code> method, and prints "Found" if it is present, or "Not Found" if it isn't. The final part of this section involves finding the size of an <code>ArrayList</code> before and after adding elements, using the <code>size()</code> method to show how the list's size changes as elements are added.</p>
+
+      <p>The next section focuses on traversing <code>ArrayLists</code>. The program uses a for-each loop to print each element of an <code>ArrayList</code> of integers, specifically the numbers 1, 2, 3, 4, and 5. This demonstrates a simple and efficient way to loop through a collection. It also shows how to use a traditional <code>for</code> loop to traverse the list by accessing each element using the <code>get()</code> method and iterating through the list based on its size. The program then reverses the order of elements in an <code>ArrayList</code> of integers (10, 20, 30, 40) by using the <code>Collections.reverse()</code> method, and prints the reversed list. Following that, it calculates the sum of all elements in an <code>ArrayList</code> of integers by iterating through the list with a loop and adding the elements together. It then counts how many even numbers are in the list by checking if each number is divisible by 2 and printing the result.</p>
+      
+      <p>Moving on to algorithmic tasks, the program tackles some common problems. It finds the maximum and minimum values in an <code>ArrayList</code> of integers using the <code>Collections.max()</code> and <code>Collections.min()</code> methods, respectively. The program also removes duplicate values from an <code>ArrayList</code> by iterating through the list and adding only unique elements to a new <code>ArrayList</code>. Afterward, it searches for the index of a specific element (e.g., "Bob") in a <code>String</code> <code>ArrayList</code> using the <code>indexOf()</code> method, printing the index of the element or -1 if it doesn't exist. The program also demonstrates how to insert a new element at a specific index in the <code>ArrayList</code> using the <code>add(index, element)</code> method. Finally, it merges two <code>ArrayLists</code> of integers into one by using the <code>addAll()</code> method and prints the combined result.</p>
+      
+      <p>The last section covers advanced <code>ArrayList</code> operations. The program begins by sorting an <code>ArrayList</code> of integers in ascending order using the <code>Collections.sort()</code> method. It then removes all elements greater than a given value (50) by using the <code>removeIf()</code> method, which removes elements that meet a specific condition. Next, the program calculates the median value of an <code>ArrayList</code> of integers. To find the median, the list is first sorted, and then the middle element is retrieved to calculate the median. The program also counts how many times each unique element appears in the list using the <code>Collections.frequency()</code> method and prints the frequency of each element. Lastly, the program demonstrates how to shuffle the elements of an <code>ArrayList</code> randomly using the <code>Collections.shuffle()</code> method, printing the shuffled list to show the result.</p>
+      
+      <p>Each of these operations illustrates the versatility of the <code>ArrayList</code> class in Java, covering a wide range of tasks from basic element manipulation to advanced operations such as sorting, removing duplicates, and calculating the median. The program is a comprehensive guide for working with <code>ArrayList</code> and shows how to use Java’s collection framework effectively for various tasks.</p>
+
+      <img class="image" src="/resources/images/cheatsheet.png">
+		</div>
+		<br>
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Java CheatSheet Code</title>
+        <style>
+            pre {
+                background-color: #f4f4f4;
+                padding: 10px;
+                border-radius: 5px;
+                font-family: "Courier New", Courier, monospace;
+                color: #333;
+            }
+            .keyword { color: #0000ff; }
+            .string { color: #a31515; }
+            .method { color: #2b91af; }
+            .comment { color: #008000; font-style: italic; }
+        </style>
+    </head>
+    <body>
+    
+    <h1>Java CheatSheet Code</h1>
+    <pre>
+    <span class="comment">// 1. Create and Initialize an ArrayList</span>
+    <span class="keyword">ArrayList</span>&lt;<span class="keyword">Integer</span>&gt; numbers = new <span class="keyword">ArrayList</span><>();
+    numbers.add(10);
+    numbers.add(20);
+    numbers.add(30);
+    numbers.add(40);
+    numbers.add(50);
+    <span class="method">System.out.println</span>(<span class="string">"ArrayList: "</span> + numbers);
+    
+    <span class="comment">// 2. Access and Update Elements</span>
+    <span class="keyword">ArrayList</span>&lt;<span class="keyword">String</span>&gt; names = new <span class="keyword">ArrayList</span><>();
+    names.add(<span class="string">"Alice"</span>);
+    names.add(<span class="string">"Bob"</span>);
+    names.add(<span class="string">"Charlie"</span>);
+    names.set(1, <span class="string">"David"</span>); <span class="comment">// Replace "Bob" with "David"</span>
+    <span class="method">System.out.println</span>(<span class="string">"Updated ArrayList: "</span> + names);
+    
+    <span class="comment">// 3. Remove an Element</span>
+    <span class="keyword">ArrayList</span>&lt;<span class="keyword">Integer</span>&gt; integers = new <span class="keyword">ArrayList</span><>();
+    integers.add(10);
+    integers.add(20);
+    integers.add(30);
+    integers.add(40);
+    integers.add(50);
+    integers.remove(2); <span class="comment">// Remove element at index 2</span>
+    <span class="method">System.out.println</span>(<span class="string">"ArrayList after removal: "</span> + integers);
+    
+    <span class="comment">// 4. Check if an Element Exists</span>
+    <span class="keyword">ArrayList</span>&lt;<span class="keyword">String</span>&gt; checkNames = new <span class="keyword">ArrayList</span><>();
+    checkNames.add(<span class="string">"Alice"</span>);
+    checkNames.add(<span class="string">"Bob"</span>);
+    checkNames.add(<span class="string">"Charlie"</span>);
+    <span class="keyword">if</span> (checkNames.contains(<span class="string">"Alice"</span>)) {
+        <span class="method">System.out.println</span>(<span class="string">"Found"</span>);
+    } <span class="keyword">else</span> {
+        <span class="method">System.out.println</span>(<span class="string">"Not Found"</span>);
+    }
+    
+    <span class="comment">// 5. Find the Size of an ArrayList</span>
+    <span class="keyword">ArrayList</span>&lt;<span class="keyword">String</span>&gt; sizeList = new <span class="keyword">ArrayList</span><>();
+    sizeList.add(<span class="string">"A"</span>);
+    sizeList.add(<span class="string">"B"</span>);
+    sizeList.add(<span class="string">"C"</span>);
+    <span class="method">System.out.println</span>(<span class="string">"Size before: "</span> + sizeList.size());
+    sizeList.add(<span class="string">"D"</span>);
+    sizeList.add(<span class="string">"E"</span>);
+    <span class="method">System.out.println</span>(<span class="string">"Size after: "</span> + sizeList.size());
+    
+    <span class="comment">// 6. Print All Elements Using a For-Each Loop</span>
+    <span class="keyword">ArrayList</span>&lt;<span class="keyword">Integer</span>&gt; forEachList = new <span class="keyword">ArrayList</span><>();
+    forEachList.add(1);
+    forEachList.add(2);
+    forEachList.add(3);
+    forEachList.add(4);
+    forEachList.add(5);
+    <span class="keyword">for</span> (<span class="keyword">Integer</span> num : forEachList) {
+        <span class="method">System.out.println</span>(num);
+    }
+    
+    <span class="comment">// 7. Print All Elements Using a For Loop</span>
+    <span class="keyword">ArrayList</span>&lt;<span class="keyword">String</span>&gt; forLoopList = new <span class="keyword">ArrayList</span><>();
+    forLoopList.add(<span class="string">"Alice"</span>);
+    forLoopList.add(<span class="string">"Bob"</span>);
+    forLoopList.add(<span class="string">"Charlie"</span>);
+    <span class="keyword">for</span> (<span class="keyword">int</span> i = 0; i &lt; forLoopList.size(); i++) {
+        <span class="method">System.out.println</span>(forLoopList.get(i));
+    }
+    
+    <span class="comment">// 8. Reverse the Elements in an ArrayList</span>
+    <span class="keyword">ArrayList</span>&lt;<span class="keyword">Integer</span>&gt; reverseList = new <span class="keyword">ArrayList</span><>();
+    reverseList.add(10);
+    reverseList.add(20);
+    reverseList.add(30);
+    reverseList.add(40);
+    <span class="method">Collections.reverse</span>(reverseList);
+    <span class="method">System.out.println</span>(<span class="string">"Reversed ArrayList: "</span> + reverseList);
+    
+    <span class="comment">// 9. Find the Sum of Elements in an ArrayList</span>
+    <span class="keyword">ArrayList</span>&lt;<span class="keyword">Integer</span>&gt; sumList = new <span class="keyword">ArrayList</span><>();
+    sumList.add(1);
+    sumList.add(2);
+    sumList.add(3);
+    sumList.add(4);
+    sumList.add(5);
+    <span class="keyword">int</span> sum = 0;
+    <span class="keyword">for</span> (<span class="keyword">Integer</span> num : sumList) {
+        sum += num;
+    }
+    <span class="method">System.out.println</span>(<span class="string">"Sum of elements: "</span> + sum);
+    
+    <span class="comment">// 10. Count the Number of Even Numbers</span>
+    <span class="keyword">ArrayList</span>&lt;<span class="keyword">Integer</span>&gt; evenList = new <span class="keyword">ArrayList</span><>();
+    evenList.add(1);
+    evenList.add(2);
+    evenList.add(3);
+    evenList.add(4);
+    evenList.add(5);
+    <span class="keyword">int</span> evenCount = 0;
+    <span class="keyword">for</span> (<span class="keyword">Integer</span> num : evenList) {
+        <span class="keyword">if</span> (num % 2 == 0) {
+            evenCount++;
+        }
+    }
+    <span class="method">System.out.println</span>(<span class="string">"Number of even numbers: "</span> + evenCount);
+    
+    <span class="comment">// 11. Find the Maximum and Minimum Values</span>
+    <span class="keyword">ArrayList</span>&lt;<span class="keyword">Integer</span>&gt; maxMinList = new <span class="keyword">ArrayList</span><>();
+    maxMinList.add(10);
+    maxMinList.add(20);
+    maxMinList.add(30);
+    maxMinList.add(40);
+    maxMinList.add(50);
+    <span class="keyword">int</span> max = <span class="method">Collections.max</span>(maxMinList);
+    <span class="keyword">int</span> min = <span class="method">Collections.min</span>(maxMinList);
+    <span class="method">System.out.println</span>(<span class="string">"Maximum value: "</span> + max);
+    <span class="method">System.out.println</span>(<span class="string">"Minimum value: "</span> + min);
+    
+    <span class="comment">// 12. Remove All Duplicates</span>
+    <span class="keyword">ArrayList</span>&lt;<span class="keyword">Integer</span>&gt; duplicateList = new <span class="keyword">ArrayList</span><>();
+    duplicateList.add(1);
+    duplicateList.add(2);
+    duplicateList.add(2);
+    duplicateList.add(3);
+    duplicateList.add(3);
+    duplicateList.add(4);
+    <span class="keyword">ArrayList</span>&lt;<span class="keyword">Integer</span>&gt; uniqueList = new <span class="keyword">ArrayList</span><>();
+    <span class="keyword">for</span> (<span class="keyword">Integer</span> num : duplicateList) {
+        <span class="keyword">if</span> (!uniqueList.contains(num)) {
+            uniqueList.add(num);
+        }
+    }
+    <span class="method">System.out.println</span>(<span class="string">"Unique elements: "</span> + uniqueList);
+    
+    <span class="comment">// 13. Find the Index of an Element</span>
+    <span class="keyword">ArrayList</span>&lt;<span class="keyword">String</span>&gt; indexList = new <span class="keyword">ArrayList</span><>();
+    indexList.add(<span class="string">"Alice"</span>);
+    indexList.add(<span class="string">"Bob"</span>);
+    indexList.add(<span class="string">"Charlie"</span>);
+    <span class="keyword">int</span> index = indexList.indexOf(<span class="string">"Bob"</span>);
+    <span class="method">System.out.println</span>(<span class="string">"Index of 'Bob': "</span> + index);
+    
+    <span class="comment">// 14. Convert an ArrayList to an Array</span>
+    <span class="keyword">ArrayList</span>&lt;<span class="keyword">Integer</span>&gt; listToArray = new <span class="keyword">ArrayList</span><>();
+    listToArray.add(1);
+    listToArray.add(2);
+    listToArray.add(3);
+    listToArray.add(4);
+    <span class="keyword">Integer[]</span> array = new <span class="keyword">Integer</span>[listToArray.size()];
+    listToArray.toArray(array);
+    <span class="method">System.out.println</span>(<span class="string">"Array from ArrayList: "</span> + <span class="method">Arrays.toString</span>(array));
+    
+    <span class="comment">// 15. Add All Elements from Another List</span>
+    <span class="keyword">ArrayList</span>&lt;<span class="keyword">Integer</span>&gt; list1 = new <span class="keyword">ArrayList</span><>();
+    list1.add(1);
+    list1.add(2);
+    list1.add(3);
+    <span class="keyword">ArrayList</span>&lt;<span class="keyword">Integer</span>&gt; list2 = new <span class="keyword">ArrayList</span><>();
+    list2.add(4);
+    list2.add(5);
+    list1.addAll(list2);
+    <span class="method">System.out.println</span>(<span class="string">"Merged list: "</span> + list1);
+    
+    <span class="comment">// 16. Remove All Elements from an ArrayList</span>
+    <span class="keyword">ArrayList</span>&lt;<span class="keyword">Integer</span>&gt; clearList = new <span class="keyword">ArrayList</span><>();
+    clearList.add(1);
+    clearList.add(2);
+    clearList.add(3);
+    clearList.clear();
+    <span class="method">System.out.println</span>(<span class="string">"Cleared list: "</span> + clearList);
+    
+    <span class="comment">// 17. Sort an ArrayList</span>
+    <span class="keyword">ArrayList</span>&lt;<span class="keyword">Integer</span>&gt; sortList = new <span class="keyword">ArrayList</span><>();
+    sortList.add(5);
+    sortList.add(3);
+    sortList.add(4);
+    sortList.add(1);
+    sortList.add(2);
+    <span class="method">Collections.sort</span>(sortList);
+    <span class="method">System.out.println</span>(<span class="string">"Sorted list: "</span> + sortList);
+    
+    <span class="comment">// 18. Find the Frequency of an Element</span>
+    <span class="keyword">ArrayList</span>&lt;<span class="keyword">Integer</span>&gt; frequencyList = new <span class="keyword">ArrayList</span><>();
+    frequencyList.add(1);
+    frequencyList.add(2);
+    frequencyList.add(2);
+    frequencyList.add(3);
+    frequencyList.add(2);
+    <span class="keyword">int</span> frequency = <span class="method">Collections.frequency</span>(frequencyList, 2);
+    <span class="method">System.out.println</span>(<span class="string">"Frequency of 2: "</span> + frequency);
+    
+    <span class="comment">// 19. Replace All Occurrences of an Element</span>
+    <span class="keyword">ArrayList</span>&lt;<span class="keyword">Integer</span>&gt; replaceList = new <span class="keyword">ArrayList</span><>();
+    replaceList.add(1);
+    replaceList.add(2);
+    replaceList.add(3);
+    replaceList.add(2);
+    <span class="keyword">for</span> (<span class="keyword">int</span> i = 0; i &lt; replaceList.size(); i++) {
+        <span class="keyword">if</span> (replaceList.get(i) == 2) {
+            replaceList.set(i, 10);
+        }
+    }
+    <span class="method">System.out.println</span>(<span class="string">"Replaced list: "</span> + replaceList);
+    
+    <span class="comment">// 20. Create a List from Elements</span>
+    <span class="keyword">List</span>&lt;<span class="keyword">String</span>&gt; list = <span class="method">Arrays.asList</span>(<span class="string">"Apple"</span>, <span class="string">"Banana"</span>, <span class="string">"Cherry"</span>);
+    <span class="method">System.out.println</span>(<span class="string">"List: "</span> + list);
+    </pre>
+    
+    </body>
+    </html>
+
+		<div id="interwebs" style="text-align:center; margin-bottom:20px">
+			<i><p class="centered" style="padding-bottom:5px">Find me on the interwebs!</p></i>
+			<a class="interweb" href="https://github.com/HanFerik1"><img src="../resources/images/github.png" alt="Github" width="25" height="25"></a>
+			<a class="interweb" href="https://linkedin.com/in/han-ferik-ba527a23b?original_referer=https%3A%2F%2Fwww.linkedin.com%2F"><img src="../resources/images/linkedin.png" alt="LinkedIn" width="25" height="25"></a>
+			<a class="interweb" href="https://www.instagram.com/hanferik/"><img src="../resources/images/instagram.jpg" alt="Instagram" width="25" height="25"></a>
+			<a class="interweb" href="https://www.facebook.com/han.ferik/"><img src="../resources/images/facebook.png" alt="Facebook" width="25" height="25"></a>
+		</div>
+
+</body>
+</html>
