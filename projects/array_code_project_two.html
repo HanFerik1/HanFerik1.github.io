@@ -34,85 +34,293 @@
 		</div>
 		<br>
     
-   <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Array Code Project Two</title>
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-                background-color: #f4f4f4;
-                padding: 20px;
+ <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Array Code Project Two</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        padding: 20px;
+    }
+    pre {
+        background-color: #e8e8e8;
+        padding: 15px;
+        border-radius: 5px;
+        overflow-x: auto;
+        font-size: 14px;
+    }
+    .keyword {
+        color: #d73a49; /* Pink for keywords */
+        font-weight: bold;
+    }
+    .datatype {
+        color: #005cc5; /* Blue for data types */
+    }
+    .variable {
+        color: #6f42c1; /* Purple for variables */
+    }
+    .method {
+        color: #6f42c1; /* Purple for methods */
+    }
+    .string {
+        color: #032f62; /* Dark blue for strings */
+    }
+</style>
+</head>
+<body>
+
+<h1>Java Code Example</h1>
+<pre>
+    <span class="keyword">import</span> java.util.*;
+
+    <span class="keyword">public</span> class <span class="variable">ArrayCodeProjectTwo</span> {
+        
+        <span class="keyword">// 1. Sum of Elements</span>
+        <span class="keyword">public static</span> <span class="keyword">int</span> <span class="method">sumOfElements</span>(<span class="keyword">int</span>[] <span class="variable">arr</span>) {
+            <span class="keyword">int</span> <span class="variable">sum</span> = 0;
+            <span class="keyword">for</span> (<span class="keyword">int</span> <span class="variable">num</span> : <span class="variable">arr</span>) {
+                <span class="variable">sum</span> += <span class="variable">num</span>;
             }
-            pre {
-                background-color: #e8e8e8;
-                padding: 15px;
-                border-radius: 5px;
-                overflow-x: auto;
-                font-size: 14px;
+            <span class="keyword">return</span> <span class="variable">sum</span>;
+        }
+
+        <span class="keyword">// 2. Maximum and Minimum Finder</span>
+        <span class="keyword">public static</span> <span class="keyword">void</span> <span class="method">findMaxMin</span>(<span class="keyword">int</span>[] <span class="variable">arr</span>) {
+            <span class="keyword">int</span> <span class="variable">max</span> = <span class="variable">arr</span>[0], <span class="variable">min</span> = <span class="variable">arr</span>[0];
+            <span class="keyword">for</span> (<span class="keyword">int</span> <span class="variable">num</span> : <span class="variable">arr</span>) {
+                <span class="keyword">if</span> (<span class="variable">num</span> > <span class="variable">max</span>) <span class="variable">max</span> = <span class="variable">num</span>;
+                <span class="keyword">if</span> (<span class="variable">num</span> < <span class="variable">min</span>) <span class="variable">min</span> = <span class="variable">num</span>;
             }
-            .keyword {
-                color: #d73a49; /* Pink for keywords */
-                font-weight: bold;
+            <span class="keyword">System.out.println</span>(<span class="string">"Max: "</span> + <span class="variable">max</span> + <span class="string">", Min: "</span> + <span class="variable">min</span>);
+        }
+
+        <span class="keyword">// 3. Count Positive, Negative, and Zero Elements</span>
+        <span class="keyword">public static</span> <span class="keyword">void</span> <span class="method">countNumbers</span>(<span class="keyword">int</span>[] <span class="variable">arr</span>) {
+            <span class="keyword">int</span> <span class="variable">pos</span> = 0, <span class="variable">neg</span> = 0, <span class="variable">zero</span> = 0;
+            <span class="keyword">for</span> (<span class="keyword">int</span> <span class="variable">num</span> : <span class="variable">arr</span>) {
+                <span class="keyword">if</span> (<span class="variable">num</span> > 0) <span class="variable">pos</span>++;
+                <span class="keyword">else if</span> (<span class="variable">num</span> < 0) <span class="variable">neg</span>++;
+                <span class="keyword">else</span> <span class="variable">zero</span>++;
             }
-            .datatype {
-                color: #005cc5; /* Blue for data types */
+            <span class="keyword">System.out.println</span>(<span class="string">"Positive: "</span> + <span class="variable">pos</span> + <span class="string">", Negative: "</span> + <span class="variable">neg</span> + <span class="string">", Zero: "</span> + <span class="variable">zero</span>);
+        }
+
+        <span class="keyword">// 4. Reverse the Array</span>
+        <span class="keyword">public static</span> <span class="keyword">void</span> <span class="method">reverseArray</span>(<span class="keyword">int</span>[] <span class="variable">arr</span>) {
+            <span class="keyword">int</span> <span class="variable">left</span> = 0, <span class="variable">right</span> = <span class="variable">arr</span>.length - 1;
+            <span class="keyword">while</span> (<span class="variable">left</span> < <span class="variable">right</span>) {
+                <span class="keyword">int</span> <span class="variable">temp</span> = <span class="variable">arr</span>[<span class="variable">left</span>];
+                <span class="variable">arr</span>[<span class="variable">left</span>] = <span class="variable">arr</span>[<span class="variable">right</span>];
+                <span class="variable">arr</span>[<span class="variable">right</span>] = <span class="variable">temp</span>;
+                <span class="variable">left</span>++;
+                <span class="variable">right</span>--;
             }
-            .variable {
-                color: #6f42c1; /* Purple for variables */
-            }
-            .method {
-                color: #6f42c1; /* Purple for methods */
-            }
-            .string {
-                color: #032f62; /* Dark blue for strings */
-            }
-        </style>
-    </head>
-    <body>
-    
-        <h1>Java Code Example</h1>
-        <pre>
-            <span class="keyword">import</span> java.util.*;
-    
-            <span class="keyword">public</span> class <span class="variable">ArrayCodeProjectTwo</span> {
-            
-                <span class="keyword">// 1. Sum of Elements</span>
-                <span class="keyword">public static</span> <span class="keyword">int</span> <span class="method">sumOfElements</span>(<span class="keyword">int</span>[] <span class="variable">arr</span>) {
-                    <span class="keyword">int</span> <span class="variable">sum</span> = 0;
-                    <span class="keyword">for</span> (<span class="keyword">int</span> <span class="variable">num</span> : <span class="variable">arr</span>) {
-                        <span class="variable">sum</span> += <span class="variable">num</span>;
-                    }
-                    <span class="keyword">return</span> <span class="variable">sum</span>;
+            <span class="keyword">System.out.println</span>(<span class="string">"Reversed Array: "</span> + <span class="variable">Arrays.toString</span>(<span class="variable">arr</span>));
+        }
+
+        <span class="keyword">// 5. Find the Second Largest Element</span>
+        <span class="keyword">public static</span> <span class="keyword">int</span> <span class="method">secondLargest</span>(<span class="keyword">int</span>[] <span class="variable">arr</span>) {
+            <span class="keyword">int</span> <span class="variable">first</span> = <span class="keyword">Integer.MIN_VALUE</span>, <span class="variable">second</span> = <span class="keyword">Integer.MIN_VALUE</span>;
+            <span class="keyword">for</span> (<span class="keyword">int</span> <span class="variable">num</span> : <span class="variable">arr</span>) {
+                <span class="keyword">if</span> (<span class="variable">num</span> > <span class="variable">first</span>) {
+                    <span class="variable">second</span> = <span class="variable">first</span>;
+                    <span class="variable">first</span> = <span class="variable">num</span>;
+                } <span class="keyword">else if</span> (<span class="variable">num</span> > <span class="variable">second</span> && <span class="variable">num</span> != <span class="variable">first</span>) {
+                    <span class="variable">second</span> = <span class="variable">num</span>;
                 }
-            
-                <span class="keyword">// 2. Maximum and Minimum Finder</span>
-                <span class="keyword">public static</span> <span class="keyword">void</span> <span class="method">findMaxMin</span>(<span class="keyword">int</span>[] <span class="variable">arr</span>) {
-                    <span class="keyword">int</span> <span class="variable">max</span> = <span class="variable">arr</span>[0], <span class="variable">min</span> = <span class="variable">arr</span>[0];
-                    <span class="keyword">for</span> (<span class="keyword">int</span> <span class="variable">num</span> : <span class="variable">arr</span>) {
-                        <span class="keyword">if</span> (<span class="variable">num</span> > <span class="variable">max</span>) <span class="variable">max</span> = <span class="variable">num</span>;
-                        <span class="keyword">if</span> (<span class="variable">num</span> < <span class="variable">min</span>) <span class="variable">min</span> = <span class="variable">num</span>;
-                    }
-                    <span class="keyword">System.out.println</span>(<span class="string">"Max: "</span> + <span class="variable">max</span> + <span class="string">", Min: "</span> + <span class="variable">min</span>);
+            }
+            <span class="keyword">return</span> <span class="variable">second</span>;
+        }
+
+        <span class="keyword">// 6. Check if an Array is Sorted</span>
+        <span class="keyword">public static</span> <span class="keyword">boolean</span> <span class="method">isSorted</span>(<span class="keyword">int</span>[] <span class="variable">arr</span>) {
+            <span class="keyword">for</span> (<span class="keyword">int</span> <span class="variable">i</span> = 1; <span class="variable">i</span> < <span class="variable">arr</span>.length; <span class="variable">i</span>++) {
+                <span class="keyword">if</span> (<span class="variable">arr</span>[<span class="variable">i</span>] < <span class="variable">arr</span>[<span class="variable">i</span> - 1]) {
+                    <span class="keyword">return</span> <span class="keyword">false</span>;
                 }
-            
-                <span class="keyword">// 3. Count Positive, Negative, and Zero Elements</span>
-                <span class="keyword">public static</span> <span class="keyword">void</span> <span class="method">countNumbers</span>(<span class="keyword">int</span>[] <span class="variable">arr</span>) {
-                    <span class="keyword">int</span> <span class="variable">pos</span> = 0, <span class="variable">neg</span> = 0, <span class="variable">zero</span> = 0;
-                    <span class="keyword">for</span> (<span class="keyword">int</span> <span class="variable">num</span> : <span class="variable">arr</span>) {
-                        <span class="keyword">if</span> (<span class="variable">num</span> > 0) <span class="variable">pos</span>++;
-                        <span class="keyword">else if</span> (<span class="variable">num</span> < 0) <span class="variable">neg</span>++;
-                        <span class="keyword">else</span> <span class="variable">zero</span>++;
-                    }
-                    <span class="keyword">System.out.println</span>(<span class="string">"Positive: "</span> + <span class="variable">pos</span> + <span class="string">", Negative: "</span> + <span class="variable">neg</span> + <span class="string">", Zero: "</span> + <span class="variable">zero</span>);
+            }
+            <span class="keyword">return</span> <span class="keyword">true</span>;
+        }
+
+        <span class="keyword">// 7. Find the Mode (Most Frequent Element)</span>
+        <span class="keyword">public static</span> <span class="keyword">int</span> <span class="method">findMode</span>(<span class="keyword">int</span>[] <span class="variable">arr</span>) {
+            <span class="keyword">Map</span><span class="datatype">&lt;Integer, Integer&gt;</span> <span class="variable">countMap</span> = <span class="keyword">new</span> <span class="keyword">HashMap</span><span class="datatype">&lt;&gt;</span>();
+            <span class="keyword">for</span> (<span class="keyword">int</span> <span class="variable">num</span> : <span class="variable">arr</span>) {
+                <span class="keyword">countMap</span>.put(<span class="variable">num</span>, <span class="variable">countMap</span>.getOrDefault(<span class="variable">num</span>, 0) + 1);
+            }
+            <span class="keyword">int</span> <span class="variable">mode</span> = <span class="variable">arr</span>[0];
+            <span class="keyword">int</span> <span class="variable">maxCount</span> = 0;
+            <span class="keyword">for</span> (<span class="keyword">Map.Entry</span><span class="datatype">&lt;Integer, Integer&gt;</span> <span class="variable">entry</span> : <span class="variable">countMap</span>.entrySet()) {
+                <span class="keyword">if</span> (<span class="variable">entry</span>.getValue() > <span class="variable">maxCount</span>) {
+                    <span class="variable">maxCount</span> = <span class="variable">entry</span>.getValue();
+                    <span class="variable">mode</span> = <span class="variable">entry</span>.getKey();
                 }
-    
-                <span class="keyword">// The rest of the methods follow the same structure...</span>
-            
-            <span class="keyword">}</span>
-        </pre>
-    </body>
-    </html>
+            }
+            <span class="keyword">return</span> <span class="variable">mode</span>;
+        }
+
+        <span class="keyword">// 8. Merge Two Sorted Arrays</span>
+        <span class="keyword">public static</span> <span class="keyword">int</span>[] <span class="method">mergeSortedArrays</span>(<span class="keyword">int</span>[] <span class="variable">arr1</span>, <span class="keyword">int</span>[] <span class="variable">arr2</span>) {
+            <span class="keyword">int</span> <span class="variable">len1</span> = <span class="variable">arr1</span>.length;
+            <span class="keyword">int</span> <span class="variable">len2</span> = <span class="variable">arr2</span>.length;
+            <span class="keyword">int</span>[] <span class="variable">merged</span> = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="variable">len1</span> + <span class="variable">len2</span>];
+            <span class="keyword">int</span> <span class="variable">i</span> = 0, <span class="variable">j</span> = 0, <span class="variable">k</span> = 0;
+
+            <span class="keyword">while</span> (<span class="variable">i</span> < <span class="variable">len1</span> && <span class="variable">j</span> < <span class="variable">len2</span>) {
+                <span class="keyword">if</span> (<span class="variable">arr1</span>[<span class="variable">i</span>] < <span class="variable">arr2</span>[<span class="variable">j</span>]) {
+                    <span class="variable">merged</span>[<span class="variable">k</span>++] = <span class="variable">arr1</span>[<span class="variable">i</span>++];
+                } <span class="keyword">else</span> {
+                    <span class="variable">merged</span>[<span class="variable">k</span>++] = <span class="variable">arr2</span>[<span class="variable">j</span>++];
+                }
+            }
+
+            <span class="keyword">while</span> (<span class="variable">i</span> < <span class="variable">len1</span>) {
+                <span class="variable">merged</span>[<span class="variable">k</span>++] = <span class="variable">arr1</span>[<span class="variable">i</span>++];
+            }
+            <span class="keyword">while</span> (<span class="variable">j</span> < <span class="variable">len2</span>) {
+                <span class="variable">merged</span>[<span class="variable">k</span>++] = <span class="variable">arr2</span>[<span class="variable">j</span>++];
+            }
+            <span class="keyword">return</span> <span class="variable">merged</span>;
+        }
+
+	    <span class="keyword">// 9. Calculate the Average of Elements</span>
+	    <span class="keyword">public static</span> <span class="keyword">double</span> <span class="method">average</span>(<span class="keyword">int</span>[] <span class="variable">arr</span>) {
+	        <span class="keyword">int</span> <span class="variable">sum</span> = 0;
+	        <span class="keyword">for</span> (<span class="keyword">int</span> <span class="variable">num</span> : <span class="variable">arr</span>) {
+	            <span class="variable">sum</span> += <span class="variable">num</span>;
+	        }
+	        <span class="keyword">return</span> <span class="variable">sum</span> / <span class="keyword">double</span> (<span class="variable">arr</span>.length);
+	    }
+	
+	    <span class="keyword">// 10. Remove Duplicates from an Array</span>
+	    <span class="keyword">public static</span> <span class="keyword">int</span>[] <span class="method">removeDuplicates</span>(<span class="keyword">int</span>[] <span class="variable">arr</span>) {
+	        <span class="keyword">Set</span><span class="datatype">&lt;Integer&gt;</span> <span class="variable">set</span> = <span class="keyword">new</span> <span class="keyword">HashSet</span><span class="datatype">&lt;&gt;</span>();
+	        <span class="keyword">for</span> (<span class="keyword">int</span> <span class="variable">num</span> : <span class="variable">arr</span>) {
+	            <span class="variable">set</span>.add(<span class="variable">num</span>);
+	        }
+	        <span class="keyword">int</span>[] <span class="variable">uniqueArr</span> = <span class="variable">new</span> <span class="keyword">int</span>[<span class="variable">set</span>.size()];
+	        <span class="keyword">int</span> <span class="variable">i</span> = 0;
+	        <span class="keyword">for</span> (<span class="keyword">Integer</span> <span class="variable">num</span> : <span class="variable">set</span>) {
+	            <span class="variable">uniqueArr</span>[<span class="variable">i</span>++] = <span class="variable">num</span>;
+	        }
+	        <span class="keyword">return</span> <span class="variable">uniqueArr</span>;
+	    }
+	
+	    <span class="keyword">// 11. Swap Two Elements in an Array</span>
+	    <span class="keyword">public static</span> <span class="keyword">void</span> <span class="method">swapElements</span>(<span class="keyword">int</span>[] <span class="variable">arr</span>, <span class="keyword">int</span> <span class="variable">index1</span>, <span class="keyword">int</span> <span class="variable">index2</span>) {
+	        <span class="keyword">int</span> <span class="variable">temp</span> = <span class="variable">arr</span>[<span class="variable">index1</span>];
+	        <span class="variable">arr</span>[<span class="variable">index1</span>] = <span class="variable">arr</span>[<span class="variable">index2</span>];
+	        <span class="variable">arr</span>[<span class="variable">index2</span>] = <span class="variable">temp</span>;
+	    }
+	
+	    <span class="keyword">// 12. Check if an Array is Palindromic</span>
+	    <span class="keyword">public static</span> <span class="keyword">boolean</span> <span class="method">isPalindrome</span>(<span class="keyword">int</span>[] <span class="variable">arr</span>) {
+	        <span class="keyword">int</span> <span class="variable">left</span> = 0, <span class="variable">right</span> = <span class="variable">arr</span>.length - 1;
+	        <span class="keyword">while</span> (<span class="variable">left</span> < <span class="variable">right</span>) {
+	            <span class="keyword">if</span> (<span class="variable">arr</span>[<span class="variable">left</span>] != <span class="variable">arr</span>[<span class="variable">right</span>]) {
+	                <span class="keyword">return</span> <span class="keyword">false</span>;
+	            }
+	            <span class="variable">left</span>++;
+	            <span class="variable">right</span>--;
+	        }
+	        <span class="keyword">return</span> <span class="keyword">true</span>;
+	    }
+	
+	    <span class="keyword">// 13. Rotate Array Elements</span>
+	    <span class="keyword">public static</span> <span class="keyword">void</span> <span class="method">rotateArray</span>(<span class="keyword">int</span>[] <span class="variable">arr</span>, <span class="keyword">int</span> <span class="variable">k</span>) {
+	        <span class="keyword">int</span> <span class="variable">len</span> = <span class="variable">arr</span>.length;
+	        <span class="variable">k</span> %= <span class="variable">len</span>;
+	        <span class="keyword">int</span>[] <span class="variable">temp</span> = <span class="variable">new</span> <span class="keyword">int</span>[<span class="variable">len</span>];
+	        <span class="keyword">for</span> (<span class="keyword">int</span> <span class="variable">i</span> = 0; <span class="variable">i</span> < <span class="variable">len</span>; <span class="variable">i</span>++) {
+	            <span class="variable">temp</span>[<span class="variable">i</span>] = <span class="variable">arr</span>[<span class="variable">i</span>];
+	        }
+	        <span class="keyword">for</span> (<span class="keyword">int</span> <span class="variable">i</span> = 0; <span class="variable">i</span> < <span class="variable">len</span>; <span class="variable">i</span>++) {
+	            <span class="variable">arr</span>[<span class="variable">i</span>] = <span class="variable">temp</span>[<span class="variable">i</span>];
+	        }
+	    }
+	
+	    <span class="keyword">// 14. Convert Array to List</span>
+	    <span class="keyword">public static</span> <span class="keyword">List&lt;Integer&gt;</span> <span class="method">arrayToList</span>(<span class="keyword">int</span>[] <span class="variable">arr</span>) {
+	        <span class="keyword">List&lt;Integer&gt;</span> <span class="variable">list</span> = <span class="keyword">new</span> <span class="keyword">ArrayList&lt;&gt;</span>();
+	        <span class="keyword">for</span> (<span class="keyword">int</span> <span class="variable">num</span> : <span class="variable">arr</span>) {
+	            <span class="variable">list</span>.add(<span class="variable">num</span>);
+	        }
+	        <span class="keyword">return</span> <span class="variable">list</span>;
+	    }
+	
+	    <span class="keyword">// 15. Find the Intersection of Two Arrays</span>
+	    <span class="keyword">public static</span> <span class="keyword">int</span>[] <span class="method">intersection</span>(<span class="keyword">int</span>[] <span class="variable">arr1</span>, <span class="keyword">int</span>[] <span class="variable">arr2</span>) {
+	        <span class="keyword">Set</span><span class="datatype">&lt;Integer&gt;</span> <span class="variable">set1</span> = <span class="keyword">new</span> <span class="keyword">HashSet</span><span class="datatype">&lt;&gt;</span>();
+	        <span class="keyword">Set</span><span class="datatype">&lt;Integer&gt;</span> <span class="variable">set2</span> = <span class="keyword">new</span> <span class="keyword">HashSet</span><span class="datatype">&lt;&gt;</span>();
+	        <span class="keyword">for</span> (<span class="keyword">int</span> <span class="variable">num</span> : <span class="variable">arr1</span>) {
+	            <span class="variable">set1</span>.add(<span class="variable">num</span>);
+	        }
+	        <span class="keyword">for</span> (<span class="keyword">int</span> <span class="variable">num</span> : <span class="variable">arr2</span>) {
+	            <span class="variable">set2</span>.add(<span class="variable">num</span>);
+	        }
+	        <span class="keyword">set1</span>.retainAll(<span class="variable">set2</span>);
+	        <span class="keyword">int</span>[] <span class="variable">intersection</span> = <span class="variable">new</span> <span class="keyword">int</span>[<span class="variable">set1</span>.size()];
+	        <span class="keyword">int</span> <span class="variable">i</span> = 0;
+	        <span class="keyword">for</span> (<span class="keyword">Integer</span> <span class="variable">num</span> : <span class="variable">set1</span>) {
+	            <span class="variable">intersection</span>[<span class="variable">i</span>++] = <span class="variable">num</span>;
+	        }
+	        <span class="keyword">return</span> <span class="variable">intersection</span>;
+	    }
+	
+	    <span class="keyword">// 16. Count Occurrences of an Element in an Array</span>
+	    <span class="keyword">public static</span> <span class="keyword">int</span> <span class="method">countOccurrences</span>(<span class="keyword">int</span>[] <span class="variable">arr</span>, <span class="keyword">int</span> <span class="variable">target</span>) {
+	        <span class="keyword">int</span> <span class="variable">count</span> = 0;
+	        <span class="keyword">for</span> (<span class="keyword">int</span> <span class="variable">num</span> : <span class="variable">arr</span>) {
+	            <span class="keyword">if</span> (<span class="variable">num</span> == <span class="variable">target</span>) {
+	                <span class="variable">count</span>++;
+	            }
+	        }
+	        <span class="keyword">return</span> <span class="variable">count</span>;
+	    }
+	
+	    <span class="keyword">// 17. Find the Longest Word in a String Array</span>
+	    <span class="keyword">public static</span> <span class="keyword">String</span> <span class="method">longestWord</span>(<span class="keyword">String</span>[] <span class="variable">arr</span>) {
+	        <span class="keyword">String</span> <span class="variable">longest</span> = <span class="string">""</span>;
+	        <span class="keyword">for</span> (<span class="keyword">String</span> <span class="variable">word</span> : <span class="variable">arr</span>) {
+	            <span class="keyword">if</span> (<span class="variable">word</span>.length() > <span class="variable">longest</span>.length()) {
+	                <span class="variable">longest</span> = <span class="variable">word</span>;
+	            }
+	        }
+	        <span class="keyword">return</span> <span class="variable">longest</span>;
+	    }
+	
+	    <span class="keyword">// 18. Reverse a String</span>
+	    <span class="keyword">public static</span> <span class="keyword">String</span> <span class="method">reverseString</span>(<span class="keyword">String</span> <span class="variable">str</span>) {
+	        <span class="keyword">StringBuilder</span> <span class="variable">reversed</span> = <span class="keyword">new</span> <span class="keyword">StringBuilder</span>(<span class="variable">str</span>);
+	        <span class="variable">reversed</span>.reverse();
+	        <span class="keyword">return</span> <span class="variable">reversed</span>.toString();
+	    }
+	
+	    <span class="keyword">// 19. Convert a List to an Array</span>
+	    <span class="keyword">public static</span> <span class="keyword">int</span>[] <span class="method">listToArray</span>(<span class="keyword">List&lt;Integer&gt;</span> <span class="variable">list</span>) {
+	        <span class="keyword">int</span>[] <span class="variable">arr</span> = <span class="variable">new</span> <span class="keyword">int</span>[<span class="variable">list</span>.size()];
+	        <span class="keyword">for</span> (<span class="keyword">int</span> <span class="variable">i</span> = 0; <span class="variable">i</span> < <span class="variable">arr</span>.length; <span class="variable">i</span>++) {
+	            <span class="variable">arr</span>[<span class="variable">i</span>] = <span class="variable">list</span>.get(<span class="variable">i</span>);
+	        }
+	        <span class="keyword">return</span> <span class="variable">arr</span>;
+	    }
+	
+	    <span class="keyword">// 20. Find the Smallest Element in an Array</span>
+	    <span class="keyword">public static</span> <span class="keyword">int</span> <span class="method">findSmallest</span>(<span class="keyword">int</span>[] <span class="variable">arr</span>) {
+	        <span class="keyword">int</span> <span class="variable">smallest</span> = <span class="variable">arr</span>[0];
+	        <span class="keyword">for</span> (<span class="keyword">int</span> <span class="variable">num</span> : <span class="variable">arr</span>) {
+	            <span class="keyword">if</span> (<span class="variable">num</span> &lt; <span class="variable">smallest</span>) {
+	                <span class="variable">smallest</span> = <span class="variable">num</span>;
+	            }
+	        }
+	        <span class="keyword">return</span> <span class="variable">smallest</span>;
+	    }	    
+	}
+</pre>
+
+</body>
+</html>
 
   
 		<div id="interwebs" style="text-align:center; margin-bottom:20px">
