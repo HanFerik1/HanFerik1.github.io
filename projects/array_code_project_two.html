@@ -1,1 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Han Ferik's Portfolio Website">
+	<title>Han Ferik</title>
+	<link href="https://fonts.googleapis.com/css?family=Nunito:400,700,900" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="../css/main.css">
+</head>
 
+<body>
+		<img src="../resources/images/han_ferik_logo.png" alt="Han" width="100" height="100" style ="display:block; margin-left: auto; margin-right: auto; margin-top:20px">
+		<h1 style="color:#191919;margin-left: 10px;font-size: 50px;text-align:center;">Han Ferik</h1>
+		<p class="centered" style="text-align:center"><a href="https://hanferik1.github.io/">Home</a> | <a href="../projects.html">Projects</a> | <a href="../apcsa.html">AP CSA</a> </p>
+  
+		<h3 class="centered" style="color: #191919;font-size: 25px">Array Code Project Two</h3>
+		<div class="centered">
+			<p style="margin-top:5px"><i>Tools: VSCode | Source Code: <a href="https://github.com/HanFerik1/Projects/tree/main/Project%20Array%20Code">GitHub</a></i></p>
+      <p>The <code>ArrayCodeProjectTwo</code> program includes various methods that manipulate and analyze arrays in Java. The code covers several common operations like summing array elements, finding the maximum and minimum values, counting positive, negative, and zero elements, and reversing the array. Each method is self-contained, performing a specific task, and the program employs loops and conditional statements to achieve the desired results.</p>
+
+      <p>For example, the <code>sumOfElements</code> method calculates the sum of all integers in the array. It initializes a <code>sum</code> variable to zero and then iterates over the array, adding each number to the sum. The method then returns the total sum.</p>
+      
+      <p>The <code>findMaxMin</code> method finds both the maximum and minimum values in the array. It starts by assuming the first element is both the maximum and minimum. As it iterates over the array, it compares each element to the current maximum and minimum, updating them as needed.</p>
+      
+      <p>Similarly, the <code>countNumbers</code> method counts how many positive, negative, and zero elements exist in the array. It uses simple if-else statements to categorize each element.</p>
+      
+      <p>Other methods perform operations like reversing the array, finding the second-largest element, and checking if the array is sorted. For example, the <code>reverseArray</code> method uses a two-pointer technique, swapping elements from both ends of the array until the pointers meet in the middle.</p>
+      
+      <p>The program also includes functionality to handle duplicate elements using the <code>removeDuplicates</code> method, which uses a <code>LinkedHashSet</code> to ensure only unique elements are kept. Additionally, it includes methods like <code>rotateArrayInPlace</code>, which rotates the array by a specified number of positions, and <code>findPairsWithSum</code>, which finds pairs of numbers that add up to a given target.</p>
+      
+      <p>In the <code>main</code> method, user input is handled via a <code>Scanner</code> object. The user is prompted to enter an array, and then the program calls various methods on that array, such as finding prime numbers, the longest increasing subsequence, rotating the array, and performing binary search. The results are printed to the console after each operation, providing feedback to the user. The program concludes by finding the intersection of two arrays and displaying the common elements.</p>
+
+      <img class="image" src="/resources/images/arraycodeprojecttwo.png">
+		</div>
+		<br>
+    
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Java Code Syntax Highlighting</title>
+        <style>
+            body {
+                font-family: 'Courier New', Courier, monospace;
+                background-color: #2e2e2e;
+                color: #f8f8f2;
+                padding: 20px;
+            }
+    
+            .keyword {
+                color: #c678dd;
+                font-weight: bold;
+            }
+    
+            .variable {
+                color: #98c379;
+            }
+    
+            .method {
+                color: #61afef;
+            }
+    
+            .string {
+                color: #98c379;
+            }
+    
+            .comment {
+                color: #7f8c8d;
+                font-style: italic;
+            }
+    
+            .number {
+                color: #d19a66;
+            }
+    
+            .brackets {
+                color: #56b6c2;
+            }
+    
+            pre {
+                background-color: #282c34;
+                padding: 20px;
+                border-radius: 5px;
+                overflow-x: auto;
+                white-space: pre-wrap;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Java Code Example</h1>
+        <pre>
+            <span class="keyword">import</span> java.util.*;
+    
+            <span class="keyword">public</span> class <span class="variable">ArrayCodeProjectTwo</span> {
+            
+                <span class="keyword">// 1. Sum of Elements</span>
+                <span class="keyword">public static</span> <span class="keyword">int</span> <span class="method">sumOfElements</span>(<span class="keyword">int</span>[] <span class="variable">arr</span>) {
+                    <span class="keyword">int</span> <span class="variable">sum</span> = 0;
+                    <span class="keyword">for</span> (<span class="keyword">int</span> <span class="variable">num</span> : <span class="variable">arr</span>) {
+                        <span class="variable">sum</span> += <span class="variable">num</span>;
+                    }
+                    <span class="keyword">return</span> <span class="variable">sum</span>;
+                }
+            
+                <span class="keyword">// 2. Maximum and Minimum Finder</span>
+                <span class="keyword">public static</span> <span class="keyword">void</span> <span class="method">findMaxMin</span>(<span class="keyword">int</span>[] <span class="variable">arr</span>) {
+                    <span class="keyword">int</span> <span class="variable">max</span> = <span class="variable">arr</span>[0], <span class="variable">min</span> = <span class="variable">arr</span>[0];
+                    <span class="keyword">for</span> (<span class="keyword">int</span> <span class="variable">num</span> : <span class="variable">arr</span>) {
+                        <span class="keyword">if</span> (<span class="variable">num</span> > <span class="variable">max</span>) <span class="variable">max</span> = <span class="variable">num</span>;
+                        <span class="keyword">if</span> (<span class="variable">num</span> < <span class="variable">min</span>) <span class="variable">min</span> = <span class="variable">num</span>;
+                    }
+                    <span class="keyword">System.out.println</span>(<span class="string">"Max: "</span> + <span class="variable">max</span> + <span class="string">", Min: "</span> + <span class="variable">min</span>);
+                }
+            
+                <span class="keyword">// 3. Count Positive, Negative, and Zero Elements</span>
+                <span class="keyword">public static</span> <span class="keyword">void</span> <span class="method">countNumbers</span>(<span class="keyword">int</span>[] <span class="variable">arr</span>) {
+                    <span class="keyword">int</span> <span class="variable">pos</span> = 0, <span class="variable">neg</span> = 0, <span class="variable">zero</span> = 0;
+                    <span class="keyword">for</span> (<span class="keyword">int</span> <span class="variable">num</span> : <span class="variable">arr</span>) {
+                        <span class="keyword">if</span> (<span class="variable">num</span> > 0) <span class="variable">pos</span>++;
+                        <span class="keyword">else if</span> (<span class="variable">num</span> < 0) <span class="variable">neg</span>++;
+                        <span class="keyword">else</span> <span class="variable">zero</span>++;
+                    }
+                    <span class="keyword">System.out.println</span>(<span class="string">"Positive: "</span> + <span class="variable">pos</span> + <span class="string">", Negative: "</span> + <span class="variable">neg</span> + <span class="string">", Zero: "</span> + <span class="variable">zero</span>);
+                }
+    
+                <span class="keyword">// The rest of the methods follow the same structure...</span>
+            
+            <span class="keyword">}</span>
+        </pre>
+    </body>
+    </html>
+
+  
+		<div id="interwebs" style="text-align:center; margin-bottom:20px">
+			<i><p class="centered" style="padding-bottom:5px">Find me on the interwebs!</p></i>
+			<a class="interweb" href="https://github.com/HanFerik1"><img src="../resources/images/github.png" alt="Github" width="25" height="25"></a>
+			<a class="interweb" href="https://linkedin.com/in/han-ferik-ba527a23b?original_referer=https%3A%2F%2Fwww.linkedin.com%2F"><img src="../resources/images/linkedin.png" alt="LinkedIn" width="25" height="25"></a>
+			<a class="interweb" href="https://www.instagram.com/hanferik/"><img src="../resources/images/instagram.jpg" alt="Instagram" width="25" height="25"></a>
+			<a class="interweb" href="https://www.facebook.com/han.ferik/"><img src="../resources/images/facebook.png" alt="Facebook" width="25" height="25"></a>
+		</div>
+
+</body>
+</html>
