@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Han Ferik's Portfolio Website">
+	<title>Han Ferik</title>
+	<link href="https://fonts.googleapis.com/css?family=Nunito:400,700,900" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="../css/main.css">
+</head>
+
+<body>
+		<img src="../resources/images/han_ferik_logo.png" alt="Han" width="100" height="100" style ="display:block; margin-left: auto; margin-right: auto; margin-top:20px">
+		<h1 style="color:#191919;margin-left: 10px;font-size: 50px;text-align:center;">Han Ferik</h1>
+		<p class="centered" style="text-align:center"><a href="https://hanferik1.github.io/">Home</a> | <a href="../projects.html">Projects</a> | <a href="../apcsa.html">AP CSA</a> </p>
+  
+		<h3 class="centered" style="color: #191919;font-size: 25px">Caesar Cipher</h3>
+		<div class="centered">
+			<p style="margin-top:5px"><i>Tools: VSCode | Source Code: <a href="https://github.com/HanFerik1/Projects/tree/main/Caesar%20Cipher">GitHub</a></i></p>
+      <p>This Java program implements a basic Caesar cipher, a simple encryption technique where each letter in the input is shifted by a fixed number of positions in the alphabet. Specifically, this program shifts each letter forward by three places (e.g., 'a' → 'd', 'b' → 'e', etc.). The program takes user input, encrypts it by shifting the letters, and then prints the transformed text.</p>
+      
+      <p>The <code>CeaserCipher</code> class is designed to handle user input and perform the encryption process. The constructor method (<code>CeaserCipher</code>) uses a <code>Scanner</code> object to prompt the user for input and stores the entered text in the <code>input</code> variable. Once the input is received, the <code>Scanner</code> is closed to prevent resource leaks.</p>
+      
+      <p>The encryption is performed by the <code>CeaserReturner</code> method. This method processes the input string in reverse order, checking each character and shifting it forward by three places if it is a letter. If the character is not a letter, it remains unchanged. The <code>equalsIgnoreCase</code> method is used to ensure that the encryption works regardless of letter case. The transformed text is stored in the <code>newinput</code> variable, which is returned as the encrypted result.</p>
+      
+      <p>The program's <code>main</code> method initializes an instance of <code>CeaserCipher</code>, calls the <code>CeaserReturner</code> method to perform the encryption, and prints the resulting encrypted text. However, the program's approach is inefficient due to the extensive use of <code>if-else</code> statements for character conversion. A more optimized approach would involve using ASCII values or direct <code>char</code> manipulation to achieve the shift in a simpler and more efficient way.</p>
+      <img class="image" src="/resources/images/caesarcipher.png">
+		</div>
+		<br>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Caesar Cipher in Java</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f4;
+                padding: 20px;
+            }
+            pre {
+                background-color: #e8e8e8;
+                padding: 15px;
+                border-radius: 5px;
+                overflow-x: auto;
+                font-size: 14px;
+            }
+            .keyword {
+                color: #d73a49;
+                font-weight: bold;
+            }
+            .datatype {
+                color: #005cc5;
+            }
+            .variable {
+                color: #6f42c1;
+            }
+            .method {
+                color: #6f42c1;
+            }
+            .string {
+                color: #032f62;
+            }
+        </style>
+    </head>
+    <body>
+    
+        <h1>Caesar Cipher in Java</h1>
+        <pre><code>
+        <span class="keyword">import</span> <span class="datatype">java.util.Scanner</span>;
+    
+        <span class="keyword">public class</span> <span class="datatype">CaesarCipher</span> {
+            <span class="datatype">private String</span> <span class="variable">input</span>;
+            <span class="datatype">private String</span> <span class="variable">newinput</span> = "";
+    
+            <span class="keyword">public</span> <span class="method">CaesarCipher</span>() {
+                <span class="datatype">Scanner</span> <span class="variable">scanner</span> = <span class="keyword">new</span> <span class="datatype">Scanner</span>(System.in);
+                System.out.print(<span class="string">"Enter Input? "</span>);
+                <span class="variable">input</span> = <span class="variable">scanner</span>.nextLine();
+                <span class="variable">scanner</span>.close();
+            }
+    
+            <span class="keyword">public String</span> <span class="method">CeaserReturner</span>() {
+                <span class="keyword">for</span> (<span class="datatype">int</span> <span class="variable">i</span> = <span class="variable">input</span>.length(); <span class="variable">i</span> > 0; <span class="variable">i</span>--) {
+                    <span class="datatype">char</span> <span class="variable">ch</span> = <span class="variable">input</span>.charAt(<span class="variable">i</span> - 1);
+                    <span class="keyword">if</span> (<span class="variable">Character</span>.isLetter(<span class="variable">ch</span>)) {
+                        <span class="variable">char</span> <span class="variable">shifted</span> = (<span class="variable">char</span>) (<span class="variable">ch</span> + 3);
+                        <span class="keyword">if</span> ((<span class="variable">Character</span>.isLowerCase(<span class="variable">ch</span>) && <span class="variable">shifted</span> > 'z') || 
+                            (<span class="variable">Character</span>.isUpperCase(<span class="variable">ch</span>) && <span class="variable">shifted</span> > 'Z')) {
+                            <span class="variable">shifted</span> -= 26;
+                        }
+                        <span class="variable">newinput</span> += <span class="variable">shifted</span>;
+                    } <span class="keyword">else</span> {
+                        <span class="variable">newinput</span> += <span class="variable">ch</span>;
+                    }
+                }
+                <span class="keyword">return</span> <span class="variable">newinput</span>;
+            }
+    
+            <span class="keyword">public static void</span> <span class="method">main</span>(String[] args) {
+                <span class="datatype">CaesarCipher</span> <span class="variable">cipher</span> = <span class="keyword">new</span> <span class="datatype">CaesarCipher</span>();
+                <span class="datatype">String</span> <span class="variable">result</span> = <span class="variable">cipher</span>.<span class="method">CeaserReturner</span>();
+                System.out.println(<span class="string">"New Text: "</span> + <span class="variable">result</span>);
+            }
+        }
+        </code></pre>
+    
+    </body>
+  
+		<div id="interwebs" style="text-align:center; margin-bottom:20px">
+			<i><p class="centered" style="padding-bottom:5px">Find me on the interwebs!</p></i>
+			<a class="interweb" href="https://github.com/HanFerik1"><img src="../resources/images/github.png" alt="Github" width="25" height="25"></a>
+			<a class="interweb" href="https://linkedin.com/in/han-ferik-ba527a23b?original_referer=https%3A%2F%2Fwww.linkedin.com%2F"><img src="../resources/images/linkedin.png" alt="LinkedIn" width="25" height="25"></a>
+			<a class="interweb" href="https://www.instagram.com/hanferik/"><img src="../resources/images/instagram.jpg" alt="Instagram" width="25" height="25"></a>
+			<a class="interweb" href="https://www.facebook.com/han.ferik/"><img src="../resources/images/facebook.png" alt="Facebook" width="25" height="25"></a>
+		</div>
+
+</body>
+</html>
