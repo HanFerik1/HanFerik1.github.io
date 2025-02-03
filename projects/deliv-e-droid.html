@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Han Ferik's Portfolio Website">
+	<title>Han Ferik</title>
+	<link href="https://fonts.googleapis.com/css?family=Nunito:400,700,900" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="../css/main.css">
+</head>
+
+<body>
+		<img src="../resources/images/han_ferik_logo.png" alt="Han" width="100" height="100" style ="display:block; margin-left: auto; margin-right: auto; margin-top:20px">
+		<h1 style="color:#191919;margin-left: 10px;font-size: 50px;text-align:center;">Han Ferik</h1>
+		<p class="centered" style="text-align:center"><a href="https://hanferik1.github.io/">Home</a> | <a href="../projects.html">Projects</a> | <a href="../apcsa.html">AP CSA</a> </p>
+  
+		<h3 class="centered" style="color: #191919;font-size: 25px">Deliv-e-droid</h3>
+		<div class="centered">
+			<p style="margin-top:5px"><i>Tools: VSCode | Source Code: <a href="https://github.com/HanFerik1/Projects/tree/main/CEMC%202023%20Junior/Deliv-e-droid">GitHub</a></i></p>
+      <p>The problem "Deliv-e-droid" involves calculating a final score for a robot in a game based on the number of packages delivered and the number of collisions with obstacles. The score is determined by a specific set of rules: the robot earns points for each package delivered, loses points for each collision, and may receive a bonus if more packages are delivered than collisions.</p>
+      
+      <p>To begin, the robot gains 50 points for every package delivered. These points are calculated by multiplying the number of packages delivered by 50. On the other hand, the robot loses 10 points for every collision with an obstacle. This penalty is calculated by multiplying the number of collisions by 10. The total score is then computed by subtracting the points lost due to collisions from the points gained by delivering packages.</p>
+      
+      <p>In addition to these calculations, a bonus of 500 points is awarded if the number of packages delivered is greater than the number of collisions. This bonus is added to the total score only if the condition (packages delivered &gt; collisions) is true. If this condition is not met, no bonus is applied.</p>
+      
+      <p>For example, if the robot delivers 5 packages and collides with 2 obstacles, the score would be calculated as follows: 5 packages * 50 points = 250 points, minus 2 collisions * 10 points = 20 points, resulting in a score of 230. Since the number of packages (5) is greater than the number of collisions (2), a 500-point bonus is added, bringing the final score to 730. If the robot delivers no packages but collides with 10 obstacles, the score would be -100 points, with no bonus applied.</p>
+      
+      <p>The solution involves reading the two integers (number of packages and number of collisions), performing the arithmetic calculations, and outputting the final score. This method ensures that the score is computed efficiently and accurately according to the rules specified in the problem.</p>
+
+    </div>
+		<br>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>DelivEDroid Java Code</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f4;
+                padding: 20px;
+            }
+            pre {
+                background-color: #e8e8e8;
+                padding: 15px;
+                border-radius: 5px;
+                overflow-x: auto;
+                font-size: 14px;
+            }
+            .keyword {
+                color: #d73a49; /* Pink for keywords */
+                font-weight: bold;
+            }
+            .datatype {
+                color: #005cc5; /* Blue for data types */
+            }
+            .variable {
+                color: #6f42c1; /* Purple for variables */
+            }
+            .method {
+                color: #6f42c1; /* Purple for methods */
+            }
+            .comment {
+                color: #6a737d; /* Grey for comments */
+                font-style: italic;
+            }
+            .string {
+                color: #032f62; /* Dark blue for strings */
+            }
+        </style>
+    </head>
+    <body>
+    
+        <h1>DelivEDroid Java Code</h1>
+        <pre><code>
+    <span class="keyword">import</span> <span class="datatype">java.util.Scanner</span>;
+    
+    <span class="keyword">public class</span> <span class="datatype">DelivEDroid</span> {
+        <span class="keyword">public static void</span> <span class="method">main</span>(<span class="datatype">String</span>[] <span class="variable">args</span>) {
+            <span class="datatype">Scanner</span> <span class="variable">scanner</span> = <span class="keyword">new</span> <span class="datatype">Scanner</span>(<span class="keyword">System.in</span>);
+            
+            <span class="datatype">int</span> <span class="variable">packagesDelivered</span> = <span class="variable">scanner</span>.<span class="method">nextInt</span>();
+            <span class="datatype">int</span> <span class="variable">collisions</span> = <span class="variable">scanner</span>.<span class="method">nextInt</span>();
+            
+            <span class="datatype">int</span> <span class="variable">score</span> = <span class="number">50</span> * <span class="variable">packagesDelivered</span> - <span class="number">10</span> * <span class="variable">collisions</span>;
+            
+            <span class="keyword">if</span> (<span class="variable">packagesDelivered</span> > <span class="variable">collisions</span>) {
+                <span class="variable">score</span> += <span class="number">500</span>;
+            }
+            
+            <span class="method">System.out.println</span>(<span class="variable">score</span>);
+        }
+    }
+        </code></pre>
+    
+    </body>
+
+		<div id="interwebs" style="text-align:center; margin-bottom:20px">
+			<i><p class="centered" style="padding-bottom:5px">Find me on the interwebs!</p></i>
+			<a class="interweb" href="https://github.com/HanFerik1"><img src="../resources/images/github.png" alt="Github" width="25" height="25"></a>
+			<a class="interweb" href="https://linkedin.com/in/han-ferik-ba527a23b?original_referer=https%3A%2F%2Fwww.linkedin.com%2F"><img src="../resources/images/linkedin.png" alt="LinkedIn" width="25" height="25"></a>
+			<a class="interweb" href="https://www.instagram.com/hanferik/"><img src="../resources/images/instagram.jpg" alt="Instagram" width="25" height="25"></a>
+			<a class="interweb" href="https://www.facebook.com/han.ferik/"><img src="../resources/images/facebook.png" alt="Facebook" width="25" height="25"></a>
+		</div>
+
+</body>
+</html>
