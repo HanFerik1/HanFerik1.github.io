@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Han Ferik's Portfolio Website">
+	<title>Han Ferik</title>
+	<link href="https://fonts.googleapis.com/css?family=Nunito:400,700,900" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="../css/main.css">
+</head>
+
+<body>
+		<img src="../resources/images/han_ferik_logo.png" alt="Han" width="100" height="100" style ="display:block; margin-left: auto; margin-right: auto; margin-top:20px">
+		<h1 style="color:#191919;margin-left: 10px;font-size: 50px;text-align:center;">Han Ferik</h1>
+		<p class="centered" style="text-align:center"><a href="https://hanferik1.github.io/">Home</a> | <a href="../projects.html">Projects</a> | <a href="../apcsa.html">AP CSA</a> </p>
+  
+		<h3 class="centered" style="color: #191919;font-size: 25px">Modern Art</h3>
+		<div class="centered">
+			<p style="margin-top:5px"><i>Tools: VSCode | Source Code: <a href="https://github.com/HanFerik1/Projects/tree/main/CEMC%202021%20Junior/Modern%20Art">GitHub</a></i></p>
+      <p>In this problem, we are tasked with simulating a series of operations on a canvas where the artist applies a magic brush to either rows or columns, changing their color between black and gold. The goal is to determine how many cells are gold at the end of all operations.</p>
+      
+      <p>The first part of the program involves reading the dimensions of the canvas (r rows and c columns) and the number of operations (n). The canvas is represented conceptually, and instead of maintaining a full 2D grid (which could be inefficient), the program uses two arrays (rowFlips and colFlips) to track how many times each row or column has been "flipped." Initially, all rows and columns are in the "black" state, represented by 0 in the arrays. When a row or column is flipped, its corresponding entry in the array is incremented.</p>
+      
+      <p>The core of the solution is in handling each operation. The program processes each operation (either row or column flip) and updates the respective row or column flip count. Each operation either increments the corresponding row or column flip counter, depending on whether it's a row (R) or column (C) operation.</p>
+      
+      <p>After all operations are applied, the program calculates how many gold cells there are on the canvas. A cell is gold if the sum of flips for its row and column is odd, meaning the cell has been flipped an odd number of times. This is checked by examining the sum of rowFlips[i] + colFlips[j] for each cell (i, j) on the canvas. If the sum is odd, the cell is gold, and the gold cell count is incremented.</p>
+      
+      <p>Finally, the program outputs the total number of gold cells. This approach efficiently calculates the result without needing to construct a full canvas, making it scalable for larger inputs.</p>
+
+    </div>
+		<br>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ModernArt Java Code</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f4;
+                padding: 20px;
+            }
+            pre {
+                background-color: #e8e8e8;
+                padding: 15px;
+                border-radius: 5px;
+                overflow-x: auto;
+                font-size: 14px;
+            }
+            .keyword {
+                color: #d73a49; /* Pink for keywords */
+                font-weight: bold;
+            }
+            .datatype {
+                color: #005cc5; /* Blue for data types */
+            }
+            .variable {
+                color: #6f42c1; /* Purple for variables */
+            }
+            .method {
+                color: #6f42c1; /* Purple for methods */
+            }
+            .comment {
+                color: #6a737d; /* Grey for comments */
+                font-style: italic;
+            }
+            .string {
+                color: #032f62; /* Dark blue for strings */
+            }
+        </style>
+    </head>
+    <body>
+    
+        <h1>ModernArt Java Code</h1>
+        <pre><code>
+        <span class="keyword">import</span> <span class="datatype">java.util.Scanner</span>;
+    
+        <span class="keyword">public class</span> <span class="datatype">ModernArt</span> {
+            <span class="keyword">public static void</span> <span class="method">main</span>(<span class="datatype">String</span>[] <span class="variable">args</span>) {
+                <span class="datatype">Scanner</span> <span class="variable">scanner</span> = <span class="keyword">new</span> <span class="datatype">Scanner</span>(<span class="variable">System.in</span>);
+    
+                <span class="datatype">int</span> <span class="variable">r</span> = <span class="variable">scanner</span>.<span class="method">nextInt</span>();
+                <span class="datatype">int</span> <span class="variable">c</span> = <span class="variable">scanner</span>.<span class="method">nextInt</span>();
+                <span class="datatype">int</span> <span class="variable">n</span> = <span class="variable">scanner</span>.<span class="method">nextInt</span>();
+    
+                <span class="datatype">int</span>[] <span class="variable">rowFlips</span> = <span class="keyword">new</span> <span class="datatype">int</span>[<span class="variable">r</span>];
+                <span class="datatype">int</span>[] <span class="variable">colFlips</span> = <span class="keyword">new</span> <span class="datatype">int</span>[<span class="variable">c</span>];
+    
+                <span class="keyword">for</span> (<span class="datatype">int</span> <span class="variable">i</span> = 0; <span class="variable">i</span> &lt; <span class="variable">n</span>; <span class="variable">i</span>++) {
+                    <span class="datatype">String</span> <span class="variable">operation</span> = <span class="variable">scanner</span>.<span class="method">next</span>();
+                    <span class="datatype">int</span> <span class="variable">index</span> = <span class="variable">scanner</span>.<span class="method">nextInt</span>() - 1;
+    
+                    <span class="keyword">if</span> (<span class="variable">operation</span>.<span class="method">equals</span>(<span class="string">"R"</span>)) {
+                        <span class="variable">rowFlips</span>[<span class="variable">index</span>]++;
+                    } <span class="keyword">else if</span> (<span class="variable">operation</span>.<span class="method">equals</span>(<span class="string">"C"</span>)) {
+                        <span class="variable">colFlips</span>[<span class="variable">index</span>]++;
+                    }
+                }
+    
+                <span class="datatype">int</span> <span class="variable">goldCells</span> = 0;
+                <span class="keyword">for</span> (<span class="datatype">int</span> <span class="variable">i</span> = 0; <span class="variable">i</span> &lt; <span class="variable">r</span>; <span class="variable">i</span>++) {
+                    <span class="keyword">for</span> (<span class="datatype">int</span> <span class="variable">j</span> = 0; <span class="variable">j</span> &lt; <span class="variable">c</span>; <span class="variable">j</span>++) {
+                        <span class="keyword">if</span> ((<span class="variable">rowFlips</span>[<span class="variable">i</span>] + <span class="variable">colFlips</span>[<span class="variable">j</span>]) % 2 == 1) {
+                            <span class="variable">goldCells</span>++;
+                        }
+                    }
+                }
+    
+                <span class="variable">System.out.println</span>(<span class="variable">goldCells</span>);
+            }
+        }
+        </code></pre>
+    
+    </body>
+
+  
+		<div id="interwebs" style="text-align:center; margin-bottom:20px">
+			<i><p class="centered" style="padding-bottom:5px">Find me on the interwebs!</p></i>
+			<a class="interweb" href="https://github.com/HanFerik1"><img src="../resources/images/github.png" alt="Github" width="25" height="25"></a>
+			<a class="interweb" href="https://linkedin.com/in/han-ferik-ba527a23b?original_referer=https%3A%2F%2Fwww.linkedin.com%2F"><img src="../resources/images/linkedin.png" alt="LinkedIn" width="25" height="25"></a>
+			<a class="interweb" href="https://www.instagram.com/hanferik/"><img src="../resources/images/instagram.jpg" alt="Instagram" width="25" height="25"></a>
+			<a class="interweb" href="https://www.facebook.com/han.ferik/"><img src="../resources/images/facebook.png" alt="Facebook" width="25" height="25"></a>
+		</div>
+
+</body>
+</html>
