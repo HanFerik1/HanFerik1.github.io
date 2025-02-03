@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Han Ferik's Portfolio Website">
+	<title>Han Ferik</title>
+	<link href="https://fonts.googleapis.com/css?family=Nunito:400,700,900" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="../css/main.css">
+</head>
+
+<body>
+		<img src="../resources/images/han_ferik_logo.png" alt="Han" width="100" height="100" style ="display:block; margin-left: auto; margin-right: auto; margin-top:20px">
+		<h1 style="color:#191919;margin-left: 10px;font-size: 50px;text-align:center;">Han Ferik</h1>
+		<p class="centered" style="text-align:center"><a href="https://hanferik1.github.io/">Home</a> | <a href="../projects.html">Projects</a> | <a href="../apcsa.html">AP CSA</a> </p>
+  
+		<h3 class="centered" style="color: #191919;font-size: 25px">Trianglane</h3>
+		<div class="centered">
+			<p style="margin-top:5px"><i>Tools: VSCode | Source Code: <a href="https://github.com/HanFerik1/Projects/tree/main/CEMC%202023%20Junior/Trianglane">GitHub</a></i></p>
+      <p>The program first reads the number of columns, which determines the length of the laneway. It then initializes a 2D array to store the tile colors, reading two rows of input where 1 represents a black (wet) tile and 0 represents a white (dry) tile. This grid structure helps in determining adjacency between tiles.</p>
+      
+      <p>After storing the input, the program iterates through each tile to calculate the amount of warning tape needed. Each tile is an equilateral triangle, and since adjacent tiles share sides, the tape requirement depends on the exposed edges. The algorithm checks for each wet tile whether its six possible edges are exposed: three edges naturally belong to the tile, while the other three depend on whether adjacent tiles are also wet.</p>
+      
+      <p>For each wet tile, the program starts with an assumption of all three edges being exposed. It then checks whether there are adjacent wet tiles in the grid and subtracts shared edges from the count accordingly. If a neighboring tile is also wet, the shared edge between them does not contribute to the total tape length. This process ensures that only the outer perimeter of each connected wet area is counted.</p>
+      
+      <p>Finally, the program outputs the total tape length required to surround all wet areas. The approach is efficient as it only requires a single pass through the grid with a few conditional checks per tile. This guarantees that the solution runs in linear time relative to the number of tiles.</p>
+
+    </div>
+		<br>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Trianglane Java Code</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f4;
+                padding: 20px;
+            }
+            pre {
+                background-color: #e8e8e8;
+                padding: 15px;
+                border-radius: 5px;
+                overflow-x: auto;
+                font-size: 14px;
+            }
+            .keyword {
+                color: #d73a49; /* Pink for keywords */
+                font-weight: bold;
+            }
+            .datatype {
+                color: #005cc5; /* Blue for data types */
+            }
+            .variable {
+                color: #6f42c1; /* Purple for variables */
+            }
+            .method {
+                color: #6f42c1; /* Purple for methods */
+            }
+            .comment {
+                color: #6a737d; /* Grey for comments */
+                font-style: italic;
+            }
+            .string {
+                color: #032f62; /* Dark blue for strings */
+            }
+        </style>
+    </head>
+    <body>
+    
+        <h1>Trianglane Java Code</h1>
+        <pre><code>
+    <span class="keyword">import</span> <span class="datatype">java.util.Scanner</span>;
+    
+    <span class="keyword">public class</span> <span class="datatype">Trianglane</span> {
+        <span class="keyword">public static void</span> <span class="method">main</span>(<span class="datatype">String</span>[] <span class="variable">args</span>) {
+            <span class="datatype">Scanner</span> <span class="variable">scanner</span> = <span class="keyword">new</span> <span class="datatype">Scanner</span>(<span class="variable">System.in</span>);
+            <span class="datatype">int</span> <span class="variable">n</span> = <span class="variable">scanner</span>.<span class="method">nextInt</span>();
+            <span class="datatype">int</span>[][] <span class="variable">tiles</span> = <span class="keyword">new</span> <span class="datatype">int</span>[<span class="number">2</span>][<span class="variable">n</span>];
+    
+            <span class="keyword">for</span> (<span class="datatype">int</span> <span class="variable">i</span> = <span class="number">0</span>; <span class="variable">i</span> &lt; <span class="number">2</span>; <span class="variable">i</span>++) {
+                <span class="keyword">for</span> (<span class="datatype">int</span> <span class="variable">j</span> = <span class="number">0</span>; <span class="variable">j</span> &lt; <span class="variable">n</span>; <span class="variable">j</span>++) {
+                    <span class="variable">tiles</span>[<span class="variable">i</span>][<span class="variable">j</span>] = <span class="variable">scanner</span>.<span class="method">nextInt</span>();
+                }
+            }
+    
+            <span class="datatype">int</span> <span class="variable">tapeLength</span> = <span class="number">0</span>;
+            <span class="datatype">int</span>[] <span class="variable">dx</span> = {<span class="number">0</span>, <span class="number">0</span>, <span class="number">-1</span>, <span class="number">1</span>, <span class="number">-1</span>, <span class="number">1</span>};
+            <span class="datatype">int</span>[] <span class="variable">dy</span> = {<span class="number">-1</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">-1</span>};
+    
+            <span class="keyword">for</span> (<span class="datatype">int</span> <span class="variable">i</span> = <span class="number">0</span>; <span class="variable">i</span> &lt; <span class="number">2</span>; <span class="variable">i</span>++) {
+                <span class="keyword">for</span> (<span class="datatype">int</span> <span class="variable">j</span> = <span class="number">0</span>; <span class="variable">j</span> &lt; <span class="variable">n</span>; <span class="variable">j</span>++) {
+                    <span class="keyword">if</span> (<span class="variable">tiles</span>[<span class="variable">i</span>][<span class="variable">j</span>] == <span class="number">1</span>) {
+                        <span class="datatype">int</span> <span class="variable">sides</span> = <span class="number">3</span>;
+                        <span class="keyword">for</span> (<span class="datatype">int</span> <span class="variable">k</span> = <span class="number">0</span>; <span class="variable">k</span> &lt; <span class="number">6</span>; <span class="variable">k</span>++) {
+                            <span class="datatype">int</span> <span class="variable">ni</span> = <span class="variable">i</span> + <span class="variable">dx</span>[<span class="variable">k</span>];
+                            <span class="datatype">int</span> <span class="variable">nj</span> = <span class="variable">j</span> + <span class="variable">dy</span>[<span class="variable">k</span>];
+                            <span class="keyword">if</span> (<span class="variable">ni</span> &gt;= <span class="number">0</span> && <span class="variable">ni</span> &lt; <span class="number">2</span> && <span class="variable">nj</span> &gt;= <span class="number">0</span> && <span class="variable">nj</span> &lt; <span class="variable">n</span> && <span class="variable">tiles</span>[<span class="variable">ni</span>][<span class="variable">nj</span>] == <span class="number">1</span>) {
+                                <span class="variable">sides</span>--;
+                            }
+                        }
+                        <span class="variable">tapeLength</span> += <span class="variable">sides</span>;
+                    }
+                }
+            }
+    
+            <span class="keyword">System</span>.<span class="method">out.println</span>(<span class="variable">tapeLength</span>);
+            <span class="variable">scanner</span>.<span class="method">close</span>();
+        }
+    }
+        </code></pre>
+    
+    </body>
+
+		<div id="interwebs" style="text-align:center; margin-bottom:20px">
+			<i><p class="centered" style="padding-bottom:5px">Find me on the interwebs!</p></i>
+			<a class="interweb" href="https://github.com/HanFerik1"><img src="../resources/images/github.png" alt="Github" width="25" height="25"></a>
+			<a class="interweb" href="https://linkedin.com/in/han-ferik-ba527a23b?original_referer=https%3A%2F%2Fwww.linkedin.com%2F"><img src="../resources/images/linkedin.png" alt="LinkedIn" width="25" height="25"></a>
+			<a class="interweb" href="https://www.instagram.com/hanferik/"><img src="../resources/images/instagram.jpg" alt="Instagram" width="25" height="25"></a>
+			<a class="interweb" href="https://www.facebook.com/han.ferik/"><img src="../resources/images/facebook.png" alt="Facebook" width="25" height="25"></a>
+		</div>
+
+</body>
+</html>
