@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Han Ferik's Portfolio Website">
+	<title>Han Ferik</title>
+	<link href="https://fonts.googleapis.com/css?family=Nunito:400,700,900" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="../css/main.css">
+</head>
+
+<body>
+		<img src="../resources/images/han_ferik_logo.png" alt="Han" width="100" height="100" style ="display:block; margin-left: auto; margin-right: auto; margin-top:20px">
+		<h1 style="color:#191919;margin-left: 10px;font-size: 50px;text-align:center;">Han Ferik</h1>
+		<p class="centered" style="text-align:center"><a href="https://hanferik1.github.io/">Home</a> | <a href="../projects.html">Projects</a> | <a href="../apcsa.html">AP CSA</a> </p>
+  
+		<h3 class="centered" style="color: #191919;font-size: 25px">CEMC 2022 Junior / ConstraintViolations</h3>
+		<div class="centered">
+			<p style="margin-top:5px"><i>Tools: VSCode | Source Code: <a href="https://github.com/HanFerik1/Projects/tree/main/CEMC%202022%20Junior/ConstraintViolations">GitHub</a></i></p>
+      <p>This program is a Java application that checks whether certain grouping constraints for students are violated. It first takes input specifying which students must be together ("together constraints") and which students must not be together ("not together constraints"). Then, it processes the student groups and determines how many violations occur, finally printing the total number of violations.</p>
+      
+      <p>The program begins by using a <code>Scanner</code> object to read input from the user. It first reads the number of "together constraints" and stores them in a two-dimensional array, where each constraint consists of a pair of students who must be in the same group. Similarly, it reads the "not together constraints" and stores them in another two-dimensional array, where each constraint consists of a pair of students who should not be in the same group.</p>
+      
+      <p>Next, the program reads the student groups. Each group consists of three students, and these groups are stored in a two-dimensional array. At this point, the program is ready to check for violations based on the given constraints.</p>
+      
+      <p>The first check is for "together constraints." For each pair of students in this category, the program verifies if they are in the same group. If a pair is not found together in any group, it is considered a violation, and the <code>violations</code> counter is incremented.</p>
+      
+      <p>The second check is for "not together constraints." Here, the program ensures that no pair of students from this category appears in the same group. If a pair is found together in any group, it is counted as a violation, and the <code>violations</code> counter is incremented.</p>
+      
+      <p>Finally, the program prints the total number of violations. At the end of the program, there is a helper method called <code>isInGroup</code>, which checks if a given student is part of a specific group. This method returns <code>true</code> if the student is in the group and <code>false</code> otherwise. It is used to simplify the constraint-checking logic and make the code more readable.</p>
+
+		</div>
+		<br>
+
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>ConstraintViolations Java Code</title>
+      <style>
+          body {
+              font-family: Arial, sans-serif;
+              background-color: #f4f4f4;
+              padding: 20px;
+          }
+          pre {
+              background-color: #e8e8e8;
+              padding: 15px;
+              border-radius: 5px;
+              overflow-x: auto;
+              font-size: 14px;
+          }
+          .keyword {
+              color: #d73a49;
+              font-weight: bold;
+          }
+          .datatype {
+              color: #005cc5;
+          }
+          .variable {
+              color: #6f42c1;
+          }
+          .method {
+              color: #6f42c1;
+          }
+          .comment {
+              color: #6a737d;
+              font-style: italic;
+          }
+          .string {
+              color: #032f62;
+          }
+      </style>
+  </head>
+  <body>
+      <h1>ConstraintViolations Java Code</h1>
+      <pre><code>
+  <span class="keyword">import</span> java.util.Scanner;
+  
+  <span class="keyword">public class</span> <span class="datatype">ConstraintViolations</span> {
+      <span class="keyword">public static void</span> <span class="method">main</span>(<span class="datatype">String</span>[] <span class="variable">args</span>) {
+          Scanner <span class="variable">scanner</span> = <span class="keyword">new</span> Scanner(System.in);
+          
+          <span class="datatype">int</span> <span class="variable">numTogetherConstraints</span> = scanner.nextInt();
+          <span class="datatype">String</span>[][] <span class="variable">togetherConstraints</span> = <span class="keyword">new</span> <span class="datatype">String</span>[numTogetherConstraints][2];
+          <span class="keyword">for</span> (<span class="datatype">int</span> <span class="variable">i</span> = 0; i < numTogetherConstraints; i++) {
+              togetherConstraints[i][0] = scanner.next();
+              togetherConstraints[i][1] = scanner.next();
+          }
+          
+          <span class="datatype">int</span> <span class="variable">numNotTogetherConstraints</span> = scanner.nextInt();
+          <span class="datatype">String</span>[][] <span class="variable">notTogetherConstraints</span> = <span class="keyword">new</span> <span class="datatype">String</span>[numNotTogetherConstraints][2];
+          <span class="keyword">for</span> (<span class="datatype">int</span> <span class="variable">i</span> = 0; i < numNotTogetherConstraints; i++) {
+              notTogetherConstraints[i][0] = scanner.next();
+              notTogetherConstraints[i][1] = scanner.next();
+          }
+          
+          <span class="datatype">int</span> <span class="variable">numGroups</span> = scanner.nextInt();
+          <span class="datatype">String</span>[][] <span class="variable">groups</span> = <span class="keyword">new</span> <span class="datatype">String</span>[numGroups][3];
+          <span class="keyword">for</span> (<span class="datatype">int</span> <span class="variable">i</span> = 0; i < numGroups; i++) {
+              <span class="keyword">for</span> (<span class="datatype">int</span> <span class="variable">j</span> = 0; j < 3; j++) {
+                  groups[i][j] = scanner.next();
+              }
+          }
+          
+          <span class="datatype">int</span> <span class="variable">violations</span> = 0;
+          
+          <span class="keyword">for</span> (<span class="datatype">int</span> <span class="variable">i</span> = 0; i < numTogetherConstraints; i++) {
+              <span class="datatype">String</span> <span class="variable">student1</span> = togetherConstraints[i][0];
+              <span class="datatype">String</span> <span class="variable">student2</span> = togetherConstraints[i][1];
+              <span class="datatype">boolean</span> <span class="variable">found</span> = false;
+              
+              <span class="keyword">for</span> (<span class="datatype">int</span> <span class="variable">j</span> = 0; j < numGroups; j++) {
+                  <span class="keyword">if</span> (isInGroup(groups[j], student1) && isInGroup(groups[j], student2)) {
+                      found = true;
+                      <span class="keyword">break</span>;
+                  }
+              }
+              
+              <span class="keyword">if</span> (!found) {
+                  violations++;
+              }
+          }
+          
+          <span class="keyword">for</span> (<span class="datatype">int</span> <span class="variable">i</span> = 0; i < numNotTogetherConstraints; i++) {
+              <span class="datatype">String</span> <span class="variable">student1</span> = notTogetherConstraints[i][0];
+              <span class="datatype">String</span> <span class="variable">student2</span> = notTogetherConstraints[i][1];
+              <span class="datatype">boolean</span> <span class="variable">found</span> = false;
+              
+              <span class="keyword">for</span> (<span class="datatype">int</span> <span class="variable">j</span> = 0; j < numGroups; j++) {
+                  <span class="keyword">if</span> (isInGroup(groups[j], student1) && isInGroup(groups[j], student2)) {
+                      found = true;
+                      <span class="keyword">break</span>;
+                  }
+              }
+              
+              <span class="keyword">if</span> (found) {
+                  violations++;
+              }
+          }
+          
+          System.out.println(violations);
+      }
+      
+      <span class="keyword">public static boolean</span> <span class="method">isInGroup</span>(<span class="datatype">String</span>[] <span class="variable">group</span>, <span class="datatype">String</span> <span class="variable">student</span>) {
+          <span class="keyword">for</span> (<span class="datatype">int</span> <span class="variable">i</span> = 0; i < group.length; i++) {
+              <span class="keyword">if</span> (group[i].equals(student)) {
+                  <span class="keyword">return</span> true;
+              }
+          }
+          <span class="keyword">return</span> false;
+      }
+  }</code></pre>
+  </body>
+          
+		<div id="interwebs" style="text-align:center; margin-bottom:20px">
+			<i><p class="centered" style="padding-bottom:5px">Find me on the interwebs!</p></i>
+			<a class="interweb" href="https://github.com/HanFerik1"><img src="../resources/images/github.png" alt="Github" width="25" height="25"></a>
+			<a class="interweb" href="https://linkedin.com/in/han-ferik-ba527a23b?original_referer=https%3A%2F%2Fwww.linkedin.com%2F"><img src="../resources/images/linkedin.png" alt="LinkedIn" width="25" height="25"></a>
+			<a class="interweb" href="https://www.instagram.com/hanferik/"><img src="../resources/images/instagram.jpg" alt="Instagram" width="25" height="25"></a>
+			<a class="interweb" href="https://www.facebook.com/han.ferik/"><img src="../resources/images/facebook.png" alt="Facebook" width="25" height="25"></a>
+		</div>
+
+</body>
+</html>
