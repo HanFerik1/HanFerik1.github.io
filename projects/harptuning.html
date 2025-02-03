@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Han Ferik's Portfolio Website">
+	<title>Han Ferik</title>
+	<link href="https://fonts.googleapis.com/css?family=Nunito:400,700,900" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="../css/main.css">
+</head>
+
+<body>
+		<img src="../resources/images/han_ferik_logo.png" alt="Han" width="100" height="100" style ="display:block; margin-left: auto; margin-right: auto; margin-top:20px">
+		<h1 style="color:#191919;margin-left: 10px;font-size: 50px;text-align:center;">Han Ferik</h1>
+		<p class="centered" style="text-align:center"><a href="https://hanferik1.github.io/">Home</a> | <a href="../projects.html">Projects</a> | <a href="../apcsa.html">AP CSA</a> </p>
+  
+		<h3 class="centered" style="color: #191919;font-size: 25px">CEMC 2022 Junior / HarpTuning</h3>
+		<div class="centered">
+		<p style="margin-top:5px"><i>Tools: VSCode | Source Code: <a href="https://github.com/HanFerik1/Projects/tree/main/CEMC%202022%20Junior/HarpTuning">GitHub</a></i></p>
+
+    <p>This Java program processes a string of characters representing a harp's tuning instructions, where each tuning instruction specifies whether a string should be tightened or loosened by a certain number. It reads the input string, processes the instructions, and then outputs the actions to be performed for each string.</p>
+
+    <p>The program begins by creating a <code>Scanner</code> object called <code>inputTuning</code> to read the tuning input from the user. It prompts the user for the tuning string, which includes string identifiers (like "E" or "A") and tuning instructions (e.g., "+3" or "-5"). After reading the input string, the <code>Scanner</code> object is closed to avoid any resource leaks.</p>
+    
+    <p>The program then initializes a variable <code>segmentStart</code> to 0, which will be used to mark the starting position of each string identifier. It enters a loop that iterates through each character of the tuning string. If it encounters either a "+" or a "-", it means there is an instruction for tuning a specific string. At this point, the program stores the index of the tuning character (<code>counterTuning</code>) and begins another loop (<code>counterWhile</code>) to capture the number (digit) following the tuning symbol.</p>
+    
+    <p>The program then extracts the string identifier (from <code>segmentStart</code> to the index of the tuning symbol) and the number of steps to tighten or loosen the string (from <code>counterTuning + 1</code> to the end of the number). Based on whether the tuning symbol is "+" or "-", the program prints out an instruction to either "tighten" or "loosen" the string by the specified number of steps.</p>
+    
+    <p>After processing each tuning instruction, the <code>segmentStart</code> is updated to the position after the number, and the outer loop's index <code>i</code> is updated to skip over the processed segment. This ensures that the program continues correctly to the next segment of the string. The program repeats this process until all tuning instructions have been processed and printed.</p>
+    
+    <p>Overall, this program efficiently parses the tuning string, extracting and interpreting each tuning instruction, and provides the user with clear output indicating which strings need to be tightened or loosened and by how many steps.</p>
+		
+    </div>
+		<br>
+
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>HarpTuning Java Code</title>
+      <style>
+          body {
+              font-family: Arial, sans-serif;
+              background-color: #f4f4f4;
+              padding: 20px;
+          }
+          pre {
+              background-color: #e8e8e8;
+              padding: 15px;
+              border-radius: 5px;
+              overflow-x: auto;
+              font-size: 14px;
+          }
+          .keyword {
+              color: #d73a49; /* Pink for keywords */
+              font-weight: bold;
+          }
+          .datatype {
+              color: #005cc5; /* Blue for data types */
+          }
+          .variable {
+              color: #6f42c1; /* Purple for variables */
+          }
+          .method {
+              color: #6f42c1; /* Purple for methods */
+          }
+          .comment {
+              color: #6a737d; /* Grey for comments */
+              font-style: italic;
+          }
+          .string {
+              color: #032f62; /* Dark blue for strings */
+          }
+      </style>
+  </head>
+  <body>
+  
+      <h1>HarpTuning Java Code</h1>
+      <pre><code>
+  <span class="keyword">import</span> <span class="datatype">java.util.Scanner</span>;
+  
+  <span class="keyword">public class</span> <span class="datatype">HarpTuning</span> {
+      <span class="keyword">public static void</span> <span class="method">main</span>(<span class="datatype">String</span>[] <span class="variable">args</span>) {
+          <span class="datatype">Scanner</span> <span class="variable">inputTuning</span> = <span class="keyword">new</span> <span class="datatype">Scanner</span>(<span class="variable">System.in</span>);
+          <span class="keyword">System.out.println</span>(<span class="string">""</span>);
+          <span class="datatype">String</span> <span class="variable">tuning</span> = <span class="variable">inputTuning</span>.<span class="method">nextLine</span>();
+          <span class="variable">inputTuning</span>.<span class="method">close</span>();
+          <span class="datatype">int</span> <span class="variable">segmentStart</span> = <span class="number">0</span>;
+          <span class="keyword">for</span> (<span class="datatype">int</span> <span class="variable">i</span> = <span class="number">0</span>; <span class="variable">i</span> &lt; <span class="variable">tuning</span>.<span class="method">length</span>(); <span class="variable">i</span>++) {
+              <span class="keyword">if</span> (<span class="variable">tuning</span>.<span class="method">charAt</span>(<span class="variable">i</span>) == <span class="string">"+" </span> || <span class="variable">tuning</span>.<span class="method">charAt</span>(<span class="variable">i</span>) == <span class="string">"-"</span>) {
+                  <span class="datatype">int</span> <span class="variable">counterTuning</span> = <span class="variable">i</span>;
+  
+                  <span class="datatype">int</span> <span class="variable">counterWhile</span> = <span class="variable">i</span> + <span class="number">1</span>;
+                  <span class="keyword">while</span> (<span class="variable">counterWhile</span> &lt; <span class="variable">tuning</span>.<span class="method">length</span>() && <span class="variable">Character</span>.<span class="method">isDigit</span>(<span class="variable">tuning</span>.<span class="method">charAt</span>(<span class="variable">counterWhile</span>))) {
+                      <span class="variable">counterWhile</span>++;
+                  }
+                  <span class="datatype">String</span> <span class="variable">tuneNo</span> = <span class="variable">tuning</span>.<span class="method">substring</span>(<span class="variable">segmentStart</span>, <span class="variable">counterTuning</span>);
+                  <span class="datatype">String</span> <span class="variable">number</span> = <span class="variable">tuning</span>.<span class="method">substring</span>(<span class="variable">counterTuning</span> + <span class="number">1</span>, <span class="variable">counterWhile</span>);
+  
+                  <span class="keyword">if</span> (<span class="variable">tuning</span>.<span class="method">charAt</span>(<span class="variable">i</span>) == <span class="string">"+" </span>) {
+                      <span class="keyword">System.out.println</span>(<span class="variable">tuneNo</span> + <span class="string">" tighten "</span> + <span class="variable">number</span>);
+                  } <span class="keyword">else</span> {
+                      <span class="keyword">System.out.println</span>(<span class="variable">tuneNo</span> + <span class="string">" loosen "</span> + <span class="variable">number</span>);
+                  }
+                  <span class="variable">segmentStart</span> = <span class="variable">counterWhile</span>;
+                  <span class="variable">i</span> = <span class="variable">counterWhile</span> - <span class="number">1</span>;
+              }
+          }
+      }
+  }
+      </code></pre>
+  
+  </body>
+
+		<div id="interwebs" style="text-align:center; margin-bottom:20px">
+			<i><p class="centered" style="padding-bottom:5px">Find me on the interwebs!</p></i>
+			<a class="interweb" href="https://github.com/HanFerik1"><img src="../resources/images/github.png" alt="Github" width="25" height="25"></a>
+			<a class="interweb" href="https://linkedin.com/in/han-ferik-ba527a23b?original_referer=https%3A%2F%2Fwww.linkedin.com%2F"><img src="../resources/images/linkedin.png" alt="LinkedIn" width="25" height="25"></a>
+			<a class="interweb" href="https://www.instagram.com/hanferik/"><img src="../resources/images/instagram.jpg" alt="Instagram" width="25" height="25"></a>
+			<a class="interweb" href="https://www.facebook.com/han.ferik/"><img src="../resources/images/facebook.png" alt="Facebook" width="25" height="25"></a>
+		</div>
+
+</body>
+</html>
