@@ -1,346 +1,267 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Han Ferik's Projects Website">
-	<title>Projects - Han Ferik</title>
-	<link href="https://fonts.googleapis.com/css?family=Nunito:400,700,900" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
-	<style>
-		/* Add some styles to make the grid layout work */
-		.project-container {
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: space-between;
-			padding: 20px;
-		}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Han Ferik's Projects Website">
+    <title>Projects - Han Ferik</title>
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
 
-		.project-item {
-			width: calc(25% - 20px); /* Adjust the width to make it fit 4 items in a row */
-			margin-bottom: 20px;
-			box-sizing: border-box;
-		}
+        .project-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            justify-content: center;
+            max-width: 1200px;
+            margin: auto;
+        }
 
-		.project-item img {
-			width: 100%;
-			height: auto;
-		}
+        .project-item {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+        }
 
-		.project-item .text {
-			text-align: center;
-			padding: 10px;
-			background-color: rgba(0, 0, 0, 0.7);
-			color: white;
-			font-size: 16px;
-		}
-	</style>
+        .project-item:hover {
+            transform: scale(1.05);
+        }
+
+        .project-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+    </style>
 </head>
-
 <body>
-		<img src="resources/images/han_ferik_logo.png" alt="Han" width="100" height="100" style ="display:block; margin-left: auto; margin-right: auto; margin-top:20px">
-		<h1 style="color:#191919;margin-left: 10px;font-size: 50px;text-align:center;">Han Ferik</h1>
-		<p class="centered" style="text-align:center"><a href="hanferik1.github.io">Home</a> | <a href="projects.html">Projects</a> | <a href="../apcsa.html">AP CSA</a> </p>
-		<br>
+    <img src="resources/images/han_ferik_logo.png" alt="Han" width="100" height="100" style="margin: 20px auto; display: block;">
+    <h1 style="color: #191919; font-size: 50px;">Han Ferik</h1>
+    <p><a href="hanferik1.github.io">Home</a> | <a href="projects.html">Projects</a> | <a href="../apcsa.html">AP CSA</a></p>
 
-		<div>
-			<div style="position: absolute; left: 50%; transform: translateX(-50%); width: 100vh; height: auto">
-				<a href="projects/project_memory_card.html"><div class="left" style="padding-right:20px; padding-top:0px">
-					<img class="image" src="resources/images/project_memory_card.png" alt="Project Memory Card">
-					<div class="middle">
-						<div class="text">Project Memory Card</div>
-					</div>
-				</div></a>
-
-				<a href="projects/translatecards.html"><div class="right" style="padding-top:0px">
-					<img class="image" src="resources/images/translatecards.png" alt="TranslateCards">
-					<div class="middle">
-						<div class="text">TranslateCards</div>
-					</div>
-				</div></a>
-
-				<a href="projects/project_palindrama.html"><div class="right" style="padding-top:0px">
-					<img class="image" src="resources/images/project_palindrama.png" alt="Project Palindrama">
-					<div class="middle">
-						<div class="text">Project Palindrama</div>
-					</div>
-				</div></a>				
-				
-				<a href="projects/car_type_identifier.html"><div class="right" style="padding-top:0px">
-					<img class="image" src="resources/images/car_type_identifier.png" alt="Car Type Identifier">
-					<div class="middle">
-						<div class="text">Car Type Identifier</div>
-					</div>
-				</div></a>
-
-				<a href="projects/project_palindromic_numbers.html"><div class="right" style="padding-top:0px">
-					<img class="image" src="resources/images/introducing_palindromic_numbers.png" alt="Project Palindromic Numbers">
-					<div class="middle">
-						<div class="text">Project Palindromic Numbers</div>
-					</div>
-				</div></a>
-
-				<a href="projects/project_underwater.html"><div class="right" style="padding-top:0px">
-					<img class="image" src="resources/images/project_underwater.png" alt="Project Underwater">
-					<div class="middle">
-						<div class="text">Project Underwater</div>
-					</div>
-				</div></a>
-
-				<a href="projects/project_planetary.html"><div class="right" style="padding-top:0px">
-					<img class="image" src="resources/images/project_planetary.png" alt="Project Planetary">
-					<div class="middle">
-						<div class="text">Project Planetary</div>
-					</div>
-				</div></a>
-
-				<a href="projects/project_pension.html"><div class="right" style="padding-top:0px">
-					<img class="image" src="resources/images/project_pension.png" alt="Project Pension">
-					<div class="middle">
-						<div class="text">Project Pension</div>
-					</div>
-				</div></a>
-
-				<a href="projects/project_compare_method.html"><div class="right" style="padding-top:0px">
-					<img class="image" src="resources/images/project_compare_method.png" alt="Project Compare Method">
-					<div class="middle">
-						<div class="text">Project Compare Method</div>
-					</div>
-				</div></a>
-
-				<a href="projects/project_city_order.html"><div class="right" style="padding-top:0px">
-					<img class="image" src="resources/images/city_order.png" alt="Project City Order">
-					<div class="middle">
-						<div class="text">Project City Order</div>
-					</div>
-				</div></a>
-				
-				<a href="projects/project_smartdoorlock.html"><div class="right" style="padding-top:0px">
-					<img class="image" src="resources/images/smartdoorlock.png" alt="Project SmartDoorLock">
-					<div class="middle">
-						<div class="text">Project SmartDoorLock</div>
-					</div>
-				</div></a>				
-				
-				<a href="projects/project_studentgpa.html"><div class="right" style="padding-top:0px">
-					<img class="image" src="resources/images/studentgpa.png" alt="Project StudentGPA">
-					<div class="middle">
-						<div class="text">Project StudentGPA</div>
-					</div>
-				</div></a>
-
-				<a href="projects/unit_three_examples.html"><div class="right" style="padding-top:0px">
-					<img class="image" src="resources/images/unitthreeexamples.png" alt="Unit 3: Examples">
-					<div class="middle">
-						<div class="text">Unit 3: Examples</div>
-					</div>
-				</div></a>
-
-				<a href="projects/unit_digits_finder.html"><div class="right" style="padding-top:0px">
-					<img class="image" src="resources/images/digitfinder.png" alt="Unit Digits Finder">
-					<div class="middle">
-						<div class="text">Unit Digits Finder</div>
-					</div>
-				</div></a>
-
-				<a href="projects/project_brilliant_numbers.html"><div class="right" style="padding-top:0px">
-					<img class="image" src="resources/images/brilliant_numbers.png" alt="Project Brilliant Numbers">
-					<div class="middle">
-						<div class="text">Project Brilliant Numbers</div>
-					</div>
-				</div></a>
-
-				<a href="projects/project_dog.html"><div class="right" style="padding-top:0px">
-					<img class="image" src="resources/images/dog.png" alt="Project Dog">
-					<div class="middle">
-						<div class="text">Project Dog</div>
-					</div>
-				</div></a>
-
-				<a href="projects/project_diamond.html"><div class="right" style="padding-top:0px">
-					<img class="image" src="resources/images/diamond.png" alt="Project Diamond">
-					<div class="middle">
-						<div class="text">Project Diamond</div>
-					</div>
-				</div></a>
-
-
-				<a href="projects/project_sorting.html"><div class="right" style="padding-top:0px">
-					<img class="image" src="resources/images/sorting.png" alt="Project Sorting">
-					<div class="middle">
-						<div class="text">Project Sorting</div>
-					</div>
-				</div></a>
-
-				<a href="projects/project_newsorting.html"><div class="right" style="padding-top:0px">
-					<img class="image" src="resources/images/newsorting.png" alt="Project NewSorting">
-					<div class="middle">
-						<div class="text">Project NewSorting</div>
-					</div>
-				</div></a>
-
-				<a href="projects/array_code_project_two.html"><div class="right" style="padding-top:0px">
-					<img class="image" src="resources/images/arraycodeprojecttwo.png" alt="Array Code Project Two">
-					<div class="middle">
-						<div class="text">Array Code Project Two</div>
-					</div>
-				</div></a>
-
-				<a href="projects/cheat_sheet.html"><div class="right" style="padding-top:0px">
-					<img class="image" src="resources/images/cheatsheet.png" alt="Cheat Sheet">
-					<div class="middle">
-						<div class="text">Cheat Sheet</div>
-					</div>
-				</div></a>
-
-				<a href="projects/caesar_cipher.html"><div class="right" style="padding-top:0px">
-					<img class="image" src="resources/images/caesarcipher.png" alt="Caesar Cipher">
-					<div class="middle">
-						<div class="text">Caesar Cipher</div>
-					</div>
-				</div></a>
-
-				<a href="projects/harptuning.html"><div class="right" style="padding-top:0px">
-					<img class="image" src="resources/images/harptuning.png" alt="HarpTuning">
-					<div class="middle">
-						<div class="text">HarpTuning</div>
-					</div>
-				</div></a>
-
-				<a href="projects/cupcake.html"><div class="right" style="padding-top:0px">
-					<img class="image" src="resources/images/cupcakes.png" alt="Cupcake">
-					<div class="middle">
-						<div class="text">Cupcake</div>
-					</div>
-				</div></a>
-
-				<a href="projects/fergusonball.html"><div class="right" style="padding-top:0px">
-					<img class="image" src="resources/images/fergusonball.png" alt="Fergusonball">
-					<div class="middle">
-						<div class="text">Fergusonball</div>
-					</div>
-				</div></a>
-
-				<a href="projects/constraintviolations.html"><div class="right" style="padding-top:0px">
-					<img class="image" src="resources/images/constraintviolations.png" alt="ConstraintViolations">
-					<div class="middle">
-						<div class="text">ConstraintViolations</div>
-					</div>
-				</div></a>
-
-				<a href="arranging_books.html"><div class="right" style="padding-top:0px">
-					<img class="image" src="resources/images/arranging_books.png" alt="Arranging Books">
-					<div class="middle">
-						<div class="text">Arranging Books</div>
-					</div>
-				</div></a>
-
-				<a href="projects/boiling_water.html"><div class="right" style="padding-top:0px">
-					<img class="image" src="resources/images/boiling_water.png" alt="Boiling Water">
-					<div class="middle">
-						<div class="text">Boiling Water</div>
-					</div>
-				</div></a>
-
-				<a href="projects/modern_art.html"><div class="right" style="padding-top:0px">
-					<img class="image" src="resources/images/modern_art.png" alt="Modern Art">
-					<div class="middle">
-						<div class="text">Modern Art</div>
-					</div>
-				</div></a>
-
-				<a href="projects/secret_instructions.html"><div class="right" style="padding-top:0px">
-					<img class="image" src="resources/images/secret_instructions.png" alt="Secret Instructions">
-					<div class="middle">
-						<div class="text">Secret Instructions</div>
-					</div>
-				</div></a>
-
-				<a href="projects/silent_auction.html"><div class="right" style="padding-top:0px">
-					<img class="image" src="resources/images/silent_auction.png" alt="Silent Auction">
-					<div class="middle">
-						<div class="text">Silent Auction</div>
-					</div>
-				</div></a>
-
-				<a href="projects/ccc_word_hunt.html"><div class="right" style="padding-top:0px">
-					<img class="image" src="resources/images/ccc_word_hunt.png" alt="CCC Word Hunt">
-					<div class="middle">
-						<div class="text">CCC Word Hunt</div>
-					</div>
-				</div></a>
-
-				<a href="projects/chili_peppers.html"><div class="right" style="padding-top:0px">
-					<img class="image" src="resources/images/chili_peppers.png" alt="Chili Peppers">
-					<div class="middle">
-						<div class="text">Chili Peppers</div>
-					</div>
-				</div></a>
-
-				<a href="projects/deliv-e-droid.html"><div class="right" style="padding-top:0px">
-					<img class="image" src="resources/images/deliv-e-droid.png" alt="Deliv-e-droid">
-					<div class="middle">
-						<div class="text">Deliv-e-droid</div>
-					</div>
-				</div></a>
-
-				<a href="projects/special_event.html"><div class="right" style="padding-top:0px">
-					<img class="image" src="resources/images/special_event.png" alt="Special Event">
-					<div class="middle">
-						<div class="text">Special Event</div>
-					</div>
-				</div></a>
-
-				<a href="projects/trianglane.html"><div class="right" style="padding-top:0px">
-					<img class="image" src="resources/images/trianglane.png" alt="Trianglane">
-					<div class="middle">
-						<div class="text">Trianglane</div>
-					</div>
-				</div></a>
-
-				<a href="projects/bronze_count.html"><div class="right" style="padding-top:0px">
-					<img class="image" src="resources/images/bronze_count.png" alt="Bronze Count">
-					<div class="middle">
-						<div class="text">Bronze Count</div>
-					</div>
-				</div></a>
-
-				<a href="projects/conveyor_belt_sushi.html"><div class="right" style="padding-top:0px">
-					<img class="image" src="resources/images/conveyor_belt_sushi.png" alt="Conveyor Belt Sushi">
-					<div class="middle">
-						<div class="text">Conveyor Belt Sushi</div>
-					</div>
-				</div></a>
-
-				<a href="projects/harvest_waterloo.html"><div class="right" style="padding-top:0px">
-					<img class="image" src="resources/images/harvest_waterloo.png" alt="Harvest Waterloo">
-					<div class="middle">
-						<div class="text">Harvest Waterloo</div>
-					</div>
-				</div></a>
-
-				<a href="projects/dusa_and_the _yobis.html"><div class="right" style="padding-top:0px">
-					<img class="image" src="resources/images/dusa_and_the_yobis.png" alt="Dusa And The Yobis">
-					<div class="middle">
-						<div class="text">Dusa And The Yobis</div>
-					</div>
-				</div></a>
-
-				<a href="projects/troublesome_keys.html"><div class="right" style="padding-top:0px">
-					<img class="image" src="resources/images/troublesome_keys.png" alt="Troublesome Keys">
-					<div class="middle">
-						<div class="text">Troublesome Keys</div>
-					</div>
-				</div></a>
-
-				<a href="project_two_dimensional_array.html"><div class="right" style="padding-top:0px">
-					<img class="image" src="resources/images/twodimensionalarray.png" alt="Project Two Dimensional Array">
-					<div class="middle">
-						<div class="text">Project Two Dimensional Array</div>
-					</div>
-				</div></a>
-			</div>
-</div>
+	<div class="project-container">
+		<a href="projects/project_memory_card.html" class="project-item">
+		    <img src="resources/images/project_memory_card.png" alt="Project Memory Card">
+		    <div>Project Memory Card</div>
+		</a>
+		
+		<a href="projects/translatecards.html" class="project-item">
+		    <img src="resources/images/translatecards.png" alt="TranslateCards">
+		    <div>TranslateCards</div>
+		</a>
+		
+		<a href="projects/project_palindrama.html" class="project-item">
+		    <img src="resources/images/project_palindrama.png" alt="Project Palindrama">
+		    <div>Project Palindrama</div>
+		</a>
+		
+		<a href="projects/car_type_identifier.html" class="project-item">
+		    <img src="resources/images/car_type_identifier.png" alt="Car Type Identifier">
+		    <div>Car Type Identifier</div>
+		</a>
+		
+		<a href="projects/project_palindromic_numbers.html" class="project-item">
+		    <img src="resources/images/introducing_palindromic_numbers.png" alt="Project Palindromic Numbers">
+		    <div>Project Palindromic Numbers</div>
+		</a>
+		
+		<a href="projects/project_underwater.html" class="project-item">
+		    <img src="resources/images/project_underwater.png" alt="Project Underwater">
+		    <div>Project Underwater</div>
+		</a>
+		
+		<a href="projects/project_planetary.html" class="project-item">
+		    <img src="resources/images/project_planetary.png" alt="Project Planetary">
+		    <div>Project Planetary</div>
+		</a>
+		
+		<a href="projects/project_pension.html" class="project-item">
+		    <img src="resources/images/project_pension.png" alt="Project Pension">
+		    <div>Project Pension</div>
+		</a>
+		
+		<a href="projects/project_compare_method.html" class="project-item">
+		    <img src="resources/images/project_compare_method.png" alt="Project Compare Method">
+		    <div>Project Compare Method</div>
+		</a>
+		
+		<a href="projects/project_city_order.html" class="project-item">
+		    <img src="resources/images/city_order.png" alt="Project City Order">
+		    <div>Project City Order</div>
+		</a>
+		
+		<a href="projects/project_smartdoorlock.html" class="project-item">
+		    <img src="resources/images/smartdoorlock.png" alt="Project SmartDoorLock">
+		    <div>Project SmartDoorLock</div>
+		</a>
+		
+		<a href="projects/project_studentgpa.html" class="project-item">
+		    <img src="resources/images/studentgpa.png" alt="Project StudentGPA">
+		    <div>Project StudentGPA</div>
+		</a>
+		
+		<a href="projects/unit_three_examples.html" class="project-item">
+		    <img src="resources/images/unitthreeexamples.png" alt="Unit 3: Examples">
+		    <div>Unit 3: Examples</div>
+		</a>
+		
+		<a href="projects/unit_digits_finder.html" class="project-item">
+		    <img src="resources/images/digitfinder.png" alt="Unit Digits Finder">
+		    <div>Unit Digits Finder</div>
+		</a>
+		
+		<a href="projects/project_brilliant_numbers.html" class="project-item">
+		    <img src="resources/images/brilliant_numbers.png" alt="Project Brilliant Numbers">
+		    <div>Project Brilliant Numbers</div>
+		</a>
+		
+		<a href="projects/project_dog.html" class="project-item">
+		    <img src="resources/images/dog.png" alt="Project Dog">
+		    <div>Project Dog</div>
+		</a>
+		
+		<a href="projects/project_diamond.html" class="project-item">
+		    <img src="resources/images/diamond.png" alt="Project Diamond">
+		    <div>Project Diamond</div>
+		</a>
+		
+		<a href="projects/project_sorting.html" class="project-item">
+		    <img src="resources/images/sorting.png" alt="Project Sorting">
+		    <div>Project Sorting</div>
+		</a>
+		
+		<a href="projects/project_newsorting.html" class="project-item">
+		    <img src="resources/images/newsorting.png" alt="Project NewSorting">
+		    <div>Project NewSorting</div>
+		</a>
+		
+		<a href="projects/array_code_project_two.html" class="project-item">
+		    <img src="resources/images/arraycodeprojecttwo.png" alt="Array Code Project Two">
+		    <div>Array Code Project Two</div>
+		</a>
+		
+		<a href="projects/cheat_sheet.html" class="project-item">
+		    <img src="resources/images/cheatsheet.png" alt="Cheat Sheet">
+		    <div>Cheat Sheet</div>
+		</a>
+		
+		<a href="projects/caesar_cipher.html" class="project-item">
+		    <img src="resources/images/caesarcipher.png" alt="Caesar Cipher">
+		    <div>Caesar Cipher</div>
+		</a>
+		
+		<a href="projects/harptuning.html" class="project-item">
+		    <img src="resources/images/harptuning.png" alt="HarpTuning">
+		    <div>HarpTuning</div>
+		</a>
+		
+		<a href="projects/cupcake.html" class="project-item">
+		    <img src="resources/images/cupcakes.png" alt="Cupcake">
+		    <div>Cupcake</div>
+		</a>
+		
+		<a href="projects/fergusonball.html" class="project-item">
+		    <img src="resources/images/fergusonball.png" alt="Fergusonball">
+		    <div>Fergusonball</div>
+		</a>
+		
+		<a href="projects/constraintviolations.html" class="project-item">
+		    <img src="resources/images/constraintviolations.png" alt="ConstraintViolations">
+		    <div>ConstraintViolations</div>
+		</a>
+		
+		<a href="arranging_books.html" class="project-item">
+		    <img src="resources/images/arranging_books.png" alt="Arranging Books">
+		    <div>Arranging Books</div>
+		</a>
+		
+		<a href="projects/boiling_water.html" class="project-item">
+		    <img src="resources/images/boiling_water.png" alt="Boiling Water">
+		    <div>Boiling Water</div>
+		</a>
+		
+		<a href="projects/modern_art.html" class="project-item">
+		    <img src="resources/images/modern_art.png" alt="Modern Art">
+		    <div>Modern Art</div>
+		</a>
+		
+		<a href="projects/secret_instructions.html" class="project-item">
+		    <img src="resources/images/secret_instructions.png" alt="Secret Instructions">
+		    <div>Secret Instructions</div>
+		</a>
+		
+		<a href="projects/silent_auction.html" class="project-item">
+		    <img src="resources/images/silent_auction.png" alt="Silent Auction">
+		    <div>Silent Auction</div>
+		</a>
+		
+		<a href="projects/ccc_word_hunt.html" class="project-item">
+		    <img src="resources/images/ccc_word_hunt.png" alt="CCC Word Hunt">
+		    <div>CCC Word Hunt</div>
+		</a>
+		
+		<a href="projects/chili_peppers.html" class="project-item">
+		    <img src="resources/images/chili_peppers.png" alt="Chili Peppers">
+		    <div>Chili Peppers</div>
+		</a>
+		
+		<a href="projects/deliv-e-droid.html" class="project-item">
+		    <img src="resources/images/deliv-e-droid.png" alt="Deliv-e-droid">
+		    <div>Deliv-e-droid</div>
+		</a>
+		
+		<a href="projects/special_event.html" class="project-item">
+		    <img src="resources/images/special_event.png" alt="Special Event">
+		    <div>Special Event</div>
+		</a>
+		
+		<a href="projects/trianglane.html" class="project-item">
+		    <img src="resources/images/trianglane.png" alt="Trianglane">
+		    <div>Trianglane</div>
+		</a>
+		
+		<a href="projects/bronze_count.html" class="project-item">
+		    <img src="resources/images/bronze_count.png" alt="Bronze Count">
+		    <div>Bronze Count</div>
+		</a>
+		
+		<a href="projects/conveyor_belt_sushi.html" class="project-item">
+		    <img src="resources/images/conveyor_belt_sushi.png" alt="Conveyor Belt Sushi">
+		    <div>Conveyor Belt Sushi</div>
+		</a>
+		
+		<a href="projects/harvest_waterloo.html" class="project-item">
+		    <img src="resources/images/harvest_waterloo.png" alt="Harvest Waterloo">
+		    <div>Harvest Waterloo</div>
+		</a>
+		
+		<a href="projects/dusa_and_the_yobis.html" class="project-item">
+		    <img src="resources/images/dusa_and_the_yobis.png" alt="Dusa And The Yobis">
+		    <div>Dusa And The Yobis</div>
+		</a>
+		
+		<a href="projects/troublesome_keys.html" class="project-item">
+		    <img src="resources/images/troublesome_keys.png" alt="Troublesome Keys">
+		    <div>Troublesome Keys</div>
+		</a>
+		
+		<a href="projects/project_two_dimensional_array.html" class="project-item">
+		    <img src="resources/images/twodimensionalarray.png" alt="Project Two Dimensional Array">
+		    <div>Project Two Dimensional Array</div>
+		</a>
+	</div>
+	
     <div id="interwebs" style="text-align:center; margin-bottom:20px;">
         <i>
             <p class="centered" style="padding-bottom:5px;">Find me on the interwebs!</p>
