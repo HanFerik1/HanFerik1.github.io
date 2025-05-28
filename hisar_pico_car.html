@@ -1,1 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Raspberry Pi Pico Project</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+      padding: 20px;
+    }
+    h1, h2 {
+      color: #333;
+    }
+    h1 {
+      font-size: 36px;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    h2 {
+      color: #007BFF;
+      margin-top: 20px;
+    }
+    p {
+      font-size: 18px;
+      color: #555;
+    }
+    pre {
+      background-color: #f8f9fa;
+      border-radius: 5px;
+      padding: 15px;
+      font-size: 16px;
+      line-height: 1.5;
+      border: 1px solid #ddd;
+      margin-top: 20px;
+    }
+    .section {
+      margin-bottom: 30px;
+    }
+    code {
+      color: #D63384;
+    }
+    .header {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Raspberry Pi Pico Project Documentation</h1>
 
+  <div class="section">
+    <h2>Project Steps:</h2>
+    <p><span class="header">1.</span> A Git project page will be created and shared with the instructor.</p>
+    <p><span class="header">2.</span> The architecture of the Raspberry Pi Pico will be studied to understand what it is and how it works.</p>
+    <p><span class="header">3.</span> The Raspberry Pi Pico will be booted and introduced to the computer system.</p>
+    <p><span class="header">4.</span> Using Visual Studio Code (VSCode) or Thonny, the first code will be written to make the LED on the Pico blink, and this will be added to the portfolio page.</p>
+    <p><span class="header">5.</span> The circuit will be set up with a breadboard, and an external LED will blink. The concept of LEDs will be explained.</p>
+    <p><span class="header">6.</span> The standard method for connecting the LED and Pico to the breadboard will be explained.</p>
+    <p><span class="header">7.</span> The LED and Pico will be connected to the breadboard, and a DC motor will be controlled to rotate both clockwise and counterclockwise.</p>
+    <p><span class="header">8.</span> A web-based HTML page will be created. On this page, the LED on the Pico and the LED on the breadboard will blink. Additionally, buttons for controlling the rotation of the motor will be added.</p>
+    <p><span class="header">9.</span> The rotation of the motor will be controlled within the range of 0 to 180 degrees.</p>
+    <p><span class="header">10.</span> The L298 motor driver will be introduced, and its use will be explained with examples from GitHub.</p>
+    <p><span class="header">11.</span> The L298 motor driver will be connected to two motors and controlled using the Raspberry Pi Pico.</p>
+    <p><span class="header">12.</span> Power management will be researched, and the power issue related to two DC motors, one Pico, and the L298 will be resolved.</p>
+    <p><span class="header">13.</span> The robot assembly will be completed.</p>
+    <p><span class="header">14.</span> The robot will be tested using the web interface with wired connections, and the buttons on the web page will be updated according to the challenge requirements.</p>
+    <p><span class="header">15.</span> The existing Pico will be replaced with the Pico W, and the system will be operated wirelessly. The network topology and web server architecture will be explained.</p>
+    <p><span class="header">16.</span> The final portfolio will be completed, including the electronic architecture, programming architecture, and design architecture. A 30-second working video will be uploaded to GitHub and presented to the instructor, Sedat.</p>
+  </div>
+
+  <div class="section">
+    <h2>Raspberry Pi Pico Architecture:</h2>
+    <p>To begin with, we need to examine the Raspberry Pi Pico’s architecture in depth to comprehend its components and how it operates. The Pico is a microcontroller board built on the RP2040 chip, designed and manufactured by the Raspberry Pi Foundation. It is distinct from the traditional Raspberry Pi single-board computers, as it is a microcontroller rather than a full computer system. Let’s break down its core architecture and functionality step by step.</p>
+
+    <h3>The RP2040 Chip: The Heart of the Pico:</h3>
+    <p>The Raspberry Pi Pico uses the RP2040 microcontroller, a custom-designed chip by the Raspberry Pi Foundation. The RP2040 is a 32-bit ARM Cortex-M0+ processor, which is specifically designed for embedded systems and low-power applications. Unlike the powerful ARM cores used in full Raspberry Pi computers, the Cortex-M0+ is optimized for efficiency and speed in handling real-time tasks. It operates at a clock speed of up to 133 MHz, providing a solid balance between performance and power consumption. Additionally, the RP2040 chip contains dual cores, meaning it can execute two tasks in parallel (dual-core processing). This is essential for applications that require simultaneous processing, such as controlling multiple sensors or peripherals, which makes it more versatile in embedded projects.</p>
+
+    <h3>Memory and Storage:</h3>
+    <p>The RP2040 chip on the Raspberry Pi Pico is equipped with 264 KB of SRAM, which is used for temporary data storage. This allows the Pico to handle a range of tasks with moderate memory demands. For long-term storage, the Pico doesn’t have built-in flash storage but provides a slot for external flash memory. Most Raspberry Pi Pico boards come with 2 MB of flash storage, which is used to store code, libraries, and other data necessary for operation. This flash memory is rewritable, meaning you can update the programs stored on the Pico as needed.</p>
+
+    <h3>GPIO Pins (Interfacing with the Outside World):</h3>
+    <p>One of the most significant features of the Raspberry Pi Pico is its General Purpose Input/Output (GPIO) pins. The Pico offers 26 GPIO pins, which can be configured for input or output and are capable of interacting with a wide range of peripherals, such as sensors, LEDs, motors, and displays. These GPIO pins also support various communication protocols, including I2C, SPI, and UART, which are essential for connecting the Pico to other devices in a system. For example, a sensor might use I2C to communicate with the Pico, while a motor driver might use PWM (Pulse Width Modulation) signals on the GPIO pins to control the motor’s speed and direction. The versatility of these pins makes the Pico ideal for embedded applications where real-time control and communication are crucial.</p>
+
+    <h3>Power Supply and Efficiency:</h3>
+    <p>The Raspberry Pi Pico can be powered via a micro-USB connector or through external power inputs, typically ranging from 1.8V to 5.5V. The efficient design of the RP2040 chip and the surrounding circuitry allows the Pico to run on very low power, making it suitable for battery-powered or energy-efficient projects. For instance, if you’re building a portable sensor network or a robotics system that requires constant operation without recharging, the power management capabilities of the Pico are essential.</p>
+
+    <h3>Programming and Software Development:</h3>
+    <p>Programming the Raspberry Pi Pico is straightforward, thanks to the support for various development environments, such as Thonny (a Python IDE) or Visual Studio Code with C/C++ SDK. The RP2040 microcontroller supports programming in both C/C++ and MicroPython, making it flexible for students and professionals alike. MicroPython, a version of Python specifically designed for microcontrollers, provides an easy-to-use environment for beginners, while C/C++ allows for more advanced, performance-critical applications. The Pico can be easily reprogrammed by connecting it to a computer via USB. Upon boot-up, the device appears as a storage device, and you can simply drag and drop your code to it. This feature simplifies the development and debugging process, as you don’t need an external programmer or complex setup.</p>
+
+    <h3>Peripheral Support: Expanding the Pico’s Capabilities:</h3>
+    <p>While the Raspberry Pi Pico itself is a highly capable microcontroller, its true power comes from its ability to interact with and control various external peripherals. With the help of add-ons and accessories, such as motor drivers, sensors, cameras, and displays, the Pico can be used in a wide range of applications—from building a simple LED blink circuit to more complex robotics or IoT systems. For example, you can connect a servo motor to one of the GPIO pins and control its position with PWM signals. Alternatively, you might connect an ultrasonic sensor to measure distance and then use the Pico to process the sensor data and trigger actions based on the readings.</p>
+
+    <h3>Development Process and Tools:</h3>
+    <p>The development tools for Raspberry Pi Pico are highly integrated and user-friendly. The most common development environments for Pico programming are:</p>
+    <ul>
+      <li><strong>Thonny IDE</strong>: Thonny is an excellent tool for beginners, especially when using MicroPython. It provides an integrated environment where students can write, debug, and execute their code with ease.</li>
+      <li><strong>Visual Studio Code (VSCode)</strong>: For more advanced development in C/C++, VSCode is a powerful editor that integrates well with the Pico SDK. It provides advanced features like debugging and IntelliSense, which helps streamline the development process.</li>
+    </ul>
+
+    <h3>Debugging and Optimization:</h3>
+    <p>Since the Raspberry Pi Pico is designed for real-time applications, debugging and optimization are crucial aspects of the development process. Tools like serial output for debugging, along with breakpoints and step-through debugging in your chosen IDE, can be used to track down issues and optimize code. The efficiency of the RP2040 microcontroller ensures that even in time-sensitive applications, the Pico can handle multiple tasks without significant delays.</p>
+
+    <p>By studying the architecture of the Raspberry Pi Pico, we gain insight into how microcontrollers work and how they can be programmed to interact with the physical world. Understanding the Pico’s capabilities—its dual-core processor, GPIO pins, power management, and peripheral support—lays the foundation for creating a wide range of embedded systems and robotics projects. Whether you are just starting with embedded systems or looking to expand your knowledge, the Pico is a great tool for learning and experimenting with real-world applications.</p>
+  </div>
+
+  <div class="section">
+    <h2>Blinking the Onboard LED:</h2>
+    <p>This program demonstrates how to blink the onboard LED of the Raspberry Pi Pico using MicroPython. The primary goal is to familiarize students with fundamental concepts in embedded systems programming, such as controlling GPIO (General Purpose Input/Output) pins, using infinite loops, and introducing timed delays.</p>
+
+    <p>The program begins by importing two essential modules: <strong>machine</strong> and <strong>time</strong>. The <strong>machine</strong> module provides low-level access to the Pico’s hardware, and within it, the <strong>Pin</strong> class is used to define and control GPIO pins. The <strong>time</strong> module is used for introducing delays between LED toggles, allowing us to control the frequency of the blinking.</p>
+
+    <p>Next, the program defines a variable named <strong>led</strong>, which is initialized as a Pin object. Specifically, it configures GPIO pin 25 as an output pin. On the Raspberry Pi Pico, GPIO 25 is hardwired to the onboard LED, making it a convenient choice for introductory exercises. By setting the pin mode to <strong>Pin.OUT</strong>, we indicate that this pin will be used to send signals (HIGH or LOW voltage) to control an external component, in this case, the LED.</p>
+
+    <p>The program then enters an infinite loop using <strong>while True:</strong>. This ensures that the following actions repeat continuously for as long as the Pico remains powered. Inside the loop, the statement <strong>led.toggle()</strong> is used to reverse the current state of the LED—turning it on if it was off, and vice versa. This method simplifies the logic by eliminating the need to manually track the current state of the pin. After each toggle, the program pauses for half a second using <strong>time.sleep(0.5)</strong>. This delay is critical because, without it, the LED would toggle states too quickly for the human eye to perceive the blinking effect.</p>
+
+    <p>Overall, this simple program introduces key concepts in embedded programming such as hardware initialization, digital output control, timing, and continuous execution using loops. Saving the file as <strong>main.py</strong> directly onto the Pico allows the code to run automatically every time the board is powered, making this example an ideal starting point for more complex hardware-interfacing projects.</p>
+
+    <h3>Program Code:</h3>
+    <pre>
+from machine import Pin
+import time
+
+led = Pin(25, Pin.OUT)
+
+while True:
+    led.toggle()
+    time.sleep(0.5)
+    </pre>
+  </div>
+
+  <div class="section">
+    <h2>Blinking the Breadboard LED:</h2>
+    <p>In this step, we will extend our understanding of digital output control by connecting an external LED to the Raspberry Pi Pico using a breadboard, and then writing a program that blinks this external LED. This introduces both fundamental hardware knowledge and reinforces the GPIO programming concepts previously applied to the onboard LED.</p>
+
+    <p>Before writing code, it is essential to understand what an LED is and how it functions. An LED, or Light Emitting Diode, is a semiconductor device that emits light when an electric current passes through it. Unlike regular bulbs, LEDs are polarized components, meaning they have a positive leg (anode) and a negative leg (cathode), and current must flow in the correct direction—from anode to cathode—for the LED to illuminate. LEDs are widely used due to their low power consumption, fast switching time, and long lifespan. However, they must always be used with a current-limiting resistor (typically 220Ω or 330Ω) to prevent damage caused by excessive current.</p>
+
+    <p>To begin the hardware setup, place a Raspberry Pi Pico and a LED onto a breadboard. Connect one end of a resistor to the longer leg (anode) of the LED, and then connect the other end of the resistor to a GPIO pin on the Pico (for example, GPIO 15). The shorter leg (cathode) of the LED should be connected directly to the Pico’s GND (ground) pin. This simple circuit allows the GPIO pin to provide voltage to the LED, completing the circuit and turning the LED on.</p>
+
+    <p>On the software side, we will write a MicroPython program similar to the previous example, but this time we will control GPIO 15 instead of GPIO 25. The code will use the machine module to configure GPIO 15 as an output, and the time module to create regular time intervals for blinking. Inside an infinite loop, the program will toggle the LED’s state and pause for a short delay (e.g., 0.5 seconds), creating a visible blinking effect.</p>
+
+    <p>This exercise reinforces the connection between hardware components and software control, highlighting how microcontrollers like the Pico interact with the physical world. It also introduces students to prototyping techniques using breadboards, which is a vital skill in embedded systems and robotics development.</p>
+
+    <h3>Program Code:</h3>
+    <pre>
+from machine import Pin
+import time
+
+# Create a Pin object for GPIO 15 (connected to external LED)
+led = Pin(15, Pin.OUT)
+
+# Blink the LED in an infinite loop
+while True:
+    led.toggle()       # Change the LED state (ON -> OFF or OFF -> ON)
+    time.sleep(0.5)    # Wait for 0.5 seconds
+    </pre>
+  </div>
+
+  <div class="section">
+    <h2>Blinking the External LED and Controlling the DC Motor:</h2>
+  <div class="section">
+    <h2>Blinking the LED and Rotating DC Motor Through L298:</h2>
+    <p>This MicroPython program controls both an LED and a DC motor connected to the Raspberry Pi Pico through a breadboard. The program continuously alternates between turning the LED on, rotating the DC motor forward, then rotating it backward, before stopping the motor and turning off the LED. The process is repeated in a continuous loop.</p>
+
+    <p>The program begins by importing the necessary modules: <strong>Pin</strong> from the machine module and the <strong>time</strong> module. The <strong>Pin</strong> class allows the program to control the GPIO pins on the Raspberry Pi Pico, while the <strong>time</strong> module provides the ability to pause the execution of the code for a set duration, which is essential for motor rotation and LED timing.</p>
+
+    <p>In the code, GPIO 16 is used to control the LED attached to the breadboard. A Pin object called <strong>led</strong> is created, and its state is controlled using the functions <strong>turn_on_led()</strong> and <strong>turn_off_led()</strong>. The function <strong>turn_on_led()</strong> sets the GPIO pin to HIGH (1), turning the LED on, and <strong>turn_off_led()</strong> sets it to LOW (0), turning the LED off. These functions help manage the LED's state throughout the program.</p>
+
+    <p>For controlling the DC motor, GPIO 14 and GPIO 15 are used to send control signals to the IN1 and IN2 pins of the L298N motor driver, respectively. The motor's direction is controlled by setting these pins to HIGH or LOW. To rotate the motor in a forward direction (clockwise), IN1 is set to HIGH and IN2 is set to LOW, which is achieved in the function <strong>rotate_motor_right()</strong>. Conversely, to rotate the motor backward (counterclockwise), IN1 is set to LOW and IN2 is set to HIGH, which is handled in the function <strong>rotate_motor_left()</strong>.</p>
+
+    <p>The motor's movement is timed using the <strong>time.sleep()</strong> function. The motor runs forward for 2 seconds in <strong>rotate_motor_right()</strong>, then stops for 1 second by setting both IN1 and IN2 to LOW. Afterward, the motor runs in reverse for another 2 seconds in <strong>rotate_motor_left()</strong>, and again stops for 1 second. This process is continuously repeated in the <strong>while True</strong> loop, where the LED and motor alternate between their respective states.</p>
+
+    <p>In summary, this program introduces students to controlling both digital outputs (LED) and motor direction using GPIO pins on the Raspberry Pi Pico. It demonstrates the use of control logic to manage the state of hardware components, time delays to create observable effects, and looping to create a continuous pattern of operations. The use of functions such as <strong>turn_on_led()</strong>, <strong>turn_off_led()</strong>, <strong>rotate_motor_right()</strong>, and <strong>rotate_motor_left()</strong> modularizes the code, making it easier to understand and extend. This is a fundamental concept in embedded systems programming where hardware control is performed based on time intervals and logical conditions.</p>
+
+    <h3>Program Code:</h3>
+    <pre>
+from machine import Pin
+import time
+
+led = Pin(15, Pin.OUT)
+motor_in1 = Pin(14, Pin.OUT)
+motor_in2 = Pin(15, Pin.OUT)
+
+while True:
+    led.toggle()
+    motor_in1.value(1)
+    motor_in2.value(0)
+    time.sleep(2)
+    motor_in1.value(0)
+    motor_in2.value(1)
+    time.sleep(2)
+    </pre>
+  </div>
+
+  <div class="section">
+    <h2>Rotating the Robot 180 Degrees:</h2>
+    <p>This section explains how to rotate the robot 180 degrees to the left and right using two DC motors controlled by the Raspberry Pi Pico. The program uses timed delays to rotate the motors for a fixed period, completing a 180-degree turn.</p>
+    <h3>Program Code:</h3>
+    <pre>
+from machine import Pin
+import time
+
+motor1_in1 = Pin(14, Pin.OUT)
+motor1_in2 = Pin(15, Pin.OUT)
+motor2_in1 = Pin(16, Pin.OUT)
+motor2_in2 = Pin(17, Pin.OUT)
+
+def rotate_right():
+    motor1_in1.value(1)
+    motor1_in2.value(0)
+    motor2_in1.value(1)
+    motor2_in2.value(0)
+    time.sleep(2)
+    motor1_in1.value(0)
+    motor1_in2.value(0)
+    motor2_in1.value(0)
+    motor2_in2.value(0)
+
+def rotate_left():
+    motor1_in1.value(0)
+    motor1_in2.value(1)
+    motor2_in1.value(0)
+    motor2_in2.value(1)
+    time.sleep(2)
+    motor1_in1.value(0)
+    motor1_in2.value(0)
+    motor2_in1.value(0)
+    motor2_in2.value(0)
+
+while True:
+    rotate_right()
+    time.sleep(1)
+    rotate_left()
+    time.sleep(1)
+    </pre>
+  </div>
+
+  <div class="section">
+    <h2>L298 Motor Driver Architecture (Continued):</h2>
+    <p>The L298 Motor Driver is a popular and widely-used integrated circuit (IC) designed to control the direction and speed of DC motors and stepper motors. It is part of the H-Bridge family, allowing the motor to rotate in both directions. The L298 can supply up to **2A of continuous current**, which is suitable for small to medium-sized motors, far beyond the capabilities of the Raspberry Pi Pico’s GPIO pins (which can only handle around 20-40 mA per pin).</p>
+
+    <h3>How the L298 Works:</h3>
+    <p>The L298 Motor Driver uses an **H-Bridge configuration** that enables motors to rotate in both directions, based on the control signals from the **IN1** and **IN2** pins. By applying either a HIGH or LOW signal to these pins, the motor will either rotate clockwise or counterclockwise. The **ENA** pin (Enable A) controls the motor's power, and by applying a PWM signal to ENA, motor speed can be varied.</p>
+
+    <h3>Pin Description of the L298:</h3>
+    <ul>
+      <li><strong>IN1, IN2, IN3, IN4</strong>: Input control pins for motor direction. IN1 and IN2 control one motor, while IN3 and IN4 control the other motor in dual-motor setups.</li>
+      <li><strong>ENA (Enable A)</strong>: Controls whether the motor operates. Set it HIGH to enable the motor and LOW to stop it.</li>
+      <li><strong>ENB (Enable B)</strong>: Controls the second motor in dual-motor configurations, similar to ENA.</li>
+      <li><strong>OUT1, OUT2</strong>: Motor terminal pins where the motor is connected.</li>
+      <li><strong>GND</strong>: Common ground pin.</li>
+      <li><strong>VCC</strong>: Power supply for the motor (typically 5-12V).</li>
+      <li><strong>VSS</strong>: Logic voltage (typically 5V) for the driver’s internal circuits.</li>
+    </ul>
+
+    <h3>Electrical Characteristics:</h3>
+    <p>The L298 supports motor voltages from **4.5V to 46V** and can supply up to **2A continuous current**. The efficiency of the L298 is typically around **40-50%**, due to the significant voltage drop across its internal transistors, which generate heat. This makes the L298 less efficient compared to newer **MOSFET-based drivers**. However, it remains popular in educational settings due to its simplicity, robustness, and availability.</p>
+
+    <h3>Software Control:</h3>
+    <p>Controlling the L298 motor driver through software is straightforward: set the input pins (IN1, IN2) HIGH or LOW to change the motor’s direction, and use PWM signals on the ENA or ENB pins to adjust speed.</p>
+
+    <h3>Program Code Example:</h3>
+    <pre>
+from machine import Pin
+import time
+
+# Motor control pins
+motor_in1 = Pin(14, Pin.OUT)
+motor_in2 = Pin(15, Pin.OUT)
+
+# Function to rotate motor forward (clockwise)
+def rotate_motor_right():
+    motor_in1.value(1)
+    motor_in2.value(0)
+    print("Motor rotating right (clockwise)")
+
+# Function to rotate motor backward (counterclockwise)
+def rotate_motor_left():
+    motor_in1.value(0)
+    motor_in2.value(1)
+    print("Motor rotating left (counterclockwise)")
+
+# Main loop
+while True:
+    rotate_motor_right()
+    time.sleep(2)
+    rotate_motor_left()
+    time.sleep(2)
+    </pre>
+  </div>
+
+  <div class="section">
+    <h2>Power Management in 2 DC Motor, 1 Pico, and 1 L298:</h2>
+    <p>In this step, the focus is on power management for a system consisting of two DC motors, a Raspberry Pi Pico, and an L298 motor driver. Managing the power needs of each component effectively is crucial to ensure the system operates without issues.</p>
+
+    <h3>Power Supply Considerations:</h3>
+    <p>The **Raspberry Pi Pico** requires **5V** to operate, which can be supplied via the micro-USB connection or through an external power source. The **L298 motor driver**, however, requires higher voltages to power the motors, typically between **5V and 12V**. Therefore, the Pico and L298 must each be powered from different sources, though they should share a common ground.</p>
+
+    <h3>Resolving Power Issues:</h3>
+    <p>The Pico can be powered through its USB connection, while the L298 should be powered using an external source matching the motor’s voltage requirements. A **common ground** between the Pico, L298, and the motor power source is necessary for stable operation. Additionally, using a **voltage regulator** or **buck converter** can help step down the voltage for the Pico, optimizing power efficiency and reducing heat dissipation from the L298.</p>
+
+    <h3>Program Code for Power Management:</h3>
+    <pre>
+# Power management control logic can be inserted here to monitor and control power states.
+    </pre>
+  </div>
+
+  <div class="section">
+    <h2>Controlling the Pico Car Through HTML Web Page:</h2>
+    <p>This MicroPython program turns the Raspberry Pi Pico into a web server, allowing you to control an LED and a DC motor remotely via a web interface. The Pico connects to Wi-Fi, and the server listens for HTTP requests to control the LED and motor.</p>
+
+    <h3>Program Code:</h3>
+    <pre>
+import network
+import socket
+from machine import Pin
+import time
+
+# Setup for LED and motor control
+led = Pin(16, Pin.OUT)  # LED on GPIO 16
+motor_in1 = Pin(14, Pin.OUT)  # Motor control pin 1
+motor_in2 = Pin(15, Pin.OUT)  # Motor control pin 2
+
+# Connect to Wi-Fi
+wifi_ssid = 'your_wifi_ssid'
+wifi_password = 'your_wifi_password'
+
+wifi = network.WLAN(network.STA_IF)
+wifi.active(True)
+wifi.connect(wifi_ssid, wifi_password)
+
+while not wifi.isconnected():
+    time.sleep(1)
+
+print("Connected to WiFi")
+print("IP Address:", wifi.ifconfig()[0])
+
+# Web server setup
+html = """<!DOCTYPE html>
+<html>
+<head>
+    <title>Control LED and Motor</title>
+</head>
+<body>
+    <h1>Raspberry Pi Pico Web Control</h1>
+    <button onclick="toggleLED()">Toggle LED</button>
+    <button onclick="rotateMotor('right')">Motor Right</button>
+    <button onclick="rotateMotor('left')">Motor Left</button>
+    <script>
+        function toggleLED() {
+            fetch('/toggle_led');
+        }
+        function rotateMotor(direction) {
+            fetch('/rotate_motor?direction=' + direction);
+        }
+    </script>
+</body>
+</html>"""
+
+addr = socket.getaddrinfo('0.0.0.0', 80)[0][-1]
+s = socket.socket()
+s.bind(addr)
+s.listen(1)
+
+while True:
+    cl, addr = s.accept()
+    request = cl.recv(1024)
+    request = str(request)
+
+    # Control LED
+    if '/toggle_led' in request:
+        led.value(not led.value())
+
+    # Control motor
+    if '/rotate_motor' in request:
+        direction = request.split('direction=')[1].split(' ')[0]
+        if direction == 'right':
+            motor_in1.value(1)
+            motor_in2.value(0)
+        elif direction == 'left':
+            motor_in1.value(0)
+            motor_in2.value(1)
+
+    cl.send('HTTP/1.1 200 OK\r\n')
+    cl.send('Content-Type: text/html\r\n')
+    cl.send('\r\n')
+    cl.send(html)
+
+    cl.close()
+    </pre>
+  </div>
+
+</body>
+</html>
